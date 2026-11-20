@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-19",
+ "stand": "2026-11-20",
  "quelle": "Wikimedia Commons",
  "mindest": 20,
  "pools": {
@@ -34,7 +34,7 @@
   "flaeche": 2,
   "verkehr": 20,
   "tipp": 21,
-  "themen": 25,
+  "themen": 27,
   "menschen": 20
  },
  "bilder": [
@@ -7639,6 +7639,34 @@
    "geprueft": true,
    "geprueftAm": "2026-11-17",
    "ort": "Merzenich"
+  },
+  {
+   "id": "web-themen-26-299418b5",
+   "pool": "themen",
+   "datei": "/assets/editorial-pools/themen/themen-26-299418b5e9-800.webp",
+   "alt": "Unwetter am 18. Mai 2017 über dem Landkreis Esslingen mit Starkregen und anschließendem Hagel",
+   "credit": "Symbolbild · Michael Hoffmann / Wikimedia Commons · CC BY 3.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3AUnwetter-mit-Starkregen.jpg",
+   "titel": "File:Unwetter-mit-Starkregen.jpg",
+   "lizenz": "CC BY 3.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by/3.0",
+   "geprueft": true,
+   "geprueftAm": "2026-11-20",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-themen-27-a5e20eb2",
+   "pool": "themen",
+   "datei": "/assets/editorial-pools/themen/themen-27-a5e20eb2ff-1200.webp",
+   "alt": "Komposthaufen in einem Garten an der Straße Donnerbecke",
+   "credit": "Symbolbild · Sdicke / Wikimedia Commons · CC BY-SA 4.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3AKomposthaufen_in_einem_Garten_an_der_Stra%C3%9Fe_Donnerbecke.jpg",
+   "titel": "File:Komposthaufen in einem Garten an der Straße Donnerbecke.jpg",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "geprueft": true,
+   "geprueftAm": "2026-11-20",
+   "ort": "Deutschland / überregional"
   },
   {
    "id": "web-menschen-01-686bb6fb",

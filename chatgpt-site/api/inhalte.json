@@ -1,14 +1,14 @@
 {
- "generated": "2026-11-19T23:47:00+01:00",
- "anzahl": 243,
+ "generated": "2026-11-20T09:18:00+01:00",
+ "anzahl": 245,
  "bestand": {
-  "gesamt": 243,
+  "gesamt": 245,
   "ressorts": {
    "nachrichten": 0,
-   "blaulicht": 76,
+   "blaulicht": 77,
    "sport": 35,
    "rathaus": 45,
-   "leben": 51,
+   "leben": 52,
    "wirtschaft": 11,
    "tipp": 0,
    "menschen": 7,
@@ -16,7 +16,7 @@
    "kultur": 0
   },
   "ortsteile": {
-   "merzenich": 168,
+   "merzenich": 170,
    "golzheim": 27,
    "girbelsrath": 26,
    "morschenich": 13,
@@ -25,11 +25,11 @@
   },
   "listen": {
    "/nachrichten/": {
-    "anzahl": 243,
+    "anzahl": 245,
     "liste": "gepflegt"
    },
    "/blaulicht/": {
-    "anzahl": 76,
+    "anzahl": 77,
     "liste": "gepflegt"
    },
    "/sport/": {
@@ -41,7 +41,7 @@
     "liste": "gepflegt"
    },
    "/leben/": {
-    "anzahl": 51,
+    "anzahl": 52,
     "liste": "gepflegt"
    },
    "/wirtschaft/": {
@@ -65,7 +65,7 @@
     "liste": "keine Seite"
    },
    "/merzenich/": {
-    "anzahl": 168,
+    "anzahl": 170,
     "liste": "gepflegt"
    },
    "/golzheim/": {
@@ -101,6 +101,82 @@
  },
  "hinweis": "Kanonischer Inhaltsindex, erzeugt von deploy/inhaltsindex.mjs aus den Artikelseiten. Alle Listen, Feeds und die Startseite werden daraus gebaut.",
  "artikel": [
+  {
+   "id": "2026-11-20-unwetterwarnung-merzenich-dauerregen-kreis-dueren-20-november-2026-dwd",
+   "url": "/blaulicht/unwetterwarnung-merzenich-dauerregen-kreis-dueren-20-november-2026-dwd/",
+   "titel": "Unwetterwarnung für Merzenich: DWD warnt bis Freitag 22 Uhr vor ergiebigem Dauerregen",
+   "teaser": "Für den Kreis Düren gilt eine amtliche Unwetterwarnung. Bis zum Abend werden noch einmal rund 35 Liter Regen je Quadratmeter erwartet.",
+   "kicker": "Blaulicht · Wetter",
+   "ressort": "blaulicht",
+   "ressortLabel": "Blaulicht",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-11-20T09:18:00+01:00",
+   "aktualisiert": "2026-11-20T09:18:00+01:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "wetter",
+     "label": "Wetter"
+    },
+    {
+     "slug": "unwetter",
+     "label": "Unwetter"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/themen/themen-26-299418b5e9.jpg",
+    "srcset": "/assets/editorial-pools/themen/themen-26-299418b5e9-480.webp 480w, /assets/editorial-pools/themen/themen-26-299418b5e9-800.webp 800w, /assets/editorial-pools/themen/themen-26-299418b5e9.jpg 1200w",
+    "alt": "Unwetter am 18. Mai 2017 über dem Landkreis Esslingen mit Starkregen und anschließendem Hagel",
+    "width": 1200,
+    "height": 801,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Michael Hoffmann / Wikimedia Commons · CC BY 3.0",
+    "symbol": true,
+    "stufe": "B"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
+  {
+   "id": "2026-11-20-grundschule-kgs-merzenich-garten-ag-baut-keyhole-komposter-schulgarten-2026",
+   "url": "/leben/grundschule-kgs-merzenich-garten-ag-baut-keyhole-komposter-schulgarten-2026/",
+   "titel": "Grundschule in Merzenich: Garten-AG baut Komposter nach afrikanischem Vorbild",
+   "teaser": "Die Kinder der Garten-AG der KGS Merzenich haben über den Sommer einen Keyhole-Komposter aus Weidenzweigen gebaut. Im April soll er die erste Erde liefern.",
+   "kicker": "Leben · Schule",
+   "ressort": "leben",
+   "ressortLabel": "Leben",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-11-20T09:18:00+01:00",
+   "aktualisiert": "2026-11-20T09:18:00+01:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "schule",
+     "label": "Schule"
+    },
+    {
+     "slug": "umwelt",
+     "label": "Umwelt"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/themen/themen-27-a5e20eb2ff.jpg",
+    "srcset": "/assets/editorial-pools/themen/themen-27-a5e20eb2ff-480.webp 480w, /assets/editorial-pools/themen/themen-27-a5e20eb2ff-800.webp 800w, /assets/editorial-pools/themen/themen-27-a5e20eb2ff-1200.webp 1200w, /assets/editorial-pools/themen/themen-27-a5e20eb2ff.jpg 1920w",
+    "alt": "Komposthaufen in einem Garten an der Straße Donnerbecke",
+    "width": 1920,
+    "height": 1440,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Sdicke / Wikimedia Commons · CC BY-SA 4.0",
+    "symbol": true,
+    "stufe": "B"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
   {
    "id": "2026-11-19-einsatz-148-person-hinter-tuer-merzenich",
    "url": "/blaulicht/einsatz-148-person-hinter-tuer-merzenich/",
@@ -10049,11 +10125,21 @@
   }
  ],
  "aufmacher": {
-  "id": "2026-11-19-einsatz-148-person-hinter-tuer-merzenich",
-  "url": "/blaulicht/einsatz-148-person-hinter-tuer-merzenich/",
-  "titel": "Feuerwehr Merzenich: Person hinter Tür in Merzenich (Einsatz 148/26)"
+  "id": "2026-11-20-unwetterwarnung-merzenich-dauerregen-kreis-dueren-20-november-2026-dwd",
+  "url": "/blaulicht/unwetterwarnung-merzenich-dauerregen-kreis-dueren-20-november-2026-dwd/",
+  "titel": "Unwetterwarnung für Merzenich: DWD warnt bis Freitag 22 Uhr vor ergiebigem Dauerregen"
  },
  "nebenmeldungen": [
+  {
+   "id": "2026-11-20-grundschule-kgs-merzenich-garten-ag-baut-keyhole-komposter-schulgarten-2026",
+   "url": "/leben/grundschule-kgs-merzenich-garten-ag-baut-keyhole-komposter-schulgarten-2026/",
+   "titel": "Grundschule in Merzenich: Garten-AG baut Komposter nach afrikanischem Vorbild"
+  },
+  {
+   "id": "2026-11-19-einsatz-148-person-hinter-tuer-merzenich",
+   "url": "/blaulicht/einsatz-148-person-hinter-tuer-merzenich/",
+   "titel": "Feuerwehr Merzenich: Person hinter Tür in Merzenich (Einsatz 148/26)"
+  },
   {
    "id": "2026-11-19-umsatzsteuer-gemeinde-merzenich-ab-2027-grababraeumung-gemeindemobil-spuelmobil-friedhofsgebuehren",
    "url": "/rathaus/umsatzsteuer-gemeinde-merzenich-ab-2027-grababraeumung-gemeindemobil-spuelmobil-friedhofsgebuehren/",
@@ -10063,16 +10149,6 @@
    "id": "2026-11-19-merzenich-haushalt-2026-prognose-defizit-3-4-millionen-statt-5-7-millionen-finanzausschuss",
    "url": "/rathaus/merzenich-haushalt-2026-prognose-defizit-3-4-millionen-statt-5-7-millionen-finanzausschuss/",
    "titel": "Haushalt Merzenich 2026: Verwaltung erwartet 3,4 statt 5,7 Millionen Euro Defizit"
-  },
-  {
-   "id": "2026-11-18-buergewald-ausschuss-merzenich-26-november-2026-solarpark-a4-bau-turbo-vermarktung-erster-abschnitt",
-   "url": "/rathaus/buergewald-ausschuss-merzenich-26-november-2026-solarpark-a4-bau-turbo-vermarktung-erster-abschnitt/",
-   "titel": "Bürgewald-Ausschuss in Merzenich: Solarpark an der A4 und Bau-Turbo kommen am 26. November auf den Tisch"
-  },
-  {
-   "id": "2026-11-15-advent-merzenich-2026-adventsmarkt-adventsfenster-weihnachtsshow-termine",
-   "url": "/leben/advent-merzenich-2026-adventsmarkt-adventsfenster-weihnachtsshow-termine/",
-   "titel": "Advent in Merzenich 2026: Adventsmarkt, Adventsfenster und Weihnachtsshow, alle Termine bis 20. Dezember"
   }
  ],
  "startseitenMotive": {
@@ -10102,12 +10178,10 @@
   "editorial-pools/feuerwehr/feuerwehr-17-06a888ad36": 1,
   "editorial-pools/feuerwehr/feuerwehr-19-1b61ac5382": 1,
   "editorial-pools/kultur/kultur-01-8826d38c5d": 2,
-  "editorial-pools/menschen/menschen-01-686bb6fb4c": 1,
   "editorial-pools/polizei/polizei-10-b2dae76ca0": 1,
   "editorial-pools/schule/schule-03-dbb36132c8": 1,
   "editorial-pools/technik/technik-05-81cd88e925": 1,
   "editorial-pools/themen/themen-01-0394d77d0b": 1,
-  "editorial-pools/themen/themen-05-1ca58804a8": 1,
   "editorial-pools/themen/themen-06-bc6b8eed4f": 1,
   "editorial-pools/themen/themen-12-1e67d8491e": 1,
   "editorial-pools/themen/themen-15-30a6b323da": 2,
@@ -10116,6 +10190,8 @@
   "editorial-pools/themen/themen-23-f5560260b4": 2,
   "editorial-pools/themen/themen-24-960e0101ba": 1,
   "editorial-pools/themen/themen-25-7e1a7afdf3": 2,
+  "editorial-pools/themen/themen-26-299418b5e9": 1,
+  "editorial-pools/themen/themen-27-a5e20eb2ff": 1,
   "editorial-pools/unfall/unfall-01-d28ac4c922": 1,
   "editorial-pools/veranstaltungen/veranstaltungen-15-ab46720923": 1,
   "editorial-pools/veranstaltungen/veranstaltungen-18-246e60a7fc": 2,
@@ -10133,8 +10209,8 @@
   "editorial-pools/aktuell/aktuell-01-0b6bcf033a",
   "editorial-pools/aktuell/aktuell-05-85b961cd5e",
   "editorial-pools/blaulicht/blaulicht-13-f2236bb05e",
-  "editorial-pools/themen/themen-25-7e1a7afdf3",
-  "editorial-pools/veranstaltungen/veranstaltungen-18-246e60a7fc"
+  "editorial-pools/themen/themen-26-299418b5e9",
+  "editorial-pools/themen/themen-27-a5e20eb2ff"
  ],
  "motivMax": 2
 }

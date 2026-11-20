@@ -1,0 +1,175 @@
+{
+  "hinweis": "Recherche vom 20.11.2026, Morgenlauf (Claude): Unwetterwarnung Dauerregen (DWD-Daten 09:12 Uhr, gelesen 09:15 Uhr; Kreis Düren 19.11.; Feuerwehr und Polizei 09:17 Uhr) und Kompostprojekt der KGS Merzenich (Entwurf vom 19.11., Gemeindebeitrag in Heimat-Info vom 19.11. 09:56 Uhr, verschoben mangels Foto).",
+  "redaktionsstandard": 2,
+  "meldungen": [
+    {
+      "slug": "unwetterwarnung-merzenich-dauerregen-kreis-dueren-20-november-2026-dwd",
+      "ressort": "blaulicht",
+      "ortsteil": "merzenich",
+      "kicker": "Blaulicht · Wetter",
+      "titel": "Unwetterwarnung für Merzenich: DWD warnt bis Freitag 22 Uhr vor ergiebigem Dauerregen",
+      "dek": "Für den Kreis Düren gilt eine amtliche Unwetterwarnung. Bis zum Abend werden noch einmal rund 35 Liter Regen je Quadratmeter erwartet.",
+      "datum": "2026-11-20T09:18:00+01:00",
+      "artikeltyp": "kurzmeldung",
+      "relevanz": 1,
+      "ortsbezug": "Die Unwetterwarnung des Deutschen Wetterdienstes gilt für den Kreis Düren und damit für die Gemeinde Merzenich mit Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald; die Feuerwehr Merzenich meldete bis 9.17 Uhr keinen Regeneinsatz.",
+      "themen": [
+        [
+          "wetter",
+          "Wetter"
+        ],
+        [
+          "unwetter",
+          "Unwetter"
+        ]
+      ],
+      "bildklasse": "wetter.unwetter.regen",
+      "absaetze": [
+        "Der Deutsche Wetterdienst (DWD) warnt für den Kreis Düren und damit auch für die Gemeinde Merzenich vor ergiebigem Dauerregen. Die amtliche Unwetterwarnung gilt nach dem Stand von Freitag, 20. November, 9.12 Uhr, bis Freitagabend um 22 Uhr. Bisher hat der Wetterdienst im Warngebiet 60 bis 90 Liter Regen je Quadratmeter beobachtet. Mit Unterbrechungen sollen noch einmal etwa 35 Liter hinzukommen, in Staulagen bis zu 45 Liter.",
+        "Der DWD sieht große Gefahr, dass Straßen und Unterführungen sowie Gebäude in der Nähe von Bächen und Flüssen überflutet werden; auch Erdrutsche seien möglich. Er rät, überflutete und gefährdete Stellen zu meiden, im Straßenverkehr vorsichtig zu fahren und mit Behinderungen zu rechnen. Wer kann, solle vorbeugend Hochwasserschutz treffen. Droht ein Keller vollzulaufen oder steht schon Wasser darin, solle man ihn sofort verlassen. Über die Hochwasserlage informiert das Portal hochwasserzentralen.de.",
+        "Der Kreis Düren hatte die Warnung schon am Donnerstag, 19. November, weitergegeben. Damals galt sie ab 11.44 Uhr; erwartet wurden zu diesem Zeitpunkt noch 40 bis 60 Liter je Quadratmeter, in Staulagen bis 70 Liter.",
+        "Einsätze wegen des Regens in Merzenich sind bislang nicht bekannt. Die Einsatzübersichten der Freiwilligen Feuerwehr Merzenich auf ihrer Website und in der Heimat-Info-App verzeichneten am Freitagmorgen um 9.17 Uhr als jüngsten Einsatz eine Türöffnung vom Donnerstagvormittag; ein Unwettereinsatz war nicht darunter. Auch die Polizei Düren hatte bis dahin keine Meldung zu Folgen des Regens in der Gemeinde veröffentlicht. Merzenich Aktuell berichtet, falls sich das ändert."
+      ],
+      "fakten": [
+        "Amtliche Unwetterwarnung vor ergiebigem Dauerregen für den Kreis Düren bis Freitag, 20. November, 22 Uhr",
+        "Bisher 60 bis 90 Liter je Quadratmeter beobachtet, weitere rund 35 Liter erwartet, in Staulagen bis 45 Liter",
+        "Gefahr von Überflutungen und Erdrutschen",
+        "Keine regenbedingten Einsätze der Feuerwehr Merzenich bis 20. November, 9.17 Uhr"
+      ],
+      "pruefung": [
+        {
+          "aussage": "DWD-Warnungen (warnings.json), Datenstand 20.11.2026 09:12:06 Uhr (Freitag, 20. November, 9.12 Uhr), gelesen 09:15 Uhr: Warnzelle 105358000 „Kreis Düren“, Ereignis „ERGIEBIGER DAUERREGEN“, Stufe 4, Überschrift „Amtliche UNWETTERWARNUNG vor ERGIEBIGEM DAUERREGEN“, Beginn 20.11. 04:06 Uhr, Ende 20.11. 22:00 Uhr (22 Uhr); Text: „Nach bisher beobachteten Niederschlagsmengen von 60 bis 90 l/m² tritt weiterhin ergiebiger Dauerregen mit Unterbrechungen auf. Dabei werden nochmals Niederschlagsmengen um 35 l/m² erwartet. In Staulagen werden Mengen bis 45 l/m² erreicht.“",
+          "belege": [
+            "https://www.dwd.de/DWD/warnungen/warnapp/json/warnings.json",
+            "https://www.dwd.de/DE/wetter/warnungen_landkreise/warnWetter_node.html"
+          ],
+          "stelle": "warnings[105358000]",
+          "selbstauskunft": "Amtliche Warnung des Deutschen Wetterdienstes (Bundesbehörde), Rohdaten der Warn-App am 20.11.2026 um 09:15 Uhr selbst gelesen"
+        },
+        {
+          "aussage": "DWD, derselbe Eintrag: „Große Gefahr durch: Überflutungen von Straßen/Unterführungen sowie gewässernahen Gebäuden; mögliche Erdrutsche.“ Handlungsempfehlungen: „überflutete und gefährdete Abschnitte meiden; Verhalten im Straßenverkehr anpassen, Behinderungen auf Verkehrswegen einplanen; ggf. vorbeugend Hochwasser-Schutzmaßnahmen treffen; bei drohender/bereits bestehender Überflutung Keller sofort verlassen; über Hochwasserlage unter www.hochwasserzentralen.de informieren“.",
+          "belege": [
+            "https://www.dwd.de/DWD/warnungen/warnapp/json/warnings.json",
+            "https://www.kreis-dueren.de/presse/unwetter_2026-11-19.php"
+          ],
+          "stelle": "warnings[105358000], description und instruction; Kreis Düren mit denselben Empfehlungen"
+        },
+        {
+          "aussage": "Kreis Düren, Pressemitteilung „Unwetterwarnung“ vom 19.11.2026 (Donnerstag, 19. November): Warnung „von Donnerstag, 19. November, 11:44 Uhr bis Freitag, 20. November, 22 Uhr“ (11.44 Uhr); „Nach bisher beobachteten Niederschlagsmengen von 20 bis 40 l/m² … nochmals Niederschlagsmengen zwischen 40 l/m² und 60 l/m² erwartet. In Staulagen werden Mengen bis 70 l/m² erreicht.“ Gelesen 20.11.2026 09:15 Uhr.",
+          "belege": [
+            "https://www.kreis-dueren.de/presse/unwetter_2026-11-19.php"
+          ],
+          "stelle": "Pressemitteilung"
+        },
+        {
+          "aussage": "Einsatzliste der Feuerwehr Merzenich (Website, jüngster Eintrag 147/26) und Heimat-Info-Profil der Feuerwehr (jüngster Beitrag 148/26 vom 19.11.2026, Stichwort „Person hinter Tür“, Donnerstag Vormittag), beide gelesen 20.11.2026 um 9.17 Uhr: kein Einsatz wegen Regen oder Unwetter. Presseportal Polizei Düren (Dienststellenliste nr/8), 9.17 Uhr: jüngste Meldung 19.11.2026 12:42 Uhr (Jülich), keine Meldung zu Regenfolgen in Merzenich.",
+          "belege": [
+            "https://feuerwehr-merzenich.de/einsaetze",
+            "https://www.heimat-info.de/gemeinden/merzenich/organisationen/freiwillige-feuerwehr-merzenich/beitraege"
+          ],
+          "stelle": "Einsatzübersichten",
+          "selbstauskunft": "Eigene Abrufe der Feuerwehrseiten und des Presseportals am 20.11.2026 um 9.17 Uhr; Fehlen eines Einsatzes nur für diesen Zeitpunkt festgestellt"
+        }
+      ],
+      "quelle": {
+        "name": "Deutscher Wetterdienst: Amtliche Unwetterwarnung vor ergiebigem Dauerregen für den Kreis Düren (Warn-App-Daten, Stand 20.11.2026, 09:12 Uhr)",
+        "url": "https://www.dwd.de/DWD/warnungen/warnapp/json/warnings.json",
+        "stand": "2026-11-20"
+      },
+      "weitereQuellen": [
+        {
+          "name": "Deutscher Wetterdienst: Warnungen für Landkreise",
+          "url": "https://www.dwd.de/DE/wetter/warnungen_landkreise/warnWetter_node.html",
+          "stand": "2026-11-20"
+        },
+        {
+          "name": "Kreis Düren: Unwetterwarnung (Pressemitteilung vom 19.11.2026)",
+          "url": "https://www.kreis-dueren.de/presse/unwetter_2026-11-19.php",
+          "stand": "2026-11-20"
+        },
+        {
+          "name": "Freiwillige Feuerwehr Merzenich: Einsätze",
+          "url": "https://feuerwehr-merzenich.de/einsaetze",
+          "stand": "2026-11-20"
+        },
+        {
+          "name": "Freiwillige Feuerwehr Merzenich in Heimat-Info: Beiträge",
+          "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/freiwillige-feuerwehr-merzenich/beitraege",
+          "stand": "2026-11-20"
+        }
+      ]
+    },
+    {
+      "slug": "grundschule-kgs-merzenich-garten-ag-baut-keyhole-komposter-schulgarten-2026",
+      "ressort": "leben",
+      "ortsteil": "merzenich",
+      "kicker": "Leben · Schule",
+      "titel": "Grundschule in Merzenich: Garten-AG baut Komposter nach afrikanischem Vorbild",
+      "dek": "Die Kinder der Garten-AG der KGS Merzenich haben über den Sommer einen Keyhole-Komposter aus Weidenzweigen gebaut. Im April soll er die erste Erde liefern.",
+      "datum": "2026-11-20T09:18:00+01:00",
+      "artikeltyp": "kurzmeldung",
+      "relevanz": 3,
+      "ortsbezug": "Die Garten-AG der Grundschule KGS Merzenich hat im Schulgarten in Merzenich einen Komposter gebaut; die Gemeinde Merzenich berichtet darüber.",
+      "themen": [
+        [
+          "schule",
+          "Schule"
+        ],
+        [
+          "umwelt",
+          "Umwelt"
+        ]
+      ],
+      "bildklasse": "leben.schule.garten",
+      "absaetze": [
+        "Im Schulgarten der Grundschule KGS Merzenich steht ein neuer Komposter, den die Kinder der Garten-AG selbst gebaut haben. Darüber hat die Gemeinde Merzenich am Donnerstag, 19. November, in ihrem Kanal in der Heimat-Info-App berichtet. Den ganzen Sommer über haben die Kinder nach Angaben der Gemeinde an dem Projekt gearbeitet. Begleitet wurden sie von ihrer AG-Leiterin und von einem Diplom-Biologen, der Schatzmeister des Dürener Vereins „Migranten bauen Brücken“ ist.",
+        "Inzwischen haben die Kinder den Garten für den Winter vorbereitet und den Komposter noch einmal mit Laub gefüllt. Im April 2027 soll es weitergehen; dann, so die Gemeinde, sollte aus dem Kompost fertige Erde geworden sein.",
+        "Gebaut ist die Anlage nach dem Prinzip „Kenia Keyhole“. Von oben gesehen erinnert sie an ein Schlüsselloch: In der Mitte liegt der Zugang zum Komposthaufen, außen herum ein Ring zum Bepflanzen. Entwickelt wurde der Typ nach der Darstellung der Gemeinde in Kenia, heute nutzen ihn viele Länder Afrikas. Für Grundschulen eigne er sich, weil er klein und leicht zu bearbeiten sei und trotzdem viel Ertrag bringe. Dort betreuen meist zwei Kinder ein Beet, und die Ernte geht an die Schulkantine. Der Merzenicher Komposter besteht nur aus Weidenzweigen, die im Sommer beim Rückschnitt angefallen sind.",
+        "Nach der Beschreibung im Gemeindebeitrag bringt der Verein „Migranten bauen Brücken“ Menschen aus Deutschland und Afrika zusammen, damit sie Wissen austauschen, vor allem in Handwerk, Landwirtschaft und Medizin. Mit dem Schulprojekt wolle man auch zeigen, dass Kinder überall auf der Welt an ähnlichen Aufgaben arbeiten und gemeinsam lernen, die Umwelt zu schützen. Was das Projekt gekostet hat und wer es bezahlt, steht in dem Beitrag nicht."
+      ],
+      "fakten": [
+        "Garten-AG der KGS Merzenich baut Komposter im Schulgarten",
+        "Bauweise „Kenia Keyhole“, nur aus Weidenzweigen vom Rückschnitt",
+        "Unterstützt vom Dürener Verein „Migranten bauen Brücken“",
+        "Weiter geht es im April 2027"
+      ],
+      "pruefung": [
+        {
+          "aussage": "Beitrag der Gemeinde Merzenich (offizielles Gemeindeprofil) in Heimat-Info vom 19.11.2026, 09:56 Uhr (Donnerstag, 19. November): „den ganzen Sommer über haben die Kinder der Garten AG der #GrundschuleMerzenich an diesem tollen Projekt gearbeitet“; unterstützt von der Lehrerin/AG-Leiterin und einem Vertreter des Vereins „Migranten bauen Brücken“ („Schatzmeister des Vereins und Diplom-Biologe“, Namen nicht übernommen); „Kürzlich wurde der Garten winterfest gemacht und der Komposter noch einmal gut mit Laub gefüllt. Im April nächsten Jahres geht es weiter, dann sollte der Kompost fertige Erde liefern.“ (April 2027); „Schulgarten der KGS Merzenich“.",
+          "belege": [
+            "https://www.heimat-info.de/beitraege/6d6570dd-689f-4569-914f-104db28904e2"
+          ],
+          "stelle": "Gemeindebeitrag",
+          "selbstauskunft": "Beitrag des offiziellen Profils der Gemeinde Merzenich in Heimat-Info, am 19.11.2026 um 14:46 Uhr vollständig gelesen; Detailseite der Gemeinde-Website liefert HTTP 428 (Bot-Prüfung), nicht umgangen"
+        },
+        {
+          "aussage": "Derselbe Beitrag: Typ „Kenia Keyhole“, „von oben mit seinem Zugang zum Kompost und dem umlaufenden Ring zur Bepflanzung wie ein Schlüsselloch“, „in Kenia entwickelt“, „in vielen afrikanischen Ländern verwendet“, „eignet sich sehr gut für Grundschulen, da er wegen seiner geringen Größe gut bearbeitet werden kann und dennoch hohe Ernten liefert“, „meist von zwei Schülern betreut“, Ernten für Schulkantinen; „nur aus Weidenzweigen gebaut, die im Sommer beim notwendigen Rückschnitt anfallen“; Verein „vermittelt Kontakte zwischen Menschen in Deutschland und Afrika zum Wissens- und Kulturaustausch“, Fokus „handwerklichen, landwirtschaftlichen und medizinischen Berufen“; Kosten nicht genannt.",
+          "belege": [
+            "https://www.heimat-info.de/beitraege/6d6570dd-689f-4569-914f-104db28904e2"
+          ],
+          "stelle": "Gemeindebeitrag",
+          "selbstauskunft": "Beitrag des offiziellen Profils der Gemeinde Merzenich in Heimat-Info, gelesen 19.11.2026 14:46 Uhr; Angaben zum Komposter-Typ als Darstellung der Gemeinde gekennzeichnet"
+        },
+        {
+          "aussage": "Pressemitteilungsliste der Gemeinde Merzenich (gemeinde-merzenich.de, Abruf der Actions-Rohdaten imports/quellen/gemeinde.json am 18.11.2026 um 23:37 Uhr): Eintrag „Tolles Kompostprojekt an der Grundschule – Die Garten AG der Grundschule Merzenich hat gemeinsam mit dem Verein Migranten bauen Brücken ein tolles Kompostprojekt umgesetzt!“ Detailseite aus der Sitzung HTTP 428 (Bot-Prüfung), nicht umgangen.",
+          "belege": [
+            "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php"
+          ],
+          "stelle": "Pressemitteilungsliste, Teaser"
+        }
+      ],
+      "quelle": {
+        "name": "Gemeinde Merzenich in Heimat-Info: „Garten AG baut Komposter im Schulgarten“ (19.11.2026)",
+        "url": "https://www.heimat-info.de/beitraege/6d6570dd-689f-4569-914f-104db28904e2",
+        "stand": "2026-11-19"
+      },
+      "weitereQuellen": [
+        {
+          "name": "Gemeinde Merzenich: Pressemitteilungen / News, Eintrag „Tolles Kompostprojekt an der Grundschule“ (Abruf über die Quellen-Rohdaten vom 18.11.2026)",
+          "url": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php",
+          "stand": "2026-11-18"
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-19T22:48:57.579Z",
+  "updatedAt": "2026-11-20T08:18:02.371Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -1772,6 +1772,24 @@
       "assignedAt": "2026-11-19T22:48:57.579Z",
       "articleId": "2026-11-19-einsatz-148-person-hinter-tuer-merzenich",
       "articleDate": "2026-11-19T23:47:00+01:00"
+    },
+    "/blaulicht/unwetterwarnung-merzenich-dauerregen-kreis-dueren-20-november-2026-dwd/": {
+      "imageId": "web-themen-26-299418b5",
+      "pool": "themen",
+      "motiv": "starkregen-unwetter",
+      "regel": "wetter.unwetter.regen",
+      "assignedAt": "2026-11-20T08:18:02.370Z",
+      "articleId": "2026-11-20-unwetterwarnung-merzenich-dauerregen-kreis-dueren-20-november-2026-dwd",
+      "articleDate": "2026-11-20T09:20:00+01:00"
+    },
+    "/leben/grundschule-kgs-merzenich-garten-ag-baut-keyhole-komposter-schulgarten-2026/": {
+      "imageId": "web-themen-27-a5e20eb2",
+      "pool": "themen",
+      "motiv": "kompost-garten",
+      "regel": "leben.schule.garten",
+      "assignedAt": "2026-11-20T08:18:02.371Z",
+      "articleId": "2026-11-20-grundschule-kgs-merzenich-garten-ag-baut-keyhole-komposter-schulgarten-2026",
+      "articleDate": "2026-11-20T09:22:00+01:00"
     }
   }
 }

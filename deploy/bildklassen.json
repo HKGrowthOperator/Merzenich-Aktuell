@@ -466,6 +466,18 @@
         "streifenwagen",
         "polizeimotorrad"
       ]
+    },
+    "wetter.unwetter.regen": {
+      "titel": "Unwetterwarnung, Dauerregen, Starkregen (Symbolbild Regenfront, kein Foto aus Merzenich)",
+      "motive": [
+        "starkregen-unwetter"
+      ]
+    },
+    "leben.schule.garten": {
+      "titel": "Schulgarten, Kompost, Garten-AG (Symbolbild Komposter im Garten, kein Foto der Schule)",
+      "motive": [
+        "kompost-garten"
+      ]
     }
   }
 }

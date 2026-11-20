@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Thu, 19 Nov 2026 22:47:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 20 Nov 2026 08:18:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Blaulicht</title><link>https://merzenichaktuell.hk-growthoperator.de/blaulicht/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/blaulicht/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Unwetterwarnung für Merzenich: DWD warnt bis Freitag 22 Uhr vor ergiebigem Dauerregen</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/blaulicht/unwetterwarnung-merzenich-dauerregen-kreis-dueren-20-november-2026-dwd/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/blaulicht/unwetterwarnung-merzenich-dauerregen-kreis-dueren-20-november-2026-dwd/</guid>
+<pubDate>Fri, 20 Nov 2026 08:18:00 GMT</pubDate>
+<category>Blaulicht</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Für den Kreis Düren gilt eine amtliche Unwetterwarnung. Bis zum Abend werden noch einmal rund 35 Liter Regen je Quadratmeter erwartet.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-26-299418b5e9.jpg" medium="image"><media:credit>Michael Hoffmann / Wikimedia Commons · CC BY 3.0</media:credit><media:description>Unwetter am 18. Mai 2017 über dem Landkreis Esslingen mit Starkregen und anschließendem Hagel</media:description></media:content>
+</item>
 <item>
 <title>Feuerwehr Merzenich: Person hinter Tür in Merzenich (Einsatz 148/26)</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-148-person-hinter-tuer-merzenich/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Jugendliche sollen am 1. September am Gewerbering Gegenstände auf die Fahrbahn geworfen haben. Ein Autofahrer musste ausweichen.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/unfall/unfall-13-dddcf86b1e.jpg" medium="image"><media:credit>P170 / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Die Pfeiffersbrücke (nicht im Bild) wurde im Sommer 2013 erneuert, die hier zu sehende Fußgängerüberführung dabei aber zurückgebaut. Der historische Treppenaufgang steht noch</media:description></media:content>
-</item>
-<item>
-<title>Angebranntes Essen löst Brandmeldeanlage am Steinpfahl aus</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-121-brandmeldeanlage-steinpfahl/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-121-brandmeldeanlage-steinpfahl/</guid>
-<pubDate>Thu, 20 Aug 2026 10:39:00 GMT</pubDate>
-<category>Blaulicht</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Die Feuerwehr rückte am 20. August mit Vollalarm zu einer Wohnanlage aus. Ursache war ein Topf auf dem Herd.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/technik/technik-18-1eea351292.jpg" medium="image"><media:credit>TWGThewikiguy / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>This is the Prodex firescape, addressable firealarm panel. It is made by Hedegren security</media:description></media:content>
 </item>
 </channel>
 </rss>
