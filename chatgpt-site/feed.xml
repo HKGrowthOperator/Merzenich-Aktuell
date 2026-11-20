@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Fri, 20 Nov 2026 08:18:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 20 Nov 2026 08:22:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell</title><link>https://merzenichaktuell.hk-growthoperator.de/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Bauausschuss Merzenich: Ja zum Umbau der Grundschule Golzheim, 36 Wohnungen am Poolplatz vorgestellt</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/rathaus/bauausschuss-merzenich-ergebnisse-grundschule-golzheim-poolplatz-solarpark-a4-bau-turbo-2026/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/rathaus/bauausschuss-merzenich-ergebnisse-grundschule-golzheim-poolplatz-solarpark-a4-bau-turbo-2026/</guid>
+<pubDate>Fri, 20 Nov 2026 08:22:00 GMT</pubDate>
+<category>Rathaus &amp; Politik</category>
+<category>Golzheim</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Die Niederschrift der Sitzung vom 12. November zeigt: Der Ausschuss empfiehlt einstimmig, die Schulplanung fortzusetzen, obwohl der Gemeinde ein Eigenanteil von 7,3 bis 7,6 Millionen Euro droht. Auch zwei Solarparks und der Bau-Turbo bekamen grünes Licht.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg" medium="image"><media:credit>Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Rathaus in Merzenich</media:description></media:content>
+</item>
 <item>
 <title>Unwetterwarnung für Merzenich: DWD warnt bis Freitag 22 Uhr vor ergiebigem Dauerregen</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/blaulicht/unwetterwarnung-merzenich-dauerregen-kreis-dueren-20-november-2026-dwd/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Auf rund zwölf Hektar zwischen Golzheim und Eschweiler über Feld sollen Solarmodule und ein Großbatteriespeicher entstehen. Der Bauausschuss soll am 12. November empfehlen, den Planentwurf öffentlich auszulegen.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-23-f5560260b4.jpg" medium="image"><media:credit>Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Solar Park in the morning mist, Dülmen, North Rhine-Westphalia, Germany</media:description></media:content>
-</item>
-<item>
-<title>Baustelle vor dem Rathaus in Merzenich dauert länger: Kabel im Hauptkanal, Versicherung schickt Gutachter</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/rathaus/baustelle-valdersweg-rathaus-merzenich-telekomschaden-bahnstrasse-foerderung-tiefbau-2026/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/rathaus/baustelle-valdersweg-rathaus-merzenich-telekomschaden-bahnstrasse-foerderung-tiefbau-2026/</guid>
-<pubDate>Wed, 04 Nov 2026 13:50:00 GMT</pubDate>
-<category>Rathaus &amp; Politik</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Die Verwaltung berichtet dem Bauausschuss über fünf Tiefbaustellen: den Valdersweg, zwei durch Glasfaserarbeiten beschädigte Bäume, aufgebrochene Wirtschaftswege in Girbelsrath und die Suche nach Fördergeld für den Ausbau der Bahnstraße.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-06-bc6b8eed4f.jpg" medium="image"><media:credit>VSchagow / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Baustellenabsperrung Dohnaischer Platz, für Bau eines Abwassersammlers</media:description></media:content>
 </item>
 </channel>
 </rss>

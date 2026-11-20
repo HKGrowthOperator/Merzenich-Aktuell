@@ -1,5 +1,5 @@
 {
-  "hinweis": "Recherche vom 20.11.2026, Morgenlauf (Claude): Unwetterwarnung Dauerregen (DWD-Daten 09:12 Uhr, gelesen 09:15 Uhr; Kreis Düren 19.11.; Feuerwehr und Polizei 09:17 Uhr) und Kompostprojekt der KGS Merzenich (Entwurf vom 19.11., Gemeindebeitrag in Heimat-Info vom 19.11. 09:56 Uhr, verschoben mangels Foto).",
+  "hinweis": "Recherche vom 20.11.2026, Morgenlauf (Claude): Unwetterwarnung Dauerregen (DWD-Daten 09:12 Uhr, gelesen 09:15 Uhr; Kreis Düren 19.11.; Feuerwehr und Polizei 09:17 Uhr) und Kompostprojekt der KGS Merzenich (Entwurf vom 19.11., Gemeindebeitrag in Heimat-Info vom 19.11. 09:56 Uhr, verschoben mangels Foto). Folgemeldung Bauausschuss 12.11. nach öffentlicher Niederschrift und Beschlusstexten (gelesen 20.11.2026 09:20 Uhr).",
   "redaktionsstandard": 2,
   "meldungen": [
     {
@@ -168,6 +168,168 @@
           "name": "Gemeinde Merzenich: Pressemitteilungen / News, Eintrag „Tolles Kompostprojekt an der Grundschule“ (Abruf über die Quellen-Rohdaten vom 18.11.2026)",
           "url": "https://www.gemeinde-merzenich.de/aktuelles/pressemitteilungen.php",
           "stand": "2026-11-18"
+        }
+      ]
+    },
+    {
+      "slug": "bauausschuss-merzenich-ergebnisse-grundschule-golzheim-poolplatz-solarpark-a4-bau-turbo-2026",
+      "ressort": "rathaus",
+      "ortsteil": "golzheim",
+      "kicker": "Rathaus · Bauen",
+      "titel": "Bauausschuss Merzenich: Ja zum Umbau der Grundschule Golzheim, 36 Wohnungen am Poolplatz vorgestellt",
+      "dek": "Die Niederschrift der Sitzung vom 12. November zeigt: Der Ausschuss empfiehlt einstimmig, die Schulplanung fortzusetzen, obwohl der Gemeinde ein Eigenanteil von 7,3 bis 7,6 Millionen Euro droht. Auch zwei Solarparks und der Bau-Turbo bekamen grünes Licht.",
+      "datum": "2026-11-20T09:22:00+01:00",
+      "artikeltyp": "standard",
+      "relevanz": 2,
+      "ortsbezug": "Der Bau-, Planungs- und Umweltausschuss der Gemeinde Merzenich hat über den Umbau der Grundschule Golzheim, das Wohnprojekt am Poolplatz in Merzenich, Solarparks bei Bürgewald und Golzheim und den Bau-Turbo beraten.",
+      "themen": [
+        [
+          "schule",
+          "Schule"
+        ],
+        [
+          "bauen",
+          "Bauen und Wohnen"
+        ],
+        [
+          "photovoltaik",
+          "Photovoltaik"
+        ],
+        [
+          "buergewald",
+          "Bürgewald"
+        ]
+      ],
+      "bildklasse": "rathaus.rat",
+      "absaetze": [
+        "Der Umbau der Grundschule in Golzheim soll weitergehen, obwohl die Gemeinde Merzenich nach heutigem Stand einen großen Teil selbst bezahlen müsste. Das hat der Bau-, Planungs- und Umweltausschuss am Donnerstag, 12. November, einstimmig dem Gemeinderat empfohlen. Seit dieser Woche ist die öffentliche Niederschrift der Sitzung im Ratsinformationssystem abrufbar. Sie zeigt auch, wie die Fraktionen über das neue Wohnprojekt am Poolplatz, zwei Solarparks und den sogenannten Bau-Turbo gesprochen haben. Endgültig entscheidet in allen Punkten der Gemeinderat; er tagt am Donnerstag, 3. Dezember, um 18 Uhr im Ratssaal.",
+        "Bei der Grundschule Golzheim geht es um einen Umbau mit Räumen für den Offenen Ganztag (OGS). Nach der Niederschrift liegt die aktuelle Kostenschätzung des Architekturbüros KPS bei rund 12 Millionen Euro; zu Jahresbeginn war noch von etwa 13 Millionen Euro die Rede. Mit Fördermitteln rechnet das Büro in Höhe von rund 5 Millionen Euro. Die Verwaltung geht für den förderfähigen Teil weiter von einer Förderquote von 95 Prozent aus. Weil die Bezirksregierung Köln aber nur Flächen fördert, die ausschließlich der OGS dienen, bleibt nach den Angaben im Ausschuss ein Eigenanteil von etwa 7,3 bis 7,6 Millionen Euro bei der Gemeinde.",
+        "Wie eng die Regeln sind, zeigte der Bürgermeister am Beispiel des geplanten Aufzugs: Er werde nicht vollständig gefördert, weil ein Kind mit Behinderung ihn am Vormittag im Schulbetrieb nicht nutzen dürfte, am Nachmittag in der OGS dagegen schon. Ein Vertreter der FDP gab zu bedenken, dass die Gemeinde bereits rund 35 Millionen Euro Schulden habe und auch beim Feuerwehrgerätehaus in Golzheim dringender Handlungsbedarf bestehe. Für einen eigenen OGS-Neubau fehle die Zeit, sagte der Planer; als Frist nannte die Verwaltung den 19. November.",
+        "Bisher sind für die Planung 401.201,65 Euro ausgegeben worden; die Summe wurde auf Wunsch des Bürgermeisters erst im Protokoll beziffert. Bezahlt wird aus 1,6 Millionen Euro, die im Haushalt für die Grundschule zurückgelegt sind. Der Förderantrag soll gestellt und die Maßnahme in die Haushaltsberatungen für 2027 eingebracht werden. Sollte die Gemeinde dann feststellen, dass sie den Eigenanteil nicht tragen kann, müsse der Antrag notfalls zurückgezogen werden, hieß es. Ob das Projekt am Ende umgesetzt wird, entscheidet sich deshalb erst im Förderverfahren und im Haushalt.",
+        "Ebenfalls Thema war das Wohnprojekt am Poolplatz auf dem Gelände der früheren Kfz-Werkstatt zwischen Ürlingsweg und Severin-Böhr-Straße. Der neue Eigentümer, die Paffendorf Vermögensverwaltungs GmbH & Co. KG, stellte zusammen mit dem Planungsbüro Schumacher Planen und Bauen 36 Wohnungen mit Tiefgarage und begrünten Flachdächern vor; investiert werden sollen mehr als 10 Millionen Euro. Gebaut werden könne, sobald die Baugenehmigung vorliegt, nach heutiger Planung ab März oder April; ein Jahr nennt die Niederschrift nicht. Die Bauzeit schätzt der Investor auf rund zwei Jahre. Vorgesehen sind bisher 33 Stellplätze, drei weniger als vorgeschrieben. Geheizt werden soll voraussichtlich mit einer Luft-Wasser-Wärmepumpe. Einen Beschluss gab es dazu nicht, das Projekt wurde nur vorgestellt.",
+        "Für den Solarpark von RWE an der Autobahn A4 südlich von Bürgewald empfiehlt der Ausschuss einstimmig, einen Bebauungsplan aufzustellen und den Flächennutzungsplan zu ändern. In der Präsentation war von rund 40 Hektar die Rede, die Unterlagen zur Vorlage nennen ein Plangebiet von rund 44 Hektar mit etwa 36 Hektar Modulfläche. Der Batteriespeicher soll nach RWE-Angaben auf der Projektfläche nahe dem Netzanschluss stehen und etwa vier Stunden lang Strom abgeben können; die genaue Größe steht noch nicht fest. Geprüft werden soll weiter, ob sich Bürgewald an der Energieversorgung beteiligen kann. Am Donnerstag, 26. November, berät auch der Bürgewald-Ausschuss darüber.",
+        "Für den zweiten Solarpark zwischen Golzheim und Eschweiler über Feld empfiehlt der Ausschuss ebenfalls einstimmig, die 20. Änderung des Flächennutzungsplans öffentlich auszulegen und die Behörden zu beteiligen. Ein FDP-Vertreter fragte, ob die bis zu vier Meter tiefe Fläche bei Starkregen überflutet werden könne. Die Verwaltung verwies darauf, dass der Bebauungsplan noch aussteht.",
+        "Bei den Leitlinien zum Bau-Turbo, mit denen die Gemeinde Wohnungsbau ohne neuen Bebauungsplan erlauben will, stimmte der Ausschuss nach der Niederschrift über eine Änderung auf sechs Wohneinheiten ab und empfahl die Leitlinien einstimmig. Welche Grenze genau geändert wird, geht aus dem Protokoll nicht hervor; die Leitlinien in den Unterlagen für den Bürgewald-Ausschuss nennen weiter fünf Wohnungen. Der Bürgermeister nannte zwei Flächen, für die der Bau-Turbo infrage kommt: die freie Restfläche am Feuerwehrgerätehaus in Golzheim und eine Fläche in Bürgewald, auf die der Kreis Düren die Gemeinde angesprochen habe. Mehrere Fraktionen wollen über jedes Projekt informiert werden.",
+        "Zu Beginn der Sitzung hatte die Firma root Technik das Energiemanagementsystem der Gemeinde vorgestellt. Es bündelt die Verbrauchsdaten der gemeindeeigenen Gebäude und ist nach ihren Angaben derzeit in drei Liegenschaften eingebunden, wo es auch die Heizung steuert. Wie viel Energie das spart, wurde in der Sitzung nicht beziffert.",
+        "Wie es weitergeht: Über die Empfehlungen zu Schule, Solarparks und Bau-Turbo stimmt der Gemeinderat am 3. Dezember ab. In derselben Sitzung will die Verwaltung nach ihrem Zeitplan vom September auch den Entwurf des Haushalts 2027 einbringen. Dort muss sich zeigen, ob der Eigenanteil für die Grundschule Golzheim finanziert werden kann."
+      ],
+      "fakten": [
+        "Bauausschuss empfiehlt einstimmig: Grundschule Golzheim mit angepasster Entwurfsvariante weiterplanen",
+        "Kosten rund 12 Millionen Euro, Förderung rund 5 Millionen, Eigenanteil etwa 7,3 bis 7,6 Millionen Euro",
+        "Bisherige Planungskosten 401.201,65 Euro",
+        "Poolplatz: 36 Wohnungen, Tiefgarage, über 10 Millionen Euro, 33 Stellplätze",
+        "Solarpark A4 und FNP-Änderung Golzheim/Eschweiler über Feld einstimmig empfohlen",
+        "Bau-Turbo-Leitlinien einstimmig empfohlen, Abstimmung über Änderung auf sechs Wohneinheiten",
+        "Gemeinderat entscheidet am 3. Dezember 2026 um 18 Uhr"
+      ],
+      "pruefung": [
+        {
+          "aussage": "Beschlusstext 138/2026 aus der Niederschrift der 5. Sitzung des Bau-, Planungs- und Umweltausschusses vom 12.11.2026 (Donnerstag, 12. November), S. 1 bis 5: Kostenschätzung „rund 12 Millionen Euro Gesamtkosten“, zu Jahresbeginn „rund 13 Millionen Euro“; Fördermittel „rund 5 Millionen Euro“; „Förderquote von 95 %“ für den förderfähigen Anteil; Eigenanteil „etwa 7,3 – 7,6 Millionen Euro“; Vorgabe der Bezirksregierung: OGS-Flächen „ausschließlich der OGS“; Aufzug-Beispiel (vormittags nicht in Schulnutzung, nachmittags in OGS); FDP: Verschuldung „rund 35 Millionen Euro“, „dringender Handlungsbedarf bei dem Feuerwehrgerätehaus in Golzheim“; Frist „19.11.2026“ (19. November); Planungskosten „401.201,65 Euro“; „1,6 Millionen Euro“ im Haushalt zurückgestellt; Haushaltsberatung 2027; Rücknahme des Förderantrags im Worst Case; Beschluss: „empfiehlt einstimmig … Das weitere Verfahren soll mit dieser angepassten Entwurfsvariante durchgeführt werden.“ Gelesen 20.11.2026, 09:20 Uhr.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZaLnCdElljVrkfzb2tNMD7fpxoEDi7FFr4Ng8u3G53NU/Beschlusstext_138-2026_-oeffentlich-_Bau--_Planungs-_und_Umweltausschuss_12.11.2026.pdf",
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZc1ECzpZsP3TWwNgGuuj87QCqpwz0rlEu07YBWZVnSVo/Oeffentliche_Niederschrift_Bau--_Planungs-_und_Umweltausschuss_12.11.2026.pdf"
+          ],
+          "stelle": "Beschlusstext 138/2026 S. 1 bis 5"
+        },
+        {
+          "aussage": "Beschlusstext M142/2026 (Poolplatz), S. 1 und 2: Fläche „zwischen Ürlingsweg und Severin-Böhr-Str.“, Architektenwettbewerb 2020; „36 Wohneinheiten mit einer Tiefgarage“, begrünte Flachdächer; „Investitionsvolumen liegt bei über 10 Millionen Euro“; Paffendorf Vermögensverwaltungs GmbH & Co. KG, Schumacher Planen und Bauen GmbH; Baubeginn nach Baugenehmigung, „im März/April“ (ohne Jahr); Bauzeit „rund zwei Jahre“; „33 Stellplätze vorgesehen … Somit fehlen noch drei Stellplätze“; „Luft-Wasser-Wärmepumpe“. Mitteilung ohne Beschluss.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZbdKEwQ5InBjf1V9JDAikL_NJijHQCSMdiRexqDPyy6N/Beschlusstext_M142-2026_-oeffentlich-_Bau--_Planungs-_und_Umweltausschuss_12.11.2026.pdf",
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZc1ECzpZsP3TWwNgGuuj87QCqpwz0rlEu07YBWZVnSVo/Oeffentliche_Niederschrift_Bau--_Planungs-_und_Umweltausschuss_12.11.2026.pdf"
+          ],
+          "stelle": "Beschlusstext M142/2026"
+        },
+        {
+          "aussage": "Beschlusstext 144/2026 (Solarpark E3 an der A4), S. 1 bis 3: „rund 40 Hektar große Fläche südlich von Bürgewald“; Batteriespeicher „innerhalb der vorgesehenen Projektfläche“, „möglichst nah am vorgesehenen Netzanschluss“, „Speicherkapazität von etwa vier Stunden“, endgültige Dimensionierung offen; Ausschussvorsitz: Thema erneut im Bürgewald-Ausschuss; „empfiehlt einstimmig“: Aufstellung B-Plan und FNP-Änderung, Beteiligungsmodell Bürgewald prüfen. Kurzbegründung im Sitzungspaket des Bürgewald-Ausschusses: Plangebiet „rund 44 ha“, PV „etwa 36 ha“. Bürgewald-Ausschuss Donnerstag, 26. November.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZZjpwNA0-Q92z-Xg1vUrHWliiHbQ5wylTK5u8_5Onfm9/Beschlusstext_144-2026_-oeffentlich-_Bau--_Planungs-_und_Umweltausschuss_12.11.2026.pdf",
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZcPAuUDf1tTiyLtDpYcVCGNgKQeGmdK_N_bJ21yz13hoR7o3089KkUpDHdY62oKjNg/Gesamtes_Sitzungspaket.pdf"
+          ],
+          "stelle": "Beschlusstext 144/2026; Sitzungspaket ARB S. 6"
+        },
+        {
+          "aussage": "Beschlusstext 92/2026: 20. Änderung des Flächennutzungsplans im Bereich Golzheim und Eschweiler über Feld; FDP: „Tiefe von 4 Metern“, bei Starkregen überflutet; Verwaltung: Bebauungsplan „steht noch aus“; „empfiehlt einstimmig“ Veröffentlichung nach § 3 Abs. 2 BauGB und Behördenbeteiligung.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZU205i-Ju5zNBsGniwOk5LLRzbq7x5alw6l8qhdJnk9N/Beschlusstext_92-2026_-oeffentlich-_Bau--_Planungs-_und_Umweltausschuss_12.11.2026.pdf",
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZc1ECzpZsP3TWwNgGuuj87QCqpwz0rlEu07YBWZVnSVo/Oeffentliche_Niederschrift_Bau--_Planungs-_und_Umweltausschuss_12.11.2026.pdf"
+          ],
+          "stelle": "Beschlusstext 92/2026"
+        },
+        {
+          "aussage": "Beschlusstext 142/2026 (Bau-Turbo), S. 1 bis 3: FDP für „6 Wohnparteien“; Bürgermeister: „freie Restfläche am Feuerwehrgerätehaus in Golzheim“, Kreis Düren wegen „Fläche in Bürgewald“; „Es soll laut Herr Zeyen abgestimmt werden (Änderung auf 6 WE)“ (sechs Wohneinheiten); „empfiehlt einstimmig“ Genehmigung der Leitlinien; Informationswünsche der Fraktionen. Leitlinien (Anlage 2, Ver. 1.0 vom 28.10.2026) im ARB-Sitzungspaket S. 20: „bis einschließlich 5 WE“ (fünf Wohnungen).",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZTVhexQeiRmnMMHxYtgI5smurOPwG7MePPgLeENwv9Ql/Beschlusstext_142-2026_-oeffentlich-_Bau--_Planungs-_und_Umweltausschuss_12.11.2026.pdf",
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZcPAuUDf1tTiyLtDpYcVCGNgKQeGmdK_N_bJ21yz13hoR7o3089KkUpDHdY62oKjNg/Gesamtes_Sitzungspaket.pdf"
+          ],
+          "stelle": "Beschlusstext 142/2026; Sitzungspaket ARB S. 20"
+        },
+        {
+          "aussage": "Beschlusstext M139/2026 (Energiemanagementsystem): Vortrag der Firma root Technik; Verbrauchsdaten der Liegenschaften gebündelt; „derzeit in drei Liegenschaften integriert“, Steuerung der Heizungsanlagen; keine bezifferte Einsparung. Gemeinderat 8. Sitzung am 03.12.2026, 18:00 Uhr (Donnerstag, 3. Dezember, 18 Uhr), Sitzungsseite gelesen 18.11. und termine.ics 19.11.2026.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZR8BL1xXw_HFm04Oap-8E8Pqz5R_UzygY7PyTvJqny13/Beschlusstext_M139-2026_-oeffentlich-_Bau--_Planungs-_und_Umweltausschuss_12.11.2026.pdf",
+            "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZVdT8_yNOFdxzzqOMkjDj10"
+          ],
+          "stelle": "Beschlusstext M139/2026; Ratsinformationssystem"
+        },
+        {
+          "aussage": "Mitteilungsvorlage M128/2026 vom 23.09.2026 (Zeitplan vom September; eigener Artikel vom 13.10.2026): Einbringung des Haushaltsentwurfs 2027 in der Ratssitzung am 3. Dezember. Beschlusstext 138/2026: Maßnahme soll in die Haushaltsberatung 2027 eingebracht werden.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZWIZvJfpWZ5XCeZ8IDC8TCYRWLcN1RoTQYEbJdIrV8BR/Mitteilungsvorlage_M128-2026.pdf",
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZaLnCdElljVrkfzb2tNMD7fpxoEDi7FFr4Ng8u3G53NU/Beschlusstext_138-2026_-oeffentlich-_Bau--_Planungs-_und_Umweltausschuss_12.11.2026.pdf"
+          ],
+          "stelle": "M128/2026; Beschlusstext 138/2026 S. 2"
+        }
+      ],
+      "quelle": {
+        "name": "Gemeinde Merzenich: Öffentliche Niederschrift der 5. Sitzung des Bau-, Planungs- und Umweltausschusses vom 12.11.2026",
+        "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZc1ECzpZsP3TWwNgGuuj87QCqpwz0rlEu07YBWZVnSVo/Oeffentliche_Niederschrift_Bau--_Planungs-_und_Umweltausschuss_12.11.2026.pdf",
+        "stand": "2026-11-20"
+      },
+      "weitereQuellen": [
+        {
+          "name": "Beschlusstext 138/2026, Umbau Grundschule Golzheim",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZaLnCdElljVrkfzb2tNMD7fpxoEDi7FFr4Ng8u3G53NU/Beschlusstext_138-2026_-oeffentlich-_Bau--_Planungs-_und_Umweltausschuss_12.11.2026.pdf",
+          "stand": "2026-11-20"
+        },
+        {
+          "name": "Beschlusstext M142/2026, Projekt Poolplatz",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZbdKEwQ5InBjf1V9JDAikL_NJijHQCSMdiRexqDPyy6N/Beschlusstext_M142-2026_-oeffentlich-_Bau--_Planungs-_und_Umweltausschuss_12.11.2026.pdf",
+          "stand": "2026-11-20"
+        },
+        {
+          "name": "Beschlusstext 144/2026, Solarpark E3 an der A4",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZZjpwNA0-Q92z-Xg1vUrHWliiHbQ5wylTK5u8_5Onfm9/Beschlusstext_144-2026_-oeffentlich-_Bau--_Planungs-_und_Umweltausschuss_12.11.2026.pdf",
+          "stand": "2026-11-20"
+        },
+        {
+          "name": "Beschlusstext 92/2026, 20. FNP-Änderung Golzheim/Eschweiler über Feld",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZU205i-Ju5zNBsGniwOk5LLRzbq7x5alw6l8qhdJnk9N/Beschlusstext_92-2026_-oeffentlich-_Bau--_Planungs-_und_Umweltausschuss_12.11.2026.pdf",
+          "stand": "2026-11-20"
+        },
+        {
+          "name": "Beschlusstext 142/2026, Bau-Turbo-Leitlinien",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZTVhexQeiRmnMMHxYtgI5smurOPwG7MePPgLeENwv9Ql/Beschlusstext_142-2026_-oeffentlich-_Bau--_Planungs-_und_Umweltausschuss_12.11.2026.pdf",
+          "stand": "2026-11-20"
+        },
+        {
+          "name": "Beschlusstext M139/2026, Energiemanagementsystem",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZR8BL1xXw_HFm04Oap-8E8Pqz5R_UzygY7PyTvJqny13/Beschlusstext_M139-2026_-oeffentlich-_Bau--_Planungs-_und_Umweltausschuss_12.11.2026.pdf",
+          "stand": "2026-11-20"
+        },
+        {
+          "name": "Sitzungspaket Ausschuss für Revitalisierung Bürgewald 26.11.2026 (Kurzbegründung Solarpark, Leitlinien Bau-Turbo)",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZcPAuUDf1tTiyLtDpYcVCGNgKQeGmdK_N_bJ21yz13hoR7o3089KkUpDHdY62oKjNg/Gesamtes_Sitzungspaket.pdf",
+          "stand": "2026-11-18"
+        },
+        {
+          "name": "Sitzungsseite Bau-, Planungs- und Umweltausschuss 12.11.2026",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZVdT8_yNOFdxzzqOMkjDj10",
+          "stand": "2026-11-20"
+        },
+        {
+          "name": "Gemeinde Merzenich: Mitteilungsvorlage M128/2026 vom 23.09.2026 (Haushalt 2027, Zeitplan)",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZWIZvJfpWZ5XCeZ8IDC8TCYRWLcN1RoTQYEbJdIrV8BR/Mitteilungsvorlage_M128-2026.pdf",
+          "stand": "2026-10-13"
         }
       ]
     }
