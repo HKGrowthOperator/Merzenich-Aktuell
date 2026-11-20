@@ -1,22 +1,22 @@
 {
- "generated": "2026-11-20T09:22:00+01:00",
- "anzahl": 246,
+ "generated": "2026-11-20T14:55:00+01:00",
+ "anzahl": 247,
  "bestand": {
-  "gesamt": 246,
+  "gesamt": 247,
   "ressorts": {
    "nachrichten": 0,
    "blaulicht": 77,
    "sport": 35,
    "rathaus": 46,
    "leben": 52,
-   "wirtschaft": 11,
+   "wirtschaft": 12,
    "tipp": 0,
    "menschen": 7,
    "vereine": 18,
    "kultur": 0
   },
   "ortsteile": {
-   "merzenich": 170,
+   "merzenich": 171,
    "golzheim": 28,
    "girbelsrath": 26,
    "morschenich": 13,
@@ -25,7 +25,7 @@
   },
   "listen": {
    "/nachrichten/": {
-    "anzahl": 246,
+    "anzahl": 247,
     "liste": "gepflegt"
    },
    "/blaulicht/": {
@@ -45,7 +45,7 @@
     "liste": "gepflegt"
    },
    "/wirtschaft/": {
-    "anzahl": 11,
+    "anzahl": 12,
     "liste": "gepflegt"
    },
    "/tipp/": {
@@ -65,7 +65,7 @@
     "liste": "keine Seite"
    },
    "/merzenich/": {
-    "anzahl": 170,
+    "anzahl": 171,
     "liste": "gepflegt"
    },
    "/golzheim/": {
@@ -101,6 +101,44 @@
  },
  "hinweis": "Kanonischer Inhaltsindex, erzeugt von deploy/inhaltsindex.mjs aus den Artikelseiten. Alle Listen, Feeds und die Startseite werden daraus gebaut.",
  "artikel": [
+  {
+   "id": "2026-11-20-gutachterbuero-hr2-merzenich-gewerbegebiet-schimmel-feuchteschaeden-15-arbeitsplaetze",
+   "url": "/wirtschaft/gutachterbuero-hr2-merzenich-gewerbegebiet-schimmel-feuchteschaeden-15-arbeitsplaetze/",
+   "titel": "Neues Gutachterbüro in Merzenich: Gemeinde meldet 15 Arbeitsplätze im Gewerbegebiet",
+   "teaser": "Ein neu gegründetes Sachverständigenbüro für Schimmel- und Feuchteschäden hat sich im Merzenicher Gewerbegebiet angesiedelt. Die Gemeinde stellt es in ihrer Reihe „Merzenich hat was zu bieten“ vor.",
+   "kicker": "Wirtschaft · Neu im Ort",
+   "ressort": "wirtschaft",
+   "ressortLabel": "Wirtschaft",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-11-20T14:55:00+01:00",
+   "aktualisiert": "2026-11-20T14:55:00+01:00",
+   "lesezeit": "1 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "wirtschaft",
+     "label": "Wirtschaft"
+    },
+    {
+     "slug": "gewerbe",
+     "label": "Gewerbe"
+    }
+   ],
+   "bild": {
+    "src": "/assets/places/merzenich-st-laurentius-1440.webp",
+    "srcset": "/assets/places/merzenich-st-laurentius-720.webp 720w, /assets/places/merzenich-st-laurentius-1440.webp 1440w",
+    "alt": "St. Laurentius in Merzenich von Südosten",
+    "width": 1440,
+    "height": 960,
+    "fit": "",
+    "badge": "Ortsansicht",
+    "credit": "Kilind / Wikimedia Commons (bearbeitet) · CC BY-SA 4.0",
+    "symbol": true,
+    "stufe": "O"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
   {
    "id": "2026-11-20-bauausschuss-merzenich-ergebnisse-grundschule-golzheim-poolplatz-solarpark-a4-bau-turbo-2026",
    "url": "/rathaus/bauausschuss-merzenich-ergebnisse-grundschule-golzheim-poolplatz-solarpark-a4-bau-turbo-2026/",
@@ -10210,7 +10248,6 @@
   "anzeigen/merzlicht-1-v2": 2,
   "anzeigen/merzlicht-2-v2": 2,
   "editorial-pools/aktuell/aktuell-01-0b6bcf033a": 2,
-  "editorial-pools/aktuell/aktuell-04-01b3540d7f": 1,
   "editorial-pools/aktuell/aktuell-05-85b961cd5e": 2,
   "editorial-pools/aktuell/aktuell-07-d923824479": 1,
   "editorial-pools/aktuell/aktuell-13-33d9d347f2": 1,
@@ -10243,6 +10280,7 @@
   "places/girbelsrath": 1,
   "places/golzheim": 1,
   "places/merzenich": 1,
+  "places/merzenich-st-laurentius": 1,
   "places/morschenich": 1,
   "responsive/37c79d0e603f3a": 1,
   "responsive/49833d3edfa958": 1,

@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Fri, 20 Nov 2026 08:22:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 20 Nov 2026 13:55:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell</title><link>https://merzenichaktuell.hk-growthoperator.de/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Neues Gutachterbüro in Merzenich: Gemeinde meldet 15 Arbeitsplätze im Gewerbegebiet</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/wirtschaft/gutachterbuero-hr2-merzenich-gewerbegebiet-schimmel-feuchteschaeden-15-arbeitsplaetze/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/wirtschaft/gutachterbuero-hr2-merzenich-gewerbegebiet-schimmel-feuchteschaeden-15-arbeitsplaetze/</guid>
+<pubDate>Fri, 20 Nov 2026 13:55:00 GMT</pubDate>
+<category>Wirtschaft</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Ein neu gegründetes Sachverständigenbüro für Schimmel- und Feuchteschäden hat sich im Merzenicher Gewerbegebiet angesiedelt. Die Gemeinde stellt es in ihrer Reihe „Merzenich hat was zu bieten“ vor.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/places/merzenich-st-laurentius-1440.webp" medium="image"><media:credit>Kilind / Wikimedia Commons (bearbeitet) · CC BY-SA 4.0</media:credit><media:description>St. Laurentius in Merzenich von Südosten</media:description></media:content>
+</item>
 <item>
 <title>Bauausschuss Merzenich: Ja zum Umbau der Grundschule Golzheim, 36 Wohnungen am Poolplatz vorgestellt</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/rathaus/bauausschuss-merzenich-ergebnisse-grundschule-golzheim-poolplatz-solarpark-a4-bau-turbo-2026/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Seit Herbst 2025 dürfen Gemeinden Wohnungsbau auch ohne Bebauungsplan zulassen. Merzenich will dafür feste Regeln: kleine Flächen, höchstens 25 Meter vom Ortsrand, in der Regel ein Vertrag vor dem Antrag. Der Bauausschuss berät am 12. November.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg" medium="image"><media:credit>Papa1234 / Wikimedia Commons · gemeinfrei</media:credit><media:description>Merzenich, Rathaus Own Work papa1234 2006-07-14</media:description></media:content>
-</item>
-<item>
-<title>Zweiter Solarpark in Merzenich: 15 Megawatt auf früherer Kiesgrube bei Golzheim, Bauausschuss berät Offenlage</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/rathaus/solarpark-golzheim-eschweiler-ueber-feld-merzenich-15-mwp-kiesgrube-bauausschuss-2026/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/rathaus/solarpark-golzheim-eschweiler-ueber-feld-merzenich-15-mwp-kiesgrube-bauausschuss-2026/</guid>
-<pubDate>Wed, 04 Nov 2026 13:55:00 GMT</pubDate>
-<category>Rathaus &amp; Politik</category>
-<category>Golzheim</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Auf rund zwölf Hektar zwischen Golzheim und Eschweiler über Feld sollen Solarmodule und ein Großbatteriespeicher entstehen. Der Bauausschuss soll am 12. November empfehlen, den Planentwurf öffentlich auszulegen.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-23-f5560260b4.jpg" medium="image"><media:credit>Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Solar Park in the morning mist, Dülmen, North Rhine-Westphalia, Germany</media:description></media:content>
 </item>
 </channel>
 </rss>
