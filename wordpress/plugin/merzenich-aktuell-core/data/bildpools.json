@@ -34,7 +34,7 @@
   "flaeche": 2,
   "verkehr": 20,
   "tipp": 21,
-  "themen": 27,
+  "themen": 28,
   "menschen": 20
  },
  "bilder": [
@@ -7664,6 +7664,20 @@
    "titel": "File:Komposthaufen in einem Garten an der Straße Donnerbecke.jpg",
    "lizenz": "CC BY-SA 4.0",
    "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "geprueft": true,
+   "geprueftAm": "2026-11-20",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-themen-28-0db85162",
+   "pool": "themen",
+   "datei": "/assets/editorial-pools/themen/themen-28-0db85162b4-1200.webp",
+   "alt": "Probenentnahme und -zubereitung Feuchtemessung nach der Calciumcarbid-Methode für Estrich",
+   "credit": "Symbolbild · Cschirp / Wikimedia Commons · CC BY-SA 3.0 de",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3ACM_Messung_Probenbereitung.jpg",
+   "titel": "File:CM Messung Probenbereitung.jpg",
+   "lizenz": "CC BY-SA 3.0 de",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
    "geprueft": true,
    "geprueftAm": "2026-11-20",
    "ort": "Deutschland / überregional"

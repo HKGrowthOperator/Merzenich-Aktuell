@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-20T08:22:03.096Z",
+  "updatedAt": "2026-11-20T13:57:12.209Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -1799,6 +1799,15 @@
       "assignedAt": "2026-11-20T08:22:03.096Z",
       "articleId": "2026-11-20-bauausschuss-merzenich-ergebnisse-grundschule-golzheim-poolplatz-solarpark-a4-bau-turbo-2026",
       "articleDate": "2026-11-20T09:22:00+01:00"
+    },
+    "/wirtschaft/gutachterbuero-hr2-merzenich-gewerbegebiet-schimmel-feuchteschaeden-15-arbeitsplaetze/": {
+      "imageId": "web-themen-28-0db85162",
+      "pool": "themen",
+      "motiv": "feuchtemessung-bau",
+      "regel": "wirtschaft.sachverstaendige.feuchte",
+      "assignedAt": "2026-11-20T13:57:12.209Z",
+      "articleId": "2026-11-20-gutachterbuero-hr2-merzenich-gewerbegebiet-schimmel-feuchteschaeden-15-arbeitsplaetze",
+      "articleDate": "2026-11-20T14:55:00+01:00"
     }
   }
 }

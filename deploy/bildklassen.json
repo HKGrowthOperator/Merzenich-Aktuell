@@ -478,6 +478,12 @@
       "motive": [
         "kompost-garten"
       ]
+    },
+    "wirtschaft.sachverstaendige.feuchte": {
+      "titel": "Bausachverständige, Feuchte- und Schimmelgutachten (Symbolbild Feuchtemessung am Estrich, kein Foto des Betriebs)",
+      "motive": [
+        "feuchtemessung-bau"
+      ]
     }
   }
 }

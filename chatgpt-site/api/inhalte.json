@@ -125,16 +125,16 @@
     }
    ],
    "bild": {
-    "src": "/assets/places/merzenich-st-laurentius-1440.webp",
-    "srcset": "/assets/places/merzenich-st-laurentius-720.webp 720w, /assets/places/merzenich-st-laurentius-1440.webp 1440w",
-    "alt": "St. Laurentius in Merzenich von Südosten",
-    "width": 1440,
-    "height": 960,
+    "src": "/assets/editorial-pools/themen/themen-28-0db85162b4.jpg",
+    "srcset": "/assets/editorial-pools/themen/themen-28-0db85162b4-480.webp 480w, /assets/editorial-pools/themen/themen-28-0db85162b4-800.webp 800w, /assets/editorial-pools/themen/themen-28-0db85162b4-1200.webp 1200w, /assets/editorial-pools/themen/themen-28-0db85162b4.jpg 1920w",
+    "alt": "Probenentnahme und -zubereitung Feuchtemessung nach der Calciumcarbid-Methode für Estrich",
+    "width": 1920,
+    "height": 1824,
     "fit": "",
-    "badge": "Ortsansicht",
-    "credit": "Kilind / Wikimedia Commons (bearbeitet) · CC BY-SA 4.0",
+    "badge": "Symbolbild",
+    "credit": "Cschirp / Wikimedia Commons · CC BY-SA 3.0 de",
     "symbol": true,
-    "stufe": "O"
+    "stufe": "B"
    },
    "undatiert": false,
    "abgerufen": ""
@@ -10215,6 +10215,11 @@
  },
  "nebenmeldungen": [
   {
+   "id": "2026-11-20-gutachterbuero-hr2-merzenich-gewerbegebiet-schimmel-feuchteschaeden-15-arbeitsplaetze",
+   "url": "/wirtschaft/gutachterbuero-hr2-merzenich-gewerbegebiet-schimmel-feuchteschaeden-15-arbeitsplaetze/",
+   "titel": "Neues Gutachterbüro in Merzenich: Gemeinde meldet 15 Arbeitsplätze im Gewerbegebiet"
+  },
+  {
    "id": "2026-11-20-unwetterwarnung-merzenich-dauerregen-kreis-dueren-20-november-2026-dwd",
    "url": "/blaulicht/unwetterwarnung-merzenich-dauerregen-kreis-dueren-20-november-2026-dwd/",
    "titel": "Unwetterwarnung für Merzenich: DWD warnt bis Freitag 22 Uhr vor ergiebigem Dauerregen"
@@ -10228,11 +10233,6 @@
    "id": "2026-11-19-einsatz-148-person-hinter-tuer-merzenich",
    "url": "/blaulicht/einsatz-148-person-hinter-tuer-merzenich/",
    "titel": "Feuerwehr Merzenich: Person hinter Tür in Merzenich (Einsatz 148/26)"
-  },
-  {
-   "id": "2026-11-19-umsatzsteuer-gemeinde-merzenich-ab-2027-grababraeumung-gemeindemobil-spuelmobil-friedhofsgebuehren",
-   "url": "/rathaus/umsatzsteuer-gemeinde-merzenich-ab-2027-grababraeumung-gemeindemobil-spuelmobil-friedhofsgebuehren/",
-   "titel": "Umsatzsteuer für die Gemeinde Merzenich ab 2027: Grababräumung, Gemeindemobil und Spülmobil betroffen"
   }
  ],
  "startseitenMotive": {
@@ -10248,13 +10248,13 @@
   "anzeigen/merzlicht-1-v2": 2,
   "anzeigen/merzlicht-2-v2": 2,
   "editorial-pools/aktuell/aktuell-01-0b6bcf033a": 2,
+  "editorial-pools/aktuell/aktuell-04-01b3540d7f": 1,
   "editorial-pools/aktuell/aktuell-05-85b961cd5e": 2,
   "editorial-pools/aktuell/aktuell-07-d923824479": 1,
   "editorial-pools/aktuell/aktuell-13-33d9d347f2": 1,
   "editorial-pools/blaulicht/blaulicht-05-ec25c697b3": 2,
   "editorial-pools/blaulicht/blaulicht-10-85fcb93e91": 1,
   "editorial-pools/blaulicht/blaulicht-13-f2236bb05e": 1,
-  "editorial-pools/feuerwehr/feuerwehr-05-64a62b437a": 1,
   "editorial-pools/feuerwehr/feuerwehr-16-28ad9c442f": 1,
   "editorial-pools/feuerwehr/feuerwehr-17-06a888ad36": 1,
   "editorial-pools/feuerwehr/feuerwehr-19-1b61ac5382": 1,
@@ -10273,6 +10273,7 @@
   "editorial-pools/themen/themen-25-7e1a7afdf3": 2,
   "editorial-pools/themen/themen-26-299418b5e9": 1,
   "editorial-pools/themen/themen-27-a5e20eb2ff": 1,
+  "editorial-pools/themen/themen-28-0db85162b4": 1,
   "editorial-pools/unfall/unfall-01-d28ac4c922": 1,
   "editorial-pools/veranstaltungen/veranstaltungen-15-ab46720923": 1,
   "editorial-pools/veranstaltungen/veranstaltungen-18-246e60a7fc": 2,
@@ -10280,7 +10281,6 @@
   "places/girbelsrath": 1,
   "places/golzheim": 1,
   "places/merzenich": 1,
-  "places/merzenich-st-laurentius": 1,
   "places/morschenich": 1,
   "responsive/37c79d0e603f3a": 1,
   "responsive/49833d3edfa958": 1,
@@ -10288,11 +10288,11 @@
   "responsive/f507b5f3e2c7d3": 1
  },
  "buehnenMotive": [
-  "editorial-pools/aktuell/aktuell-01-0b6bcf033a",
   "editorial-pools/aktuell/aktuell-05-85b961cd5e",
   "editorial-pools/blaulicht/blaulicht-13-f2236bb05e",
   "editorial-pools/themen/themen-26-299418b5e9",
-  "editorial-pools/themen/themen-27-a5e20eb2ff"
+  "editorial-pools/themen/themen-27-a5e20eb2ff",
+  "editorial-pools/themen/themen-28-0db85162b4"
  ],
  "motivMax": 2
 }

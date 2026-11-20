@@ -23628,6 +23628,34 @@
       "checksum": "ebe085a7f93996fbd6114d8581f488d0165a34ef19851fc0bf43b7b74e835fe3"
     },
     {
+      "id": "web-themen-28-0db85162",
+      "pool": "themen",
+      "src": "/assets/editorial-pools/themen/themen-28-0db85162b4.jpg",
+      "alt": "Probenentnahme und -zubereitung Feuchtemessung nach der Calciumcarbid-Methode für Estrich",
+      "credit": "Symbolbild · Cschirp / Wikimedia Commons · CC BY-SA 3.0 de",
+      "source": "Wikimedia Commons",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ACM_Messung_Probenbereitung.jpg",
+      "sourceTitle": "File:CM Messung Probenbereitung.jpg",
+      "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/CM_Messung_Probenbereitung.jpg/1920px-CM_Messung_Probenbereitung.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC BY-SA 3.0 de",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+      "rightsCheckedAt": "2026-11-20",
+      "tags": [
+        "symbolbild",
+        "thema",
+        "messung",
+        "probenbereitung"
+      ],
+      "width": 1920,
+      "height": 1824,
+      "format": "jpg",
+      "symbol": true,
+      "photo": true,
+      "locality": "Deutschland / überregional",
+      "geprueft": true,
+      "checksum": "da32bd6f915deb7a0ffa63cd5f60e84f07390cf6bab14ae940bfdef9db46662f"
+    },
+    {
       "id": "web-menschen-01-686bb6fb",
       "pool": "menschen",
       "src": "/assets/editorial-pools/menschen/menschen-01-686bb6fb4c.jpg",
