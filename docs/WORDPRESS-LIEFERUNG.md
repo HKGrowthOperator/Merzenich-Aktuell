@@ -1,6 +1,13 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-20. November 2026 · Theme 21.30.4 · Core-Plugin 1.50.2 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+20. November 2026 · Theme 21.30.4 · Core-Plugin 1.50.3 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+
+## Neu am 20.11.2026 abends: Plugin 1.50.3, zweite Durchsicht
+
+- Merzlicht im Band ohne doppeltes Logo (Bildschirm beginnt mit „Ihre Werbung hier“), Logo im 16:9-Motiv größer.
+- Almera: Telefon im Band oben rechts, Logo im 16:9-Motiv größer.
+- ASS Firmenwagen: ruhigere Fahrt auf das Gesicht, die Adresse bleibt im Bild.
+- HK Software und KI: kürzerer Bildlauf, die Überschrift der Seite bleibt sichtbar.
 
 ## Neu am 20.11.2026 abends: Plugin 1.50.2, Videos nach Neubau
 

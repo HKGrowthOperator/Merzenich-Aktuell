@@ -76,7 +76,7 @@ ${streifCss(0.5)}`;
     inhalt = b
       ? `<div class="links"></div><img class="logo" src="almera-weiss.png" alt="" style="left:${(470 - 350) / 2}px;top:${(fmt.h - 200) / 2}px;height:200px">
 <div class="worte" style="left:540px;top:40px"><span>Gebäude</span><span>Fenster</span><span>Wäsche</span></div><span class="ort" style="left:544px;top:${fmt.h - 66}px">Kettenweg 1 · Merzenich</span><span class="tel2">0176 814 124 41</span>`
-      : `<img class="logo" src="almera-dunkel.png" alt="" style="left:${fmt.w - 392}px;top:118px;height:190px">
+      : `<img class="logo" src="almera-dunkel.png" alt="" style="left:${fmt.w - 420}px;top:110px;height:210px">
 <div class="worte" style="left:70px;top:70px"><span>Gebäude</span><span>Fenster</span><span>Wäsche</span></div><span class="ort" style="left:70px;top:${fmt.h - 82}px">Kettenweg 1 · Merzenich</span>`;
     stil = `${s.css}
 #root{background:${MINT}}
@@ -85,7 +85,7 @@ ${streifCss(0.5)}`;
 .worte{position:absolute;display:flex;flex-direction:column;font:800 ${b ? 72 : 92}px/1.04 'Raleway',sans-serif;letter-spacing:.01em;text-transform:uppercase;color:${PETROL}}
 .worte span{display:block;position:relative}
 .worte span::after{content:'';position:absolute;left:2px;bottom:${b ? 6 : 8}px;height:${b ? 5 : 6}px;width:100%;background:${NACHT};opacity:.14;transform-origin:0 50%;transform:scaleX(var(--s,0))}
-.tel2{position:absolute;right:64px;bottom:58px;font:800 46px/1 'Raleway',sans-serif;color:${PETROL};letter-spacing:.01em}
+.tel2{position:absolute;right:64px;top:52px;font:800 40px/1 'Raleway',sans-serif;color:${PETROL};letter-spacing:.01em}
 .ort{position:absolute;font:700 ${b ? 30 : 30}px/1.2 'Raleway',sans-serif;color:${NACHT};letter-spacing:.02em}
 ${streifCss(0.7)}`;
   }
@@ -125,14 +125,14 @@ function merzlicht_wand(m, fmt, h) {
 <img class="mzlogo" src="merzlicht-hell.png" alt="" style="position:absolute;left:58px;top:104px;width:430px">
 <div style="position:absolute;left:62px;top:172px;font:600 31px/1.3 'Poppins',sans-serif;color:${MZ.creme};letter-spacing:.01em">Sportplatz<br>Bürgewaldzentrum</div>
 ${wand({ x: 640, y: 36, w: 600, h: 312 })}
-<div class="folie erste f0"><img class="mzlogo" src="merzlicht-hell.png" alt="" style="width:440px"></div>
+<div class="folie erste f0"><span style="font-size:34px">IHRE</span><b style="font-size:76px">WERBUNG</b><span style="font-size:34px">HIER</span></div>
 <div class="folie f1"><span style="font-size:40px">CLIPS UND</span><span style="font-size:40px">BILDER</span><b style="font-size:40px;margin-top:14px">IM WECHSEL</b></div>
 <div class="folie f2"><span style="font-size:30px">SICHTBAR</span><b style="font-size:38px;margin-top:12px">ZUM SPIELFELD</b><b style="font-size:38px;margin-top:6px">UND ZUM MERZPARK</b></div>
 </div>`;
   } else {
     inhalt = `<div class="glow" style="left:60px;top:-100px;width:260px;height:200px"></div><div class="glow" style="left:660px;top:-100px;width:260px;height:200px"></div>
 ${wand({ x: 100, y: 70, w: 760, h: 400 })}
-<div class="folie erste f0"><img class="mzlogo" src="merzlicht-hell.png" alt="" style="width:470px"><span style="font-size:34px;margin-top:24px;color:rgba(243,239,228,.85)">VIDEOWALL BÜRGEWALDZENTRUM</span></div>
+<div class="folie erste f0"><img class="mzlogo" src="merzlicht-hell.png" alt="" style="width:540px"><span style="font-size:38px;margin-top:24px;color:rgba(243,239,228,.85)">VIDEOWALL BÜRGEWALDZENTRUM</span></div>
 <div class="folie f1"><span style="font-size:46px">IHRE</span><b style="font-size:104px">WERBUNG</b><span style="font-size:46px">HIER</span></div>
 <div class="folie f2"><span style="font-size:40px">SICHTBAR</span><b style="font-size:44px;margin-top:14px">ZUM SPIELFELD</b><b style="font-size:44px;margin-top:6px">UND ZUM MERZPARK</b></div>
 </div>`;

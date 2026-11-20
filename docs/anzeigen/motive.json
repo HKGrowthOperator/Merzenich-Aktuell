@@ -8,8 +8,8 @@
    "layout": "foto",
    "bild": "ass/wagen.jpg",
    "fokus": "50% 60%",
-   "zentrum": "40% 46%",
-   "zoom": 1.07,
+   "zentrum": "50% 40%",
+   "zoom": 1.03,
    "panel": {
     "farbe": "#1b365d",
     "logo": "logos/ass-weiss.png",
@@ -77,7 +77,7 @@
    "bild": "hk/uno-desktop.jpg",
    "handy": "hk/uno-handy.jpg",
    "adresse": "deal-uno.de",
-   "lauf": 900,
+   "lauf": 420,
    "handyLauf": 700,
    "crf": 31,
    "hinweis": "Stil marke 20.11.2026 (Betreiber: echt statt gestellt): DealUno, eigenes Software-Produkt von HK Growth (laut hk-growthoperator.de), Bildschirmfoto 20.11.2026"
@@ -89,7 +89,7 @@
    "bild": "hk/os-desktop.jpg",
    "handy": "hk/os-handy.jpg",
    "adresse": "ki.hk-growthoperator.de",
-   "lauf": 900,
+   "lauf": 500,
    "handyLauf": 700,
    "crf": 31,
    "hinweis": "Stil marke 20.11.2026 (Betreiber: echt statt gestellt): HK Growth OS, KI-Betriebssystem von HK Growth, Bildschirmfoto 20.11.2026 ohne Logostreifen (dort KBS)"
