@@ -75,7 +75,12 @@ Heimat-Info-Veranstaltungskalender der Gemeinde (https://www.heimat-info.de/geme
 
 Commits: `017c0a2f` (Korrektur Bauausschuss), `2ce71288` (Aktualisierung Unwetter), `15445c22` (Meldung HR²), `06bad5a0` (Bild HR²), Dokumentation in diesem Commit.
 
-Live-Nachweis: wird nach dem stündlichen Abgleich (15:05 Uhr) in einem eigenen Commit nachgetragen.
+Abgleich: Anstoß 14:50 Uhr `angestossen: false` (nächster Lauf 15:05 Uhr); der stündliche Abgleich hat alles übernommen. Import-XML auf GitHub raw enthält den neuen Slug.
+
+Live-Nachweis 15:10 Uhr, jeweils HTTP 200:
+- `/wirtschaft/gutachterbuero-hr2-merzenich-gewerbegebiet-schimmel-feuchteschaeden-15-arbeitsplaetze/` mit „15 neue Arbeitsplätze“, og:image `themen-28-0db85162b4` (Feuchtemessung, nicht mehr die Ortsansicht); Startseite „Neu in Merzenich“ oben (14:55 Uhr), `news-sitemap.xml` an erster Stelle.
+- `/rathaus/bauausschuss-merzenich-ergebnisse-grundschule-golzheim-poolplatz-solarpark-a4-bau-turbo-2026/` mit „die Vorlagen sehen dafür“ und „Korrigiert am 20. November“.
+- `/blaulicht/unwetterwarnung-merzenich-dauerregen-kreis-dueren-20-november-2026-dwd/` mit „Aktualisiert am 20. November“ und dem Glättehinweis.
 
 ## 8. Bildprüfung
 
