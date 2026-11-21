@@ -1,6 +1,6 @@
 # Offene Themen aus dem Register
 
-Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-20-claude-nachmittags.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
+Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-21-morgens.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
 
 ## Zahlen
 
@@ -132,7 +132,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 
 ## Jüngste Läufe
 
+- 2026-11-21 morgens (ChatGPT): WetterUpdatekarteT2: Regenwarnungabgelaufen, markanteGlätte/Frostbis09Uhr, vorUmsetzungerneutprüfen. KreisPressezweimal503. HR²undjüngsteArtikelgegenOriginalegeprüft; Ratskorrekturliveerledigt, Motorradbildtextoffen. NeueWasserturmEinladungbestätigtbestehendenTermin, keinneuerTermin.
 - 2026-11-20 nachmittags (Claude): Neue Kurzmeldung Gutachterbüro HR² im Gewerbegebiet (15 Arbeitsplätze laut Gemeinde, Commons-Foto Feuchtemessung). Korrektur Bauausschuss-Folgemeldung (Rat 3.12. nur vorgesehene Beratungsfolge). Aktualisierung Unwetterwarnung (DWD 14:38 Uhr, Glätte/Frost in der Nacht). Kalender 19 Termine bestätigt; DSEE-Online-Termine ohne Ortsbezug nicht übernommen. Mindesttakt 20.11.: 4. – Commit 017c0a2f, 2ce71288, 15445c22, 06bad5a0
 - 2026-11-20 mittags (ChatGPT): NeuHR²GemeindevorstellungT2, dreiDSEEOnlineServicetermineanVeranstalterseitenbestätigt. NeuerPräzisierungsauftragzuRatsabstimmungen3DezimBauausschussartikel. Dauerregenwarnung/Publikationsübersichtenunverändert, HFA-Ergebnisse/Ratstagesordnungfehlen, bekannterMotorradbildtextoffen.
 - 2026-11-20 morgens (Claude): Drei Meldungen: Unwetterwarnung Dauerregen (Relevanz 1), Garten-AG KGS Merzenich (aus Entwurf 19.11.), Bauausschuss-Ergebnisse (Standard, 874 Wörter). Zwei neue Commons-Fotos (Starkregen, Komposthaufen) selbst angesehen. Kalender 19 Termine bis 03.12. bestätigt. Polizei-Unfall Düren-Heerweg ohne Ortsbezug nicht übernommen. Mindesttakt 20.11.: 3. – Commit d1493fb2, 96e72812, 5d7a61bb
-- 2026-11-20 morgens (ChatGPT): Neu: amtliche Dauerregenwarnung; neue Bauausschuss-Niederschrift als gemeinsame Updatekarte zu Schule, Solarplanungen, Poolplatz, Bauturbo,EMS. BeideKartenT2. HFA-Ergebnisse fehlen. Feuerwehreinsatz148 bereits automatischveröffentlicht. HaushaltRatzeitlivekorrigiert, bekannterMotorradbildtextweiteroffen.

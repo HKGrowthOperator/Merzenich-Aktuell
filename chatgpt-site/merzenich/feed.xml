@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Fri, 20 Nov 2026 13:55:00 GMT</lastBuildDate>
+<lastBuildDate>Sat, 21 Nov 2026 08:25:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Merzenich</title><link>https://merzenichaktuell.hk-growthoperator.de/merzenich/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/merzenich/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Merzenich vom 23. bis 29. November: Bürgewald-Ausschuss, Tannenbaumschmücken und Adventmarkt</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/leben/merzenich-23-bis-29-november-2026-buergewald-ausschuss-tannenbaumschmuecken-adventmarkt/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/merzenich-23-bis-29-november-2026-buergewald-ausschuss-tannenbaumschmuecken-adventmarkt/</guid>
+<pubDate>Sat, 21 Nov 2026 08:25:00 GMT</pubDate>
+<category>Leben</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>In der letzten Novemberwoche berät der Bürgewald-Ausschuss über Solarpark und Bau-Turbo, im Ratssaal öffnet eine Ausstellung über das frühere Morschenich-Alt, und am Wochenende vor dem ersten Advent beginnt in mehreren Ortsteilen die Adventszeit. Ein Überblick über die Termine der Woche.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/veranstaltungen/veranstaltungen-10-5df0764e43.jpg" medium="image"><media:credit>Cyberolm / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Mittelalterlicher Weihnachtsmarkt auf Schloss Merode bei Düren. Westseite 2015</media:description></media:content>
+</item>
 <item>
 <title>Neues Gutachterbüro in Merzenich: Gemeinde meldet 15 Arbeitsplätze im Gewerbegebiet</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/wirtschaft/gutachterbuero-hr2-merzenich-gewerbegebiet-schimmel-feuchteschaeden-15-arbeitsplaetze/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Golzheim feiert am 7. November die erste große Sitzung, in Merzenich beginnt die Session am 11.11. um 17.11 Uhr. Was die drei Gesellschaften der Gemeinde bis Rosenmontag planen und welche Angaben noch fehlen.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-15-30a6b323da.jpg" medium="image"><media:credit>Goltziusjester / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Jester Fool</media:description></media:content>
-</item>
-<item>
-<title>Solarpark an der A4 in Merzenich: RWE plant bis zu 45 Megawatt, Bauausschuss berät am 12. November</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/rathaus/solarpark-a4-merzenich-bauausschuss-12-november-2026-photovoltaik-batteriespeicher/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/rathaus/solarpark-a4-merzenich-bauausschuss-12-november-2026-photovoltaik-batteriespeicher/</guid>
-<pubDate>Tue, 03 Nov 2026 13:49:00 GMT</pubDate>
-<category>Rathaus &amp; Politik</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Nördlich der Autobahn will RWE auf rund 36 Hektar Solarmodule und einen großen Batteriespeicher bauen; angefahren würde das Gelände durch Bürgewald. Was in den Planungsunterlagen steht, was offen ist und wie es weitergeht.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-23-f5560260b4.jpg" medium="image"><media:credit>Dietmar Rabich / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Solar Park in the morning mist, Dülmen, North Rhine-Westphalia, Germany</media:description></media:content>
 </item>
 </channel>
 </rss>

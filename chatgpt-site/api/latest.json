@@ -1,7 +1,16 @@
 {
-  "generated": "2026-11-20T14:55:00+01:00",
-  "stand": "2026-11-20T14:55:00+01:00",
+  "generated": "2026-11-21T09:25:00+01:00",
+  "stand": "2026-11-21T09:25:00+01:00",
   "items": [
+    {
+      "title": "Merzenich vom 23. bis 29. November: Bürgewald-Ausschuss, Tannenbaumschmücken und Adventmarkt",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/leben/merzenich-23-bis-29-november-2026-buergewald-ausschuss-tannenbaumschmuecken-adventmarkt/",
+      "date": "2026-11-21T09:25:00+01:00",
+      "ressort": "leben",
+      "ort": "merzenich",
+      "teaser": "In der letzten Novemberwoche berät der Bürgewald-Ausschuss über Solarpark und Bau-Turbo, im Ratssaal öffnet eine Ausstellung über das frühere Morschenich-Alt, und am Wochenende vor dem ersten Advent beginnt in mehreren Ortsteilen die Adventszeit. Ein Überblick über die Termine der Woche.",
+      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/veranstaltungen/veranstaltungen-10-5df0764e43.jpg"
+    },
     {
       "title": "Neues Gutachterbüro in Merzenich: Gemeinde meldet 15 Arbeitsplätze im Gewerbegebiet",
       "url": "https://merzenichaktuell.hk-growthoperator.de/wirtschaft/gutachterbuero-hr2-merzenich-gewerbegebiet-schimmel-feuchteschaeden-15-arbeitsplaetze/",
@@ -172,15 +181,6 @@
       "ort": "merzenich",
       "teaser": "Ein Merzenicher, der seit dem Start des Ersthelfer-Netzes „Region Aachen rettet“ dabei ist, wurde als Vertreter des Kreises Düren geehrt. Er sorgt außerdem dafür, dass Defibrillatoren nach ihrem Gebrauch rasch wieder bereitstehen.",
       "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/blaulicht/blaulicht-05-ec25c697b3.jpg"
-    },
-    {
-      "title": "Merzenich will Gebühren für Unterkünfte von Geflüchteten und Obdachlosen neu festsetzen",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/rathaus/merzenich-gebuehren-unterkuenfte-gefluechtete-obdachlose-2027-neukalkulation-vorschlag/",
-      "date": "2026-11-12T09:16:00+01:00",
-      "ressort": "rathaus",
-      "ort": "merzenich",
-      "teaser": "Die Verwaltung schlägt für 2027 zwei getrennte Sätze vor: 195,72 Euro je Person und Monat in Häusern und Wohnungen, 290,66 Euro in der Containeranlage, jeweils ohne Strom. Grund sind mehr Bewohner und die neue Lage in Bürgewald.",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg"
     }
   ],
   "events": [

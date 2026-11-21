@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-20T13:57:12.209Z",
+  "updatedAt": "2026-11-21T08:25:23.893Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -1808,6 +1808,15 @@
       "assignedAt": "2026-11-20T13:57:12.209Z",
       "articleId": "2026-11-20-gutachterbuero-hr2-merzenich-gewerbegebiet-schimmel-feuchteschaeden-15-arbeitsplaetze",
       "articleDate": "2026-11-20T14:55:00+01:00"
+    },
+    "/leben/merzenich-23-bis-29-november-2026-buergewald-ausschuss-tannenbaumschmuecken-adventmarkt/": {
+      "imageId": "web-veranstaltungen-10-5df0764e",
+      "pool": "veranstaltungen",
+      "motiv": "adventsmarkt",
+      "regel": "leben.brauchtum.advent",
+      "assignedAt": "2026-11-21T08:25:23.893Z",
+      "articleId": "2026-11-21-merzenich-23-bis-29-november-2026-buergewald-ausschuss-tannenbaumschmuecken-adventmarkt",
+      "articleDate": "2026-11-21T09:25:00+01:00"
     }
   }
 }
