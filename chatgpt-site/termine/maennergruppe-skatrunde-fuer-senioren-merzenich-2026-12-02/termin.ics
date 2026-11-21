@@ -10,7 +10,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
 UID:maennergruppe-skatrunde-fuer-senioren-merzenich-2026-12-02@merzenich-ak
  tuell.de
-DTSTAMP:20261120T060000Z
+DTSTAMP:20261121T060000Z
 DTSTART:20261202T080000Z
 DTEND:20261202T100000Z
 SUMMARY:Männergruppe und Skatrunde für Senioren im Evangelischen Gemeinde
