@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-21-morgens.md",
+  "latest_dossier": "dossiers/2026-11-21-claude-morgens.md",
   "source_check_window": "21.11.2026 Europe/Berlin: Beginn06:57; Hauptabrufe06:58:05–06:58:39; Kreis503zunächst06:58:05/19undWiederholung06:59:31; Zusatzoriginale06:59:31; Livebilder06:59:37/42danach07:00gesichtet; Frostoriginal06:59:54HTTP403; Polizeivolltext07:00:42.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
@@ -12129,6 +12129,29 @@
       ]
     },
     {
+      "id": "MA-WOCHENVORSCHAU-2026-48",
+      "priority": "P3",
+      "location_section": "Gemeinde · Termine",
+      "change_type": "Neu",
+      "text_status": "T1",
+      "image_status": "B2",
+      "dossier": "dossiers/2026-11-21-claude-morgens.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-21 09:35 Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-21-recherche-claude-morgens.json → /leben/merzenich-23-bis-29-november-2026-buergewald-ausschuss-tannenbaumschmuecken-adventmarkt/",
+      "article_id": null,
+      "implementation_commit": "ad708019",
+      "notes": "Claude 21.11. morgens: Wochenvorschau 23. bis 29. November (Standard, 818 Wörter) aus dem am 21.11. an den Quellen geprüften Terminbestand: Senioren-Treffs 25.11., Bürgewald-Ausschuss 26.11. (Tagesordnung RIS), Ausstellung Bürgewald und Tannenbaumschmücken 27.11., Adventmarkt, Weinbergschnecken, Adventsfenster Morschenich, Golzheimer Adventskalender 28.11., Heimspiele SC und FC Golzheim sowie Adventsliedersingen 29.11. Widerspruch Nikolaus-Zeit (Amtsblatt 12 gegen Kulturkalender) benannt. Bild Klasse leben.brauchtum.advent (Schloss Merode, Symbolbild).",
+      "dossier_history": [
+        {
+          "date": "2026-11-21",
+          "edition": "claude-morgens",
+          "dossier": "dossiers/2026-11-21-claude-morgens.md",
+          "heading": "1. Umgesetzt"
+        }
+      ]
+    },
+    {
       "id": "MA-BAHN-DUEREN-HORREM-WEICHE-1411",
       "priority": "P2",
       "location_section": "Gemeindeweit / Pendelverkehr · Verkehr",
@@ -13173,11 +13196,11 @@
       "image_status": "B2",
       "dossier": "dossiers/2026-11-20-claude-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-20 15:00 Europe/Berlin",
+      "last_checked_at": "2026-11-21 09:35 Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-11-20-recherche-claude-morgens.json → /blaulicht/unwetterwarnung-merzenich-dauerregen-kreis-dueren-20-november-2026-dwd/",
       "article_id": null,
       "implementation_commit": "d1493fb2",
-      "notes": "Amtliche DWD-Dauerregenwarnung KreisDüren, aktueller Feed07:05:22 gelesen. Kreistext übernimmt älterenDWDStand, keine unabhängige Bestätigung/Drittquelle. Keine lokal eingetretenen Schäden belegt. WetterfotoMetadatenvalid, Original403/visuellungeprüft. | Claude 20.11. morgens: Kurzmeldung (274 Wörter, Relevanz 1) nach DWD-Warndaten selbst gelesen (Datenstand 09:12:06 Uhr, Stufe 4, gültig bis 22 Uhr), Kreis Düren 19.11. als Hintergrund, Feuerwehr ohne Regeneinsatz; keine Schäden behauptet. Eine amtliche Quelle reicht für Kurzmeldungen (SCHREIBREGELN Abschnitt 0). Foto Unwetter-mit-Starkregen.jpg (CC BY 3.0) selbst angesehen. Live 09:23 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. | Claude 20.11. nachmittags: Aktualisierung nach DWD-Stand 14:38 Uhr (Unwetterwarnung unverändert bis 22 Uhr; neu Glätte/Frost 21.11. 0–9 Uhr), Feuerwehr und Polizei bis 14:48 Uhr ohne Regenfolgen. Commit 2ce71288.",
+      "notes": "Amtliche DWD-Dauerregenwarnung KreisDüren, aktueller Feed07:05:22 gelesen. Kreistext übernimmt älterenDWDStand, keine unabhängige Bestätigung/Drittquelle. Keine lokal eingetretenen Schäden belegt. WetterfotoMetadatenvalid, Original403/visuellungeprüft. | Claude 20.11. morgens: Kurzmeldung (274 Wörter, Relevanz 1) nach DWD-Warndaten selbst gelesen (Datenstand 09:12:06 Uhr, Stufe 4, gültig bis 22 Uhr), Kreis Düren 19.11. als Hintergrund, Feuerwehr ohne Regeneinsatz; keine Schäden behauptet. Eine amtliche Quelle reicht für Kurzmeldungen (SCHREIBREGELN Abschnitt 0). Foto Unwetter-mit-Starkregen.jpg (CC BY 3.0) selbst angesehen. Live 09:23 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. | Claude 20.11. nachmittags: Aktualisierung nach DWD-Stand 14:38 Uhr (Unwetterwarnung unverändert bis 22 Uhr; neu Glätte/Frost 21.11. 0–9 Uhr), Feuerwehr und Polizei bis 14:48 Uhr ohne Regenfolgen. Commit 2ce71288. | Claude 21.11. morgens: DWD 9.09 Uhr ohne Warnung für den Kreis Düren; Abschluss-Nachtrag „Aktualisiert am 21. November“, Titel in Vergangenheitsform („warnte“), Dek angepasst, Relevanz 1 → 2 (Warnung abgelaufen). Feuerwehr und Polizei bis 9.15 Uhr ohne Meldung zu Wetterfolgen; Kreis-Website nicht erreichbar. Commit ffcfee5e.",
       "dossier_history": [
         {
           "date": "2026-11-20",
@@ -13194,6 +13217,12 @@
           "date": "2026-11-20",
           "edition": "claude-nachmittags",
           "dossier": "dossiers/2026-11-20-claude-nachmittags.md",
+          "heading": "1. Umgesetzt (Aktualisierung)"
+        },
+        {
+          "date": "2026-11-21",
+          "edition": "claude-morgens",
+          "dossier": "dossiers/2026-11-21-claude-morgens.md",
           "heading": "1. Umgesetzt (Aktualisierung)"
         }
       ],
@@ -15969,6 +15998,16 @@
         "KitaPrüfbericht/Haushaltsvorbericht/Planwert/SteuerEinzelumsetzungundübrigeältereLiveartikelnichtvollständigoriginalgeprüft",
         "Hallen/BdSt/Frostfoto403, ZuginfonurTitel, keinevollständigeDetailterminprüfung"
       ]
+    },
+    {
+      "date": "2026-11-21",
+      "edition": "morgens",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-21-claude-morgens.md",
+      "compared_with": "dossiers/2026-11-21-morgens.md",
+      "implementation_commit": "ffcfee5e, aac33b30, ad708019",
+      "summary": "Wochenvorschau 23. bis 29. November (Standard, 818 Wörter). Unwetterwarnung abgeschlossen (DWD ohne Warnung, keine Wetterfolgen veröffentlicht, Relevanz 2). Kalender 19 Termine bis 05.12. bestätigt; neue Heimat-Info-Einladung Modelleisenbahn ohne Änderung, keine Dublette. Gemeinde-Pressemitteilung Adventsfenster (HTTP 428) nicht lesbar, Termin 15.12. vorhanden. Mindesttakt 21.11.: 1 bis hierher.",
+      "publication": "Eine Meldung und eine Aktualisierung direkt veröffentlicht"
     }
   ]
 }
