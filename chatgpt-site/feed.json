@@ -15,6 +15,21 @@
   ],
   "items": [
     {
+      "id": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-149-brandmeldealarm-merzenich/",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/blaulicht/einsatz-149-brandmeldealarm-merzenich/",
+      "title": "Feuerwehr Merzenich: Brandmeldealarm in Merzenich (Einsatz 149/26)",
+      "summary": "Die Freiwillige Feuerwehr Merzenich ist am Samstag, 21. November 2026, nach Merzenich alarmiert worden. Die Meldung lautete „Brandmeldealarm“.",
+      "content_html": "<p>Die Freiwillige Feuerwehr Merzenich ist am Samstag, 21. November 2026, nach Merzenich alarmiert worden. Die Meldung lautete „Brandmeldealarm“.</p>",
+      "date_published": "2026-11-21T22:01:00+01:00",
+      "date_modified": "2026-11-21T22:01:00+01:00",
+      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/brand/brand-19-6a048a0c3d.jpg",
+      "tags": [
+        "Blaulicht",
+        "Merzenich",
+        "Feuerwehr"
+      ]
+    },
+    {
       "id": "https://merzenichaktuell.hk-growthoperator.de/leben/merzenich-23-bis-29-november-2026-buergewald-ausschuss-tannenbaumschmuecken-adventmarkt/",
       "url": "https://merzenichaktuell.hk-growthoperator.de/leben/merzenich-23-bis-29-november-2026-buergewald-ausschuss-tannenbaumschmuecken-adventmarkt/",
       "title": "Merzenich vom 23. bis 29. November: Bürgewald-Ausschuss, Tannenbaumschmücken und Adventmarkt",
@@ -485,24 +500,6 @@
         "Merzenich",
         "Feuerwehr",
         "Blaulicht"
-      ]
-    },
-    {
-      "id": "https://merzenichaktuell.hk-growthoperator.de/leben/merzenich-9-bis-15-november-2026-martinszuege-sessionsstart-bauausschuss-volkstrauertag/",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/leben/merzenich-9-bis-15-november-2026-martinszuege-sessionsstart-bauausschuss-volkstrauertag/",
-      "title": "Merzenich vom 9. bis 15. November: Martinszüge, Sessionsstart, Bauausschuss und Volkstrauertag",
-      "summary": "Martinszüge in Golzheim und Merzenich, eine Martinsfeier in Girbelsrath, der Karneval beginnt, der Bauausschuss entscheidet über wichtige Vorhaben, und am Sonntag gedenken Merzenich und Morschenich der Toten der Kriege. Die Woche im Überblick.",
-      "content_html": "<p>Martinszüge in Golzheim und Merzenich, eine Martinsfeier in Girbelsrath, der Karneval beginnt, der Bauausschuss entscheidet über wichtige Vorhaben, und am Sonntag gedenken Merzenich und Morschenich der Toten der Kriege. Die Woche im Überblick.</p>",
-      "date_published": "2026-11-05T14:55:00+01:00",
-      "date_modified": "2026-11-05T14:55:00+01:00",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-05-1ca58804a8.jpg",
-      "tags": [
-        "Leben",
-        "Merzenich",
-        "Termine",
-        "Sankt Martin",
-        "Volkstrauertag",
-        "Bauausschuss"
       ]
     }
   ]

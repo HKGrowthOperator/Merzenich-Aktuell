@@ -35,6 +35,11 @@
       "slug": "einsatz-148-person-hinter-tuer-merzenich",
       "datei": "inhalte/meldungen/2026-11-19-feuerwehr-automatik.json",
       "am": "2026-11-19"
+    },
+    "149/26": {
+      "slug": "einsatz-149-brandmeldealarm-merzenich",
+      "datei": "inhalte/meldungen/2026-11-21-feuerwehr-automatik.json",
+      "am": "2026-11-21"
     }
   },
   "termine": {

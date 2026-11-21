@@ -1,0 +1,41 @@
+{
+  "hinweis": "Automatisch aus den Quellen der Feuerwehr Merzenich angelegt (deploy/automatik-feuerwehr.mjs). Text nur aus den Feldern der Quelle und einem gekennzeichneten Zitat. Erscheint direkt auf der Seite, sortiert nach relevanz (Entscheidung Luis Kummer 03.11.2026); die Redaktion prüft im nächsten Lauf nach.",
+  "redaktionsstandard": 2,
+  "meldungen": [
+    {
+      "slug": "einsatz-149-brandmeldealarm-merzenich",
+      "ressort": "blaulicht",
+      "ortsteil": "merzenich",
+      "kicker": "Feuerwehr · 149/26",
+      "titel": "Feuerwehr Merzenich: Brandmeldealarm in Merzenich (Einsatz 149/26)",
+      "dek": "Die Freiwillige Feuerwehr Merzenich ist am Samstag, 21. November 2026, nach Merzenich alarmiert worden. Die Meldung lautete „Brandmeldealarm“.",
+      "datum": "2026-11-21T22:01:00+01:00",
+      "artikeltyp": "kurzmeldung",
+      "relevanz": 2,
+      "fakten": [
+        "Einsatz 149/26 der Freiwilligen Feuerwehr Merzenich",
+        "Alarmierung: Samstag, 21. November 2026",
+        "Einsatzort: Merzenich, Mühlenstraße",
+        "Meldung: Brandmeldealarm",
+        "Eingesetzte Kräfte: Feuerwehr Merzenich, Feuerschutztechnisches Zentrum Stockheim"
+      ],
+      "absaetze": [
+        "Einsatzort war Merzenich, Mühlenstraße. Das Einsatzstichwort lautete „MDL“. Im Einsatz waren: Feuerwehr Merzenich und Feuerschutztechnisches Zentrum Stockheim.",
+        "Die Feuerwehr schreibt dazu: „Die Feuerwehr Merzenich wurde am Samstag Nachmittag zu einer ausgelösten Brandmeldeanlage am Wasserturm in der Mühlenstraße alarmiert. Vor Ort wurde das Objekt durch die Einsatzkräfte erkundet.“ Es war der 149. Einsatz der Freiwilligen Feuerwehr Merzenich im Jahr 2026.",
+        "Grundlage dieser Meldung ist dem Beitrag der Feuerwehr in der Heimat-Info-App vom 21. November 2026; daraus stammen Einsatzort, Meldebild, Kräfte und die zitierten Sätze. Die Redaktion ergänzt die Meldung, wenn Feuerwehr oder Polizei mehr mitteilen."
+      ],
+      "themen": [
+        [
+          "feuerwehr",
+          "Feuerwehr"
+        ]
+      ],
+      "bildklasse": "blaulicht.feuer",
+      "quelle": {
+        "name": "Freiwillige Feuerwehr Merzenich, Beitrag in der Heimat-Info-App vom 21.11.2026",
+        "url": "https://www.heimat-info.de/beitraege/99a2c4a9-cdf6-4219-b2bb-9b4e93058dc4",
+        "stand": "2026-11-21"
+      }
+    }
+  ]
+}
