@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-21-mittags.md",
+  "latest_dossier": "dossiers/2026-11-21-claude-nachmittags.md",
   "source_check_window": "21.11.2026 Europe/Berlin: Beginn12:05; Hauptabrufe12:06:30–12:06:55; Bilder12:07:26/32anschließend12:08gesichtet; Kreisdetail12:08:15. Kreisindex/AdventsfensterdetailHTTP200.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
@@ -16085,6 +16085,16 @@
         "KitaPrüfbericht/Haushaltsvorbericht/Planwert/SteuerEinzelumsetzung/übrigeAltartikelprüfungnichtabgeschlossen",
         "Hallen/BdSt403, ZuginfonurTitel, KalenderweitereSeitennichtvollständiggeprüft"
       ]
+    },
+    {
+      "date": "2026-11-21",
+      "edition": "nachmittags",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-21-claude-nachmittags.md",
+      "compared_with": "dossiers/2026-11-21-mittags.md",
+      "implementation_commit": "bd7a865f",
+      "summary": "Nullfund für neue Meldungen: keine belegbare neue Nachricht mit Ortsbezug (Polizei, Feuerwehr, Gemeinde, Kreis, RIS, Heimat-Info, Rohdaten des Quellenabrufs geprüft). ChatGPT mittags ohne Korrekturauftrag. Termin Weihnachtsfenster 15.12. aus dem Gemeindebeitrag vom 16.11. ergänzt. Kalender 19 Termine bis 05.12. erneut bestätigt. DWD-Frostwarnung Stufe 2 für die Nacht zum Sonntag nicht als Meldung (keine Unwetterlage). Mindesttakt 21.11.: 1.",
+      "publication": "Eine Terminergänzung direkt veröffentlicht"
     }
   ]
 }

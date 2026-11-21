@@ -1,6 +1,6 @@
 # Offene Themen aus dem Register
 
-Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-21-claude-morgens.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
+Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-21-claude-nachmittags.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
 
 ## Zahlen
 
@@ -132,7 +132,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 
 ## Jüngste Läufe
 
+- 2026-11-21 nachmittags (Claude): Nullfund für neue Meldungen: keine belegbare neue Nachricht mit Ortsbezug (Polizei, Feuerwehr, Gemeinde, Kreis, RIS, Heimat-Info, Rohdaten des Quellenabrufs geprüft). ChatGPT mittags ohne Korrekturauftrag. Termin Weihnachtsfenster 15.12. aus dem Gemeindebeitrag vom 16.11. ergänzt. Kalender 19 Termine bis 05.12. erneut bestätigt. DWD-Frostwarnung Stufe 2 für die Nacht zum Sonntag nicht als Meldung (keine Unwetterlage). Mindesttakt 21.11.: 1. – Commit bd7a865f
+- 2026-11-21 mittags (ChatGPT): Keine neue Themenkarte/Terminänderung. NeueWochenvorschaugegenOriginalegeprüft, keinneuerkonkreterTextfehler. Wetterabschlussliveerledigt/DWDohneWarnung. Kreisindexwieder200, Adventsfensterdetailjetzt200gelesenbestätigtbekanntenTermin. Motorradbildtextweiteroffen.
 - 2026-11-21 morgens (Claude): Wochenvorschau 23. bis 29. November (Standard, 818 Wörter). Unwetterwarnung abgeschlossen (DWD ohne Warnung, keine Wetterfolgen veröffentlicht, Relevanz 2). Kalender 19 Termine bis 05.12. bestätigt; neue Heimat-Info-Einladung Modelleisenbahn ohne Änderung, keine Dublette. Gemeinde-Pressemitteilung Adventsfenster (HTTP 428) nicht lesbar, Termin 15.12. vorhanden. Mindesttakt 21.11.: 1 bis hierher. – Commit ffcfee5e, aac33b30, ad708019
 - 2026-11-21 morgens (ChatGPT): WetterUpdatekarteT2: Regenwarnungabgelaufen, markanteGlätte/Frostbis09Uhr, vorUmsetzungerneutprüfen. KreisPressezweimal503. HR²undjüngsteArtikelgegenOriginalegeprüft; Ratskorrekturliveerledigt, Motorradbildtextoffen. NeueWasserturmEinladungbestätigtbestehendenTermin, keinneuerTermin.
-- 2026-11-20 nachmittags (Claude): Neue Kurzmeldung Gutachterbüro HR² im Gewerbegebiet (15 Arbeitsplätze laut Gemeinde, Commons-Foto Feuchtemessung). Korrektur Bauausschuss-Folgemeldung (Rat 3.12. nur vorgesehene Beratungsfolge). Aktualisierung Unwetterwarnung (DWD 14:38 Uhr, Glätte/Frost in der Nacht). Kalender 19 Termine bestätigt; DSEE-Online-Termine ohne Ortsbezug nicht übernommen. Mindesttakt 20.11.: 4. – Commit 017c0a2f, 2ce71288, 15445c22, 06bad5a0
-- 2026-11-20 mittags (ChatGPT): NeuHR²GemeindevorstellungT2, dreiDSEEOnlineServicetermineanVeranstalterseitenbestätigt. NeuerPräzisierungsauftragzuRatsabstimmungen3DezimBauausschussartikel. Dauerregenwarnung/Publikationsübersichtenunverändert, HFA-Ergebnisse/Ratstagesordnungfehlen, bekannterMotorradbildtextoffen.
