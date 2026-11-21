@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-20-claude-nachmittags.md",
-  "source_check_window": "20.11.2026 Europe/Berlin: Laufbeginn12:01; Hauptabrufe12:02:28–12:03:04; neueHeimatInfo/Polizeivolltexte12:03:13; DSEEVeranstalter12:03:30; Kontext12:04:28; Livebilder12:04:49–12:05:09, anschließend12:05gesichtet.",
+  "latest_dossier": "dossiers/2026-11-21-morgens.md",
+  "source_check_window": "21.11.2026 Europe/Berlin: Beginn06:57; Hauptabrufe06:58:05–06:58:39; Kreis503zunächst06:58:05/19undWiederholung06:59:31; Zusatzoriginale06:59:31; Livebilder06:59:37/42danach07:00gesichtet; Frostoriginal06:59:54HTTP403; Polizeivolltext07:00:42.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -12097,6 +12097,11 @@
           "checked_at": "2026-11-20T12:09:13+01:00",
           "dossier": "dossiers/2026-11-20-mittags.md",
           "result": "BekannteKorrekturMA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411 weiteroffen: Caption/alt Polizeiwache, BildzeigtMotorrad."
+        },
+        {
+          "checked_at": "2026-11-21T07:03:57+01:00",
+          "dossier": "dossiers/2026-11-21-morgens.md",
+          "result": "BekannteKorrekturMA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411 weiteroffen, LivebildfrischgesichtetMotorradstattWache."
         }
       ]
     },
@@ -12757,6 +12762,11 @@
           "checked_at": "2026-11-20T12:09:13+01:00",
           "dossier": "dossiers/2026-11-20-mittags.md",
           "result": "Neuen Liveartikel gegen GemeindeOriginal/HeimatInfo geprüft, sachlichimgeprüftenUmfangvereinbar. BildKomposterfrischgesichtet; Publikationsstatus/ClaudeNotizenerhalten. Unabhängige Bestätigung/Drittquelle weiterhinfehlend."
+        },
+        {
+          "checked_at": "2026-11-21T07:03:57+01:00",
+          "dossier": "dossiers/2026-11-21-morgens.md",
+          "result": "LiveartikelgegenGemeindeOriginalwegeerneutgelesen, keinneuerkonkreterTextfehler. UnabhängigeBestätigung/DrittquellefehlenRechercheT2, keineneueThemenkarte."
         }
       ]
     },
@@ -13192,6 +13202,11 @@
           "checked_at": "2026-11-20T12:09:13+01:00",
           "dossier": "dossiers/2026-11-20-mittags.md",
           "result": "DWD12:02:43, Datenstand11:59:01, Warnende/Mengen unverändert. Kein neuer Regeneinsatz in gelesenen Veröffentlichungen. AktuellerRechercheprüfstandT2: unabhängigeBestätigung/tragfähigeDrittquellefehlt. HistorischeClaudeStatuswerteunverändert. Livebildfrischgesichtet, keine neue Themenkarte."
+        },
+        {
+          "checked_at": "2026-11-21T07:03:57+01:00",
+          "dossier": "dossiers/2026-11-21-morgens.md",
+          "result": "NeuerUpdatebedarf: Regenwarnungabgelaufen; DWDaktuellmarkanteGlätte/Frostbis21Nov09Uhr. Vor09:13Umsetzungerneutlesen. RechercheT2: unabhängigeBestätigung/Drittquellefehlt, Kreis503. HistorischeClaudeT1/Publikationscommitsunverändert."
         }
       ]
     },
@@ -13221,6 +13236,13 @@
           "dossier": "dossiers/2026-11-20-claude-nachmittags.md",
           "heading": "1. Umgesetzt"
         }
+      ],
+      "research_verifications": [
+        {
+          "checked_at": "2026-11-21T07:03:57+01:00",
+          "dossier": "dossiers/2026-11-21-morgens.md",
+          "result": "NeuestenLiveartikelgegenGemeindeOriginalundArchivvorstellunggeprüft, keinneuerkonkreterTextfehler. BildFeuchtemessungfrischgesichtet. UnabhängigeBestätigung/DrittquelleweiterfehlendRechercheT2. ClaudePfad/Notizen/Commitserhalten."
+        }
       ]
     },
     {
@@ -13248,6 +13270,13 @@
           "edition": "claude-nachmittags",
           "dossier": "dossiers/2026-11-20-claude-nachmittags.md",
           "heading": "1. Umgesetzt"
+        }
+      ],
+      "research_verifications": [
+        {
+          "checked_at": "2026-11-21T07:03:57+01:00",
+          "dossier": "dossiers/2026-11-21-morgens.md",
+          "result": "Erledigunglivebestätigt: BeratungsfolgevonfeststehenderAbstimmunggetrennt, Poolplatz/EMSalsBerichte, Korrekturhinweis. VorlagenundRatstermingelesen, Implementierung017c0a2ferhalten."
         }
       ]
     }
@@ -15894,6 +15923,52 @@
       "implementation_commit": "017c0a2f, 2ce71288, 15445c22, 06bad5a0",
       "summary": "Neue Kurzmeldung Gutachterbüro HR² im Gewerbegebiet (15 Arbeitsplätze laut Gemeinde, Commons-Foto Feuchtemessung). Korrektur Bauausschuss-Folgemeldung (Rat 3.12. nur vorgesehene Beratungsfolge). Aktualisierung Unwetterwarnung (DWD 14:38 Uhr, Glätte/Frost in der Nacht). Kalender 19 Termine bestätigt; DSEE-Online-Termine ohne Ortsbezug nicht übernommen. Mindesttakt 20.11.: 4.",
       "publication": "Eine Meldung, eine Korrektur, eine Aktualisierung direkt veröffentlicht"
+    },
+    {
+      "date": "2026-11-21",
+      "edition": "morgens",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-21-morgens.md",
+      "compared_with": "dossiers/2026-11-20-mittags.md",
+      "compared_with_claude": "dossiers/2026-11-20-claude-nachmittags.md",
+      "base_commit": "23a20ffc065dde07092a685dbdeb6dcba5b6c280",
+      "implementation_commit": null,
+      "summary": "WetterUpdatekarteT2: Regenwarnungabgelaufen, markanteGlätte/Frostbis09Uhr, vorUmsetzungerneutprüfen. KreisPressezweimal503. HR²undjüngsteArtikelgegenOriginalegeprüft; Ratskorrekturliveerledigt, Motorradbildtextoffen. NeueWasserturmEinladungbestätigtbestehendenTermin, keinneuerTermin.",
+      "topics": 1,
+      "new_topics": 0,
+      "updated_topics": 1,
+      "blocked_T2": 1,
+      "corrections_required": 1,
+      "new_corrections_required": 0,
+      "new_corrections": [],
+      "known_corrections_still_open": [
+        "MA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411"
+      ],
+      "article_updates_required": [
+        "MA-DAUERREGEN-20112026"
+      ],
+      "repository_article_files_read": 60,
+      "repository_event_files_read": 26,
+      "repository_area_files_read": 23,
+      "new_or_changed_events": 0,
+      "event_change_scope": "NeueGHV-Veröffentlichungzum21Nov13–17UhrbestätigtbereitsbestehendenModelleisenbahntermin. KeineNeuanlage. DSEEohneOrtsbeteiligungnichtwiederholt.",
+      "complete_drafts": 0,
+      "source_check_window": "21.11.2026 Europe/Berlin: Beginn06:57; Hauptabrufe06:58:05–06:58:39; Kreis503zunächst06:58:05/19undWiederholung06:59:31; Zusatzoriginale06:59:31; Livebilder06:59:37/42danach07:00gesichtet; Frostoriginal06:59:54HTTP403; Polizeivolltext07:00:42.",
+      "prepared_at": "2026-11-21T07:03:57+01:00",
+      "deadline": "2026-11-21T08:45:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "TatsächlicheBereitstellung/Fristeinhaltungim bestätigtenmainUploadabschluss; prepared_atkeinUploadnachweis.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "open_checks": [
+        "Wettervor09:13Redaktionsumsetzungneuabrufen, Warnende09Uhr; Kreis503/Folgenprüfungunvollständig; unabhängigeBestätigung/DrittquellefehltT2",
+        "HFAErgebnisse/Ratstagesordnungfehlen; Schul-/Bauturbo-/Solar-/Poolplatzfragenunverändertoffen",
+        "BekannterMotorradbildtextweiterfalsch; Ratskorrekturliveerledigt",
+        "HR²/KompostunabhängigeBestätigung/Drittquellefehlen, historischeClaudeStatuswerteunverändert",
+        "GirbelsrathFreitagergebnisimTextnichtbestätigt, Derbyurteil/Serienkontrolleoffen",
+        "KitaPrüfbericht/Haushaltsvorbericht/Planwert/SteuerEinzelumsetzungundübrigeältereLiveartikelnichtvollständigoriginalgeprüft",
+        "Hallen/BdSt/Frostfoto403, ZuginfonurTitel, keinevollständigeDetailterminprüfung"
+      ]
     }
   ]
 }
