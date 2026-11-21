@@ -68,7 +68,7 @@ Heimat-Info-Veranstaltungskalender der Gemeinde (https://www.heimat-info.de/geme
 
 Commits: `bd7a865f` (Termin Weihnachtsfenster), Dokumentation in diesem Commit. Abgleich 14:48 Uhr `angestossen: true`.
 
-Live-Nachweis: wird nach dem Abgleich in einem eigenen Commit nachgetragen.
+Live-Nachweis 14:49 Uhr: `/termine/weihnachtsfenster-lebendiger-adventskalender-rathaus-merzenich-2026-12-15/` HTTP 200 mit der ergänzten Beschreibung („Bläsergruppe“).
 
 ## 8. Bildprüfung
 
