@@ -1,6 +1,16 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-20. November 2026 · Theme 21.30.4 · Core-Plugin 1.50.3 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+21. November 2026 · Theme 21.30.5 · Core-Plugin 1.50.4 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+
+## Neu am 21.11.2026: Plugin 1.50.4 und Theme 21.30.5, Durchsicht vor der Vorstellung bei der Gemeinde
+
+- Impressum (Rechtstexte-Fassung 2026-11-21): interne Notizen raus („mit dem Impressum von KBS abgeglichen“, „Lizenztexte liegen dem Projekt bei“). Neu steht dort, dass Merzenich Aktuell unabhängig und kein Angebot der Gemeinde ist. Eine von Hand geänderte Seite bleibt stehen; das Backend bietet dann die neue Fassung an.
+- Termine außerhalb der Gemeinde (Kreishaus Düren, Niederzier und andere Nachbarorte, fremde Postleitzahl) tragen in Karte und strukturierten Daten nicht mehr „52399 Merzenich“ (`ma_ort_auswaerts()` in `seo.php`).
+- Termine ohne Uhrzeit zeigen „ganztägig“ statt „00:00 Uhr bis …“.
+- Vereinsseiten ohne Beschreibung zeigen einen kurzen Hinweis statt einer leeren Spalte; der Quellenkasten heißt „Quelle.“ statt „Eintrag.“.
+- Seite Unternehmen: Der Einleitungssatz nennt „Unternehmen aus Merzenich und der Umgebung“, weil HK Growth und ASS Elektrotechnik nicht aus der Gemeinde kommen.
+- Überschriften trennen nur noch Wörter ab 12 Zeichen („Merze-nich“ auf 320 px fällt weg; Chrome und Android, Safari ignoriert die Regel).
+- Termindaten: interne Hinweise („Ort im Eintrag nicht genannt“, „Veranstalter nicht namentlich genannt“) ersetzt; der Seniorentreff steht einheitlich im Ev. Gemeindehaus, Severin-Böhr-Str. 15.
 
 ## Neu am 20.11.2026 abends: Plugin 1.50.3, zweite Durchsicht
 

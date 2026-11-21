@@ -69,9 +69,9 @@ function karte(a, i) {
 }
 const kanalListe = kanaele.length
   ? `<ul class="u-kanaele">${kanaele.map((k) => `<li><a href="/unternehmen/${esc(k.slug)}/">${esc(k.name)}</a><small>${esc(k.branche)}${k.ortsteil ? ` · ${esc(k.ortsteil)}` : ''}</small></li>`).join('')}</ul>`
-  : '<p class="u-leer">Noch kein Unternehmen hat einen eigenen Kanal. Hier erscheinen Unternehmen aus der Gemeinde mit ihren Beiträgen, jeder als Anzeige gekennzeichnet.</p>';
+  : '<p class="u-leer">Noch kein Unternehmen hat einen eigenen Kanal. Hier erscheinen Unternehmen in und um Merzenich mit ihren Beiträgen, jeder als Anzeige gekennzeichnet.</p>';
 const unternehmenMain = '<main id="main"><div class="page-head"><div class="shell"><nav class="crumbs" aria-label="Brotkrumen"><a href="/">Start</a><span class="sep">›</span><span aria-current="page">Unternehmen</span></nav>'
-  + '<h1>Unternehmen</h1><p class="desc">Wirtschaft in Merzenich: Meldungen der Redaktion über Betriebe, Arbeit und Strukturwandel und die Kanäle der Unternehmen aus der Gemeinde. Beiträge von Unternehmen sind als Anzeige gekennzeichnet.</p>'
+  + '<h1>Unternehmen</h1><p class="desc">Wirtschaft in Merzenich: Meldungen der Redaktion über Betriebe, Arbeit und Strukturwandel und die Kanäle der Unternehmen in und um Merzenich. Beiträge von Unternehmen sind als Anzeige gekennzeichnet.</p>'
   + `<p class="count-line">${meldungen.length} ${meldungen.length === 1 ? 'Meldung' : 'Meldungen'} · ${kanaele.length} ${kanaele.length === 1 ? 'Unternehmenskanal' : 'Unternehmenskanäle'}</p></div></div>`
   + '<section class="section"><div class="shell content-grid"><div class="u-liste">'
   + `<div class="u-karten" data-u-karten>${meldungen.map(karte).join('')}</div>`
@@ -97,7 +97,7 @@ const kanalSeiten = kanaele.map((k) => {
   const vorlagePfad = existsSync(ziel) ? ziel : join(site, 'werben', 'index.html');
   let html = readFileSync(vorlagePfad, 'utf8');
   const alt = existsSync(ziel) ? html : '';
-  const beschreibung = 'Unternehmen in Merzenich: Wirtschaftsmeldungen der Redaktion und die Kanäle der Unternehmen aus der Gemeinde, Unternehmensbeiträge als Anzeige gekennzeichnet.';
+  const beschreibung = 'Unternehmen in Merzenich: Wirtschaftsmeldungen der Redaktion und die Kanäle der Unternehmen in und um Merzenich, Unternehmensbeiträge als Anzeige gekennzeichnet.';
   html = html.replace(/<title>[^<]*<\/title>/, '<title>Unternehmen | Merzenich Aktuell</title>')
     .replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${esc(beschreibung)}">`)
     .replace(/<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${esc(beschreibung)}">`)

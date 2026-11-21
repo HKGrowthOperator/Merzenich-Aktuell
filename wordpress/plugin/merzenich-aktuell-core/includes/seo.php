@@ -39,6 +39,12 @@ const MA_SEO_STARTTITEL = 'Merzenich Aktuell: Nachrichten aus Merzenich, Polizei
 const MA_SEO_BESCHREIBUNG = 'Lokalzeitung für Merzenich im Kreis Düren: Polizei, Feuerwehr, Unfälle, Termine und Rathaus aus Merzenich, Golzheim, Girbelsrath, Morschenich, Bürgewald.';
 const MA_SEO_BESCHREIBUNG_LANG = 'Merzenich Aktuell ist die Lokalzeitung online für die Gemeinde Merzenich im Kreis Düren: Nachrichten, Blaulicht, Termine, Vereine und Rathaus aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald. Jede Meldung mit Quelle und Bildcredit.';
 const MA_SEO_PLZ = '52399';
+
+/** Liegt der Ort eines Termins außerhalb der Gemeinde? Erkennt eine fremde Postleitzahl oder einen Nachbarort im Ortsnamen. */
+function ma_ort_auswaerts(string $ort): bool {
+    if (preg_match('/\b(\d{5})\b/', $ort, $m)) return $m[1] !== MA_SEO_PLZ;
+    return (bool) preg_match('/\b(Düren|Niederzier|Nörvenich|Kerpen|Buir|Jülich|Langerwehe|Inden|Vettweiß|Kreuzau|Heimbach|Nideggen|Aachen|Köln|Online)\b/u', $ort);
+}
 const MA_SEO_GEBIET = 'Gemeinde Merzenich, Kreis Düren, Nordrhein-Westfalen';
 
 /**
@@ -139,7 +145,7 @@ function ma_seo_ressorte(): array {
         'nachrichten' => ['Nachrichten', 'Nachrichten Merzenich aktuell: alle Meldungen, neueste zuerst', 'Alle Meldungen aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald im Kreis Düren, die neueste zuerst: Blaulicht, Rathaus, Sport, Vereine und Leben.'],
         // „veranstaltungen merzenich heute“, „was ist heute in merzenich los“, „merzenich wochenende“.
         'termine' => ['Termine', 'Veranstaltungen Merzenich: Termine heute und am Wochenende', 'Was in Merzenich los ist: Veranstaltungen heute und am Wochenende in Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald, von Karneval bis Ratssitzung.'],
-        'unternehmen' => ['Unternehmen', 'Unternehmen in Merzenich', 'Unternehmen in Merzenich: Wirtschaftsmeldungen der Redaktion und die Kanäle der Unternehmen aus der Gemeinde, Unternehmensbeiträge als Anzeige gekennzeichnet.'],
+        'unternehmen' => ['Unternehmen', 'Unternehmen in Merzenich', 'Unternehmen in Merzenich: Wirtschaftsmeldungen der Redaktion und die Kanäle der Unternehmen in und um Merzenich, Unternehmensbeiträge als Anzeige gekennzeichnet.'],
     ];
 }
 
@@ -379,7 +385,8 @@ function ma_seo_graph(array $k, array $o): array {
             // Ohne bekanntes Ende endet der Termin am selben Tag (Search Console 04.10.2026: endDate empfohlen).
             if (!empty($t['ende'])) $e['endDate'] = $t['ende'];
             elseif (!empty($t['start'])) $e['endDate'] = substr((string) $t['start'], 0, 10);
-            if (!empty($t['ort'])) $e['location'] = ['@type' => 'Place', 'name' => $t['ort'], 'address' => $adresse];
+            // Termine außerhalb der Gemeinde (Kreishaus Düren, Niederzier …) tragen nicht die Merzenicher Anschrift (Prüfung 21.11.2026).
+            if (!empty($t['ort'])) $e['location'] = ma_ort_auswaerts((string) $t['ort']) ? ['@type' => 'Place', 'name' => $t['ort'], 'address' => (string) $t['ort']] : ['@type' => 'Place', 'name' => $t['ort'], 'address' => $adresse];
             if (!empty($t['veranstalter'])) {
                 $e['organizer'] = ['@type' => 'Organization', 'name' => $t['veranstalter']];
                 $vu = ma_seo_veranstalter_url((string) $t['veranstalter']);

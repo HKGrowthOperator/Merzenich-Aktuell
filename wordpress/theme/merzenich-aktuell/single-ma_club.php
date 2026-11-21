@@ -59,7 +59,10 @@ while (have_posts()): the_post();
     <?php if (count($galerie) >= 2): ?>
     <div class="verein-galerie"><h2>Bilder</h2><div class="verein-galerie__raster"><?php foreach (array_slice($galerie, 0, 6) as [$gb, $gm]): ?><a href="<?php echo esc_url(get_permalink($gm)); ?>"><div class="media"><?php echo ma21_img($gb, '(max-width: 760px) 50vw, 250px', false); ?></div></a><?php endforeach; ?></div></div>
     <?php endif; ?>
-    <div class="source-box"><b>Eintrag.</b> Angaben laut Vereinsverzeichnis der Gemeinde Merzenich und Verein<?php echo $stand !== '' ? ', Stand ' . esc_html(wp_date('d.m.Y', strtotime($stand))) : ''; ?>. Vereine mit eigenem Zugang schlagen Änderungen direkt vor; die Redaktion prüft sie vor der Veröffentlichung. Noch kein Zugang? <a href="<?php echo esc_url(home_url('/meldung-senden/')); ?>">Melden Sie sich bei der Redaktion</a>.</div>
+    <?php if (trim($p->post_content) === '' && !$abteilungen && !$meldungen && !$termine): ?>
+    <p class="verein-leer">Eine Beschreibung des Vereins folgt. Die Angaben rechts stammen aus dem Vereinsverzeichnis der Gemeinde.</p>
+    <?php endif; ?>
+    <div class="source-box"><b>Quelle.</b> Angaben laut Vereinsverzeichnis der Gemeinde Merzenich und Verein<?php echo $stand !== '' ? ', Stand ' . esc_html(wp_date('d.m.Y', strtotime($stand))) : ''; ?>. Vereine mit eigenem Zugang schlagen Änderungen direkt vor; die Redaktion prüft sie vor der Veröffentlichung. Noch kein Zugang? <a href="<?php echo esc_url(home_url('/meldung-senden/')); ?>">Melden Sie sich bei der Redaktion</a>.</div>
   </div>
   <aside class="sidebar"><h2 class="sr-only">Weitere Inhalte</h2>
     <div class="sidebox"><h3>Auf einen Blick</h3><ul class="service">

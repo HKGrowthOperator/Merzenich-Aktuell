@@ -51,6 +51,7 @@ function ma21_termin_zeit(array $t): string {
     $mehrtaegig = !$t['ohneEnde'] && wp_date('Ymd', $t['ende']) !== wp_date('Ymd', $t['start']);
     if ($mehrtaegig) return ($hm === '00:00' ? '' : $hm . ' Uhr ') . 'bis ' . wp_date('j.n.', $t['ende']);
     if ($t['ohneEnde']) return $hm === '00:00' ? 'ganztägig' : $hm . ' Uhr';
+    if ($hm === '00:00') return 'ganztägig'; // ohne Uhrzeit eingetragen: kein „00:00 Uhr bis …“ (21.11.2026)
     return $hm . ' Uhr bis ' . wp_date('H:i', $t['ende']) . ' Uhr';
 }
 
@@ -143,7 +144,9 @@ function ma21_termin_einzel(WP_Post $p): void {
     [$kommend] = ma21_termine_alle();
     $weitere = array_slice(array_values(array_filter($kommend, fn($x) => $x['id'] !== $t['id'])), 0, 5);
     // Für die Kartensuche ohne „Gemeinde“: OSM findet „Bürgerhaus, Gemeinde Merzenich“ nicht (Review 16.10.2026).
-    $kartenOrt = trim($t['ort'] . ', ' . ($t['ortSlug'] === 'gemeinde' ? 'Merzenich' : $t['ortsteil']) . ', 52399 Merzenich', ', ');
+    $kartenOrt = function_exists('ma_ort_auswaerts') && ma_ort_auswaerts((string) $t['ort'])
+        ? (string) $t['ort'] // Termin außerhalb der Gemeinde: keine Merzenicher Anschrift anhängen (21.11.2026).
+        : trim($t['ort'] . ', ' . ($t['ortSlug'] === 'gemeinde' ? 'Merzenich' : $t['ortsteil']) . ', 52399 Merzenich', ', ');
     $bild = function_exists('ma_content_image') ? ma_content_image($p, 'large') : [];
     echo '<article class="article event-page"><div class="article-head"><div class="shell">'
         . '<nav class="crumbs" aria-label="Brotkrumen"><a href="' . esc_url(home_url('/')) . '">Start</a><span class="sep">›</span><a href="' . esc_url(home_url('/termine/')) . '">Termine</a><span class="sep">›</span><span aria-current="page">' . esc_html($t['titel']) . '</span></nav>'

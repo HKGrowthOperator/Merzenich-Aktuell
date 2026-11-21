@@ -20,7 +20,7 @@
  */
 if (!defined('ABSPATH')) { exit; }
 
-const MA_RECHTSTEXTE_VERSION = '2026-10-28';
+const MA_RECHTSTEXTE_VERSION = '2026-11-21';
 
 function ma_rechtstexte(): array {
     return [
@@ -45,7 +45,7 @@ function ma_rechtstext_anbieter(): string {
 function ma_rechtstext_impressum(): string {
     return '<h2 id="anbieter-nach-5-ddg">Anbieter nach § 5 DDG</h2>' . ma_rechtstext_anbieter()
         . '<h2 id="kontakt">Kontakt</h2><p>E-Mail: <a href="mailto:info@kbs-management.tv">info@kbs-management.tv</a></p>'
-        . '<p>Die Gesellschaft ist Anbieterin von Merzenich Aktuell. Angaben zur Gesellschaft wurden mit dem Impressum von KBS Management abgeglichen.</p>'
+        . '<p>Die Gesellschaft ist Anbieterin von Merzenich Aktuell. Merzenich Aktuell ist ein unabhängiges Angebot und kein Angebot der Gemeinde Merzenich.</p>'
         . '<h2 id="redaktionell-verantwortliche-person">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>'
         // Vorgabe Betreiber 06.10.2026: Geschäftsführer, mit der Anschrift der Gesellschaft.
         . '<p>Anto-Sutharsan Jesuthasan<br>Rheinstr. 78a<br>51371 Leverkusen</p>'
@@ -53,7 +53,7 @@ function ma_rechtstext_impressum(): string {
         . '<p>Werbung ist als „Anzeige“ gekennzeichnet, bezahlte Unternehmensbeiträge als „Anzeige · Gesponsert“.</p>'
         . '<h2 id="bildnachweise">Bildnachweise</h2>'
         . '<p>Credits und Bildtypen stehen bei den jeweiligen Beiträgen. Archiv- und Symbolmotive werden ausdrücklich als solche gekennzeichnet. Eine Quellenangabe ersetzt keine Nutzungsfreigabe. Die Herkunft aller verwendeten Motive ist im Bildverzeichnis der Redaktion dokumentiert; Nutzungsrechte werden vor der Veröffentlichung geprüft.</p>'
-        . '<p>Die Schriften Hanken Grotesk und Newsreader werden lokal bereitgestellt; die zugehörigen Lizenztexte liegen dem Projekt bei.</p>';
+        . '<p>Die Schriften Hanken Grotesk und Newsreader stehen unter der SIL Open Font License und werden vom eigenen Server geladen.</p>';
 }
 
 function ma_rechtstext_datenschutz(): string {

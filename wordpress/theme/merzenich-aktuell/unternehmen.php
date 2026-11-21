@@ -13,7 +13,7 @@ $assistent = fn($f) => home_url('/anzeigen/aufgeben/?art=Werbung&format=' . rawu
 // Unternehmenskanäle (21.18.0, inc/unternehmen.php): echte Firmen mit Beiträgen, solange es weniger als drei sind dazu die Musterfirmen.
 $firmen = ma21_alle_firmen(12);
 ?>
-<div class="page-head"><div class="shell"><nav class="crumbs" aria-label="Brotkrumen"><a href="<?php echo esc_url(home_url('/')); ?>">Start</a><span class="sep">›</span><span aria-current="page">Unternehmen</span></nav><h1>Unternehmen</h1><p class="desc">Beiträge der Unternehmen aus der Gemeinde Merzenich, als Anzeige gekennzeichnet. Nachrichten der Redaktion über Betriebe und Arbeit stehen unter <a href="<?php echo esc_url(home_url('/wirtschaft/')); ?>">Wirtschaft</a>.</p></div></div>
+<div class="page-head"><div class="shell"><nav class="crumbs" aria-label="Brotkrumen"><a href="<?php echo esc_url(home_url('/')); ?>">Start</a><span class="sep">›</span><span aria-current="page">Unternehmen</span></nav><h1>Unternehmen</h1><p class="desc">Beiträge von Unternehmen aus Merzenich und der Umgebung, als Anzeige gekennzeichnet. Nachrichten der Redaktion über Betriebe und Arbeit stehen unter <a href="<?php echo esc_url(home_url('/wirtschaft/')); ?>">Wirtschaft</a>.</p></div></div>
 <section class="section"><div class="shell content-grid"><div class="u-liste">
   <?php echo ma21_firmen_kacheln_html($firmen); ?>
   <div class="u-karten" data-u-karten><?php $i = 0; $proFirma = []; while (have_posts()): the_post(); $p = get_post(); $firma = (string) (get_post_meta($p->ID, 'ma_business_id', true) ?: get_post_meta($p->ID, 'ma_gesponsert_von', true) ?: $p->post_author); $proFirma[$firma] = ($proFirma[$firma] ?? 0) + 1; if ($proFirma[$firma] > 4) continue; echo ma21_u_karte($p, $i++); endwhile; ?></div>
@@ -22,7 +22,7 @@ $firmen = ma21_alle_firmen(12);
   if (ma21_muster_aktiv()) echo ma21_musterbeitraege_html(6);
   if (function_exists('ma_ad_marker_slot') && function_exists('ma_active_ads') && ma_active_ads(ma_ad_marker_slot('artikel'))) echo ma21_werbung('artikel'); ?>
   <div class="u-angebot">
-    <p class="eyebrow">Für Unternehmen aus der Gemeinde</p>
+    <p class="eyebrow">Für Unternehmen in und um Merzenich</p>
     <h2>Ihr Unternehmen mit eigenen Beiträgen auf Merzenich Aktuell</h2>
     <p>Hier stellen sich Betriebe aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald mit eigenen Beiträgen vor: neue Angebote, Aktionen, Eröffnungen, Ausbildungsplätze. Jedes Unternehmen zeigt bis zu vier Beiträge gleichzeitig, klar als Anzeige gekennzeichnet und getrennt von den Nachrichten der Redaktion.</p>
     <ol class="u-schritte">

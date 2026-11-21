@@ -7,23 +7,6 @@ X-WR-CALNAME:Merzenich Aktuell Termine
 X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
-UID:open-house-kinder-buergerhaus-herbstferien-2026@merzenich-aktuell.de
-DTSTAMP:20261005T060000Z
-DTSTART:20261021T090000Z
-DTEND:20261022T140000Z
-SUMMARY:Open House für Kinder im Bürgerhaus
-DESCRIPTION:In den Herbstferien öffnet die Offene Kinder- und Jugendarbeit
-  am 21. und 22. Oktober jeweils von 11 bis 16 Uhr das Bürgerhaus für Kin
- der von 6 bis 13 Jahren. Gebastelt und gekocht wird auch.\nVeranstalter: O
- ffene Kinder- und Jugendarbeit der Gemeinde Merzenich\nhttps://merzenichak
- tuell.hk-growthoperator.de/termine/open-house-kinder-buergerhaus-herbstfer
- ien-2026/
-LOCATION:Bürgerhaus Merzenich
-URL:https://merzenichaktuell.hk-growthoperator.de/termine/open-house-kinder
- -buergerhaus-herbstferien-2026/
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
 UID:patrozinium-st-amandus-girbelsrath-2026@merzenich-aktuell.de
 DTSTAMP:20261005T060000Z
 DTSTART:20261024T143000Z
@@ -338,7 +321,7 @@ DESCRIPTION:Der neue Frühstücks- und Spieletreff des Evangelischen Gemein
  lisches Gemeindezentrum Merzenich\nhttps://merzenichaktuell.hk-growthopera
  tor.de/termine/neu-fruehstuecks-und-spieletreff-fuer-senior-innen-merzenic
  h-2026-11-11/
-LOCATION:laut Veranstalter (Ort im Eintrag nicht genannt)
+LOCATION:Ev. Gemeindehaus Merzenich\, Severin-Böhr-Str. 15
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/neu-fruehstuecks-
  und-spieletreff-fuer-senior-innen-merzenich-2026-11-11/
 STATUS:CONFIRMED
@@ -681,10 +664,9 @@ DESCRIPTION:Am Samstag\, 21. November\, ab 11 Uhr wird in der Fußballhalle
   Merzenich ein Wunschbaum mit Weihnachtswünschen von Bewohnerinnen und Be
  wohnern aus Seniorenheimen der Region eröffnet. Wer möchte\, sucht sich 
  einen Wunsch aus und erfüllt ihn.\nVeranstalter: Wunschbaum-Aktion „Gem
- einsam gegen Einsam“ (Veranstalter in der Ankündigung nicht namentlich 
- genannt\; Hinweis der Gemeinde Merzenich)\nhttps://merzenichaktuell.hk-gro
- wthoperator.de/termine/wunschbaum-weihnachtsaktion-seniorenheime-fussballh
- alle-merzenich-2026-11-21/
+ einsam gegen Einsam“\nhttps://merzenichaktuell.hk-growthoperator.de/term
+ ine/wunschbaum-weihnachtsaktion-seniorenheime-fussballhalle-merzenich-2026
+ -11-21/
 LOCATION:Fußballhalle Merzenich
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/wunschbaum-weihna
  chtsaktion-seniorenheime-fussballhalle-merzenich-2026-11-21/
@@ -736,7 +718,7 @@ DESCRIPTION:Der Frühstücks- und Spieletreff des Evangelischen Gemeindezen
  ung zum Frühstück erbeten.\nVeranstalter: Evangelisches Gemeindezentrum 
  Merzenich\nhttps://merzenichaktuell.hk-growthoperator.de/termine/neu-frueh
  stuecks-und-spieletreff-fuer-senior-innen-merzenich-2026-11-25/
-LOCATION:laut Veranstalter (Ort im Eintrag nicht genannt)
+LOCATION:Ev. Gemeindehaus Merzenich\, Severin-Böhr-Str. 15
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/neu-fruehstuecks-
  und-spieletreff-fuer-senior-innen-merzenich-2026-11-25/
 STATUS:CONFIRMED
