@@ -74,7 +74,11 @@ Heimat-Info-Veranstaltungskalender der Gemeinde (https://www.heimat-info.de/geme
 
 Commits: `ffcfee5e` (Aktualisierung Unwetter), `aac33b30` (Kalender), `ad708019` (Wochenvorschau), Dokumentation in diesem Commit.
 
-Live-Nachweis: wird nach dem stündlichen Abgleich (10:05 Uhr) in einem eigenen Commit nachgetragen; Anstoß um 09:28 Uhr `angestossen: false`.
+Abgleich: Anstoß um 09:28 Uhr `angestossen: false`; der Abgleich hat beide Änderungen bis 09:32 Uhr übernommen. Import-XML auf GitHub raw enthält den neuen Slug.
+
+Live-Nachweis 09:32 Uhr, jeweils HTTP 200:
+- `/leben/merzenich-23-bis-29-november-2026-buergewald-ausschuss-tannenbaumschmuecken-adventmarkt/` mit „etwa gegen 15.15 Uhr“ und „Adventsliedersingen“, og:image `veranstaltungen-10-5df0764e43` (Schloss Merode); Startseite „Neu in Merzenich“ oben (09:25 Uhr), `news-sitemap.xml` an erster Stelle.
+- `/blaulicht/unwetterwarnung-merzenich-dauerregen-kreis-dueren-20-november-2026-dwd/` mit Titel „… DWD warnte bis Freitag 22 Uhr …“ und „Aktualisiert am 21. November“.
 
 ## 8. Bildprüfung
 
