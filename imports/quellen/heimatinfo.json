@@ -1,6 +1,6 @@
 {
  "quelle": "heimatinfo",
- "abgerufen": "2026-11-20T22:22:36.519Z",
+ "abgerufen": "2026-11-21T13:32:14.425Z",
  "organisationen": [
   "https://www.heimat-info.de/gemeinden/merzenich/organisationen/geschichts--und-heimatverein-merzenich-e-v",
   "https://www.heimat-info.de/gemeinden/merzenich/organisationen/lag-rheinisches-revier-an-inde-und-rur-ev-gemeinde-merzenich",
@@ -48,7 +48,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich",
-   "abgerufen": "2026-11-20T22:18:02.422Z",
+   "abgerufen": "2026-11-21T13:27:48.645Z",
    "status": 200,
    "titel": "Merzenich - Heimat-Info",
    "meta": {
@@ -607,7 +607,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/geschichts--und-heimatverein-merzenich-e-v/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/geschichts--und-heimatverein-merzenich-e-v/beitraege",
-   "abgerufen": "2026-11-20T22:18:05.007Z",
+   "abgerufen": "2026-11-21T13:27:50.669Z",
    "status": 200,
    "titel": "Geschichts- und Heimatverein Merzenich e.V. - Merzenich - Heimat-Info",
    "meta": {
@@ -758,7 +758,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/lag-rheinisches-revier-an-inde-und-rur-ev-gemeinde-merzenich/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/lag-rheinisches-revier-an-inde-und-rur-ev-gemeinde-merzenich/beitraege",
-   "abgerufen": "2026-11-20T22:18:07.212Z",
+   "abgerufen": "2026-11-21T13:27:52.549Z",
    "status": 200,
    "titel": "LAG Rheinisches Revier an Inde und Rur e.V. (Gemeinde Merzenich) - Merzenich - Heimat-Info",
    "meta": {
@@ -960,7 +960,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/gemeinde-merzenich/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/gemeinde-merzenich/beitraege",
-   "abgerufen": "2026-11-20T22:18:08.959Z",
+   "abgerufen": "2026-11-21T13:27:54.306Z",
    "status": 200,
    "titel": "Gemeinde Merzenich - Merzenich - Heimat-Info",
    "meta": {
@@ -1162,7 +1162,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/freiwillige-feuerwehr-merzenich/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/freiwillige-feuerwehr-merzenich/beitraege",
-   "abgerufen": "2026-11-20T22:18:10.958Z",
+   "abgerufen": "2026-11-21T13:27:56.169Z",
    "status": 200,
    "titel": "Freiwillige Feuerwehr Merzenich - Merzenich - Heimat-Info",
    "meta": {
@@ -1364,7 +1364,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/evangelische-gemeinde-1/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/evangelische-gemeinde-1/beitraege",
-   "abgerufen": "2026-11-20T22:18:12.913Z",
+   "abgerufen": "2026-11-21T13:27:58.041Z",
    "status": 200,
    "titel": "Evangelisches Gemeindezentrum Merzenich - Merzenich - Heimat-Info",
    "meta": {
@@ -1566,7 +1566,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/pfadfinder-merzenich-dpsg-st-laurentius/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/pfadfinder-merzenich-dpsg-st-laurentius/beitraege",
-   "abgerufen": "2026-11-20T22:18:14.752Z",
+   "abgerufen": "2026-11-21T13:27:59.657Z",
    "status": 200,
    "titel": "Pfadfinder Merzenich (DPSG St. Laurentius) - Merzenich - Heimat-Info",
    "meta": {
@@ -1632,7 +1632,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/lambertus-kapelle-morschenich/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/lambertus-kapelle-morschenich/beitraege",
-   "abgerufen": "2026-11-20T22:18:16.733Z",
+   "abgerufen": "2026-11-21T13:28:01.658Z",
    "status": 200,
    "titel": "St. Lambertus Kapelle Morschenich - Merzenich - Heimat-Info",
    "meta": {
@@ -1834,7 +1834,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/amprion-gmbh-merzenich/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/amprion-gmbh-merzenich/beitraege",
-   "abgerufen": "2026-11-20T22:18:18.396Z",
+   "abgerufen": "2026-11-21T13:28:03.228Z",
    "status": 200,
    "titel": "Amprion GmbH - Merzenich - Heimat-Info",
    "meta": {
@@ -1866,7 +1866,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/heimat-info-fur-merzenich/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/heimat-info-fur-merzenich/beitraege",
-   "abgerufen": "2026-11-20T22:18:20.115Z",
+   "abgerufen": "2026-11-21T13:28:04.762Z",
    "status": 200,
    "titel": "Heimat-Info für Merzenich - Merzenich - Heimat-Info",
    "meta": {
@@ -1898,7 +1898,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/veranstaltungen-merzenich/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/veranstaltungen-merzenich/beitraege",
-   "abgerufen": "2026-11-20T22:18:21.813Z",
+   "abgerufen": "2026-11-21T13:28:06.301Z",
    "status": 200,
    "titel": "Veranstaltungen Merzenich - Merzenich - Heimat-Info",
    "meta": {
@@ -1930,7 +1930,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/volkshochschule-rur-eifel-zweigstelle-merzenich/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/volkshochschule-rur-eifel-zweigstelle-merzenich/beitraege",
-   "abgerufen": "2026-11-20T22:18:23.544Z",
+   "abgerufen": "2026-11-21T13:28:07.846Z",
    "status": 200,
    "titel": "Volkshochschule Rur-Eifel – Zweigstelle Merzenich - Merzenich - Heimat-Info",
    "meta": {
@@ -1962,7 +1962,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/warnmeldungen-merzenich/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/warnmeldungen-merzenich/beitraege",
-   "abgerufen": "2026-11-20T22:18:25.150Z",
+   "abgerufen": "2026-11-21T13:28:09.602Z",
    "status": 200,
    "titel": "Warnmeldungen Kreis Düren - Merzenich - Merzenich - Heimat-Info",
    "meta": {
@@ -1994,7 +1994,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/zweckverband-entsorgungsregion-west-zew-f-merzenich/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/zweckverband-entsorgungsregion-west-zew-f-merzenich/beitraege",
-   "abgerufen": "2026-11-20T22:18:26.941Z",
+   "abgerufen": "2026-11-21T13:28:11.160Z",
    "status": 200,
    "titel": "Zweckverband Entsorgungsregion West (ZEW) f. Merzenich - Merzenich - Heimat-Info",
    "meta": {
@@ -2026,7 +2026,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/kgs-am-weinberg-merzenich/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/kgs-am-weinberg-merzenich/beitraege",
-   "abgerufen": "2026-11-20T22:18:28.578Z",
+   "abgerufen": "2026-11-21T13:28:12.694Z",
    "status": 200,
    "titel": "KGS Am Weinberg Merzenich - Merzenich - Heimat-Info",
    "meta": {
@@ -2052,7 +2052,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/kindertagesstaette-windmuehle/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/kindertagesstaette-windmuehle/beitraege",
-   "abgerufen": "2026-11-20T22:18:30.289Z",
+   "abgerufen": "2026-11-21T13:28:14.319Z",
    "status": 200,
    "titel": "Kindertagesstätte Windmühle - Merzenich - Heimat-Info",
    "meta": {
@@ -2090,7 +2090,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/freie-alten--und-krankenpflege-e-v-tagespflege-merzenich/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/freie-alten--und-krankenpflege-e-v-tagespflege-merzenich/beitraege",
-   "abgerufen": "2026-11-20T22:18:33.040Z",
+   "abgerufen": "2026-11-21T13:28:16.227Z",
    "status": 200,
    "titel": "Freie Alten- und Krankenpflege e.V. Tagespflege Merzenich - Merzenich - Heimat-Info",
    "meta": {
@@ -2258,7 +2258,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/1-fc-koeln-fanclub-merzenich-1967/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/1-fc-koeln-fanclub-merzenich-1967/beitraege",
-   "abgerufen": "2026-11-20T22:18:35.688Z",
+   "abgerufen": "2026-11-21T13:28:18.218Z",
    "status": 200,
    "titel": "1.FC Köln Fanclub Merzenich 1967 - Merzenich - Heimat-Info",
    "meta": {
@@ -2460,7 +2460,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/billardsportclub-merzenich-1970-e-v/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/billardsportclub-merzenich-1970-e-v/beitraege",
-   "abgerufen": "2026-11-20T22:18:37.550Z",
+   "abgerufen": "2026-11-21T13:28:19.939Z",
    "status": 200,
    "titel": "Billardsportclub Merzenich 1970 e.V. - Merzenich - Heimat-Info",
    "meta": {
@@ -2546,7 +2546,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/dorfgemeinschaft-morschenich/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/dorfgemeinschaft-morschenich/beitraege",
-   "abgerufen": "2026-11-20T22:18:39.231Z",
+   "abgerufen": "2026-11-21T13:28:21.516Z",
    "status": 200,
    "titel": "Dorfgemeinschaft Morschenich - Merzenich - Heimat-Info",
    "meta": {
@@ -2595,7 +2595,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/fc-golzheim-1928-e-v/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/fc-golzheim-1928-e-v/beitraege",
-   "abgerufen": "2026-11-20T22:18:40.865Z",
+   "abgerufen": "2026-11-21T13:28:23.155Z",
    "status": 200,
    "titel": "FC Golzheim 1928 e.V - Merzenich - Heimat-Info",
    "meta": {
@@ -2621,7 +2621,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/fc-rhenania-girbelsrath-1931-e-v/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/fc-rhenania-girbelsrath-1931-e-v/beitraege",
-   "abgerufen": "2026-11-20T22:18:42.443Z",
+   "abgerufen": "2026-11-21T13:28:25.445Z",
    "status": 200,
    "titel": "FC Rhenania Girbelsrath 1931 e.V. - Merzenich - Heimat-Info",
    "meta": {
@@ -2647,7 +2647,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/freunde-der-musik-merzenich/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/freunde-der-musik-merzenich/beitraege",
-   "abgerufen": "2026-11-20T22:18:44.128Z",
+   "abgerufen": "2026-11-21T13:28:27.267Z",
    "status": 200,
    "titel": "Freunde der Musik Merzenich - Merzenich - Heimat-Info",
    "meta": {
@@ -2685,7 +2685,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/girbelsrath-2-0-die-dorfwerkstatt/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/girbelsrath-2-0-die-dorfwerkstatt/beitraege",
-   "abgerufen": "2026-11-20T22:18:46.015Z",
+   "abgerufen": "2026-11-21T13:28:29.159Z",
    "status": 200,
    "titel": "Girbelsrath 2.0 Die Dorfwerkstatt - Merzenich - Heimat-Info",
    "meta": {
@@ -2819,7 +2819,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/gruppe-regenbogen/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/gruppe-regenbogen/beitraege",
-   "abgerufen": "2026-11-20T22:18:47.700Z",
+   "abgerufen": "2026-11-21T13:28:30.834Z",
    "status": 200,
    "titel": "Gruppe Regenbogen - Merzenich - Heimat-Info",
    "meta": {
@@ -2881,7 +2881,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/gut-schuss-merzenich/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/gut-schuss-merzenich/beitraege",
-   "abgerufen": "2026-11-20T22:18:49.333Z",
+   "abgerufen": "2026-11-21T13:28:32.346Z",
    "status": 200,
    "titel": "Gut Schuss Merzenich - Merzenich - Heimat-Info",
    "meta": {
@@ -2907,7 +2907,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/ig-golzheim-aktiv/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/ig-golzheim-aktiv/beitraege",
-   "abgerufen": "2026-11-20T22:18:51.460Z",
+   "abgerufen": "2026-11-21T13:28:34.034Z",
    "status": 200,
    "titel": "IG Golzheim Aktiv - Merzenich - Heimat-Info",
    "meta": {
@@ -2969,7 +2969,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/inklusives-soziales-miteinander-merzenich-e-v-ism/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/inklusives-soziales-miteinander-merzenich-e-v-ism/beitraege",
-   "abgerufen": "2026-11-20T22:18:53.368Z",
+   "abgerufen": "2026-11-21T13:28:35.606Z",
    "status": 200,
    "titel": "Inklusives Soziales Miteinander Merzenich e.V. (ISM) - Merzenich - Heimat-Info",
    "meta": {
@@ -3022,7 +3022,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/kg-jonge-vom-berg-1975-e-v/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/kg-jonge-vom-berg-1975-e-v/beitraege",
-   "abgerufen": "2026-11-20T22:18:55.500Z",
+   "abgerufen": "2026-11-21T13:28:37.499Z",
    "status": 200,
    "titel": "KG Jonge vom Berg 1975 e.V. - Merzenich - Heimat-Info",
    "meta": {
@@ -3173,7 +3173,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/kg-mir-hahle-poohl-1905-e-v/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/kg-mir-hahle-poohl-1905-e-v/beitraege",
-   "abgerufen": "2026-11-20T22:18:57.235Z",
+   "abgerufen": "2026-11-21T13:28:39.109Z",
    "status": 200,
    "titel": "KG Mir hahle Poohl Golzheim 1905 e.V. - Merzenich - Heimat-Info",
    "meta": {
@@ -3239,7 +3239,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/kk-klub-waldesgrun/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/kk-klub-waldesgrun/beitraege",
-   "abgerufen": "2026-11-20T22:18:58.974Z",
+   "abgerufen": "2026-11-21T13:28:40.724Z",
    "status": 200,
    "titel": "KK Klub Waldesgrün Morschenich 1973 e.V. - Merzenich - Heimat-Info",
    "meta": {
@@ -3305,7 +3305,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/landfrauenverband-ev-kreisverband-duren-julich-merzenich/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/landfrauenverband-ev-kreisverband-duren-julich-merzenich/beitraege",
-   "abgerufen": "2026-11-20T22:19:00.602Z",
+   "abgerufen": "2026-11-21T13:28:42.266Z",
    "status": 200,
    "titel": "LandFrauenverband e.V. – Kreisverband Düren-Jülich (Merzenich) - Merzenich - Heimat-Info",
    "meta": {
@@ -3337,7 +3337,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/lesementor-duren-e-v-merzenich/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/lesementor-duren-e-v-merzenich/beitraege",
-   "abgerufen": "2026-11-20T22:19:02.201Z",
+   "abgerufen": "2026-11-21T13:28:43.834Z",
    "status": 200,
    "titel": "LESEMENTOR Düren e. V. (Merzenich) - Merzenich - Heimat-Info",
    "meta": {
@@ -3386,7 +3386,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/sc-merzenich-tennisabteilung/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/sc-merzenich-tennisabteilung/beitraege",
-   "abgerufen": "2026-11-20T22:19:04.805Z",
+   "abgerufen": "2026-11-21T13:28:45.700Z",
    "status": 200,
    "titel": "SC Merzenich Tennisabteilung - Merzenich - Heimat-Info",
    "meta": {
@@ -3571,7 +3571,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/sc1919merzenich-e-v/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/sc1919merzenich-e-v/beitraege",
-   "abgerufen": "2026-11-20T22:19:06.464Z",
+   "abgerufen": "2026-11-21T13:28:47.240Z",
    "status": 200,
    "titel": "SC1919Merzenich e.V. - Merzenich - Heimat-Info",
    "meta": {
@@ -3597,7 +3597,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/scm-badminton-merzenich/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/scm-badminton-merzenich/beitraege",
-   "abgerufen": "2026-11-20T22:19:08.401Z",
+   "abgerufen": "2026-11-21T13:28:48.803Z",
    "status": 200,
    "titel": "SCM Badminton Merzenich - Merzenich - Heimat-Info",
    "meta": {
@@ -3646,7 +3646,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/st-lambertus-schuetzenbruderschaft-morschenich-e-v/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/st-lambertus-schuetzenbruderschaft-morschenich-e-v/beitraege",
-   "abgerufen": "2026-11-20T22:19:10.182Z",
+   "abgerufen": "2026-11-21T13:28:50.631Z",
    "status": 200,
    "titel": "St. Lambertus Schützenbruderschaft Morschenich e.V. - Merzenich - Heimat-Info",
    "meta": {
@@ -3729,7 +3729,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/treckerfreunde-merzenich/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/treckerfreunde-merzenich/beitraege",
-   "abgerufen": "2026-11-20T22:19:11.822Z",
+   "abgerufen": "2026-11-21T13:28:52.249Z",
    "status": 200,
    "titel": "Treckerfreunde Merzenich - Merzenich - Heimat-Info",
    "meta": {
@@ -3755,7 +3755,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/tv-merzenich-1882-e-v/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/tv-merzenich-1882-e-v/beitraege",
-   "abgerufen": "2026-11-20T22:19:13.581Z",
+   "abgerufen": "2026-11-21T13:28:53.872Z",
    "status": 200,
    "titel": "TV Merzenich 1882 e.V - Merzenich - Heimat-Info",
    "meta": {
@@ -3781,7 +3781,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/tv1910e-v-girbelsrath/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/tv1910e-v-girbelsrath/beitraege",
-   "abgerufen": "2026-11-20T22:19:15.367Z",
+   "abgerufen": "2026-11-21T13:28:55.516Z",
    "status": 200,
    "titel": "TV1910e.V.Girbelsrath - Merzenich - Heimat-Info",
    "meta": {
@@ -3807,7 +3807,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/ul-aero-club-morschenich-e-v/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/ul-aero-club-morschenich-e-v/beitraege",
-   "abgerufen": "2026-11-20T22:19:17.399Z",
+   "abgerufen": "2026-11-21T13:28:57.103Z",
    "status": 200,
    "titel": "UL-Aero-Club Morschenich e.V. - Merzenich - Heimat-Info",
    "meta": {
@@ -3839,7 +3839,7 @@
   {
    "url": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/vereinigung-der-freunde-und-foerderer-der-johann-kasper-kratz-grundschule-merzenich--golzheim-e-v/beitraege",
    "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/organisationen/vereinigung-der-freunde-und-foerderer-der-johann-kasper-kratz-grundschule-merzenich--golzheim-e-v/beitraege",
-   "abgerufen": "2026-11-20T22:19:19.058Z",
+   "abgerufen": "2026-11-21T13:28:58.687Z",
    "status": 200,
    "titel": "Vereinigung der Freunde und Förderer der Johann-Kasper-Kratz Grundschule Merzenich- Golzheim e.V. - Merzenich - Heimat-Info",
    "meta": {
@@ -3867,7 +3867,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/a405de01-a945-4f75-919b-6ac19e9e5614",
    "endUrl": "https://www.heimat-info.de/beitraege/a405de01-a945-4f75-919b-6ac19e9e5614",
-   "abgerufen": "2026-11-20T22:19:20.739Z",
+   "abgerufen": "2026-11-21T13:29:00.276Z",
    "status": 200,
    "titel": "📅 Veranstaltungstipps für Kurzentschlossene im Ehrenamt 📣 Von Finanzen über Selbstfürsorge bis zur Förderung: Im Novem... - Merzenich - Heimat-Info",
    "meta": {
@@ -3895,7 +3895,7 @@
      "title": ""
     },
     {
-     "src": "https://scontent-atl3-2.xx.fbcdn.net/v/t39.30808-6/910820608_1464541509219368_1886867011636359243_n.jpg?stp=dst-jpg_s640x640_tt6&_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e5c1b6&_nc_ohc=ALomy6nhCnwQ7kNvwG0PFtQ&_nc_oc=AdqgfsanSl_lWwVRHb0KuHnBz4vqQ5AQFiuT4STfjQr21FhhuGmWwM8P1oSbfplNauJR4CBCQqWbqbDb5ebRA436&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&_nc_gid=CKsGTfFkEcH9jrinXg8kFg&_nc_ss=7c289&oh=00_AQRjDHZ6gjFUCWJo4L2Fw81ZoIqzPs746aiNVpimvefAbw&oe=6B067271",
+     "src": "https://scontent-sjc6-1.xx.fbcdn.net/v/t39.30808-6/910820608_1464541509219368_1886867011636359243_n.jpg?stp=dst-jpg_s640x640_tt6&_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e5c1b6&_nc_ohc=ALomy6nhCnwQ7kNvwFuQPPq&_nc_oc=Adp3RzuYncW-xnYKRDRXya-FC2-q3M9eCd-RaSUlohQQ8n3n5Z5koSGOYVEdviFNtsHKfuR6vpvw1OJA6ntZeACm&_nc_zt=23&_nc_ht=scontent-sjc6-1.xx&_nc_gid=5utLFmHEAAy0EI_hh6VZ-A&_nc_ss=7c289&oh=00_AQRs9gDUpqA2NIJ0Nt3SQuieBbE5dIpM-MzSQ9CfPQwqmA&oe=6B075371",
      "alt": "",
      "title": ""
     }
@@ -3904,7 +3904,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/ae19982b-549c-4dc0-931e-93ace345de12",
    "endUrl": "https://www.heimat-info.de/beitraege/ae19982b-549c-4dc0-931e-93ace345de12",
-   "abgerufen": "2026-11-20T22:19:22.449Z",
+   "abgerufen": "2026-11-21T13:29:01.784Z",
    "status": 200,
    "titel": "+++ Merzenich hat was zu bieten Nr. 80 +++ Gutachter-Profis nehmen Schimmel ins Visier!🧐 Hinter dem Firmennamen „HR²“ v... - Merzenich - Heimat-Info",
    "meta": {
@@ -3932,7 +3932,7 @@
      "title": ""
     },
     {
-     "src": "https://scontent-iad3-2.xx.fbcdn.net/v/t39.30808-6/911262709_1455524033364342_1371975528183329094_n.jpg?stp=cp6_dst-jpegr_s1080x2048_tt6&_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=ebae6b&_nc_ohc=xPcZeRFkF6wQ7kNvwHbX8wR&_nc_oc=AdqiuIJaHQzhTfa7Q7vytCNbJ-sz08F_ZEJXyecHN1t685HU6UMckZI8TbWnHaMAVRZ9nqoKDZCwbDSbM9CPAAP-&_nc_zt=23&se=-1&_nc_ht=scontent-iad3-2.xx&_nc_gid=EGxeJzVNrq6LXYy-R41ceA&_nc_ss=7c289&oh=00_AQRmuXHrY6zhjq1joA3HfMhjxIMCpAjzj7C28jgxhWdwxA&oe=6B067EEE",
+     "src": "https://scontent-iad3-2.xx.fbcdn.net/v/t39.30808-6/911262709_1455524033364342_1371975528183329094_n.jpg?stp=cp6_dst-jpegr_s1080x2048_tt6&_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=ebae6b&_nc_ohc=xPcZeRFkF6wQ7kNvwHbX8wR&_nc_oc=AdqiuIJaHQzhTfa7Q7vytCNbJ-sz08F_ZEJXyecHN1t685HU6UMckZI8TbWnHaMAVRZ9nqoKDZCwbDSbM9CPAAP-&_nc_zt=23&se=-1&_nc_ht=scontent-iad3-2.xx&_nc_gid=_Fzd-NluV5Qp9SHejCbFcQ&_nc_ss=7c289&oh=00_AQRk03omMSkdzWOxcX6bG36C9o-bfeFLP3s7rZtyPsjR0A&oe=6B075FEE",
      "alt": "",
      "title": ""
     }
@@ -3941,7 +3941,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/244d1fe4-317b-4fb7-a3c3-4a598bd77832",
    "endUrl": "https://www.heimat-info.de/beitraege/244d1fe4-317b-4fb7-a3c3-4a598bd77832",
-   "abgerufen": "2026-11-20T22:19:24.076Z",
+   "abgerufen": "2026-11-21T13:29:03.305Z",
    "status": 200,
    "titel": "🚨 +++ Letzter Einsatz +++ 🚨 🚒 Einsatz-Nr: 148/26 🗓️ Datum: 19.11.2026 📟 Stichwort: PET... 📟 Meldung: Person hinter... - Merzenich - Heimat-Info",
    "meta": {
@@ -3973,7 +3973,7 @@
      "title": ""
     },
     {
-     "src": "https://scontent-iad6-1.xx.fbcdn.net/v/t39.30808-6/916822316_1438523615160428_4725939031975741072_n.jpg?stp=dst-jpg_s1080x2048_tt6&_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=ebae6b&_nc_ohc=ZN5T7rfc15cQ7kNvwGGhmHF&_nc_oc=AdpThl4TLz4qvrY9jCCPvadlIOXJRPrOZXR25ehRWdijBMHBwMWlIbfuIlZyxSafGUP4e3IHZ3I4284ZbhVVMz68&_nc_zt=23&_nc_ht=scontent-iad6-1.xx&_nc_gid=4JCCZPeXwRn_n9Zc09QmIQ&_nc_ss=7c289&oh=00_AQSG2tsFG4VqopaH63EtPf1atGHibZfg8MlZkCQ6YcDP5Q&oe=6B068310",
+     "src": "https://scontent-lga3-1.xx.fbcdn.net/v/t39.30808-6/916822316_1438523615160428_4725939031975741072_n.jpg?stp=dst-jpg_s1080x2048_tt6&_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=ebae6b&_nc_ohc=ZN5T7rfc15cQ7kNvwEsB7f9&_nc_oc=AdpyMvZDFvbME-vCcl9B200nlxj_DrnHOA94vqBC7B_QUVi-v6cJg07WKigVDs1juEY&_nc_zt=23&_nc_ht=scontent-lga3-1.xx&_nc_gid=tJk6IyblyNQptCFxO97lPw&_nc_ss=7c289&oh=00_AQTzGJaLzFKdj8g86YbHH5UhXOpJe2zPW_tRK8RwjcCprw&oe=6B076410",
      "alt": "",
      "title": ""
     }
@@ -3982,7 +3982,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/6d6570dd-689f-4569-914f-104db28904e2",
    "endUrl": "https://www.heimat-info.de/beitraege/6d6570dd-689f-4569-914f-104db28904e2",
-   "abgerufen": "2026-11-20T22:19:25.603Z",
+   "abgerufen": "2026-11-21T13:29:04.891Z",
    "status": 200,
    "titel": "++++ Garten AG baut Komposter im #Schulgarten +++ Ein eigener selbsterstellter Komposter🌿 im Schulgarten - den ganzen S... - Merzenich - Heimat-Info",
    "meta": {
@@ -4010,7 +4010,7 @@
      "title": ""
     },
     {
-     "src": "https://scontent-iad6-1.xx.fbcdn.net/v/t39.30808-6/912229059_1455517143365031_489768511973697073_n.jpg?stp=dst-jpg_s1080x2048_tt6&_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e5c1b6&_nc_ohc=JfIxyycpiFUQ7kNvwEbkNLM&_nc_oc=AdogZdURQo9UIbXVhlPlXZIS9PqpMy6DkfIgVrkJoYMG4Jq4Ee4zyJZziN53g7iNtWK2wYlZStowFNCUPYuB-SX4&_nc_zt=23&_nc_ht=scontent-iad6-1.xx&_nc_gid=EGxeJzVNrq6LXYy-R41ceA&_nc_ss=7c289&oh=00_AQTbZgW16_19ZI80dwHd3f2x53OAsA1sl849vEqkaN494w&oe=6B068C5D",
+     "src": "https://scontent-iad6-1.xx.fbcdn.net/v/t39.30808-6/912229059_1455517143365031_489768511973697073_n.jpg?stp=dst-jpg_s1080x2048_tt6&_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e5c1b6&_nc_ohc=JfIxyycpiFUQ7kNvwEbkNLM&_nc_oc=AdogZdURQo9UIbXVhlPlXZIS9PqpMy6DkfIgVrkJoYMG4Jq4Ee4zyJZziN53g7iNtWK2wYlZStowFNCUPYuB-SX4&_nc_zt=23&_nc_ht=scontent-iad6-1.xx&_nc_gid=_Fzd-NluV5Qp9SHejCbFcQ&_nc_ss=7c289&oh=00_AQTQqGVlqz44vW-_5iF9sMVex7japInWsUr5ejzrcch_pg&oe=6B076D5D",
      "alt": "",
      "title": ""
     }
@@ -4019,7 +4019,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/72cdf5c6-c7d2-4132-8dbe-dee79c1fd295",
    "endUrl": "https://www.heimat-info.de/beitraege/72cdf5c6-c7d2-4132-8dbe-dee79c1fd295",
-   "abgerufen": "2026-11-20T22:19:27.137Z",
+   "abgerufen": "2026-11-21T13:29:06.392Z",
    "status": 200,
    "titel": "Ein verlassenes Dorf. Drei Künstler:innen. Drei Perspektiven. 🎨 Was bleibt, wenn die Menschen ein Dorf verlassen, aber... - Merzenich - Heimat-Info",
    "meta": {
@@ -4047,7 +4047,7 @@
      "title": ""
     },
     {
-     "src": "https://scontent-iad3-1.xx.fbcdn.net/v/t39.30808-6/912260007_1107510188582844_7689598545121376191_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e5c1b6&_nc_ohc=OHPMg6VrXt0Q7kNvwGRVmEg&_nc_oc=AdrzEP9AmXp9SZ3mKdl6W-Ls5hg4HJZ5IEYVlqg4ABbrEeTGsSAi1p08FWGbTHqtoBO9CifCRBOKzXgWAnELyNDa&_nc_zt=23&_nc_ht=scontent-iad3-1.xx&_nc_gid=EGxeJzVNrq6LXYy-R41ceA&_nc_ss=7c289&oh=00_AQSbfiyap1PN42eyxcdGHwaGNneiT6z6SQ172jb0pooYiw&oe=6B06A325",
+     "src": "https://scontent-iad3-1.xx.fbcdn.net/v/t39.30808-6/912260007_1107510188582844_7689598545121376191_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e5c1b6&_nc_ohc=-X3qDYudwycQ7kNvwFESSCO&_nc_oc=AdpUJcsGOR_XTKY0PYY8OSq7Fcz5gbq-CGmKDODW_b5NOu_yn6fPXkbNvxdJxYjnFkiZFj5rJMjGVwq0-2XfunRo&_nc_zt=23&_nc_ht=scontent-iad3-1.xx&_nc_gid=_Fzd-NluV5Qp9SHejCbFcQ&_nc_ss=7c289&oh=00_AQQgDXA9gCIiQoBr8f4QbZfxCiFBHFgkei5SDw6PTCKK8Q&oe=6B074BE5",
      "alt": "",
      "title": ""
     }
@@ -4056,7 +4056,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/99fc3d31-26d8-4c27-8d73-223688d31fd8",
    "endUrl": "https://www.heimat-info.de/beitraege/99fc3d31-26d8-4c27-8d73-223688d31fd8",
-   "abgerufen": "2026-11-20T22:19:28.648Z",
+   "abgerufen": "2026-11-21T13:29:07.969Z",
    "status": 200,
    "titel": "Wer möchte Wunscherfüller werden😇? Ab Samstag kann man sich wieder an dieser tollen Aktion beteiligen!🙏🎄❤️ WUNSCHBAUM... - Merzenich - Heimat-Info",
    "meta": {
@@ -4084,7 +4084,7 @@
      "title": ""
     },
     {
-     "src": "https://scontent-iad3-1.xx.fbcdn.net/v/t39.30808-6/844557590_4116725931792665_7806245752589736877_n.jpg?stp=cp6_dst-jpg_p720x720_tt6&_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=2e5b1e&_nc_ohc=JJpyQpf5nXgQ7kNvwEViWQX&_nc_oc=AdrCnhYGfn_XIYqQpYwVYC3D1SJo0BaSkVe8i4Lpl9NlLaLGzjop0KLhHumS2pIsAvDluZ_i7DhefYD3zGJfOE8W&_nc_zt=23&_nc_ht=scontent-iad3-1.xx&_nc_gid=EGxeJzVNrq6LXYy-R41ceA&_nc_ss=7c289&oh=00_AQQMCVR0S9dY7eHlFBVEWmTCFCel-lZJOenFGmNv5hyJuQ&oe=6B06A7FF",
+     "src": "https://scontent-iad3-1.xx.fbcdn.net/v/t39.30808-6/844557590_4116725931792665_7806245752589736877_n.jpg?stp=cp6_dst-jpg_p720x720_tt6&_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=2e5b1e&_nc_ohc=XqQgsrBSgnAQ7kNvwFfG7Ey&_nc_oc=AdoCRz6ruyqxPbOiUmXgnKI3IWlxIUeQJrD5wl7GxObRzt8V9Rc3RubZPVaHYzMhdSy3A-M_m0M0GSFn4ByAI2GQ&_nc_zt=23&_nc_ht=scontent-iad3-1.xx&_nc_gid=_Fzd-NluV5Qp9SHejCbFcQ&_nc_ss=7c289&oh=00_AQTaYl4oqztxI0yfoukQiixH5ubctScXoUzS7VPBzBDSfQ&oe=6B0750BF",
      "alt": "",
      "title": ""
     }
@@ -4093,7 +4093,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/3ac1c0bb-e5cb-4d36-b477-d89fa9b6716f",
    "endUrl": "https://www.heimat-info.de/beitraege/3ac1c0bb-e5cb-4d36-b477-d89fa9b6716f",
-   "abgerufen": "2026-11-20T22:19:30.172Z",
+   "abgerufen": "2026-11-21T13:29:09.483Z",
    "status": 200,
    "titel": "Gemeinde Merzenich lädt ein zum Zukunfts-Event Pluriversum - Merzenich - Heimat-Info",
    "meta": {
@@ -4125,7 +4125,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/abaec4ff-23e4-43ac-a981-36e3a50de551",
    "endUrl": "https://www.heimat-info.de/beitraege/abaec4ff-23e4-43ac-a981-36e3a50de551",
-   "abgerufen": "2026-11-20T22:19:31.826Z",
+   "abgerufen": "2026-11-21T13:29:10.997Z",
    "status": 200,
    "titel": "Modelleisenbahn im Wasserturm Merzenich - Merzenich - Heimat-Info",
    "meta": {
@@ -4157,7 +4157,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/db17e206-13c6-4e8a-b7bc-a754a86bb114",
    "endUrl": "https://www.heimat-info.de/beitraege/db17e206-13c6-4e8a-b7bc-a754a86bb114",
-   "abgerufen": "2026-11-20T22:19:33.366Z",
+   "abgerufen": "2026-11-21T13:29:12.504Z",
    "status": 200,
    "titel": "Adventmarkt im Heimatmuseum - Merzenich - Heimat-Info",
    "meta": {
@@ -4189,7 +4189,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/2a82286e-cec6-4507-a4b5-f522de57e497",
    "endUrl": "https://www.heimat-info.de/beitraege/2a82286e-cec6-4507-a4b5-f522de57e497",
-   "abgerufen": "2026-11-20T22:19:34.895Z",
+   "abgerufen": "2026-11-21T13:29:14.037Z",
    "status": 200,
    "titel": "Zeitreise beim Ortsfest - Merzenich - Heimat-Info",
    "meta": {
@@ -4221,7 +4221,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/a503152b-7a71-429c-bef8-f55546f3ba76",
    "endUrl": "https://www.heimat-info.de/beitraege/a503152b-7a71-429c-bef8-f55546f3ba76",
-   "abgerufen": "2026-11-20T22:19:36.422Z",
+   "abgerufen": "2026-11-21T13:29:15.554Z",
    "status": 200,
    "titel": "Tag des offenen Denkmals - Merzenich - Heimat-Info",
    "meta": {
@@ -4253,7 +4253,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/128c1a05-b80f-4a59-8ef5-4cdd50e2a174",
    "endUrl": "https://www.heimat-info.de/beitraege/128c1a05-b80f-4a59-8ef5-4cdd50e2a174",
-   "abgerufen": "2026-11-20T22:19:37.972Z",
+   "abgerufen": "2026-11-21T13:29:17.091Z",
    "status": 200,
    "titel": "Köln-Kaffee im Heimatmuseum - Merzenich - Heimat-Info",
    "meta": {
@@ -4285,7 +4285,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/a8ec2d70-4e8d-4316-a547-54faef0309f0",
    "endUrl": "https://www.heimat-info.de/beitraege/a8ec2d70-4e8d-4316-a547-54faef0309f0",
-   "abgerufen": "2026-11-20T22:19:39.491Z",
+   "abgerufen": "2026-11-21T13:29:18.575Z",
    "status": 200,
    "titel": "Kölnkaffee im Heimatmuseum - Merzenich - Heimat-Info",
    "meta": {
@@ -4317,7 +4317,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/ab8f328a-f5b3-4246-a387-be328dbee7b2",
    "endUrl": "https://www.heimat-info.de/beitraege/ab8f328a-f5b3-4246-a387-be328dbee7b2",
-   "abgerufen": "2026-11-20T22:19:40.998Z",
+   "abgerufen": "2026-11-21T13:29:20.066Z",
    "status": 200,
    "titel": "Jazz-Dämmerschoppen 🎷 - Merzenich - Heimat-Info",
    "meta": {
@@ -4349,7 +4349,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/9cb3dda8-11b0-4263-9ca7-a3c75b6b2163",
    "endUrl": "https://www.heimat-info.de/beitraege/9cb3dda8-11b0-4263-9ca7-a3c75b6b2163",
-   "abgerufen": "2026-11-20T22:19:42.582Z",
+   "abgerufen": "2026-11-21T13:29:21.584Z",
    "status": 200,
    "titel": "💡 Ihr habt eine gute Idee für Eschweiler? Dann kommt zum 3. Infoabend „Zeit für gute Projekte“! 🌱 Vier Initiativen ste... - Merzenich - Heimat-Info",
    "meta": {
@@ -4377,7 +4377,7 @@
      "title": ""
     },
     {
-     "src": "https://scontent-atl3-2.xx.fbcdn.net/v/t39.30808-6/903683021_1458359749837544_6281844963400904019_n.jpg?stp=dst-jpg_p843x403_tt6&_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=ebae6b&_nc_ohc=j-PW1LQgLIgQ7kNvwG8TxEs&_nc_oc=AdpXmZ5tIls-Mh5_dCgKUW2ElsUPxXyg97Cv1ncRlObJc93AaWyVpUGVKm-1diJZ9SfsaXS5AuQB2kjO7-9PpemY&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&_nc_gid=CKsGTfFkEcH9jrinXg8kFg&_nc_ss=7c289&oh=00_AQSGGjytE3h7BNa-Bp7niiolb1qsEmpReTdCXFCgQr7eCw&oe=6B067FD0",
+     "src": "https://scontent-sjc6-1.xx.fbcdn.net/v/t39.30808-6/903683021_1458359749837544_6281844963400904019_n.jpg?stp=dst-jpg_p843x403_tt6&_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=ebae6b&_nc_ohc=j-PW1LQgLIgQ7kNvwGPX5DU&_nc_oc=Adp3P7VhosApN5pcv0e7XfHnUZfA6JHe7DDWllT8qZDr16nvExFZv5y-c1TonzIxkfjGvh_G-7PMEU1PxTyjzxPG&_nc_zt=23&_nc_ht=scontent-sjc6-1.xx&_nc_gid=5utLFmHEAAy0EI_hh6VZ-A&_nc_ss=7c289&oh=00_AQQF7P9qpKjQKCoxParlbcXYitZXOvYsCoAKEjH-PgH4eA&oe=6B0760D0",
      "alt": "",
      "title": ""
     }
@@ -4386,7 +4386,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/c4ba8df2-33ba-436e-8da2-4fd49f4b5a78",
    "endUrl": "https://www.heimat-info.de/beitraege/c4ba8df2-33ba-436e-8da2-4fd49f4b5a78",
-   "abgerufen": "2026-11-20T22:19:44.122Z",
+   "abgerufen": "2026-11-21T13:29:23.288Z",
    "status": 200,
    "titel": "Veranstaltungstipp: 🎉 25 Jahre ZeLE, 25 Jahre für starke ländliche Räume! Am 30. November 2026 feiert das ZeLE sein 25-... - Merzenich - Heimat-Info",
    "meta": {
@@ -4414,7 +4414,7 @@
      "title": ""
     },
     {
-     "src": "https://scontent-atl3-1.xx.fbcdn.net/v/t39.30808-6/873439683_1443568097983376_1737959216750428230_n.jpg?stp=dst-jpg_p843x403_tt6&_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=ebae6b&_nc_ohc=CVda6XnrYAsQ7kNvwEt1511&_nc_oc=AdowBmMEwAvegQ3cwkKtljgrg5f96cBDjdRcvvvMut5j1uX-lwECfvIkkq1poiUw6nJ3KuluSFZTDy_cVojgLYz3&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&_nc_gid=CKsGTfFkEcH9jrinXg8kFg&_nc_ss=7c289&oh=00_AQTAbhWU5I8_TuXRJNOKVyMRqvBwabzcLsUqlUikIdLKdw&oe=6B0680C0",
+     "src": "https://scontent-sjc6-1.xx.fbcdn.net/v/t39.30808-6/873439683_1443568097983376_1737959216750428230_n.jpg?stp=dst-jpg_p843x403_tt6&_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=ebae6b&_nc_ohc=CVda6XnrYAsQ7kNvwE26goD&_nc_oc=AdryWAT6nAf3eUi3Sc2EMpj8jzkPHij3PI_AZei9AAWAHnwWTstL_cuSfxSqd92f5RExZQvTZ0rIsAS62pLRHBwK&_nc_zt=23&_nc_ht=scontent-sjc6-1.xx&_nc_gid=5utLFmHEAAy0EI_hh6VZ-A&_nc_ss=7c289&oh=00_AQRqC4blRpdCJe5hZPuFhTnVLE1XuZrMPGIUqDaE2Rjr3w&oe=6B0761C0",
      "alt": "",
      "title": ""
     }
@@ -4423,7 +4423,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/4cc0ae30-88a1-4452-a615-d3bd9893b193",
    "endUrl": "https://www.heimat-info.de/beitraege/4cc0ae30-88a1-4452-a615-d3bd9893b193",
-   "abgerufen": "2026-11-20T22:19:45.660Z",
+   "abgerufen": "2026-11-21T13:29:24.834Z",
    "status": 200,
    "titel": "👻 Keine Gruselgeschichte. Echte Geschichte! Passend zu Halloween werfen wir einen Blick in die Vergangenheit. 🎃 Denn r... - Merzenich - Heimat-Info",
    "meta": {
@@ -4451,7 +4451,7 @@
      "title": ""
     },
     {
-     "src": "https://scontent-atl3-1.xx.fbcdn.net/v/t39.30808-6/867286184_1443533787986807_6953929925018185076_n.jpg?stp=dst-jpg_p843x403_tt6&_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e5c1b6&_nc_ohc=OGYsjx4H3mIQ7kNvwGdhaba&_nc_oc=Ado4bzONp21q0nIClk2JlK_qRSccVOtGRsw_2kZ_9YLOSQ-rPeQBO5TaVfIWyKw69Uva9ijwBL_MjWqDo2iG6kh_&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&_nc_gid=CKsGTfFkEcH9jrinXg8kFg&_nc_ss=7c289&oh=00_AQTLpQKfO3IjUKVywdRkAW7BXAoTBoJryGpdDHM3-AImzg&oe=6B069DB1",
+     "src": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-6/867286184_1443533787986807_6953929925018185076_n.jpg?stp=dst-jpg_p843x403_tt6&_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=e5c1b6&_nc_ohc=OGYsjx4H3mIQ7kNvwHrxOrr&_nc_oc=AdrKnf2iBVYpuPTAa7xNzKrdEwuBgKP1mcChAXQ_xClb_vSwUUOgAcsJGAMzBKvIFp6owmhRnahEWn3AwFqfR5-V&_nc_zt=23&_nc_ht=scontent-sjc3-1.xx&_nc_gid=5utLFmHEAAy0EI_hh6VZ-A&_nc_ss=7c289&oh=00_AQQ25rwDL2YxyOouuNKVzqpVs-w_xXAVG77KgKkW5dZrOg&oe=6B074671",
      "alt": "",
      "title": ""
     }
@@ -4460,7 +4460,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/fc5481c0-bd53-4f59-86b4-5ce6d7d75115",
    "endUrl": "https://www.heimat-info.de/beitraege/fc5481c0-bd53-4f59-86b4-5ce6d7d75115",
-   "abgerufen": "2026-11-20T22:19:47.211Z",
+   "abgerufen": "2026-11-21T13:29:26.387Z",
    "status": 200,
    "titel": "🏛️ Auf den Spuren der Römer durch Freialdenhoven! Mit der LEADER geförderten RömerRunde verbindet Freialdenhoven Geschi... - Merzenich - Heimat-Info",
    "meta": {
@@ -4497,7 +4497,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/0c128ba6-9a1c-4aba-817e-ce9861142bad",
    "endUrl": "https://www.heimat-info.de/beitraege/0c128ba6-9a1c-4aba-817e-ce9861142bad",
-   "abgerufen": "2026-11-20T22:19:48.768Z",
+   "abgerufen": "2026-11-21T13:29:27.925Z",
    "status": 200,
    "titel": "Sieben neue LEADER-Projekte für unsere Region 🌱 Bei der LAG-Sitzung wurden sieben neue LEADER-Projekte von unserer Loka... - Merzenich - Heimat-Info",
    "meta": {
@@ -4534,7 +4534,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/7f1f7291-721c-4c1c-a419-ca11847ad4e7",
    "endUrl": "https://www.heimat-info.de/beitraege/7f1f7291-721c-4c1c-a419-ca11847ad4e7",
-   "abgerufen": "2026-11-20T22:19:50.356Z",
+   "abgerufen": "2026-11-21T13:29:29.423Z",
    "status": 200,
    "titel": "🌿 Ihr habt eine Idee für eure Nachbarschaft, euren Verein oder euren Ort? Es gibt noch LEADER-Fördermittel! Wer Förderm... - Merzenich - Heimat-Info",
    "meta": {
@@ -4571,7 +4571,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/93cc9732-4998-44d9-bede-6de3deec4fe2",
    "endUrl": "https://www.heimat-info.de/beitraege/93cc9732-4998-44d9-bede-6de3deec4fe2",
-   "abgerufen": "2026-11-20T22:19:51.892Z",
+   "abgerufen": "2026-11-21T13:29:30.935Z",
    "status": 200,
    "titel": "⚡ Gut vorbereitet, wenn es darauf ankommt Stromausfall, Unwetter oder Hochwasser: Krisen können uns jederzeit treffen.... - Merzenich - Heimat-Info",
    "meta": {
@@ -4608,7 +4608,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/d623bf13-e561-461b-862f-4a53443d8777",
    "endUrl": "https://www.heimat-info.de/beitraege/d623bf13-e561-461b-862f-4a53443d8777",
-   "abgerufen": "2026-11-20T22:19:53.480Z",
+   "abgerufen": "2026-11-21T13:29:32.452Z",
    "status": 200,
    "titel": "🌱 Gemeinsam nachhaltig handeln und voneinander lernen! Ihr engagiert euch für Nachhaltigkeit im Kreis Düren, im Rhein-E... - Merzenich - Heimat-Info",
    "meta": {
@@ -4645,7 +4645,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/f659ec9f-6791-452c-aca7-07e07c377dd2",
    "endUrl": "https://www.heimat-info.de/beitraege/f659ec9f-6791-452c-aca7-07e07c377dd2",
-   "abgerufen": "2026-11-20T22:19:55.059Z",
+   "abgerufen": "2026-11-21T13:29:33.995Z",
    "status": 200,
    "titel": "⏳ Ihr habt eine LEADER-Projektidee? Die Zeit läuft! Ihr habt eine Idee, die das Rheinische Revier lebenswerter, nachhalt... - Merzenich - Heimat-Info",
    "meta": {
@@ -4682,7 +4682,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/8819ff5f-1a4b-4d2a-a123-dce7be60f55f",
    "endUrl": "https://www.heimat-info.de/beitraege/8819ff5f-1a4b-4d2a-a123-dce7be60f55f",
-   "abgerufen": "2026-11-20T22:19:56.612Z",
+   "abgerufen": "2026-11-21T13:29:35.540Z",
    "status": 200,
    "titel": "+++ Gemeinde lädt ein zum „Lebendigen Adventskalender“ +++ Auch in diesem Jahr öffnet das Team der Gemeindeverwaltung ei... - Merzenich - Heimat-Info",
    "meta": {
@@ -4719,7 +4719,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/c30cd9f2-d8c8-41c9-b6a4-c1fe4aab577b",
    "endUrl": "https://www.heimat-info.de/beitraege/c30cd9f2-d8c8-41c9-b6a4-c1fe4aab577b",
-   "abgerufen": "2026-11-20T22:19:58.217Z",
+   "abgerufen": "2026-11-21T13:29:37.049Z",
    "status": 200,
    "titel": "Das Zukunfts-Event #Pluriversum der Gemeinde Merzenich, des Kulturbüros Grupo Sal und des Klima-Bündnis findet in Kooper... - Merzenich - Heimat-Info",
    "meta": {
@@ -4756,7 +4756,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/22acf8dd-3023-4c51-918c-20f841c21453",
    "endUrl": "https://www.heimat-info.de/beitraege/22acf8dd-3023-4c51-918c-20f841c21453",
-   "abgerufen": "2026-11-20T22:19:59.735Z",
+   "abgerufen": "2026-11-21T13:29:38.626Z",
    "status": 200,
    "titel": "Nicole Simmering und Andy Simmler aus Düren haben sich getraut und am 11.11.2026 \"Ja\" zueinander gesagt! Gemäß dem närri... - Merzenich - Heimat-Info",
    "meta": {
@@ -4793,7 +4793,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/66e00cad-f053-425f-a1e4-d5d25684346a",
    "endUrl": "https://www.heimat-info.de/beitraege/66e00cad-f053-425f-a1e4-d5d25684346a",
-   "abgerufen": "2026-11-20T22:20:01.314Z",
+   "abgerufen": "2026-11-21T13:29:40.167Z",
    "status": 200,
    "titel": "Auf der Suche nach einem Job, einer besonderen Herausforderung, einem tollen Team? Dann bewirb📨 Dich jetzt bei der Geme... - Merzenich - Heimat-Info",
    "meta": {
@@ -4830,7 +4830,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/c256ce15-b37d-45a6-8b87-bfd31e0025b4",
    "endUrl": "https://www.heimat-info.de/beitraege/c256ce15-b37d-45a6-8b87-bfd31e0025b4",
-   "abgerufen": "2026-11-20T22:20:02.874Z",
+   "abgerufen": "2026-11-21T13:29:41.709Z",
    "status": 200,
    "titel": "Wer hat noch keine Tickets für die #Krätzchensitzung im kommenden Jahr? Jetzt ist die beste Gelegenheit, sich die begehr... - Merzenich - Heimat-Info",
    "meta": {
@@ -4867,7 +4867,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/4c34e523-8088-4eec-a023-b3b4091d8003",
    "endUrl": "https://www.heimat-info.de/beitraege/4c34e523-8088-4eec-a023-b3b4091d8003",
-   "abgerufen": "2026-11-20T22:20:04.405Z",
+   "abgerufen": "2026-11-21T13:29:43.207Z",
    "status": 200,
    "titel": "🚨 +++ Letzter Einsatz +++ 🚨 🚒 Einsatz-Nr: 147/26 🗓️ Datum: 07.11.2026 📟 Stichwort: PET... 📟 Meldung: Person hinter... - Merzenich - Heimat-Info",
    "meta": {
@@ -4899,7 +4899,7 @@
      "title": ""
     },
     {
-     "src": "https://scontent-iad3-1.xx.fbcdn.net/v/t39.30808-6/897779509_1426434813035975_1415674590672484433_n.jpg?stp=dst-jpg_s1080x2048_tt6&_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=ebae6b&_nc_ohc=MjmHkYUB5ewQ7kNvwF-PByU&_nc_oc=Adr8oV-RHopb-A88gMyQobIcNviQWjWMPPT8VLY38VpNq03YwdbF48vnRw4YVggfqhz9QXQ9UaQJKW543XRYf21l&_nc_zt=23&_nc_ht=scontent-iad3-1.xx&_nc_gid=4JCCZPeXwRn_n9Zc09QmIQ&_nc_ss=7c289&oh=00_AQRMu79aPVQSMKVQFgraEkadoVt22iPrKzS9Kq_nmVYoLw&oe=6B06A99E",
+     "src": "https://scontent-lga3-1.xx.fbcdn.net/v/t39.30808-6/897779509_1426434813035975_1415674590672484433_n.jpg?stp=dst-jpg_s1080x2048_tt6&_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=ebae6b&_nc_ohc=MjmHkYUB5ewQ7kNvwEP2fXs&_nc_oc=AdoCVvDGCMMkIz4UMg5XJEnF6ihrpKvirq4xtyVCbv6yuZFP4g5ziz99KJxI6BYLAtA&_nc_zt=23&_nc_ht=scontent-lga3-1.xx&_nc_gid=tJk6IyblyNQptCFxO97lPw&_nc_ss=7c289&oh=00_AQQ9mQwdNQRouhmEFRRvqkRGKxiNjMxEe2QUfS7EoP4SQA&oe=6B07525E",
      "alt": "",
      "title": ""
     }
@@ -4908,7 +4908,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/978800db-8698-4711-860c-8283071b761f",
    "endUrl": "https://www.heimat-info.de/beitraege/978800db-8698-4711-860c-8283071b761f",
-   "abgerufen": "2026-11-20T22:20:05.913Z",
+   "abgerufen": "2026-11-21T13:29:44.691Z",
    "status": 200,
    "titel": "🚨 +++ Letzter Einsatz +++ 🚨 🚒 Einsatz-Nr: 146/26 🗓️ Datum: 05.11.2026 📟 Stichwort: TIF... 📟 Meldung: Zugelaufener... - Merzenich - Heimat-Info",
    "meta": {
@@ -4940,7 +4940,7 @@
      "title": ""
     },
     {
-     "src": "https://scontent-iad6-1.xx.fbcdn.net/v/t39.30808-6/888879757_1424946503184806_4544423570469036927_n.jpg?stp=dst-jpg_p720x720_tt6&_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=ebae6b&_nc_ohc=OKblH3XOUX4Q7kNvwHEkhYA&_nc_oc=Adp1PTqUF83docGFsf4k4jbJUv6Zc7dGgWP3z12Vm6qMRMNugwyVUs3QUeVqNwrDYtiBGcr6dD6Kir6vpqvYyl9x&_nc_zt=23&_nc_ht=scontent-iad6-1.xx&_nc_gid=4JCCZPeXwRn_n9Zc09QmIQ&_nc_ss=7c289&oh=00_AQSK_Q-2feo3zRzTSXv2-V0FT1_6Tk1PRdzBCAsK8bgGRA&oe=6B069D2C",
+     "src": "https://scontent-lga3-1.xx.fbcdn.net/v/t39.30808-6/888879757_1424946503184806_4544423570469036927_n.jpg?stp=dst-jpg_p720x720_tt6&_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=ebae6b&_nc_ohc=OKblH3XOUX4Q7kNvwE-CRKu&_nc_oc=AdpK6w64jJqNcyI2WBLt0h7DZ_nkrC-Ede-szyy7jMO8MKQ-0YSpZQaSvmm_rod-0FA&_nc_zt=23&_nc_ht=scontent-lga3-1.xx&_nc_gid=tJk6IyblyNQptCFxO97lPw&_nc_ss=7c289&oh=00_AQQWm1Y6NtEK4YwPCCBWkWeo4fTh23IJhHmKBVaU6kZ-rA&oe=6B077E2C",
      "alt": "",
      "title": ""
     }
@@ -4949,7 +4949,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/7b525257-bcda-4521-b8a5-8704d5855ea7",
    "endUrl": "https://www.heimat-info.de/beitraege/7b525257-bcda-4521-b8a5-8704d5855ea7",
-   "abgerufen": "2026-11-20T22:20:07.493Z",
+   "abgerufen": "2026-11-21T13:29:46.194Z",
    "status": 200,
    "titel": "🚨 +++ Letzter Einsatz +++ 🚨 🚒 Einsatz-Nr: 145/26 🗓️ Datum: 05.11.2026 📟 Stichwort: TIN... 📟 Meldung: Hund im Garte... - Merzenich - Heimat-Info",
    "meta": {
@@ -4981,7 +4981,7 @@
      "title": ""
     },
     {
-     "src": "https://scontent-iad6-1.xx.fbcdn.net/v/t51.82787-15/890188570_18043403771839051_1986170934050168785_n.jpg?stp=dst-jpegr_p843x403_tt6&_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=ebae6b&_nc_ohc=07kuOyLIRQoQ7kNvwE4_1KN&_nc_oc=AdplF2M2J-U6dOWlp4TXT3oq-GVL1DZB9dzXkveZlV3sQ8ooodp0eHgeKB7V-72Znpedbz6DX_Av_62T4r4wTQ85&_nc_zt=23&se=-1&_nc_ht=scontent-iad6-1.xx&_nc_gid=4JCCZPeXwRn_n9Zc09QmIQ&_nc_ss=7c289&oh=00_AQQGD-diD5Xnb6taGRPonzccx2fXc6ABcJv2e_ZcC3sFdw&oe=6B067D86",
+     "src": "https://scontent-lga3-1.xx.fbcdn.net/v/t51.82787-15/890188570_18043403771839051_1986170934050168785_n.jpg?stp=dst-jpegr_p843x403_tt6&_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=ebae6b&_nc_ohc=07kuOyLIRQoQ7kNvwEtHRVo&_nc_oc=Adq_B_4epawV2mBTq7bDaZaIsDxhAR69klxSkkspsQolnnZOQqwmSjE3_N-gUigbziw&_nc_zt=23&se=-1&_nc_ht=scontent-lga3-1.xx&_nc_gid=tJk6IyblyNQptCFxO97lPw&_nc_ss=7c289&oh=00_AQToS6btJcXBJBDhVD9m8kOwckRxSdLe2VJw3dmncFaMqQ&oe=6B075E86",
      "alt": "",
      "title": ""
     }
@@ -4990,7 +4990,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/ccc978e5-2fc9-473e-bbf3-1b04af0adbf7",
    "endUrl": "https://www.heimat-info.de/beitraege/ccc978e5-2fc9-473e-bbf3-1b04af0adbf7",
-   "abgerufen": "2026-11-20T22:20:09.085Z",
+   "abgerufen": "2026-11-21T13:29:47.681Z",
    "status": 200,
    "titel": "🚨 +++ Letzter Einsatz +++ 🚨 🚒 Einsatz-Nr: 144/26 🗓️ Datum: 27.10.2026 📟 Stichwort: PE1... 📟 Meldung: Verkehrsunfal... - Merzenich - Heimat-Info",
    "meta": {
@@ -5022,7 +5022,7 @@
      "title": ""
     },
     {
-     "src": "https://scontent-iad3-2.xx.fbcdn.net/v/t39.30808-6/885053838_1420988796913910_4229716249111113855_n.jpg?stp=dst-jpg_s1080x2048_tt6&_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=ebae6b&_nc_ohc=zoYDsC-I55AQ7kNvwH94gXP&_nc_oc=AdrIE87lY5xq-bBcJFHEzlUKcrOV4ggzwhHxO0noerPV57uwT2zDNR_pmJ622Piyia0XA9zgRf4nA_C8pJRRGuEG&_nc_zt=23&_nc_ht=scontent-iad3-2.xx&_nc_gid=4JCCZPeXwRn_n9Zc09QmIQ&_nc_ss=7c289&oh=00_AQSc0kqvio5AT-ihtZf6mEsIJ_-Yw9jb12hbcOB1jZZTDA&oe=6B06772A",
+     "src": "https://scontent-lga3-2.xx.fbcdn.net/v/t39.30808-6/885053838_1420988796913910_4229716249111113855_n.jpg?stp=dst-jpg_s1080x2048_tt6&_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=ebae6b&_nc_ohc=zoYDsC-I55AQ7kNvwHLuDPq&_nc_oc=Adoe43P2CFMgKye9TgThpwfloZ3x0gcgtHDb-DWm30Rt2U5sfeCpqmW_St2OT5EhRMg&_nc_zt=23&_nc_ht=scontent-lga3-2.xx&_nc_gid=tJk6IyblyNQptCFxO97lPw&_nc_ss=7c289&oh=00_AQRDBIBnGusj-3OGYl8ZZiIOlV639Ty1FbS5tve70u9tKw&oe=6B07582A",
      "alt": "",
      "title": ""
     }
@@ -5031,7 +5031,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/3865a392-2ea9-4ac0-864e-7a32eb3ba895",
    "endUrl": "https://www.heimat-info.de/beitraege/3865a392-2ea9-4ac0-864e-7a32eb3ba895",
-   "abgerufen": "2026-11-20T22:20:10.648Z",
+   "abgerufen": "2026-11-21T13:29:49.231Z",
    "status": 200,
    "titel": "🚨 +++ Letzter Einsatz +++ 🚨 🚒 Einsatz-Nr: 143/26 🗓️ Datum: 23.10.2026 📟 Stichwort: TH... 📟 Meldung: Baum auf Straß... - Merzenich - Heimat-Info",
    "meta": {
@@ -5072,7 +5072,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/ea9cebd6-cb5d-4b20-88ed-1ee6babe60aa",
    "endUrl": "https://www.heimat-info.de/beitraege/ea9cebd6-cb5d-4b20-88ed-1ee6babe60aa",
-   "abgerufen": "2026-11-20T22:20:12.216Z",
+   "abgerufen": "2026-11-21T13:29:50.720Z",
    "status": 200,
    "titel": "🚨 +++ Letzter Einsatz +++ 🚨 🚒 Einsatz-Nr: 142/26 🗓️ Datum: 23.10.2026 📟 Stichwort: TH... 📟 Meldung: Ast auf Straße... - Merzenich - Heimat-Info",
    "meta": {
@@ -5113,7 +5113,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/c21ea3fb-4f5d-4225-b455-90541c6d492b",
    "endUrl": "https://www.heimat-info.de/beitraege/c21ea3fb-4f5d-4225-b455-90541c6d492b",
-   "abgerufen": "2026-11-20T22:20:13.798Z",
+   "abgerufen": "2026-11-21T13:29:52.202Z",
    "status": 200,
    "titel": "🚨 +++ Letzter Einsatz +++ 🚨 🚒 Einsatz-Nr: 141/26 🗓️ Datum: 19.10.2026 📟 Stichwort: OES... 📟 Meldung: Ölspur 📍Eins... - Merzenich - Heimat-Info",
    "meta": {
@@ -5154,7 +5154,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/bac4e458-d7a6-4657-970b-6d9e657203a4",
    "endUrl": "https://www.heimat-info.de/beitraege/bac4e458-d7a6-4657-970b-6d9e657203a4",
-   "abgerufen": "2026-11-20T22:20:15.404Z",
+   "abgerufen": "2026-11-21T13:29:53.713Z",
    "status": 200,
    "titel": "🚨 +++ Letzter Einsatz +++ 🚨 🚒 Einsatz-Nr: 140/26 🗓️ Datum: 16.10.2026 📟 Stichwort: PET... 📟 Meldung: Person hinter... - Merzenich - Heimat-Info",
    "meta": {
@@ -5195,7 +5195,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/ae3fb570-2d47-4d2f-ad81-374e1eb3d4e1",
    "endUrl": "https://www.heimat-info.de/beitraege/ae3fb570-2d47-4d2f-ad81-374e1eb3d4e1",
-   "abgerufen": "2026-11-20T22:20:16.939Z",
+   "abgerufen": "2026-11-21T13:29:55.293Z",
    "status": 200,
    "titel": "🚨 +++ Letzter Einsatz +++ 🚨 🚒 Einsatz-Nr: 138/26 🗓️ Datum: 04.10.2026 📟 Stichwort: PET... 📟 Meldung: Person hinter... - Merzenich - Heimat-Info",
    "meta": {
@@ -5236,7 +5236,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/ef9a1e2e-048c-4736-9669-782f3a5b46a5",
    "endUrl": "https://www.heimat-info.de/beitraege/ef9a1e2e-048c-4736-9669-782f3a5b46a5",
-   "abgerufen": "2026-11-20T22:20:18.516Z",
+   "abgerufen": "2026-11-21T13:29:56.899Z",
    "status": 200,
    "titel": "Ortsfest 3.10. und Ernte Dank 4.10.2026 - Merzenich - Heimat-Info",
    "meta": {
@@ -5264,7 +5264,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/f3dea129-e750-4f34-a7a8-2f5df90e99f6",
    "endUrl": "https://www.heimat-info.de/beitraege/f3dea129-e750-4f34-a7a8-2f5df90e99f6",
-   "abgerufen": "2026-11-20T22:20:20.170Z",
+   "abgerufen": "2026-11-21T13:29:58.460Z",
    "status": 200,
    "titel": "Merzenicher Pfadfinder bei „Pfingsten in Westernohe“ - Merzenich - Heimat-Info",
    "meta": {
@@ -5292,7 +5292,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/9e0bf641-2737-4ce2-85ee-947d79b49289",
    "endUrl": "https://www.heimat-info.de/beitraege/9e0bf641-2737-4ce2-85ee-947d79b49289",
-   "abgerufen": "2026-11-20T22:20:21.780Z",
+   "abgerufen": "2026-11-21T13:30:00.112Z",
    "status": 200,
    "titel": "Taizé-Gottesdienst in Morschenich - Merzenich - Heimat-Info",
    "meta": {
@@ -5320,7 +5320,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/27e440ee-d48e-43ba-8a6a-a6a3edd507ce",
    "endUrl": "https://www.heimat-info.de/beitraege/27e440ee-d48e-43ba-8a6a-a6a3edd507ce",
-   "abgerufen": "2026-11-20T22:20:23.355Z",
+   "abgerufen": "2026-11-21T13:30:01.755Z",
    "status": 200,
    "titel": "Wortgottesdienst in Morschenich - Merzenich - Heimat-Info",
    "meta": {
@@ -5348,7 +5348,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/723757e0-ac42-4f0c-8bf1-81b450670af9",
    "endUrl": "https://www.heimat-info.de/beitraege/723757e0-ac42-4f0c-8bf1-81b450670af9",
-   "abgerufen": "2026-11-20T22:20:24.894Z",
+   "abgerufen": "2026-11-21T13:30:03.350Z",
    "status": 200,
    "titel": "Hl. Messe in Morschenich - Merzenich - Heimat-Info",
    "meta": {
@@ -5376,7 +5376,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/07c1481e-4abf-49f0-9b14-eb0c242cb45e",
    "endUrl": "https://www.heimat-info.de/beitraege/07c1481e-4abf-49f0-9b14-eb0c242cb45e",
-   "abgerufen": "2026-11-20T22:20:26.671Z",
+   "abgerufen": "2026-11-21T13:30:04.900Z",
    "status": 200,
    "titel": "Wortgottesdienst mit anschließender Gräbersegnung in Morschenich - Merzenich - Heimat-Info",
    "meta": {
@@ -5404,7 +5404,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/137ffb85-4ea2-4d4b-b9dc-84477026cf3f",
    "endUrl": "https://www.heimat-info.de/beitraege/137ffb85-4ea2-4d4b-b9dc-84477026cf3f",
-   "abgerufen": "2026-11-20T22:20:28.338Z",
+   "abgerufen": "2026-11-21T13:30:06.388Z",
    "status": 200,
    "titel": "Wortgottesdienst in Morschenich. - Merzenich - Heimat-Info",
    "meta": {
@@ -5432,7 +5432,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/1fc1551b-0490-4f7d-8dcd-f737940e949a",
    "endUrl": "https://www.heimat-info.de/beitraege/1fc1551b-0490-4f7d-8dcd-f737940e949a",
-   "abgerufen": "2026-11-20T22:20:29.906Z",
+   "abgerufen": "2026-11-21T13:30:07.869Z",
    "status": 200,
    "titel": "Kindergottesdienst in Morschenich - Merzenich - Heimat-Info",
    "meta": {
@@ -5460,7 +5460,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/dda4c674-3ac1-45fc-b27b-31407effb2c2",
    "endUrl": "https://www.heimat-info.de/beitraege/dda4c674-3ac1-45fc-b27b-31407effb2c2",
-   "abgerufen": "2026-11-20T22:20:31.449Z",
+   "abgerufen": "2026-11-21T13:30:09.378Z",
    "status": 200,
    "titel": "Wortgottesdienst mit Kommunionausteilung - Merzenich - Heimat-Info",
    "meta": {
@@ -5488,7 +5488,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/293bdb2e-047a-4961-abdc-1604c1e4bcd4",
    "endUrl": "https://www.heimat-info.de/beitraege/293bdb2e-047a-4961-abdc-1604c1e4bcd4",
-   "abgerufen": "2026-11-20T22:20:32.998Z",
+   "abgerufen": "2026-11-21T13:30:10.930Z",
    "status": 200,
    "titel": "Wortgottesdienst mit Kommunionausteilung - Merzenich - Heimat-Info",
    "meta": {
@@ -5516,7 +5516,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/1a5f849d-e6f2-4a24-b573-d6730398bbf4",
    "endUrl": "https://www.heimat-info.de/beitraege/1a5f849d-e6f2-4a24-b573-d6730398bbf4",
-   "abgerufen": "2026-11-20T22:20:34.545Z",
+   "abgerufen": "2026-11-21T13:30:12.456Z",
    "status": 200,
    "titel": "Wortgottesdienst mit Kommunionausteilung - Merzenich - Heimat-Info",
    "meta": {
@@ -5544,7 +5544,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/0c3da3a3-36e6-489e-a1d2-b2e44f947291",
    "endUrl": "https://www.heimat-info.de/beitraege/0c3da3a3-36e6-489e-a1d2-b2e44f947291",
-   "abgerufen": "2026-11-20T22:20:36.073Z",
+   "abgerufen": "2026-11-21T13:30:13.955Z",
    "status": 200,
    "titel": "Patrozinium des Hl. Lambertus / Wortgottesdienst mit Kommunionausteilung - Merzenich - Heimat-Info",
    "meta": {
@@ -5572,7 +5572,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/e1c2d901-5b77-4a0b-b6e7-3a90c4df15f6",
    "endUrl": "https://www.heimat-info.de/beitraege/e1c2d901-5b77-4a0b-b6e7-3a90c4df15f6",
-   "abgerufen": "2026-11-20T22:20:37.642Z",
+   "abgerufen": "2026-11-21T13:30:15.492Z",
    "status": 200,
    "titel": "Laternenumzug - Merzenich - Heimat-Info",
    "meta": {
@@ -5600,7 +5600,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/dd109d3b-95f3-4e18-8bf8-cff83b7163ba",
    "endUrl": "https://www.heimat-info.de/beitraege/dd109d3b-95f3-4e18-8bf8-cff83b7163ba",
-   "abgerufen": "2026-11-20T22:20:39.208Z",
+   "abgerufen": "2026-11-21T13:30:17.056Z",
    "status": 200,
    "titel": "Tag der Tagespflege - Merzenich - Heimat-Info",
    "meta": {
@@ -5632,7 +5632,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/bd9afcd6-447e-4cd3-8db1-d40583050359",
    "endUrl": "https://www.heimat-info.de/beitraege/bd9afcd6-447e-4cd3-8db1-d40583050359",
-   "abgerufen": "2026-11-20T22:20:40.728Z",
+   "abgerufen": "2026-11-21T13:30:18.544Z",
    "status": 200,
    "titel": "Besuch der F.A.K. Merzenich auf der Annakirmes 2026 - Merzenich - Heimat-Info",
    "meta": {
@@ -5664,7 +5664,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/b91da1a1-acd4-42a9-bb9e-f00bac115441",
    "endUrl": "https://www.heimat-info.de/beitraege/b91da1a1-acd4-42a9-bb9e-f00bac115441",
-   "abgerufen": "2026-11-20T22:20:42.262Z",
+   "abgerufen": "2026-11-21T13:30:20.028Z",
    "status": 200,
    "titel": "25-jähriges Jubiläum & Sommerfest - Merzenich - Heimat-Info",
    "meta": {
@@ -5696,7 +5696,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/2989a0ad-1a5f-4a47-b480-be20e8e4cb97",
    "endUrl": "https://www.heimat-info.de/beitraege/2989a0ad-1a5f-4a47-b480-be20e8e4cb97",
-   "abgerufen": "2026-11-20T22:20:43.884Z",
+   "abgerufen": "2026-11-21T13:30:21.533Z",
    "status": 200,
    "titel": "Sommerfest & 25-jähriges Jubiläum der F.A.K. Merzenich - Merzenich - Heimat-Info",
    "meta": {
@@ -5728,7 +5728,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/00fd90dc-44aa-467b-9010-783a4627bbf8",
    "endUrl": "https://www.heimat-info.de/beitraege/00fd90dc-44aa-467b-9010-783a4627bbf8",
-   "abgerufen": "2026-11-20T22:20:45.433Z",
+   "abgerufen": "2026-11-21T13:30:23.096Z",
    "status": 200,
    "titel": "Einladung zum Sommerfest - 25 Jahre Tagespflege Merzenich - Merzenich - Heimat-Info",
    "meta": {
@@ -5760,7 +5760,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/1a3cfe8e-4957-4043-b46d-ee0659ab3b4f",
    "endUrl": "https://www.heimat-info.de/beitraege/1a3cfe8e-4957-4043-b46d-ee0659ab3b4f",
-   "abgerufen": "2026-11-20T22:20:46.991Z",
+   "abgerufen": "2026-11-21T13:30:24.592Z",
    "status": 200,
    "titel": "Wir feierten Muttertag und Vatertag in der F.A.K.-Tagespflege Merzenich - Merzenich - Heimat-Info",
    "meta": {
@@ -5792,7 +5792,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/a512ebb4-3692-49b3-9736-bc204f0ffd6f",
    "endUrl": "https://www.heimat-info.de/beitraege/a512ebb4-3692-49b3-9736-bc204f0ffd6f",
-   "abgerufen": "2026-11-20T22:20:48.597Z",
+   "abgerufen": "2026-11-21T13:30:26.141Z",
    "status": 200,
    "titel": "Frohe Ostern! - Merzenich - Heimat-Info",
    "meta": {
@@ -5824,7 +5824,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/415374c3-8986-4b2d-9dd6-b2c2dc57b1cb",
    "endUrl": "https://www.heimat-info.de/beitraege/415374c3-8986-4b2d-9dd6-b2c2dc57b1cb",
-   "abgerufen": "2026-11-20T22:20:50.144Z",
+   "abgerufen": "2026-11-21T13:30:27.635Z",
    "status": 200,
    "titel": "Besuch von Dietmar Jordan, ehrenamtlicher Alleinunterhalter für Senioren - Merzenich - Heimat-Info",
    "meta": {
@@ -5856,7 +5856,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/c8b11817-b5ca-45ce-96de-a84306047d47",
    "endUrl": "https://www.heimat-info.de/beitraege/c8b11817-b5ca-45ce-96de-a84306047d47",
-   "abgerufen": "2026-11-20T22:20:51.875Z",
+   "abgerufen": "2026-11-21T13:30:29.153Z",
    "status": 200,
    "titel": "SAVE THE DATE – 60 Jahre FC Fanclub Merzenich 1967! 🎉 - Merzenich - Heimat-Info",
    "meta": {
@@ -5888,7 +5888,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/dd6f3e6c-9a1f-46f7-a300-2e04587d3c64",
    "endUrl": "https://www.heimat-info.de/beitraege/dd6f3e6c-9a1f-46f7-a300-2e04587d3c64",
-   "abgerufen": "2026-11-20T22:20:53.470Z",
+   "abgerufen": "2026-11-21T13:30:30.694Z",
    "status": 200,
    "titel": "59. Bierabend – Ein Abend, der verbindet!🔴⚪ 🎉 - Merzenich - Heimat-Info",
    "meta": {
@@ -5920,7 +5920,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/c91dc4c3-8182-42f8-94cb-298e6f888109",
    "endUrl": "https://www.heimat-info.de/beitraege/c91dc4c3-8182-42f8-94cb-298e6f888109",
-   "abgerufen": "2026-11-20T22:20:55.073Z",
+   "abgerufen": "2026-11-21T13:30:32.225Z",
    "status": 200,
    "titel": "Was für ein Abend am Cocktailstand – ihr wart der Wahnsinn! 🍹 - Merzenich - Heimat-Info",
    "meta": {
@@ -5952,7 +5952,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/5729c7b8-25b2-4945-9c23-eee14282f83d",
    "endUrl": "https://www.heimat-info.de/beitraege/5729c7b8-25b2-4945-9c23-eee14282f83d",
-   "abgerufen": "2026-11-20T22:20:56.635Z",
+   "abgerufen": "2026-11-21T13:30:33.933Z",
    "status": 200,
    "titel": "Vorfreude auf das Ortsfest – besucht unseren Cocktailstand beim Oldieabend! 🍹 - Merzenich - Heimat-Info",
    "meta": {
@@ -5984,7 +5984,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/7eaffc81-1e19-4b48-874c-9783d2961a1d",
    "endUrl": "https://www.heimat-info.de/beitraege/7eaffc81-1e19-4b48-874c-9783d2961a1d",
-   "abgerufen": "2026-11-20T22:20:58.169Z",
+   "abgerufen": "2026-11-21T13:30:35.474Z",
    "status": 200,
    "titel": "Von Merzenich bis Müngersdorf – gemeinsam zum Effzeh ❤️ - Merzenich - Heimat-Info",
    "meta": {
@@ -6016,7 +6016,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/bb33f4b8-b853-408b-adff-0b22ff9cea4a",
    "endUrl": "https://www.heimat-info.de/beitraege/bb33f4b8-b853-408b-adff-0b22ff9cea4a",
-   "abgerufen": "2026-11-20T22:20:59.690Z",
+   "abgerufen": "2026-11-21T13:30:36.991Z",
    "status": 200,
    "titel": "Mit drei Punkten in die neue Saison – gelungene Saisoneröffnung des FC-Fanclubs - Merzenich - Heimat-Info",
    "meta": {
@@ -6048,7 +6048,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/3e423c9b-ab85-463d-9ac2-c03bdcb20f85",
    "endUrl": "https://www.heimat-info.de/beitraege/3e423c9b-ab85-463d-9ac2-c03bdcb20f85",
-   "abgerufen": "2026-11-20T22:21:01.249Z",
+   "abgerufen": "2026-11-21T13:30:38.516Z",
    "status": 200,
    "titel": "🎡 Traditioneller Besuch der Annakirmes - Merzenich - Heimat-Info",
    "meta": {
@@ -6080,7 +6080,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/2b6d8177-fd7a-49fe-aff3-87c0c6d5fe2c",
    "endUrl": "https://www.heimat-info.de/beitraege/2b6d8177-fd7a-49fe-aff3-87c0c6d5fe2c",
-   "abgerufen": "2026-11-20T22:21:02.830Z",
+   "abgerufen": "2026-11-21T13:30:40.081Z",
    "status": 200,
    "titel": "Rot-weiße Premiere beim Schützenfest: FC-Fanclub erstmals beim Merzenicher Festzug dabei 🔴⚪️ - Merzenich - Heimat-Info",
    "meta": {
@@ -6112,7 +6112,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/7d1ad4e7-da73-4ad5-b589-73b9fb4a26a4",
    "endUrl": "https://www.heimat-info.de/beitraege/7d1ad4e7-da73-4ad5-b589-73b9fb4a26a4",
-   "abgerufen": "2026-11-20T22:21:04.397Z",
+   "abgerufen": "2026-11-21T13:30:41.599Z",
    "status": 200,
    "titel": "FC-Fanclub zu Gast beim Lebendkicker-Turnier der Jugendsportwoche des SC Merzenich - Merzenich - Heimat-Info",
    "meta": {
@@ -6144,7 +6144,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/c61147a9-5842-406f-943a-e6bcca0af193",
    "endUrl": "https://www.heimat-info.de/beitraege/c61147a9-5842-406f-943a-e6bcca0af193",
-   "abgerufen": "2026-11-20T22:21:05.921Z",
+   "abgerufen": "2026-11-21T13:30:43.140Z",
    "status": 200,
    "titel": ">> Bürgerkönigin und designierter Schützenkaiser kommen aus den Reihen des Fanclubs ❤️🤍🏹<< - Merzenich - Heimat-Info",
    "meta": {
@@ -6176,7 +6176,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/eb7ad8d3-c424-45df-8086-7c40762f2ccf",
    "endUrl": "https://www.heimat-info.de/beitraege/eb7ad8d3-c424-45df-8086-7c40762f2ccf",
-   "abgerufen": "2026-11-20T22:21:07.483Z",
+   "abgerufen": "2026-11-21T13:30:44.659Z",
    "status": 200,
    "titel": "Bundesmannschaftsmeisterschaft in Merzenich - Merzenich - Heimat-Info",
    "meta": {
@@ -6208,7 +6208,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/df9a9f6f-a7f3-4e32-b3bb-6d032443c0da",
    "endUrl": "https://www.heimat-info.de/beitraege/df9a9f6f-a7f3-4e32-b3bb-6d032443c0da",
-   "abgerufen": "2026-11-20T22:21:09.010Z",
+   "abgerufen": "2026-11-21T13:30:46.142Z",
    "status": 200,
    "titel": "Europameister - Merzenich - Heimat-Info",
    "meta": {
@@ -6240,7 +6240,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/e286617f-1cd2-442e-8efa-49336858e37e",
    "endUrl": "https://www.heimat-info.de/beitraege/e286617f-1cd2-442e-8efa-49336858e37e",
-   "abgerufen": "2026-11-20T22:21:10.591Z",
+   "abgerufen": "2026-11-21T13:30:47.641Z",
    "status": 200,
    "titel": "Heimspielwochenende - Merzenich - Heimat-Info",
    "meta": {
@@ -6272,7 +6272,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/cfab84fa-85e7-4f03-ac1a-a66aed73d658",
    "endUrl": "https://www.heimat-info.de/beitraege/cfab84fa-85e7-4f03-ac1a-a66aed73d658",
-   "abgerufen": "2026-11-20T22:21:12.139Z",
+   "abgerufen": "2026-11-21T13:30:49.156Z",
    "status": 200,
    "titel": "5 Kegelbillard Weltmeisterschaft - Merzenich - Heimat-Info",
    "meta": {
@@ -6304,7 +6304,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/07e54f75-23ce-4b10-905a-55687805f82b",
    "endUrl": "https://www.heimat-info.de/beitraege/07e54f75-23ce-4b10-905a-55687805f82b",
-   "abgerufen": "2026-11-20T22:21:13.678Z",
+   "abgerufen": "2026-11-21T13:30:50.642Z",
    "status": 200,
    "titel": "Kreismeisterschaft Cadre 35/2 - Merzenich - Heimat-Info",
    "meta": {
@@ -6336,7 +6336,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/48619bc4-2d30-43f5-809d-835a0cc109c1",
    "endUrl": "https://www.heimat-info.de/beitraege/48619bc4-2d30-43f5-809d-835a0cc109c1",
-   "abgerufen": "2026-11-20T22:21:15.308Z",
+   "abgerufen": "2026-11-21T13:30:52.186Z",
    "status": 200,
    "titel": "Glühweinabend in Morschenich am 13.12.2025 - Merzenich - Heimat-Info",
    "meta": {
@@ -6364,7 +6364,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/5a01a472-71f5-47af-a1f1-a4393c4e1869",
    "endUrl": "https://www.heimat-info.de/beitraege/5a01a472-71f5-47af-a1f1-a4393c4e1869",
-   "abgerufen": "2026-11-20T22:21:16.900Z",
+   "abgerufen": "2026-11-21T13:30:53.707Z",
    "status": 200,
    "titel": "Weihnachtskonzert am 2. Advent - Merzenich - Heimat-Info",
    "meta": {
@@ -6392,7 +6392,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/4c961fa1-8f92-43ca-99bd-f37c4c0cb1c5",
    "endUrl": "https://www.heimat-info.de/beitraege/4c961fa1-8f92-43ca-99bd-f37c4c0cb1c5",
-   "abgerufen": "2026-11-20T22:21:18.491Z",
+   "abgerufen": "2026-11-21T13:30:55.239Z",
    "status": 200,
    "titel": "Großalarm für die Feuerwehr - Merzenich - Heimat-Info",
    "meta": {
@@ -6420,7 +6420,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/320a3096-83f8-4b42-a7c8-a736b4d65fa4",
    "endUrl": "https://www.heimat-info.de/beitraege/320a3096-83f8-4b42-a7c8-a736b4d65fa4",
-   "abgerufen": "2026-11-20T22:21:20.067Z",
+   "abgerufen": "2026-11-21T13:30:56.798Z",
    "status": 200,
    "titel": "Container an der Maarhalle - Merzenich - Heimat-Info",
    "meta": {
@@ -6448,7 +6448,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/fd687ced-7b19-46cd-a45b-68b5aeed282c",
    "endUrl": "https://www.heimat-info.de/beitraege/fd687ced-7b19-46cd-a45b-68b5aeed282c",
-   "abgerufen": "2026-11-20T22:21:21.617Z",
+   "abgerufen": "2026-11-21T13:30:58.301Z",
    "status": 200,
    "titel": "Garagentrödel in Girbelsrath - Merzenich - Heimat-Info",
    "meta": {
@@ -6476,7 +6476,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/d2b318ca-79f0-499b-bdbd-ab886e6d1afe",
    "endUrl": "https://www.heimat-info.de/beitraege/d2b318ca-79f0-499b-bdbd-ab886e6d1afe",
-   "abgerufen": "2026-11-20T22:21:23.160Z",
+   "abgerufen": "2026-11-21T13:30:59.800Z",
    "status": 200,
    "titel": "Bürgerenergie - Merzenich - Heimat-Info",
    "meta": {
@@ -6504,7 +6504,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/9ef3eb0d-7adc-4839-a51a-8d2473fd3ba3",
    "endUrl": "https://www.heimat-info.de/beitraege/9ef3eb0d-7adc-4839-a51a-8d2473fd3ba3",
-   "abgerufen": "2026-11-20T22:21:24.700Z",
+   "abgerufen": "2026-11-21T13:31:01.297Z",
    "status": 200,
    "titel": "Infoabend Bürgerenergie - Merzenich - Heimat-Info",
    "meta": {
@@ -6532,7 +6532,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/84c69383-f0ed-43db-8bd2-fb673c50e08d",
    "endUrl": "https://www.heimat-info.de/beitraege/84c69383-f0ed-43db-8bd2-fb673c50e08d",
-   "abgerufen": "2026-11-20T22:21:26.224Z",
+   "abgerufen": "2026-11-21T13:31:02.851Z",
    "status": 200,
    "titel": "Karnevalistischer Seniorennachmittag im Bürgerhaus - Merzenich - Heimat-Info",
    "meta": {
@@ -6560,7 +6560,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/e8a4a0d6-02dd-461f-83f9-afec4342942c",
    "endUrl": "https://www.heimat-info.de/beitraege/e8a4a0d6-02dd-461f-83f9-afec4342942c",
-   "abgerufen": "2026-11-20T22:21:27.782Z",
+   "abgerufen": "2026-11-21T13:31:04.353Z",
    "status": 200,
    "titel": "Garagentödel in Girbelsrath - Merzenich - Heimat-Info",
    "meta": {
@@ -6588,7 +6588,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/e50f154c-d857-413d-9dda-7b12a9b6e5ae",
    "endUrl": "https://www.heimat-info.de/beitraege/e50f154c-d857-413d-9dda-7b12a9b6e5ae",
-   "abgerufen": "2026-11-20T22:21:29.303Z",
+   "abgerufen": "2026-11-21T13:31:05.866Z",
    "status": 200,
    "titel": "Infoabend Bürgerenergie - Merzenich - Heimat-Info",
    "meta": {
@@ -6616,7 +6616,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/0fe41da9-7ac4-4a1c-8e54-ac44a6694fd3",
    "endUrl": "https://www.heimat-info.de/beitraege/0fe41da9-7ac4-4a1c-8e54-ac44a6694fd3",
-   "abgerufen": "2026-11-20T22:21:30.852Z",
+   "abgerufen": "2026-11-21T13:31:07.626Z",
    "status": 200,
    "titel": "St. Martin in Girbelsrath - Merzenich - Heimat-Info",
    "meta": {
@@ -6644,7 +6644,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/b47d64f8-a6ee-44ae-98f5-07543dd3ccf2",
    "endUrl": "https://www.heimat-info.de/beitraege/b47d64f8-a6ee-44ae-98f5-07543dd3ccf2",
-   "abgerufen": "2026-11-20T22:21:32.404Z",
+   "abgerufen": "2026-11-21T13:31:09.189Z",
    "status": 200,
    "titel": "Konzert an Palmsonntag - Merzenich - Heimat-Info",
    "meta": {
@@ -6676,7 +6676,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/38675bbe-5a27-4b4a-bfcc-c4421630ba5a",
    "endUrl": "https://www.heimat-info.de/beitraege/38675bbe-5a27-4b4a-bfcc-c4421630ba5a",
-   "abgerufen": "2026-11-20T22:21:34.035Z",
+   "abgerufen": "2026-11-21T13:31:10.726Z",
    "status": 200,
    "titel": "Konzert im Frühling - Merzenich - Heimat-Info",
    "meta": {
@@ -6708,7 +6708,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/0262ce47-02e5-465e-a2ac-b2e2e08f8439",
    "endUrl": "https://www.heimat-info.de/beitraege/0262ce47-02e5-465e-a2ac-b2e2e08f8439",
-   "abgerufen": "2026-11-20T22:21:35.581Z",
+   "abgerufen": "2026-11-21T13:31:12.241Z",
    "status": 200,
    "titel": "Rosenmontagszug - Merzenich - Heimat-Info",
    "meta": {
@@ -6740,7 +6740,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/75056bea-225b-4585-9134-11670f657eba",
    "endUrl": "https://www.heimat-info.de/beitraege/75056bea-225b-4585-9134-11670f657eba",
-   "abgerufen": "2026-11-20T22:21:37.258Z",
+   "abgerufen": "2026-11-21T13:31:13.825Z",
    "status": 200,
    "titel": "Erste Hilfe - Kurs am 14.11. - noch wenige Plötze frei - Merzenich - Heimat-Info",
    "meta": {
@@ -6772,7 +6772,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/4239aa15-d060-4df3-b72c-7f2f823eede0",
    "endUrl": "https://www.heimat-info.de/beitraege/4239aa15-d060-4df3-b72c-7f2f823eede0",
-   "abgerufen": "2026-11-20T22:21:38.787Z",
+   "abgerufen": "2026-11-21T13:31:15.370Z",
    "status": 200,
    "titel": "Garagentrödel in Golzheim am 13.09.2026 - Merzenich - Heimat-Info",
    "meta": {
@@ -6816,7 +6816,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/46e59ace-e4be-41b8-afb1-19a4e05a7894",
    "endUrl": "https://www.heimat-info.de/beitraege/46e59ace-e4be-41b8-afb1-19a4e05a7894",
-   "abgerufen": "2026-11-20T22:21:40.358Z",
+   "abgerufen": "2026-11-21T13:31:16.960Z",
    "status": 200,
    "titel": "Inklusionslauf am 11.09.2026 - Merzenich - Heimat-Info",
    "meta": {
@@ -6852,7 +6852,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/a7393702-a7ca-407e-a07d-2b4d2695d33a",
    "endUrl": "https://www.heimat-info.de/beitraege/a7393702-a7ca-407e-a07d-2b4d2695d33a",
-   "abgerufen": "2026-11-20T22:21:41.955Z",
+   "abgerufen": "2026-11-21T13:31:18.575Z",
    "status": 200,
    "titel": "Frohes neues Jahr 2026 - Merzenich - Heimat-Info",
    "meta": {
@@ -6884,7 +6884,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/65d0fc2a-b328-4377-9793-88b30c9c41a5",
    "endUrl": "https://www.heimat-info.de/beitraege/65d0fc2a-b328-4377-9793-88b30c9c41a5",
-   "abgerufen": "2026-11-20T22:21:43.516Z",
+   "abgerufen": "2026-11-21T13:31:20.065Z",
    "status": 200,
    "titel": "Guten Rutsch ins Jahr 2026 - Merzenich - Heimat-Info",
    "meta": {
@@ -6916,7 +6916,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/b64f5cc8-3eb5-4480-8df3-91d1b6d3049d",
    "endUrl": "https://www.heimat-info.de/beitraege/b64f5cc8-3eb5-4480-8df3-91d1b6d3049d",
-   "abgerufen": "2026-11-20T22:21:45.031Z",
+   "abgerufen": "2026-11-21T13:31:21.553Z",
    "status": 200,
    "titel": "Frohe Weihnachten - Merzenich - Heimat-Info",
    "meta": {
@@ -6948,7 +6948,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/c2ac1b13-95ff-440e-8d3d-289dbfd435e0",
    "endUrl": "https://www.heimat-info.de/beitraege/c2ac1b13-95ff-440e-8d3d-289dbfd435e0",
-   "abgerufen": "2026-11-20T22:21:46.578Z",
+   "abgerufen": "2026-11-21T13:31:23.046Z",
    "status": 200,
    "titel": "Karnevalsveranstaltungen in Merzenich 2026 - Merzenich - Heimat-Info",
    "meta": {
@@ -6980,7 +6980,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/15479d58-2bf3-4c03-b1c9-2b7c502c1796",
    "endUrl": "https://www.heimat-info.de/beitraege/15479d58-2bf3-4c03-b1c9-2b7c502c1796",
-   "abgerufen": "2026-11-20T22:21:48.108Z",
+   "abgerufen": "2026-11-21T13:31:24.581Z",
    "status": 200,
    "titel": "Anmeldung zum Rosenmontagszug der KG Jonge vom Berg am 16.02.2026 - Merzenich - Heimat-Info",
    "meta": {
@@ -7012,7 +7012,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/034d18c0-0d7c-4972-82b9-720720fb62d2",
    "endUrl": "https://www.heimat-info.de/beitraege/034d18c0-0d7c-4972-82b9-720720fb62d2",
-   "abgerufen": "2026-11-20T22:21:49.642Z",
+   "abgerufen": "2026-11-21T13:31:26.109Z",
    "status": 200,
    "titel": "Adventsfenster der KG Jonge vom Berg am 06.12.2025 - Merzenich - Heimat-Info",
    "meta": {
@@ -7044,7 +7044,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/0b8667dd-505f-4b58-af3a-ecd1d388fc5d",
    "endUrl": "https://www.heimat-info.de/beitraege/0b8667dd-505f-4b58-af3a-ecd1d388fc5d",
-   "abgerufen": "2026-11-20T22:21:51.183Z",
+   "abgerufen": "2026-11-21T13:31:27.644Z",
    "status": 200,
    "titel": "Willkommen - Merzenich - Heimat-Info",
    "meta": {
@@ -7076,7 +7076,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/5259a2bd-05f3-4924-8dea-b87f39288d6e",
    "endUrl": "https://www.heimat-info.de/beitraege/5259a2bd-05f3-4924-8dea-b87f39288d6e",
-   "abgerufen": "2026-11-20T22:21:52.733Z",
+   "abgerufen": "2026-11-21T13:31:29.242Z",
    "status": 200,
    "titel": "KG Jubiläums-Sitzung - Merzenich - Heimat-Info",
    "meta": {
@@ -7108,7 +7108,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/143a3be1-8fe8-4f5e-83db-31b685116d64",
    "endUrl": "https://www.heimat-info.de/beitraege/143a3be1-8fe8-4f5e-83db-31b685116d64",
-   "abgerufen": "2026-11-20T22:21:54.332Z",
+   "abgerufen": "2026-11-21T13:31:30.731Z",
    "status": 200,
    "titel": "RABAUE WEIHNACHTS-SHOW - Merzenich - Heimat-Info",
    "meta": {
@@ -7140,7 +7140,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/bfd3d677-774b-45cf-be97-64ad099b9aee",
    "endUrl": "https://www.heimat-info.de/beitraege/bfd3d677-774b-45cf-be97-64ad099b9aee",
-   "abgerufen": "2026-11-20T22:21:55.879Z",
+   "abgerufen": "2026-11-21T13:31:32.288Z",
    "status": 200,
    "titel": "Digitale Schießanlage - Merzenich - Heimat-Info",
    "meta": {
@@ -7172,7 +7172,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/33bf28c7-c12d-449a-8921-003b781be5fe",
    "endUrl": "https://www.heimat-info.de/beitraege/33bf28c7-c12d-449a-8921-003b781be5fe",
-   "abgerufen": "2026-11-20T22:21:57.450Z",
+   "abgerufen": "2026-11-21T13:31:33.833Z",
    "status": 200,
    "titel": "Dorfmeisterschaft 2025 - Merzenich - Heimat-Info",
    "meta": {
@@ -7204,7 +7204,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/a8056d05-e2ed-4b9f-ba47-523a65e6ac67",
    "endUrl": "https://www.heimat-info.de/beitraege/a8056d05-e2ed-4b9f-ba47-523a65e6ac67",
-   "abgerufen": "2026-11-20T22:21:59.247Z",
+   "abgerufen": "2026-11-21T13:31:35.343Z",
    "status": 200,
    "titel": "LESEMENTOR Düren stellt sich dem Landrat vom Kreis Düren vor - Merzenich - Heimat-Info",
    "meta": {
@@ -7240,7 +7240,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/826d31e1-326b-4cb4-9565-be25acd9ca19",
    "endUrl": "https://www.heimat-info.de/beitraege/826d31e1-326b-4cb4-9565-be25acd9ca19",
-   "abgerufen": "2026-11-20T22:22:00.826Z",
+   "abgerufen": "2026-11-21T13:31:36.895Z",
    "status": 200,
    "titel": "AUFSTIEG! Unsere Damen 30 steigen auf! 🍾🎾 - Merzenich - Heimat-Info",
    "meta": {
@@ -7272,7 +7272,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/f89cd2e7-c990-403b-aa63-a4cfb7e80c09",
    "endUrl": "https://www.heimat-info.de/beitraege/f89cd2e7-c990-403b-aa63-a4cfb7e80c09",
-   "abgerufen": "2026-11-20T22:22:02.444Z",
+   "abgerufen": "2026-11-21T13:31:38.490Z",
    "status": 200,
    "titel": "Die Tennisabteilung trauert um ihr Gründungsmitglied Paul Böhr 🕯️ - Merzenich - Heimat-Info",
    "meta": {
@@ -7304,7 +7304,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/f15d492f-cad0-4de0-b40d-308a5b096486",
    "endUrl": "https://www.heimat-info.de/beitraege/f15d492f-cad0-4de0-b40d-308a5b096486",
-   "abgerufen": "2026-11-20T22:22:03.952Z",
+   "abgerufen": "2026-11-21T13:31:40.038Z",
    "status": 200,
    "titel": "Mit dem Fahrrad zum Tag der offenen Tür des PFSV Düren - Merzenich - Heimat-Info",
    "meta": {
@@ -7336,7 +7336,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/422ade17-9a64-4ca8-a0b8-f4785c02f33b",
    "endUrl": "https://www.heimat-info.de/beitraege/422ade17-9a64-4ca8-a0b8-f4785c02f33b",
-   "abgerufen": "2026-11-20T22:22:05.522Z",
+   "abgerufen": "2026-11-21T13:31:41.545Z",
    "status": 200,
    "titel": "Merzenicher Tennismädels zu Besuch auf der Dürener Annakirmes 🎡🎾 - Merzenich - Heimat-Info",
    "meta": {
@@ -7368,7 +7368,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/01b6dfa1-33ae-4aa8-a1fb-2eedf303e9da",
    "endUrl": "https://www.heimat-info.de/beitraege/01b6dfa1-33ae-4aa8-a1fb-2eedf303e9da",
-   "abgerufen": "2026-11-20T22:22:07.034Z",
+   "abgerufen": "2026-11-21T13:31:43.097Z",
    "status": 200,
    "titel": "Tennisabteilung zu Gast beim Lebendkicker-Turnier der Jugendsportwoche des SC Merzenich - Merzenich - Heimat-Info",
    "meta": {
@@ -7400,7 +7400,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/d27534d7-1d5e-4ad3-b0d7-16e1e40b019c",
    "endUrl": "https://www.heimat-info.de/beitraege/d27534d7-1d5e-4ad3-b0d7-16e1e40b019c",
-   "abgerufen": "2026-11-20T22:22:08.632Z",
+   "abgerufen": "2026-11-21T13:31:44.575Z",
    "status": 200,
    "titel": "Vom Nachwuchs bis zu den Erwachsenen – gemeinsam im neuen Vereinslook - Merzenich - Heimat-Info",
    "meta": {
@@ -7432,7 +7432,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/51f2a29f-f045-4b7f-9e24-ac4593068bc7",
    "endUrl": "https://www.heimat-info.de/beitraege/51f2a29f-f045-4b7f-9e24-ac4593068bc7",
-   "abgerufen": "2026-11-20T22:22:10.205Z",
+   "abgerufen": "2026-11-21T13:31:46.110Z",
    "status": 200,
    "titel": "Offener Spieltag beim SC Merzenich – Tennis einfach ausprobieren! 🎾 - Merzenich - Heimat-Info",
    "meta": {
@@ -7464,7 +7464,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/3023fef8-dedf-47e6-bfb7-bd35964713d2",
    "endUrl": "https://www.heimat-info.de/beitraege/3023fef8-dedf-47e6-bfb7-bd35964713d2",
-   "abgerufen": "2026-11-20T22:22:11.758Z",
+   "abgerufen": "2026-11-21T13:31:47.789Z",
    "status": 200,
    "titel": "Schnuppertag auf der Tennisanlage des SC Merzenich - Merzenich - Heimat-Info",
    "meta": {
@@ -7496,7 +7496,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/0bcadb4b-f143-4d30-a19d-eb8c128f68cb",
    "endUrl": "https://www.heimat-info.de/beitraege/0bcadb4b-f143-4d30-a19d-eb8c128f68cb",
-   "abgerufen": "2026-11-20T22:22:13.285Z",
+   "abgerufen": "2026-11-21T13:31:49.288Z",
    "status": 200,
    "titel": "Gelungene Saisoneröffnung der Tennisabteilung des SC Merzenich 🎾 - Merzenich - Heimat-Info",
    "meta": {
@@ -7528,7 +7528,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/f7f70c4a-d601-4143-b99f-37349449d4be",
    "endUrl": "https://www.heimat-info.de/beitraege/f7f70c4a-d601-4143-b99f-37349449d4be",
-   "abgerufen": "2026-11-20T22:22:14.855Z",
+   "abgerufen": "2026-11-21T13:31:50.824Z",
    "status": 200,
    "titel": "🍷 Der SCM lädt zum Glühwein-Pokalabend! - Merzenich - Heimat-Info",
    "meta": {
@@ -7560,7 +7560,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/6881efae-38af-4360-85d7-f908b2b602a4",
    "endUrl": "https://www.heimat-info.de/beitraege/6881efae-38af-4360-85d7-f908b2b602a4",
-   "abgerufen": "2026-11-20T22:22:16.470Z",
+   "abgerufen": "2026-11-21T13:31:52.381Z",
    "status": 200,
    "titel": "Glühweinabend in Morschenich am 13.12.2025 - Merzenich - Heimat-Info",
    "meta": {
@@ -7592,7 +7592,7 @@
   {
    "url": "https://www.heimat-info.de/beitraege/fc982a38-5177-4b87-9ee7-4579a4cf3cb8",
    "endUrl": "https://www.heimat-info.de/beitraege/fc982a38-5177-4b87-9ee7-4579a4cf3cb8",
-   "abgerufen": "2026-11-20T22:22:18.011Z",
+   "abgerufen": "2026-11-21T13:31:53.878Z",
    "status": 200,
    "titel": "Digitale Schießanlage - Merzenich - Heimat-Info",
    "meta": {
@@ -7625,7 +7625,7 @@
  "kalender": {
   "url": "https://www.heimat-info.de/gemeinden/merzenich/veranstaltungen",
   "endUrl": "https://www.heimat-info.de/gemeinden/merzenich/veranstaltungen",
-  "abgerufen": "2026-11-20T22:22:19.664Z",
+  "abgerufen": "2026-11-21T13:31:55.563Z",
   "status": 200,
   "titel": "Veranstaltungen - Merzenich - Heimat-Info",
   "meta": {
@@ -8184,7 +8184,7 @@
   {
    "url": "https://www.heimat-info.de/veranstaltungen/96d65b21-1177-4443-b453-84122be83ffe",
    "endUrl": "https://www.heimat-info.de/veranstaltungen/96d65b21-1177-4443-b453-84122be83ffe",
-   "abgerufen": "2026-11-20T22:22:21.263Z",
+   "abgerufen": "2026-11-21T13:31:57.205Z",
    "status": 200,
    "titel": "Wasserturm Modelleisenbahn 🚂 - Merzenich - Heimat-Info",
    "meta": {
@@ -8221,7 +8221,7 @@
   {
    "url": "https://www.heimat-info.de/veranstaltungen/65643863-059f-41d8-9e2f-0c9763f0e717",
    "endUrl": "https://www.heimat-info.de/veranstaltungen/65643863-059f-41d8-9e2f-0c9763f0e717",
-   "abgerufen": "2026-11-20T22:22:22.856Z",
+   "abgerufen": "2026-11-21T13:31:59.945Z",
    "status": 200,
    "titel": "Gottesdienst mit Abendmahl - Gedenken an Verstorbene - Merzenich - Heimat-Info",
    "meta": {
@@ -8258,7 +8258,7 @@
   {
    "url": "https://www.heimat-info.de/veranstaltungen/7d1b5151-0bf2-482e-8b44-4c9bfde9e261",
    "endUrl": "https://www.heimat-info.de/veranstaltungen/7d1b5151-0bf2-482e-8b44-4c9bfde9e261",
-   "abgerufen": "2026-11-20T22:22:24.392Z",
+   "abgerufen": "2026-11-21T13:32:01.586Z",
    "status": 200,
    "titel": "Männergruppe / Skatrunde für Senioren - Merzenich - Heimat-Info",
    "meta": {
@@ -8295,7 +8295,7 @@
   {
    "url": "https://www.heimat-info.de/veranstaltungen/0b6866fc-c4f9-43b1-a1ff-114125414a31",
    "endUrl": "https://www.heimat-info.de/veranstaltungen/0b6866fc-c4f9-43b1-a1ff-114125414a31",
-   "abgerufen": "2026-11-20T22:22:25.970Z",
+   "abgerufen": "2026-11-21T13:32:03.155Z",
    "status": 200,
    "titel": "NEU: Frühstücks- und Spieletreff für Senior:innen - Merzenich - Heimat-Info",
    "meta": {
@@ -8332,7 +8332,7 @@
   {
    "url": "https://www.heimat-info.de/veranstaltungen/0bfa22f8-22d6-4fd4-89d4-e88fa903d7bd",
    "endUrl": "https://www.heimat-info.de/veranstaltungen/0bfa22f8-22d6-4fd4-89d4-e88fa903d7bd",
-   "abgerufen": "2026-11-20T22:22:27.560Z",
+   "abgerufen": "2026-11-21T13:32:04.985Z",
    "status": 200,
    "titel": "Adventsliedersingen - Merzenich - Heimat-Info",
    "meta": {
@@ -8369,7 +8369,7 @@
   {
    "url": "https://www.heimat-info.de/veranstaltungen/6b9b9f9d-1c22-43b4-9b59-b982283a2e93",
    "endUrl": "https://www.heimat-info.de/veranstaltungen/6b9b9f9d-1c22-43b4-9b59-b982283a2e93",
-   "abgerufen": "2026-11-20T22:22:29.100Z",
+   "abgerufen": "2026-11-21T13:32:06.649Z",
    "status": 200,
    "titel": "NEU: Frühstücks- und Spieletreff für Senior:innen - Merzenich - Heimat-Info",
    "meta": {
@@ -8406,7 +8406,7 @@
   {
    "url": "https://www.heimat-info.de/veranstaltungen/33400a80-dfbc-4061-8719-c54b3d71e84b",
    "endUrl": "https://www.heimat-info.de/veranstaltungen/33400a80-dfbc-4061-8719-c54b3d71e84b",
-   "abgerufen": "2026-11-20T22:22:30.663Z",
+   "abgerufen": "2026-11-21T13:32:08.223Z",
    "status": 200,
    "titel": "Männergruppe / Skatrunde für Senioren - Merzenich - Heimat-Info",
    "meta": {
@@ -8443,7 +8443,7 @@
   {
    "url": "https://www.heimat-info.de/veranstaltungen/1e0ecb73-2d3e-4763-ab13-613cf1188cc2",
    "endUrl": "https://www.heimat-info.de/veranstaltungen/1e0ecb73-2d3e-4763-ab13-613cf1188cc2",
-   "abgerufen": "2026-11-20T22:22:32.211Z",
+   "abgerufen": "2026-11-21T13:32:10.161Z",
    "status": 200,
    "titel": "Weihnachtsfeier - Merzenich - Heimat-Info",
    "meta": {
@@ -8480,7 +8480,7 @@
   {
    "url": "https://www.heimat-info.de/veranstaltungen/c66dc70a-9721-497b-816d-3bab9eab2fcc",
    "endUrl": "https://www.heimat-info.de/veranstaltungen/c66dc70a-9721-497b-816d-3bab9eab2fcc",
-   "abgerufen": "2026-11-20T22:22:33.776Z",
+   "abgerufen": "2026-11-21T13:32:11.730Z",
    "status": 200,
    "titel": "Frühstücks- und Spieletreff für Senior:innen - Merzenich - Heimat-Info",
    "meta": {
@@ -8517,7 +8517,7 @@
   {
    "url": "https://www.heimat-info.de/veranstaltungen/de9ceabc-49ef-4b18-9b1a-c142d59af3cc",
    "endUrl": "https://www.heimat-info.de/veranstaltungen/de9ceabc-49ef-4b18-9b1a-c142d59af3cc",
-   "abgerufen": "2026-11-20T22:22:35.319Z",
+   "abgerufen": "2026-11-21T13:32:13.224Z",
    "status": 200,
    "titel": "Männergruppe / Skatrunde für Senioren - Merzenich - Heimat-Info",
    "meta": {
