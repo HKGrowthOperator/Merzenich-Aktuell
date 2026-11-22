@@ -1,6 +1,6 @@
 # Offene Themen aus dem Register
 
-Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-22-claude-morgens.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
+Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-22-claude-nachmittags.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
 
 ## Zahlen
 
@@ -132,7 +132,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 
 ## Jüngste Läufe
 
+- 2026-11-22 nachmittags (Claude): Nullfund für neue Meldungen (Sonntag: Polizei, Feuerwehr, Gemeinde, Kreis, RIS, Heimat-Info ohne neue belegbare Nachricht mit Ortsbezug). Eigene Korrektur der Wochenvorschau (nicht nur zwei Fußballvereine; Spiele Girbelsrath 26.11. und Morschenich 29.11. ergänzt). ChatGPT mittags ohne Korrekturauftrag. Kalender 20 Termine bis 06.12. erneut bestätigt. Frostwarnung Stufe 2 für die Nacht nicht als Meldung. Mindesttakt 22.11.: 0. – Commit 2306ee1b
+- 2026-11-22 mittags (ChatGPT): Keine neue lokale Themenkarte/Terminänderung. Wasserturm-Korrektur von Claude live einschließlich Ersatzbild frisch bestätigt; bekannte Motorradcaption weiter offen. DWD aktuell ohne Kreiswarnung, neue Polizeivolltexte ohne Ortsbezug. Jüngste Artikel einschließlich Kompost/Bauausschuss gegen Originale nachgeprüft, Grenzen dokumentiert.
 - 2026-11-22 morgens (Claude): Korrektur Feuerwehr-Automatik 149/26 (Fehlalarm durch Waffeln: Entwarnung, Wasserturm-Foto statt Brandmotiv, Relevanz 3) und Ursache im Werkzeug behoben (Brandmeldealarm/MDL → Klasse Brandmeldeanlage, Quellensatz im Nominativ, Test). Kalender 20 Termine bis 06.12. bestätigt. Keine neue belegbare Nachricht (Polizei nur Düren, Glätte/Frost Stufe 2). Mindesttakt 22.11.: 0 bis hierher. – Commit fc6ab28a, c440abf2, ad701833
 - 2026-11-22 morgens (ChatGPT): Zwei T2-Updatekarten: Feuerwehr149 Wasserturm ohne Brand, bestehender Artikel braucht Entwarnung und neues Motiv; neue morgendliche Glättewarnung vor09Uhr, vorClaude erneut prüfen. Eine neue Bildkorrektur, bekannte Motorradcaption weiter offen. Weihnachtsfensterergänzung live bestätigt; keine neue Terminänderung.
-- 2026-11-21 nachmittags (Claude): Nullfund für neue Meldungen: keine belegbare neue Nachricht mit Ortsbezug (Polizei, Feuerwehr, Gemeinde, Kreis, RIS, Heimat-Info, Rohdaten des Quellenabrufs geprüft). ChatGPT mittags ohne Korrekturauftrag. Termin Weihnachtsfenster 15.12. aus dem Gemeindebeitrag vom 16.11. ergänzt. Kalender 19 Termine bis 05.12. erneut bestätigt. DWD-Frostwarnung Stufe 2 für die Nacht zum Sonntag nicht als Meldung (keine Unwetterlage). Mindesttakt 21.11.: 1. – Commit bd7a865f
-- 2026-11-21 mittags (ChatGPT): Keine neue Themenkarte/Terminänderung. NeueWochenvorschaugegenOriginalegeprüft, keinneuerkonkreterTextfehler. Wetterabschlussliveerledigt/DWDohneWarnung. Kreisindexwieder200, Adventsfensterdetailjetzt200gelesenbestätigtbekanntenTermin. Motorradbildtextweiteroffen.

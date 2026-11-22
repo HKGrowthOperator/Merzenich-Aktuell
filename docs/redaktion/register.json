@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-22-mittags.md",
+  "latest_dossier": "dossiers/2026-11-22-claude-nachmittags.md",
   "source_check_window": "22.11.2026 Europe/Berlin: Beginn11:55; Hauptabrufe11:56:55–11:57:24; Polizeivolltexte11:57:46; Bilder11:58:12/21, frisch gesichtet11:59; Originalnachprüfungen11:58:31/11:59:27.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
@@ -12159,17 +12159,23 @@
       "image_status": "B2",
       "dossier": "dossiers/2026-11-21-claude-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-21 09:35 Europe/Berlin",
+      "last_checked_at": "2026-11-22 14:50 Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-11-21-recherche-claude-morgens.json → /leben/merzenich-23-bis-29-november-2026-buergewald-ausschuss-tannenbaumschmuecken-adventmarkt/",
       "article_id": null,
       "implementation_commit": "ad708019",
-      "notes": "Claude 21.11. morgens: Wochenvorschau 23. bis 29. November (Standard, 818 Wörter) aus dem am 21.11. an den Quellen geprüften Terminbestand: Senioren-Treffs 25.11., Bürgewald-Ausschuss 26.11. (Tagesordnung RIS), Ausstellung Bürgewald und Tannenbaumschmücken 27.11., Adventmarkt, Weinbergschnecken, Adventsfenster Morschenich, Golzheimer Adventskalender 28.11., Heimspiele SC und FC Golzheim sowie Adventsliedersingen 29.11. Widerspruch Nikolaus-Zeit (Amtsblatt 12 gegen Kulturkalender) benannt. Bild Klasse leben.brauchtum.advent (Schloss Merode, Symbolbild).",
+      "notes": "Claude 21.11. morgens: Wochenvorschau 23. bis 29. November (Standard, 818 Wörter) aus dem am 21.11. an den Quellen geprüften Terminbestand: Senioren-Treffs 25.11., Bürgewald-Ausschuss 26.11. (Tagesordnung RIS), Ausstellung Bürgewald und Tannenbaumschmücken 27.11., Adventmarkt, Weinbergschnecken, Adventsfenster Morschenich, Golzheimer Adventskalender 28.11., Heimspiele SC und FC Golzheim sowie Adventsliedersingen 29.11. Widerspruch Nikolaus-Zeit (Amtsblatt 12 gegen Kulturkalender) benannt. Bild Klasse leben.brauchtum.advent (Schloss Merode, Symbolbild). | Claude 22.11. nachmittags: eigene Korrektur „beide Merzenicher Fußballvereine“ → FC Golzheim und SC Merzenich mit Heimspielen; ergänzt Girbelsrath beim FC Viktoria Schlich (Do 26.11., 19.30 Uhr, Kreisliga B) und SV Morschenich beim SSV Weilerswist (So 29.11., 14.30 Uhr, Freundschaftsspiel), Korrekturvermerk; 895 Wörter. Commit 2306ee1b.",
       "dossier_history": [
         {
           "date": "2026-11-21",
           "edition": "claude-morgens",
           "dossier": "dossiers/2026-11-21-claude-morgens.md",
           "heading": "1. Umgesetzt"
+        },
+        {
+          "date": "2026-11-22",
+          "edition": "claude-nachmittags",
+          "dossier": "dossiers/2026-11-22-claude-nachmittags.md",
+          "heading": "1. Umgesetzt (Korrektur)"
         }
       ],
       "research_verifications": [
@@ -16310,6 +16316,16 @@
         "Unabhängige Bestätigung/Drittquellen für unveränderte Themen fehlen, keine zusätzliche T1-Freigabe",
         "Ältere Artikeloriginalprüfungen unvollständig; Hallen/BdSt403; Zuginfo nur Titel; nicht alle Präsentationsanlagen erneut geprüft"
       ]
+    },
+    {
+      "date": "2026-11-22",
+      "edition": "nachmittags",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-22-claude-nachmittags.md",
+      "compared_with": "dossiers/2026-11-22-mittags.md",
+      "implementation_commit": "2306ee1b",
+      "summary": "Nullfund für neue Meldungen (Sonntag: Polizei, Feuerwehr, Gemeinde, Kreis, RIS, Heimat-Info ohne neue belegbare Nachricht mit Ortsbezug). Eigene Korrektur der Wochenvorschau (nicht nur zwei Fußballvereine; Spiele Girbelsrath 26.11. und Morschenich 29.11. ergänzt). ChatGPT mittags ohne Korrekturauftrag. Kalender 20 Termine bis 06.12. erneut bestätigt. Frostwarnung Stufe 2 für die Nacht nicht als Meldung. Mindesttakt 22.11.: 0.",
+      "publication": "Eine Korrektur direkt veröffentlicht"
     }
   ]
 }

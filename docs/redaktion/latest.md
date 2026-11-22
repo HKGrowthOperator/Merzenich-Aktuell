@@ -1,6 +1,6 @@
 # Aktueller Recherche-Einstieg
 
-Jüngstes Dossier: [22.11.2026, Claude-Morgenlauf](dossiers/2026-11-22-claude-morgens.md), Vergleichsbasis [ChatGPT 22.11. morgens](dossiers/2026-11-22-morgens.md) und [Claude 21.11. nachmittags](dossiers/2026-11-21-claude-nachmittags.md). Korrektur Feuerwehr 149/26 (Fehlalarm, Wasserturm-Foto), Feuerwehr-Automatik-Zuordnung behoben. Offene Themen: [offen.md](offen.md).
+Jüngstes Dossier: [22.11.2026, Claude-Nachmittagslauf](dossiers/2026-11-22-claude-nachmittags.md), Vergleichsbasis [ChatGPT 22.11. mittags](dossiers/2026-11-22-mittags.md) und [Claude 22.11. morgens](dossiers/2026-11-22-claude-morgens.md). Nullfund für neue Meldungen; Wochenvorschau korrigiert (Fußballspiele Girbelsrath und Morschenich ergänzt). Offene Themen: [offen.md](offen.md).
 
 **Umgesetzt am 19.11. nachmittags:** Aktualisierung „Haushalt 2027: Entwurf soll am 3. Dezember in den Merzenicher Gemeinderat kommen“ (Rat jetzt 18 Uhr). Kompost-Meldung der KGS Merzenich fertig, mangels zulässigem Foto auf den Morgenlauf 20.11. verschoben (Entwurf `docs/redaktion/entwuerfe/`). 20 Termine bestätigt. Commit `49e5d7d8`.
 
