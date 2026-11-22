@@ -691,7 +691,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:gottesdienst-mit-abendmahl-gedenken-an-verstorbene-2026-11-22@merzenich
  -aktuell.de
-DTSTAMP:20261121T060000Z
+DTSTAMP:20261122T060000Z
 DTSTART:20261122T090000Z
 SUMMARY:Gottesdienst mit Abendmahl - Gedenken an Verstorbene
 DESCRIPTION:„Gottesdienst mit Abendmahl - Gedenken an Verstorbene“ am S
@@ -707,7 +707,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:neu-fruehstuecks-und-spieletreff-fuer-senior-innen-merzenich-2026-11-25
  @merzenich-aktuell.de
-DTSTAMP:20261121T060000Z
+DTSTAMP:20261122T060000Z
 DTSTART:20261125T080000Z
 DTEND:20261125T100000Z
 SUMMARY:Frühstücks- und Spieletreff für Seniorinnen und Senioren des Eva
@@ -726,7 +726,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:maennergruppe-skatrunde-fuer-senioren-merzenich-2026-11-25@merzenich-ak
  tuell.de
-DTSTAMP:20261121T060000Z
+DTSTAMP:20261122T060000Z
 DTSTART:20261125T080000Z
 DTEND:20261125T100000Z
 SUMMARY:Männergruppe und Skatrunde für Senioren im Evangelischen Gemeinde
@@ -743,7 +743,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:ausschuss-revitalisierung-buergewald-2026-11-26@merzenich-aktuell.de
-DTSTAMP:20261121T060000Z
+DTSTAMP:20261122T060000Z
 DTSTART:20261126T170000Z
 SUMMARY:6. Sitzung des Ausschusses für Revitalisierung Bürgewald
 DESCRIPTION:Der Ausschuss für Revitalisierung Bürgewald kommt am Donnerst
@@ -758,7 +758,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:ausstellung-buergewald-ratssaal-merzenich-2026-11-27@merzenich-aktuell.
  de
-DTSTAMP:20261121T060000Z
+DTSTAMP:20261122T060000Z
 DTSTART:20261127T150000Z
 SUMMARY:Ausstellung „Bürgewald“: Fotografie\, Film und Kunst im Ratssa
  al
@@ -775,7 +775,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:tannenbaumschmuecken-lindenplatz-sc-merzenich-2026-11-27@merzenich-aktu
  ell.de
-DTSTAMP:20261121T060000Z
+DTSTAMP:20261122T060000Z
 DTSTART:20261127T160000Z
 SUMMARY:Tannenbaumschmücken am Lindenplatz
 DESCRIPTION:Der SC Merzenich richtet in diesem Jahr das traditionelle Tanne
@@ -791,7 +791,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:adventfeier-schuetzenbruderschaft-merzenich-2026-11-27@merzenich-aktuel
  l.de
-DTSTAMP:20261121T060000Z
+DTSTAMP:20261122T060000Z
 DTSTART:20261127T180000Z
 SUMMARY:Adventfeier der St. Sebastianus Schützenbruderschaft im Schützenh
  eim
@@ -807,7 +807,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:adventmarkt-heimatmuseum-2026-11-28@merzenich-aktuell.de
-DTSTAMP:20261121T060000Z
+DTSTAMP:20261122T060000Z
 DTSTART:20261128T130000Z
 DTEND:20261128T180000Z
 SUMMARY:Adventmarkt im Heimatmuseum
@@ -824,7 +824,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:weinbergschnecken-schneewittchens-geburtstag-weinberghalle-2026-11-28@m
  erzenich-aktuell.de
-DTSTAMP:20261121T060000Z
+DTSTAMP:20261122T060000Z
 DTSTART:20261128T140000Z
 SUMMARY:Theater der Weinbergschnecken: „Schneewittchens Geburtstag“
 DESCRIPTION:Die Theatergruppe „Die Weinbergschnecken“ zeigt am Samstag\
@@ -841,7 +841,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:adventsfenster-bwz-morschenich-2026-11-28@merzenich-aktuell.de
-DTSTAMP:20261121T060000Z
+DTSTAMP:20261122T060000Z
 DTSTART:20261128T160000Z
 SUMMARY:Adventsfenster am Bürgewaldzentrum in Morschenich
 DESCRIPTION:Am Samstag vor dem ersten Advent\, 28. November\, laden die St.
@@ -858,7 +858,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:golzheimer-adventskalender-eroeffnung-weihnachtswiese-2026-11-28@merzen
  ich-aktuell.de
-DTSTAMP:20261121T060000Z
+DTSTAMP:20261122T060000Z
 DTSTART:20261128T170000Z
 SUMMARY:Eröffnung des Golzheimer Adventskalenders
 DESCRIPTION:Die Golzheimer Krippenbauer stellen am Samstag\, 28. November\,
@@ -874,7 +874,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:adventsliedersingen-merzenich-2026-11-29@merzenich-aktuell.de
-DTSTAMP:20261121T060000Z
+DTSTAMP:20261122T060000Z
 DTSTART:20261129T170000Z
 SUMMARY:Adventsliedersingen
 DESCRIPTION:„Adventsliedersingen“ am Sonntag\, 29. November\, 18:00 Uhr
@@ -888,7 +888,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:amtsblatt-abgabeschluss-2026-12-01@merzenich-aktuell.de
-DTSTAMP:20261121T060000Z
+DTSTAMP:20261122T060000Z
 DTSTART;VALUE=DATE:20261201
 SUMMARY:Abgabeschluss für das Amtsblatt vom 11. Dezember
 DESCRIPTION:Beiträge für das Amtsblatt\, das am Freitag\, 11. Dezember\, 
@@ -904,7 +904,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:neu-fruehstuecks-und-spieletreff-fuer-senior-innen-merzenich-2026-12-02
  @merzenich-aktuell.de
-DTSTAMP:20261121T060000Z
+DTSTAMP:20261122T060000Z
 DTSTART:20261202T080000Z
 DTEND:20261202T100000Z
 SUMMARY:Frühstücks- und Spieletreff für Seniorinnen und Senioren im Evan
@@ -923,7 +923,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:maennergruppe-skatrunde-fuer-senioren-merzenich-2026-12-02@merzenich-ak
  tuell.de
-DTSTAMP:20261121T060000Z
+DTSTAMP:20261122T060000Z
 DTSTART:20261202T080000Z
 DTEND:20261202T100000Z
 SUMMARY:Männergruppe und Skatrunde für Senioren im Evangelischen Gemeinde
@@ -940,7 +940,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:jugendgremium-sitzung-2026-12-03@merzenich-aktuell.de
-DTSTAMP:20261121T060000Z
+DTSTAMP:20261122T060000Z
 DTSTART:20261203T170000Z
 DTEND:20261203T183000Z
 SUMMARY:5. Sitzung des Jugendgremiums (online)
@@ -955,7 +955,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:gemeinderat-sitzung-2026-12-03@merzenich-aktuell.de
-DTSTAMP:20261121T060000Z
+DTSTAMP:20261122T060000Z
 DTSTART:20261203T170000Z
 SUMMARY:8. Sitzung des Gemeinderates
 DESCRIPTION:Der Gemeinderat tagt am Donnerstag\, 3. Dezember\, um 18 Uhr im
@@ -970,7 +970,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:ism-weihnachtsfeier-buergerhaus-merzenich-2026-12-06@merzenich-aktuell.
  de
-DTSTAMP:20261112T060000Z
+DTSTAMP:20261122T060000Z
 DTSTART:20261206T130000Z
 SUMMARY:Inklusive Weihnachtsfeier im Bürgerhaus
 DESCRIPTION:Der Verein Inklusives Soziales Miteinander feiert am Sonntag\, 
@@ -986,7 +986,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:weihnachtsfeier-morschenich-2026-12-06@merzenich-aktuell.de
-DTSTAMP:20261104T060000Z
+DTSTAMP:20261122T060000Z
 DTSTART:20261206T140000Z
 SUMMARY:Weihnachtsschießen und Weihnachtsfeier der Schützenbruderschaft M
  orschenich
@@ -1003,7 +1003,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:taize-gottesdienst-morschenich-2026-12-06@merzenich-aktuell.de
-DTSTAMP:20261116T060000Z
+DTSTAMP:20261122T060000Z
 DTSTART:20261206T160000Z
 SUMMARY:Taizé-Gottesdienst in der Lambertuskapelle Morschenich
 DESCRIPTION:Am zweiten Advent\, Sonntag\, 6. Dezember\, wird um 17 Uhr in M
