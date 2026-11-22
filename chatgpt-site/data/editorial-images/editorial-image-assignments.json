@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-21T21:03:16.342Z",
+  "updatedAt": "2026-11-22T08:16:16.561Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -1819,11 +1819,11 @@
       "articleDate": "2026-11-21T09:25:00+01:00"
     },
     "/blaulicht/einsatz-149-brandmeldealarm-merzenich/": {
-      "imageId": "web-brand-19-6a048a0c",
-      "pool": "brand",
-      "motiv": "brand",
-      "regel": "blaulicht.feuer",
-      "assignedAt": "2026-11-21T21:03:16.341Z",
+      "imageId": "web-aktuell-07-d9238244",
+      "pool": "aktuell",
+      "motiv": "windmuehle-merzenich",
+      "regel": "vereine.wasserturm",
+      "assignedAt": "2026-11-22T08:16:16.561Z",
       "articleId": "2026-11-21-einsatz-149-brandmeldealarm-merzenich",
       "articleDate": "2026-11-21T22:01:00+01:00"
     }
