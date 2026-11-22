@@ -6,7 +6,7 @@
  * Aufruf: node qa/automatik-feuerwehr-test.mjs
  */
 import { readFileSync } from 'node:fs';
-import { einsaetzeLesen, meldungBauen, ortsteilVon, einsatzortZerlegen, berlinIso, berlinIsoAusZeitpunkt, zitatAus, gedeckteNummern, heimatInfoZerlegen, relevanzVon } from '../deploy/automatik-feuerwehr.mjs';
+import { einsaetzeLesen, meldungBauen, ortsteilVon, einsatzortZerlegen, berlinIso, berlinIsoAusZeitpunkt, zitatAus, gedeckteNummern, heimatInfoZerlegen, relevanzVon, bildklasseVon } from '../deploy/automatik-feuerwehr.mjs';
 
 const roh = JSON.parse(readFileSync(new URL('./fixtures/automatik-feuerwehr.json', import.meta.url), 'utf8'));
 const klassen = JSON.parse(readFileSync(new URL('../deploy/bildklassen.json', import.meta.url), 'utf8'));
@@ -47,6 +47,7 @@ pruefe('138: Titel 10 bis 110 Zeichen, Vorspann 60 bis 200', [m.titel.length >= 
 const m136 = meldungBauen(e[136], { stand: '2026-10-12', gueltigeKlassen: gueltig, abgerufen: '2026-10-12T05:01:59Z' }).meldung;
 pruefe('136: beide Datumsangaben mit Quelle im Text', /Einsatzseite der Feuerwehr nennt Freitag, 2\. Oktober 2026, 21:36 Uhr, der Beitrag der Feuerwehr in der Heimat-Info-App den 3\. Oktober 2026/.test(m136.absaetze[0]), true);
 pruefe('136: Meldung aus Heimat-Info, Bildklasse Feuer, Titel mit „Feuerwehr Merzenich“', [m136.titel, m136.bildklasse], ['Feuerwehr Merzenich: Unklare Rauchentwicklung in Merzenich (Einsatz 136/26)', 'blaulicht.feuer']);
+pruefe('Brandmeldealarm (Stichwort MDL) ist eine ausgelöste Anlage, kein Brand (22.11.2026)', [bildklasseVon({ meldung: 'Brandmeldealarm', stichwort: 'MDL' }), bildklasseVon({ meldung: 'Brandmeldeanlage' }), bildklasseVon({ stichwort: 'MDL' }), bildklasseVon({ meldung: 'Gebäudebrand' })], ['blaulicht.alarm.brandmeldeanlage', 'blaulicht.alarm.brandmeldeanlage', 'blaulicht.alarm.brandmeldeanlage', 'blaulicht.feuer']);
 pruefe('Relevanz: Brand und Unfall mit Rettung 2, Türöffnung, Ölspur, Alarm 3, nie 1', [m136.relevanz, m.relevanz, relevanzVon('verkehr.unfall.rettung'), relevanzVon('blaulicht.technik.oelspur'), relevanzVon('blaulicht.alarm.brandmeldeanlage'), relevanzVon('')], [2, 3, 2, 3, 3, 3]);
 
 const r133 = meldungBauen(e[133], { stand: '2026-10-12', gueltigeKlassen: gueltig, abgerufen: '2026-10-12T05:01:59Z' });

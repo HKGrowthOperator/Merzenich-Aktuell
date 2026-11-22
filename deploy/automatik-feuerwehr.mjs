@@ -203,7 +203,8 @@ const BILDKLASSEN = [
   [/person hinter t[üu]r|eingeschlossene person|^pet$|t[üu]r[öo]ffnung/i, 'blaulicht.rettung.tuer'],
   [/[öo]lspur|betriebsmittel/i, 'blaulicht.technik.oelspur'],
   [/tier/i, 'blaulicht.rettung.tier'],
-  [/brandmeldeanlage|automatischer brandalarm/i, 'blaulicht.alarm.brandmeldeanlage'],
+  // „Brandmeldealarm“ und Stichwort „MDL“ sind ausgelöste Anlagen, kein Feuer (22.11.2026, Einsatz 149/26 bekam ein Brandfoto).
+  [/brandmelde(anlage|alarm)|automatischer brandalarm|^mdl$/i, 'blaulicht.alarm.brandmeldeanlage'],
   [/rauchmelder/i, 'blaulicht.alarm.rauchmelder'],
   [/wald|fl[äa]che/i, 'blaulicht.feuer.flaeche'],
   [/th-vu|verkehrsunfall/i, 'verkehr.unfall.rettung'],
@@ -264,7 +265,7 @@ export function meldungBauen(e, { stand, gueltigeKlassen, abgerufen } = {}) {
   const absatz2 = `Die Feuerwehr schreibt dazu: „${zitat}“ Es war der ${e.nr}. Einsatz der Freiwilligen Feuerwehr Merzenich im Jahr 20${e.jahr}.`;
 
   // Quelle im Text (SCHREIBREGELN: jede Quelle genannt) und was die Redaktion übernommen hat (03.11.2026).
-  const grundlagen = [e.fw ? 'dem Einsatzbericht auf der Website der Freiwilligen Feuerwehr Merzenich' : '', e.hi ? `dem Beitrag der Feuerwehr in der Heimat-Info-App vom ${tagOhneWochentag(e.hi.beitragDatum || e.hi.datum)}` : ''].filter(Boolean);
+  const grundlagen = [e.fw ? 'der Einsatzbericht auf der Website der Freiwilligen Feuerwehr Merzenich' : '', e.hi ? `der Beitrag der Feuerwehr in der Heimat-Info-App vom ${tagOhneWochentag(e.hi.beitragDatum || e.hi.datum)}` : ''].filter(Boolean);
   const absatz3 = `Grundlage dieser Meldung ${grundlagen.length > 1 ? 'sind' : 'ist'} ${listeDeutsch(grundlagen)}; daraus stammen Einsatzort, Meldebild, Kräfte und die zitierten Sätze. Die Redaktion ergänzt die Meldung, wenn Feuerwehr oder Polizei mehr mitteilen.`;
   const fakten = [
     `Einsatz ${nummer} der Freiwilligen Feuerwehr Merzenich`,
