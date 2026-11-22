@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-22-claude-morgens.md",
-  "source_check_window": "22.11.2026 Europe/Berlin: Beginn06:57; Hauptabrufe06:57:54–06:58:22; Bilder06:59:05/11, frisch gesichtet07:00; Commons-Wasserturm06:59:23 HTTP403.",
+  "latest_dossier": "dossiers/2026-11-22-mittags.md",
+  "source_check_window": "22.11.2026 Europe/Berlin: Beginn11:55; Hauptabrufe11:56:55–11:57:24; Polizeivolltexte11:57:46; Bilder11:58:12/21, frisch gesichtet11:59; Originalnachprüfungen11:58:31/11:59:27.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -12119,6 +12119,11 @@
           "checked_at": "2026-11-22T07:04:52+01:00",
           "dossier": "dossiers/2026-11-22-morgens.md",
           "result": "Bekannte Korrektur MA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411 weiter offen: Caption/Alt Wache, frisch geladenes und gesichtetes Livebild Motorrad. Keine Websiteänderung."
+        },
+        {
+          "checked_at": "2026-11-22T12:02:04+01:00",
+          "dossier": "dossiers/2026-11-22-mittags.md",
+          "result": "Bekannte Korrektur MA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411 weiter offen: Caption/Alt Wache, frisch geladenes und gesichtetes Livebild Motorrad. Keine Websiteänderung."
         }
       ]
     },
@@ -13271,6 +13276,11 @@
           "dossier": "dossiers/2026-11-22-morgens.md",
           "result": "Neu aktuelle morgendliche Glättewarnung neben bekanntem Nachtfrost, DWD-Ende22Nov09Uhr; vor09:13 erneut prüfen. RechercheT2: unabhängige Bestätigung/Drittquelle fehlt. Historischer Regenabschluss und alle Claude-Statuswerte/Umsetzungscommits erhalten.",
           "current_research_status": "T2"
+        },
+        {
+          "checked_at": "2026-11-22T12:02:04+01:00",
+          "dossier": "dossiers/2026-11-22-mittags.md",
+          "result": "DWD11:57:08, Feedstand11:54:15: kein Kreis-Düren-Warnungseintrag, Merzenich ohne aktuelle Tabellenwarnung. Morgenwarnung nicht als aktiv übernehmen. Keine Schadensfreiheit behauptet, keine neue Wetterkarte. Historische Claude-Statuswerte/Notizen/Umsetzungscommits erhalten."
         }
       ]
     },
@@ -13380,6 +13390,17 @@
           "image_read_at": "2026-11-22T06:59:05+01:00",
           "image_inspected_at": "2026-11-22T07:00:00+01:00",
           "implementation": "keine_Websiteaenderung"
+        },
+        {
+          "id": "MA-KORR-FW149-BILDMOTIV-2211",
+          "dossier": "dossiers/2026-11-22-mittags.md",
+          "checked_at": "2026-11-22T12:02:04+01:00",
+          "status": "erledigt_live_bestaetigt",
+          "confirmed": true,
+          "image_read_at": "2026-11-22T11:58:12+01:00",
+          "image_inspected_at": "2026-11-22T11:59:00+01:00",
+          "implementation_commit": "fc6ab28a",
+          "implementation": "Claude-Morgenlauf; Recherche nur read-only verifiziert"
         }
       ],
       "dossier_history": [
@@ -13394,6 +13415,13 @@
           "edition": "claude-morgens",
           "dossier": "dossiers/2026-11-22-claude-morgens.md",
           "heading": "1. Umgesetzt"
+        }
+      ],
+      "research_verifications": [
+        {
+          "checked_at": "2026-11-22T12:02:04+01:00",
+          "dossier": "dossiers/2026-11-22-mittags.md",
+          "result": "Korrektur MA-KORR-FW149-BILDMOTIV-2211 live erledigt: Entwarnung/Waffelursache/Nachtrag und Wasserturmfoto statt Brandfoto frisch kontrolliert. Originalbericht erneut gelesen. Keine bestimmte Veranstaltung behauptet. Historische Claude-T1/B2 und Umsetzungfc6ab28a sowie Werkzeugc440abf2 erhalten; keine zusätzliche T1-Ereignis-/Commons-Rechtefreigabe. Unabhängige Bestätigung/Drittquelle nicht hinzugewonnen."
         }
       ]
     },
@@ -16238,6 +16266,50 @@
       "implementation_commit": "fc6ab28a, c440abf2, ad701833",
       "summary": "Korrektur Feuerwehr-Automatik 149/26 (Fehlalarm durch Waffeln: Entwarnung, Wasserturm-Foto statt Brandmotiv, Relevanz 3) und Ursache im Werkzeug behoben (Brandmeldealarm/MDL → Klasse Brandmeldeanlage, Quellensatz im Nominativ, Test). Kalender 20 Termine bis 06.12. bestätigt. Keine neue belegbare Nachricht (Polizei nur Düren, Glätte/Frost Stufe 2). Mindesttakt 22.11.: 0 bis hierher.",
       "publication": "Eine Korrektur direkt veröffentlicht"
+    },
+    {
+      "date": "2026-11-22",
+      "edition": "mittags",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-22-mittags.md",
+      "compared_with": "dossiers/2026-11-22-morgens.md",
+      "compared_with_claude": "dossiers/2026-11-22-claude-morgens.md",
+      "base_commit": "5a5370085c30140453b03b419f9dbbde4f17b91a",
+      "implementation_commit": null,
+      "summary": "Keine neue lokale Themenkarte/Terminänderung. Wasserturm-Korrektur von Claude live einschließlich Ersatzbild frisch bestätigt; bekannte Motorradcaption weiter offen. DWD aktuell ohne Kreiswarnung, neue Polizeivolltexte ohne Ortsbezug. Jüngste Artikel einschließlich Kompost/Bauausschuss gegen Originale nachgeprüft, Grenzen dokumentiert.",
+      "topics": 0,
+      "new_topics": 0,
+      "updated_topics": 0,
+      "blocked_T2": 0,
+      "corrections_required": 1,
+      "new_corrections_required": 0,
+      "new_corrections": [],
+      "known_corrections_still_open": [
+        "MA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411"
+      ],
+      "resolved_corrections_verified": [
+        "MA-KORR-FW149-BILDMOTIV-2211"
+      ],
+      "repository_article_files_read": 62,
+      "repository_event_files_read": 26,
+      "repository_area_files_read": 23,
+      "new_or_changed_events": 0,
+      "complete_drafts": 0,
+      "source_check_window": "22.11.2026 Europe/Berlin: Beginn11:55; Hauptabrufe11:56:55–11:57:24; Polizeivolltexte11:57:46; Bilder11:58:12/21, frisch gesichtet11:59; Originalnachprüfungen11:58:31/11:59:27.",
+      "prepared_at": "2026-11-22T12:02:04+01:00",
+      "deadline": "2026-11-22T14:15:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche Bereitstellung/Fristeinhaltung im bestätigten main-Uploadabschluss; prepared_at ist kein Uploadnachweis.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "open_checks": [
+        "Bekannte Motorradcaption weiter offen",
+        "HFA-Ergebnisse/Ratstagesordnung fehlen",
+        "Nikolaus-Zeitkonflikt/Frühstücksort offen",
+        "Freitagsergebnis Girbelsrath/Derbyurteil/Serienprüfung offen",
+        "Unabhängige Bestätigung/Drittquellen für unveränderte Themen fehlen, keine zusätzliche T1-Freigabe",
+        "Ältere Artikeloriginalprüfungen unvollständig; Hallen/BdSt403; Zuginfo nur Titel; nicht alle Präsentationsanlagen erneut geprüft"
+      ]
     }
   ]
 }
