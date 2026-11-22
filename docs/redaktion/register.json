@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-21-claude-nachmittags.md",
-  "source_check_window": "21.11.2026 Europe/Berlin: Beginn12:05; Hauptabrufe12:06:30–12:06:55; Bilder12:07:26/32anschließend12:08gesichtet; Kreisdetail12:08:15. Kreisindex/AdventsfensterdetailHTTP200.",
+  "latest_dossier": "dossiers/2026-11-22-morgens.md",
+  "source_check_window": "22.11.2026 Europe/Berlin: Beginn06:57; Hauptabrufe06:57:54–06:58:22; Bilder06:59:05/11, frisch gesichtet07:00; Commons-Wasserturm06:59:23 HTTP403.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -12114,6 +12114,11 @@
           "checked_at": "2026-11-21T12:10:56+01:00",
           "dossier": "dossiers/2026-11-21-mittags.md",
           "result": "BekannteKorrekturMA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411 weiteroffen, BildtextWache/LivebildMotorradfrischgesichtet."
+        },
+        {
+          "checked_at": "2026-11-22T07:04:52+01:00",
+          "dossier": "dossiers/2026-11-22-morgens.md",
+          "result": "Bekannte Korrektur MA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411 weiter offen: Caption/Alt Wache, frisch geladenes und gesichtetes Livebild Motorrad. Keine Websiteänderung."
         }
       ]
     },
@@ -13260,6 +13265,12 @@
           "checked_at": "2026-11-21T12:10:56+01:00",
           "dossier": "dossiers/2026-11-21-mittags.md",
           "result": "Aktualisierungliveerledigt: rückblickenderTitel/Dek/Abschlussnachtrag. DWD12:06:38Datenstand11:57:10ohneKreisEintrag; keineSchadensfreiheitbehauptet. ClaudeUmsetzungffcfee5eerhalten, keineneueWetterkarte."
+        },
+        {
+          "checked_at": "2026-11-22T07:04:52+01:00",
+          "dossier": "dossiers/2026-11-22-morgens.md",
+          "result": "Neu aktuelle morgendliche Glättewarnung neben bekanntem Nachtfrost, DWD-Ende22Nov09Uhr; vor09:13 erneut prüfen. RechercheT2: unabhängige Bestätigung/Drittquelle fehlt. Historischer Regenabschluss und alle Claude-Statuswerte/Umsetzungscommits erhalten.",
+          "current_research_status": "T2"
         }
       ]
     },
@@ -13340,6 +13351,43 @@
           "checked_at": "2026-11-21T12:10:56+01:00",
           "dossier": "dossiers/2026-11-21-mittags.md",
           "result": "Präzisierungweiterlive, RatweiterohneTagesordnung; historischerUmsetzungscommit017c0a2ferhalten."
+        }
+      ]
+    },
+    {
+      "id": "MA-FEUERWEHR-149-26",
+      "priority": "P2",
+      "location_section": "Merzenich / Blaulicht",
+      "change_type": "Update",
+      "text_status": "T2",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-11-22-morgens.md",
+      "workflow_status": "gesperrt",
+      "last_checked_at": "2026-11-22T07:04:52+01:00",
+      "article_path": "inhalte/meldungen/2026-11-21-feuerwehr-automatik.json → /blaulicht/einsatz-149-brandmeldealarm-merzenich/",
+      "article_id": null,
+      "implementation_commit": null,
+      "notes": "Bestehender Automatikartikel: vollständiges Feuerwehroriginal nennt Waffelzubereitung und ausdrücklich kein Brandereignis. Ergänzung statt Dublette; keine später nachgeschobene Entwarnung behaupten. Unabhängige Bestätigung/tragfähige dritte Ereignisquelle fehlen. Neues Korrekturthema MA-KORR-FW149-BILDMOTIV-2211: Großbrandmotiv trotz ausdrücklich verneintem Brand ersetzen; Ersatzfoto B0 wegen Commons403. Keine Websiteänderung.",
+      "correction_checks": [
+        {
+          "id": "MA-KORR-FW149-BILDMOTIV-2211",
+          "dossier": "dossiers/2026-11-22-morgens.md",
+          "checked_at": "2026-11-22T07:04:52+01:00",
+          "status": "offen_live",
+          "confirmed": true,
+          "wrong_caption": "Feuerwehr beim Löschen eines Brandes. Kein Foto vom Ereignis.",
+          "correct_description": "Kein Brandereignis laut Feuerwehr; Großbrandfoto ersetzen durch überprüftes neutrales Wasserturmmotiv.",
+          "image_read_at": "2026-11-22T06:59:05+01:00",
+          "image_inspected_at": "2026-11-22T07:00:00+01:00",
+          "implementation": "keine_Websiteaenderung"
+        }
+      ],
+      "dossier_history": [
+        {
+          "date": "2026-11-22",
+          "edition": "morgens",
+          "dossier": "dossiers/2026-11-22-morgens.md",
+          "heading": "MA-FEUERWEHR-149-26 · P2 · T2/B0"
         }
       ]
     }
@@ -16095,6 +16143,50 @@
       "implementation_commit": "bd7a865f",
       "summary": "Nullfund für neue Meldungen: keine belegbare neue Nachricht mit Ortsbezug (Polizei, Feuerwehr, Gemeinde, Kreis, RIS, Heimat-Info, Rohdaten des Quellenabrufs geprüft). ChatGPT mittags ohne Korrekturauftrag. Termin Weihnachtsfenster 15.12. aus dem Gemeindebeitrag vom 16.11. ergänzt. Kalender 19 Termine bis 05.12. erneut bestätigt. DWD-Frostwarnung Stufe 2 für die Nacht zum Sonntag nicht als Meldung (keine Unwetterlage). Mindesttakt 21.11.: 1.",
       "publication": "Eine Terminergänzung direkt veröffentlicht"
+    },
+    {
+      "date": "2026-11-22",
+      "edition": "morgens",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-22-morgens.md",
+      "compared_with": "dossiers/2026-11-21-mittags.md",
+      "compared_with_claude": "dossiers/2026-11-21-claude-nachmittags.md",
+      "base_commit": "d808f595bc278a4ada17371ca41afdc731b35a91",
+      "implementation_commit": null,
+      "summary": "Zwei T2-Updatekarten: Feuerwehr149 Wasserturm ohne Brand, bestehender Artikel braucht Entwarnung und neues Motiv; neue morgendliche Glättewarnung vor09Uhr, vorClaude erneut prüfen. Eine neue Bildkorrektur, bekannte Motorradcaption weiter offen. Weihnachtsfensterergänzung live bestätigt; keine neue Terminänderung.",
+      "topics": 2,
+      "new_topics": 0,
+      "updated_topics": 2,
+      "blocked_T2": 2,
+      "corrections_required": 2,
+      "new_corrections_required": 1,
+      "new_corrections": [
+        "MA-KORR-FW149-BILDMOTIV-2211"
+      ],
+      "known_corrections_still_open": [
+        "MA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411"
+      ],
+      "repository_article_files_read": 62,
+      "repository_event_files_read": 26,
+      "repository_area_files_read": 23,
+      "new_or_changed_events": 0,
+      "complete_drafts": 0,
+      "source_check_window": "22.11.2026 Europe/Berlin: Beginn06:57; Hauptabrufe06:57:54–06:58:22; Bilder06:59:05/11, frisch gesichtet07:00; Commons-Wasserturm06:59:23 HTTP403.",
+      "prepared_at": "2026-11-22T07:04:52+01:00",
+      "deadline": "2026-11-22T08:45:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche Bereitstellung/Fristeinhaltung im bestätigten main-Uploadabschluss; prepared_at ist kein Uploadnachweis.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "open_checks": [
+        "Feuerwehr149 unabhängige Ereignisbestätigung/Drittquelle und Commons-Ersatzbildprüfung fehlen",
+        "Glättewarnung vor09:13 frisch prüfen; unabhängige Bestätigung/Drittquelle fehlen",
+        "Neue Großbrand-Bildkorrektur und bekannte Motorradcaption offen",
+        "HFA-Ergebnisse/Ratstagesordnung fehlen",
+        "Nikolaus-Zeitkonflikt/Frühstücksort offen",
+        "Freitagsergebnis Girbelsrath/Derbyurteil/Serienprüfung offen",
+        "Ältere Artikeloriginalprüfungen unvollständig; Hallen/BdSt403; Zuginfo nur Titel"
+      ]
     }
   ]
 }
