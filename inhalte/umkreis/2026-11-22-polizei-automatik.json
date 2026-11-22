@@ -1,0 +1,29 @@
+{
+  "hinweis": "Automatisch aus der Liste der Polizei Düren im Presseportal angelegt (deploy/automatik-umkreis.mjs): amtliche Schlagzeile, Ort, Datum und Link zur Einzelmeldung, kein eigener Text. Meldungen aus Merzenich und den Ortsteilen werden hier nie angelegt.",
+  "eintraege": [
+    {
+      "ort": "Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Verkehrsunfall mit Verletzten nach Verfolgungsfahrt",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6395380",
+      "datum": "2026-11-22",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Verkehrsunfall nach Alkoholkonsum, Verursacher verletzt",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6395348",
+      "datum": "2026-11-22",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Verkehrsunfallflucht - Verursacher alkoholisiert",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6395332",
+      "datum": "2026-11-22",
+      "quelle": "Polizei Düren"
+    }
+  ]
+}

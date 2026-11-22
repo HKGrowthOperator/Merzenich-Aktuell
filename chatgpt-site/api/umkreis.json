@@ -1,6 +1,6 @@
 {
  "hinweis": "Erzeugt von deploy/umkreis.mjs aus inhalte/umkreis/. Nicht von Hand ändern.",
- "stand": "2026-11-20",
+ "stand": "2026-11-22",
  "tage": 30,
  "orte": [
   "Düren",
@@ -11,6 +11,30 @@
   "Kreis Düren"
  ],
  "eintraege": [
+  {
+   "ort": "Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Verkehrsunfall mit Verletzten nach Verfolgungsfahrt",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6395380",
+   "datum": "2026-11-22",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Verkehrsunfall nach Alkoholkonsum, Verursacher verletzt",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6395348",
+   "datum": "2026-11-22",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Verkehrsunfallflucht - Verursacher alkoholisiert",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6395332",
+   "datum": "2026-11-22",
+   "quelle": "Polizei Düren"
+  },
   {
    "ort": "Düren",
    "rubrik": "Blaulicht",
