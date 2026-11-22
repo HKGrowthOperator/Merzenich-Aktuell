@@ -1,13 +1,13 @@
 # Offene Themen aus dem Register
 
-Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-21-claude-nachmittags.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
+Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-22-claude-morgens.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
 
 ## Zahlen
 
 | Status | Themen |
 |---|---:|
 | archiv_refresh_noetig | 96 |
-| uebernommen | 69 |
+| uebernommen | 71 |
 | gesperrt | 37 |
 | neu | 5 |
 | zur_abnahme | 5 |
@@ -132,7 +132,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 
 ## Jüngste Läufe
 
+- 2026-11-22 morgens (Claude): Korrektur Feuerwehr-Automatik 149/26 (Fehlalarm durch Waffeln: Entwarnung, Wasserturm-Foto statt Brandmotiv, Relevanz 3) und Ursache im Werkzeug behoben (Brandmeldealarm/MDL → Klasse Brandmeldeanlage, Quellensatz im Nominativ, Test). Kalender 20 Termine bis 06.12. bestätigt. Keine neue belegbare Nachricht (Polizei nur Düren, Glätte/Frost Stufe 2). Mindesttakt 22.11.: 0 bis hierher. – Commit fc6ab28a, c440abf2, ad701833
+- 2026-11-22 morgens (ChatGPT): Zwei T2-Updatekarten: Feuerwehr149 Wasserturm ohne Brand, bestehender Artikel braucht Entwarnung und neues Motiv; neue morgendliche Glättewarnung vor09Uhr, vorClaude erneut prüfen. Eine neue Bildkorrektur, bekannte Motorradcaption weiter offen. Weihnachtsfensterergänzung live bestätigt; keine neue Terminänderung.
 - 2026-11-21 nachmittags (Claude): Nullfund für neue Meldungen: keine belegbare neue Nachricht mit Ortsbezug (Polizei, Feuerwehr, Gemeinde, Kreis, RIS, Heimat-Info, Rohdaten des Quellenabrufs geprüft). ChatGPT mittags ohne Korrekturauftrag. Termin Weihnachtsfenster 15.12. aus dem Gemeindebeitrag vom 16.11. ergänzt. Kalender 19 Termine bis 05.12. erneut bestätigt. DWD-Frostwarnung Stufe 2 für die Nacht zum Sonntag nicht als Meldung (keine Unwetterlage). Mindesttakt 21.11.: 1. – Commit bd7a865f
 - 2026-11-21 mittags (ChatGPT): Keine neue Themenkarte/Terminänderung. NeueWochenvorschaugegenOriginalegeprüft, keinneuerkonkreterTextfehler. Wetterabschlussliveerledigt/DWDohneWarnung. Kreisindexwieder200, Adventsfensterdetailjetzt200gelesenbestätigtbekanntenTermin. Motorradbildtextweiteroffen.
-- 2026-11-21 morgens (Claude): Wochenvorschau 23. bis 29. November (Standard, 818 Wörter). Unwetterwarnung abgeschlossen (DWD ohne Warnung, keine Wetterfolgen veröffentlicht, Relevanz 2). Kalender 19 Termine bis 05.12. bestätigt; neue Heimat-Info-Einladung Modelleisenbahn ohne Änderung, keine Dublette. Gemeinde-Pressemitteilung Adventsfenster (HTTP 428) nicht lesbar, Termin 15.12. vorhanden. Mindesttakt 21.11.: 1 bis hierher. – Commit ffcfee5e, aac33b30, ad708019
-- 2026-11-21 morgens (ChatGPT): WetterUpdatekarteT2: Regenwarnungabgelaufen, markanteGlätte/Frostbis09Uhr, vorUmsetzungerneutprüfen. KreisPressezweimal503. HR²undjüngsteArtikelgegenOriginalegeprüft; Ratskorrekturliveerledigt, Motorradbildtextoffen. NeueWasserturmEinladungbestätigtbestehendenTermin, keinneuerTermin.

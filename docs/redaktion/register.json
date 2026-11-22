@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-22-morgens.md",
+  "latest_dossier": "dossiers/2026-11-22-claude-morgens.md",
   "source_check_window": "22.11.2026 Europe/Berlin: Beginn06:57; Hauptabrufe06:57:54–06:58:22; Bilder06:59:05/11, frisch gesichtet07:00; Commons-Wasserturm06:59:23 HTTP403.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
@@ -13220,11 +13220,11 @@
       "image_status": "B2",
       "dossier": "dossiers/2026-11-20-claude-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-21 09:35 Europe/Berlin",
+      "last_checked_at": "2026-11-22 09:25 Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-11-20-recherche-claude-morgens.json → /blaulicht/unwetterwarnung-merzenich-dauerregen-kreis-dueren-20-november-2026-dwd/",
       "article_id": null,
       "implementation_commit": "d1493fb2",
-      "notes": "Amtliche DWD-Dauerregenwarnung KreisDüren, aktueller Feed07:05:22 gelesen. Kreistext übernimmt älterenDWDStand, keine unabhängige Bestätigung/Drittquelle. Keine lokal eingetretenen Schäden belegt. WetterfotoMetadatenvalid, Original403/visuellungeprüft. | Claude 20.11. morgens: Kurzmeldung (274 Wörter, Relevanz 1) nach DWD-Warndaten selbst gelesen (Datenstand 09:12:06 Uhr, Stufe 4, gültig bis 22 Uhr), Kreis Düren 19.11. als Hintergrund, Feuerwehr ohne Regeneinsatz; keine Schäden behauptet. Eine amtliche Quelle reicht für Kurzmeldungen (SCHREIBREGELN Abschnitt 0). Foto Unwetter-mit-Starkregen.jpg (CC BY 3.0) selbst angesehen. Live 09:23 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. | Claude 20.11. nachmittags: Aktualisierung nach DWD-Stand 14:38 Uhr (Unwetterwarnung unverändert bis 22 Uhr; neu Glätte/Frost 21.11. 0–9 Uhr), Feuerwehr und Polizei bis 14:48 Uhr ohne Regenfolgen. Commit 2ce71288. | Claude 21.11. morgens: DWD 9.09 Uhr ohne Warnung für den Kreis Düren; Abschluss-Nachtrag „Aktualisiert am 21. November“, Titel in Vergangenheitsform („warnte“), Dek angepasst, Relevanz 1 → 2 (Warnung abgelaufen). Feuerwehr und Polizei bis 9.15 Uhr ohne Meldung zu Wetterfolgen; Kreis-Website nicht erreichbar. Commit ffcfee5e.",
+      "notes": "Amtliche DWD-Dauerregenwarnung KreisDüren, aktueller Feed07:05:22 gelesen. Kreistext übernimmt älterenDWDStand, keine unabhängige Bestätigung/Drittquelle. Keine lokal eingetretenen Schäden belegt. WetterfotoMetadatenvalid, Original403/visuellungeprüft. | Claude 20.11. morgens: Kurzmeldung (274 Wörter, Relevanz 1) nach DWD-Warndaten selbst gelesen (Datenstand 09:12:06 Uhr, Stufe 4, gültig bis 22 Uhr), Kreis Düren 19.11. als Hintergrund, Feuerwehr ohne Regeneinsatz; keine Schäden behauptet. Eine amtliche Quelle reicht für Kurzmeldungen (SCHREIBREGELN Abschnitt 0). Foto Unwetter-mit-Starkregen.jpg (CC BY 3.0) selbst angesehen. Live 09:23 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. | Claude 20.11. nachmittags: Aktualisierung nach DWD-Stand 14:38 Uhr (Unwetterwarnung unverändert bis 22 Uhr; neu Glätte/Frost 21.11. 0–9 Uhr), Feuerwehr und Polizei bis 14:48 Uhr ohne Regenfolgen. Commit 2ce71288. | Claude 21.11. morgens: DWD 9.09 Uhr ohne Warnung für den Kreis Düren; Abschluss-Nachtrag „Aktualisiert am 21. November“, Titel in Vergangenheitsform („warnte“), Dek angepasst, Relevanz 1 → 2 (Warnung abgelaufen). Feuerwehr und Polizei bis 9.15 Uhr ohne Meldung zu Wetterfolgen; Kreis-Website nicht erreichbar. Commit ffcfee5e. | Claude 22.11. morgens: neue DWD-Warnungen vor Glätte und Frost (Stufe 2, bis 22.11. 10 Uhr, Stand 9.09 Uhr) nicht als Meldung: keine Unwetterlage, Ende vor Veröffentlichung absehbar; Bestandsartikel unverändert.",
       "dossier_history": [
         {
           "date": "2026-11-20",
@@ -13359,15 +13359,15 @@
       "priority": "P2",
       "location_section": "Merzenich / Blaulicht",
       "change_type": "Update",
-      "text_status": "T2",
-      "image_status": "B0",
-      "dossier": "dossiers/2026-11-22-morgens.md",
-      "workflow_status": "gesperrt",
-      "last_checked_at": "2026-11-22T07:04:52+01:00",
+      "text_status": "T1",
+      "image_status": "B2",
+      "dossier": "dossiers/2026-11-22-claude-morgens.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-22 09:25 Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-11-21-feuerwehr-automatik.json → /blaulicht/einsatz-149-brandmeldealarm-merzenich/",
       "article_id": null,
-      "implementation_commit": null,
-      "notes": "Bestehender Automatikartikel: vollständiges Feuerwehroriginal nennt Waffelzubereitung und ausdrücklich kein Brandereignis. Ergänzung statt Dublette; keine später nachgeschobene Entwarnung behaupten. Unabhängige Bestätigung/tragfähige dritte Ereignisquelle fehlen. Neues Korrekturthema MA-KORR-FW149-BILDMOTIV-2211: Großbrandmotiv trotz ausdrücklich verneintem Brand ersetzen; Ersatzfoto B0 wegen Commons403. Keine Websiteänderung.",
+      "implementation_commit": "fc6ab28a",
+      "notes": "Bestehender Automatikartikel: vollständiges Feuerwehroriginal nennt Waffelzubereitung und ausdrücklich kein Brandereignis. Ergänzung statt Dublette; keine später nachgeschobene Entwarnung behaupten. Unabhängige Bestätigung/tragfähige dritte Ereignisquelle fehlen. Neues Korrekturthema MA-KORR-FW149-BILDMOTIV-2211: Großbrandmotiv trotz ausdrücklich verneintem Brand ersetzen; Ersatzfoto B0 wegen Commons403. Keine Websiteänderung. | Claude 22.11. morgens: Automatik-Artikel ergänzt (Korrektur MA-KORR-FW149-BILDMOTIV-2211): Titel „Waffeln lösen Brandmeldealarm am Wasserturm aus“, Dek und Nachtrag „Aktualisiert am 22. November“ mit Entwarnung nach dem vollständigen Feuerwehrbericht (kein Brand, Anlage zurückgestellt, Übergabe an den Veranstalter), Bildklasse vereine.wasserturm (Foto Wasserturm Merzenich, Karl-Heinz Meurer, CC BY-SA 3.0, selbst angesehen) statt blaulicht.feuer, Relevanz 3, Prüfprotokoll ergänzt. Keine Zuordnung zu einer bestimmten Veranstaltung. Live 09:21 Uhr. Werkzeug: deploy/automatik-feuerwehr.mjs ordnet „Brandmeldealarm“/„MDL“ jetzt der Klasse blaulicht.alarm.brandmeldeanlage zu (Commit c440abf2).",
       "correction_checks": [
         {
           "id": "MA-KORR-FW149-BILDMOTIV-2211",
@@ -13388,6 +13388,47 @@
           "edition": "morgens",
           "dossier": "dossiers/2026-11-22-morgens.md",
           "heading": "MA-FEUERWEHR-149-26 · P2 · T2/B0"
+        },
+        {
+          "date": "2026-11-22",
+          "edition": "claude-morgens",
+          "dossier": "dossiers/2026-11-22-claude-morgens.md",
+          "heading": "1. Umgesetzt"
+        }
+      ]
+    },
+    {
+      "id": "MA-KORR-FW149-BILDMOTIV-2211",
+      "priority": "P2",
+      "location_section": "Merzenich · Blaulicht",
+      "change_type": "Korrekturauftrag",
+      "text_status": "T1",
+      "image_status": "B2",
+      "dossier": "dossiers/2026-11-22-morgens.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-22 09:25 Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-21-feuerwehr-automatik.json → /blaulicht/einsatz-149-brandmeldealarm-merzenich/",
+      "article_id": null,
+      "implementation_commit": "fc6ab28a, c440abf2",
+      "research_verifications": [
+        {
+          "checked_at": "2026-11-21T07:03:57+01:00",
+          "dossier": "dossiers/2026-11-21-morgens.md",
+          "result": "Erledigunglivebestätigt: BeratungsfolgevonfeststehenderAbstimmunggetrennt, Poolplatz/EMSalsBerichte, Korrekturhinweis. VorlagenundRatstermingelesen, Implementierung017c0a2ferhalten."
+        },
+        {
+          "checked_at": "2026-11-21T12:10:56+01:00",
+          "dossier": "dossiers/2026-11-21-mittags.md",
+          "result": "Präzisierungweiterlive, RatweiterohneTagesordnung; historischerUmsetzungscommit017c0a2ferhalten."
+        }
+      ],
+      "notes": "ChatGPT 22.11. morgens: Brandfoto beim Fehlalarm 149/26 irreführend, Entwarnung fehlt. Claude 22.11. morgens umgesetzt: Wasserturm-Foto, Entwarnung im Text, Titel und Dek angepasst; Ursache im Werkzeug (Zuordnung „Brandmeldealarm“ → Brand) behoben.",
+      "dossier_history": [
+        {
+          "date": "2026-11-22",
+          "edition": "claude-morgens",
+          "dossier": "dossiers/2026-11-22-claude-morgens.md",
+          "heading": "1. Umgesetzt"
         }
       ]
     }
@@ -16187,6 +16228,16 @@
         "Freitagsergebnis Girbelsrath/Derbyurteil/Serienprüfung offen",
         "Ältere Artikeloriginalprüfungen unvollständig; Hallen/BdSt403; Zuginfo nur Titel"
       ]
+    },
+    {
+      "date": "2026-11-22",
+      "edition": "morgens",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-22-claude-morgens.md",
+      "compared_with": "dossiers/2026-11-22-morgens.md",
+      "implementation_commit": "fc6ab28a, c440abf2, ad701833",
+      "summary": "Korrektur Feuerwehr-Automatik 149/26 (Fehlalarm durch Waffeln: Entwarnung, Wasserturm-Foto statt Brandmotiv, Relevanz 3) und Ursache im Werkzeug behoben (Brandmeldealarm/MDL → Klasse Brandmeldeanlage, Quellensatz im Nominativ, Test). Kalender 20 Termine bis 06.12. bestätigt. Keine neue belegbare Nachricht (Polizei nur Düren, Glätte/Frost Stufe 2). Mindesttakt 22.11.: 0 bis hierher.",
+      "publication": "Eine Korrektur direkt veröffentlicht"
     }
   ]
 }
