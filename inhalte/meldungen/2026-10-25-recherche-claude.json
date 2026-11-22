@@ -200,55 +200,6 @@
       ]
     },
     {
-      "slug": "aktionstag-persoenliches-budget-kreishaus-5-november-2026",
-      "ressort": "leben",
-      "ortsteil": "merzenich",
-      "kicker": "Leben · Soziales",
-      "titel": "Persönliches Budget: Aktionstag im Kreishaus am 5. November, Anmeldung über das Kreisportal noch möglich",
-      "dek": "Der Kreis Düren erklärt, wie Menschen mit Behinderung ihre Unterstützung selbst einkaufen können. Die Pressemitteilung nannte den 26. Oktober als Anmeldeschluss, das Anmeldeportal des Kreises nimmt Anmeldungen bis 2. November an.",
-      "datum": "2026-10-25T22:20:00+01:00",
-      "artikeltyp": "kurzmeldung",
-      "themen": [
-        [
-          "inklusion",
-          "Inklusion"
-        ],
-        [
-          "kreis-dueren",
-          "Kreis Düren"
-        ]
-      ],
-      "bildklasse": "leben.vorsorge",
-      "fakten": [
-        "Aktionstag „Das Persönliche Budget“: Donnerstag, 5.11.2026, 10 bis 17 Uhr, Kreishaus Düren, Raum A 158; kostenlos und barrierefrei",
-        "Anmeldung: Pressemitteilung „bis Montag, 26. Oktober“; Anmeldeportal Anmeldezeitraum 01.09.–02.11.2026, am 27.10.2026 31 freie Plätze; online, per E-Mail an die Inklusionsbeauftragte oder unter 02421 22-1051000",
-        "Programm: Fachvorträge, „Markt der Möglichkeiten“ mit Beratungsstellen, Austausch; Hörübertragungsanlage, Schrift- und Gebärdensprachdolmetschende, Ruheraum",
-        "Wanderausstellung vom 2. bis 6.11.2026 im Lichthof des Kreishauses (1. Stock, Haus B); Hinweis der Gemeinde Merzenich am 21.10.2026 über Heimat-Info"
-      ],
-      "absaetze": [
-        "Der Kreis Düren lädt am Donnerstag, 5. November, von 10 bis 17 Uhr zum Aktionstag „Das Persönliche Budget“ ins Kreishaus Düren ein (Raum A 158). Die Gemeinde Merzenich hat die Einladung am 21. Oktober in der Heimat-Info-App weitergegeben. Zur Anmeldung gibt es zwei Angaben: Pressemitteilung und Einladung nennen Montag, 26. Oktober, das Anmeldeportal des Kreises gibt als Anmeldezeitraum den 1. September bis 2. November an und zeigte am 27. Oktober 31 freie Plätze. Angemeldet wird online unter beteiligung.nrw.de/k/1028609, per E-Mail an die Inklusionsbeauftragte des Kreises oder telefonisch unter 02421 22-1051000; ein Unterstützungsbedarf soll dabei angegeben werden.",
-        "Das Persönliche Budget ist ein Geldbetrag, auf den Menschen mit Behinderung einen Rechtsanspruch haben. Damit können sie Leistungen selbst auswählen, einkaufen und bezahlen, statt sie als Sachleistung zu erhalten. Der Aktionstag bietet Fachvorträge, einen „Markt der Möglichkeiten“ mit Beratungsstellen und Diensten sowie Raum für Erfahrungsaustausch. Die Teilnahme ist kostenlos.",
-        "Das Kreishaus stellt eine Hörübertragungsanlage, Schrift- und Gebärdensprachdolmetschende sowie einen Ruheraum bereit. Begleitend informiert vom 2. bis 6. November eine barrierefreie Wanderausstellung im Lichthof des Kreishauses über das Persönliche Budget."
-      ],
-      "quelle": {
-        "name": "Kreis Düren, Pressemitteilung vom 19.10.2026: „Kreis Düren lädt zum Aktionstag ‚Das Persönliche Budget‘ ein“",
-        "url": "https://www.kreis-dueren.de/presse/das-persoenliche-budget_2026-10-19.php",
-        "stand": "2026-10-27"
-      },
-      "weitereQuellen": [
-        {
-          "name": "Gemeinde Merzenich über Heimat-Info, 21.10.2026, 09:29 Uhr",
-          "url": "https://www.heimat-info.de/beitraege/6ff892e9-2eba-4374-a65d-44609b7a6fdb",
-          "stand": "2026-10-25"
-        },
-        {
-          "name": "Kreis Düren, Anmeldeseite „Aktionstag Das Persönliche Budget“ auf beteiligung.nrw.de",
-          "url": "https://beteiligung.nrw.de/portal/dueren/beteiligung/themen/1028609",
-          "stand": "2026-10-27"
-        }
-      ]
-    },
-    {
       "slug": "sitzungstermine-gemeinderat-3-dezember-2026",
       "ressort": "rathaus",
       "ortsteil": "merzenich",
@@ -667,60 +618,6 @@
           "name": "zuginfo.NRW über VRS, Informationsplakat FPLO 30754: Zugausfälle Köln–Aachen 26. bis 28.10.2026 (PDF)",
           "url": "https://ekap-download.vrs.de/downloads/ems/Zuginfo_Ausfaelle_Koeln_Aachen_26bis28102026.pdf",
           "stand": "2026-10-26"
-        }
-      ]
-    },
-    {
-      "slug": "meisterstipendium-kreis-dueren-bewerbung-bis-31-oktober-2026",
-      "ressort": "wirtschaft",
-      "ortsteil": "merzenich",
-      "kicker": "Wirtschaft · Handwerk",
-      "titel": "Meisterstipendium des Kreises: 6.000 Euro, Bewerbung noch bis Samstag",
-      "dek": "Der Kreis Düren vergibt zum dritten Mal bis zu vier Stipendien von je 6.000 Euro für angehende Meisterinnen und Meister. Bedingung: nach der Prüfung mindestens fünf Jahre im Kreis arbeiten.",
-      "datum": "2026-10-25T22:38:00+01:00",
-      "artikeltyp": "kurzmeldung",
-      "themen": [
-        [
-          "handwerk",
-          "Handwerk"
-        ],
-        [
-          "kreis-dueren",
-          "Kreis Düren"
-        ],
-        [
-          "foerderung",
-          "Förderung"
-        ]
-      ],
-      "bildklasse": "wirtschaft.weiterbildung",
-      "fakten": [
-        "Meisterstipendium des Kreises Düren, dritte Runde: bis zu vier Stipendien zu je 6.000 Euro (Förderseite: „maximal vier“), eines als Sonderstipendium für fachkräftearme Handwerke vorgesehen (Förderrichtlinie); einmalige Zahlung",
-        "Rückforderung in voller Höhe möglich, wenn die Bedingungen der Richtlinie nicht eingehalten werden (Förderseite des Kreises); laut Mitteilung vom 20.10. Förderdauer maximal drei Jahre",
-        "Verpflichtung: nach bestandener Meisterprüfung mindestens fünf Jahre Berufsausübung im Kreis Düren",
-        "Auswahl durch eine Jury, nicht allein nach Ausbildungsnoten; beim Aufstiegs-BAföG als Einkommen anzugeben (Förderseite)",
-        "Bewerbung online bis Samstag, 31.10.2026, unter www.kreis-dueren.de/meisterstipendium",
-        "Mitteilung des Kreises vom 20.10.2026 mit Porträt eines Stipendiaten des ersten Jahrgangs (Garten- und Landschaftsbau, Düren)"
-      ],
-      "absaetze": [
-        "Handwerkerinnen und Handwerker aus der Gemeinde, die eine Meisterausbildung beginnen oder absolvieren, können sich noch bis Samstag, 31. Oktober, um ein Meisterstipendium des Kreises Düren bewerben. Der Kreis vergibt in der dritten Runde bis zu vier Stipendien von je 6.000 Euro; eines ist nach der Förderrichtlinie als Sonderstipendium für besonders fachkräftearme Handwerke vorgesehen, sofern eine passende Bewerbung vorliegt. Das Geld wird einmalig ausgezahlt und muss nicht erstattet werden, solange die Bedingungen der Richtlinie eingehalten werden; sonst kann der Kreis es in voller Höhe zurückfordern. Im Gegenzug verpflichten sich die Stipendiaten, nach der Meisterprüfung mindestens fünf Jahre im Kreis Düren in ihrem Beruf zu arbeiten.",
-        "Die Bewerbung läuft ausschließlich online über www.kreis-dueren.de/meisterstipendium. Eine Jury prüft die vollständigen Bewerbungen; entscheidend sind nach Angaben des Kreises nicht allein die Ausbildungsnoten, sondern das Gesamtbild. Wer Aufstiegs-BAföG beantragt, muss das Stipendium dort als Einkommen angeben. In seiner Mitteilung vom 20. Oktober stellt der Kreis einen Garten- und Landschaftsbauer aus Düren vor, der zum ersten Jahrgang gehört und inzwischen den Meistertitel hat. Ob bisher jemand aus Merzenich gefördert wurde, geht aus den Veröffentlichungen nicht hervor."
-      ],
-      "quelle": {
-        "name": "Kreis Düren, Mitteilung vom 20.10.2026: „Ein Leben für den Landschaftsbau“ mit Aufruf zum Meisterstipendium",
-        "url": "https://www.kreis-dueren.de/presse/meisterstipendium_2026-10-01.php",
-        "stand": "2026-10-27"
-      },
-      "weitereQuellen": [
-        {
-          "name": "Kreis Düren, Förderseite „Meisterinnen- und Meisterstipendium“",
-          "url": "https://www.kreis-dueren.de/meisterstipendium",
-          "stand": "2026-10-27"
-        },
-        {
-          "name": "Kreis Düren, Förderrichtlinie Meisterstipendium (PDF)",
-          "url": "https://www.kreis-dueren.de/kreishaus/amt/60/pdf/Foerderrichtlinie-Kreis-Dueren.pdf",
-          "stand": "2026-10-27"
         }
       ]
     }

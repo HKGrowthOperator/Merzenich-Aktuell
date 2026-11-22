@@ -1,5 +1,5 @@
 {
-  "zweck": "Zurückgezogene Beiträge und Termine. deploy/zurueckziehen.mjs entfernt sie samt aller Verweise aus der statischen Kopie (Kette). Live liegen sie im WordPress-Papierkorb und kommen beim Abgleich nicht wieder.",
+  "zweck": "Zurückgezogene Beiträge und Termine. deploy/zurueckziehen.mjs entfernt sie samt aller Verweise aus der statischen Kopie (Kette). Live liegen sie im WordPress-Papierkorb oder als Entwurf und kommen beim Abgleich nicht wieder.",
   "eintraege": [
     { "pfad": "/leben/tamilische-feste-2026-2027-karthigai-deepam-thai-pongal-thaipusam-neujahr-termine-merzenich/", "datum": "2026-11-18", "grund": "Kein Bezug zu Merzenich (Betreiber), SCHREIBREGELN.md 0b" },
     { "pfad": "/wirtschaft/ki-roadshow-ihk-aachen-dueren-6-november-2026/", "datum": "2026-11-18", "grund": "Kein Bezug zu Merzenich (Betreiber), SCHREIBREGELN.md 0b" },
@@ -15,6 +15,23 @@
     { "pfad": "/termine/ki-roadshow-ihk-dueren-2026-11-06/", "datum": "2026-11-18", "grund": "Kein Bezug zu Merzenich (Betreiber), SCHREIBREGELN.md 0b" },
     { "pfad": "/termine/eichel-sammelaktion-huertgenwald-2026-11-06/", "datum": "2026-11-18", "grund": "Kein Bezug zu Merzenich (Betreiber), SCHREIBREGELN.md 0b" },
     { "pfad": "/termine/wildpferde-exkursion-sophienhoehe-2026-10-29/", "datum": "2026-11-18", "grund": "Kein Bezug zu Merzenich (Betreiber), SCHREIBREGELN.md 0b" },
-    { "pfad": "/termine/seniorenweihnacht-kreis-dueren-2026-11-24/", "datum": "2026-11-18", "grund": "Kein Bezug zu Merzenich (Betreiber), SCHREIBREGELN.md 0b" }
+    { "pfad": "/termine/seniorenweihnacht-kreis-dueren-2026-11-24/", "datum": "2026-11-18", "grund": "Kein Bezug zu Merzenich (Betreiber), SCHREIBREGELN.md 0b" },
+    { "pfad": "/blaulicht/merzenicherin-oelspur-unfall-l218-vlatten-2026-10-01/", "datum": "2026-11-22", "grund": "Kein Bezug zur Gemeinde, Unfall bei Vlatten (Betreiber 22.11.2026)" },
+    { "pfad": "/wirtschaft/leader-reminder/", "datum": "2026-11-22", "grund": "Abgelaufen, Infoabend 2. September (Betreiber 22.11.2026)" },
+    { "pfad": "/sport/rhenania-girbelsrath-neues-flutlicht/", "datum": "2026-11-22", "grund": "Doppelte Meldung, ausführlichere Fassung bleibt (Betreiber 22.11.2026)" },
+    { "pfad": "/blaulicht/einsatz-112-girbelsrath-flaeche/", "datum": "2026-11-22", "grund": "Doppelte Meldung, ausführlichere Fassung bleibt (Betreiber 22.11.2026)" },
+    { "pfad": "/blaulicht/flaechenbrand-girbelsrath/", "datum": "2026-11-22", "grund": "Doppelte Meldung, ausführlichere Fassung bleibt (Betreiber 22.11.2026)" },
+    { "pfad": "/blaulicht/einsatz-108-vu-l264/", "datum": "2026-11-22", "grund": "Doppelte Meldung, ausführlichere Fassung bleibt (Betreiber 22.11.2026)" },
+    { "pfad": "/leben/vhs-oldschool-merzenich/", "datum": "2026-11-22", "grund": "Doppelte Meldung, ausführlichere Fassung bleibt (Betreiber 22.11.2026)" },
+    { "pfad": "/wirtschaft/stromtrasse-oberzier-blatzheim/", "datum": "2026-11-22", "grund": "Doppelte Meldung, ausführlichere Fassung bleibt (Betreiber 22.11.2026)" },
+    { "pfad": "/rathaus/wirtschaftsausschuss-sitzung-2026-10-15/", "datum": "2026-11-22", "grund": "Doppelte Meldung, ausführlichere Fassung bleibt (Betreiber 22.11.2026)" },
+    { "pfad": "/wirtschaft/meisterstipendium-kreis-dueren-bewerbung-bis-31-oktober-2026/", "datum": "2026-11-22", "grund": "Abgelaufen, Bewerbungsfrist vorbei (Betreiber 22.11.2026)" },
+    { "pfad": "/leben/aktionstag-persoenliches-budget-kreishaus-5-november-2026/", "datum": "2026-11-22", "grund": "Abgelaufen, Aktionstag 5. November (Betreiber 22.11.2026)" },
+    { "pfad": "/rathaus/nahverkehrsplan-beteiligung/", "datum": "2026-11-22", "grund": "Abgelaufen, Beteiligung bis Februar 2026 (Betreiber 22.11.2026)" },
+    { "pfad": "/leben/seniorennachmittag-anmeldung/", "datum": "2026-11-22", "grund": "Abgelaufen, Seniorennachmittag 17. Oktober (Betreiber 22.11.2026)" },
+    { "pfad": "/sport/sc-golzheim-nachbarschaftsduell/", "datum": "2026-11-22", "grund": "Abgelaufen, Spielankündigung 6. September (Betreiber 22.11.2026)" },
+    { "pfad": "/termine/amtsblatt-12-2026-abgabeschluss-2026-11-03/", "datum": "2026-11-22", "grund": "Amtsblatt-Abgabeschluss ist kein Termin für Leser (Betreiber 22.11.2026)" },
+    { "pfad": "/termine/amtsblatt-abgabeschluss-2026-12-01/", "datum": "2026-11-22", "grund": "Amtsblatt-Abgabeschluss ist kein Termin für Leser (Betreiber 22.11.2026)" },
+    { "pfad": "/termine/amtsblatt-abgabeschluss-2026-12-29/", "datum": "2026-11-22", "grund": "Amtsblatt-Abgabeschluss ist kein Termin für Leser (Betreiber 22.11.2026)" }
   ]
 }

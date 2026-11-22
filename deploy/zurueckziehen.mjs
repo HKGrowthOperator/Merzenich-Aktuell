@@ -8,7 +8,8 @@
  * WordPress-Papierkorb; der Abgleich holt sie nicht zurück. Die Generatoren hängen
  * Zeilen aber nur an und entfernen keine, daher räumt dieses Werkzeug auf:
  *   - Seitenordner des Pfads
- *   - Feed-Zeilen (<article … class="feed-row"> und "feed-lead") und Listenpunkte (<li>) mit Link auf den Pfad
+ *   - Feed-Zeilen (<article … class="feed-row"> und "feed-lead"), Karten (<article> mit „card“ oder „karte“ in der Klasse, ohne Verschachtelung)
+ *     und Listenpunkte (<li>) mit Link auf den Pfad
  *   - ListItem-Einträge im JSON-LD, danach neu durchnummeriert
  *   - Weiterleitungen auf den Pfad in _redirects
  *   - Zähler <p class="count-line"> um die entfernten Feed-Zeilen verringert
@@ -65,7 +66,7 @@ function ldBereinigen(wert) {
   return geaendert;
 }
 
-let seitenWeg = 0, zeilenWeg = 0, punkteWeg = 0, ldWeg = 0, themenWeg = 0, umleitungenWeg = 0, dateienGeaendert = 0;
+let seitenWeg = 0, zeilenWeg = 0, punkteWeg = 0, kartenWeg = 0, ldWeg = 0, themenWeg = 0, umleitungenWeg = 0, dateienGeaendert = 0;
 const reste = [];
 
 for (const p of pfade) {
@@ -80,6 +81,8 @@ for (const datei of htmlDateien(site)) {
   let neu = alt, zeilen = 0;
   neu = neu.replace(/(\n[ \t]*)?<article\b[^>]*class="feed-(?:row|lead)"[^>]*>[\s\S]*?<\/article>/g, (m) => (linkRe.test(m) ? (zeilen++, '') : m));
   neu = neu.replace(/<li\b[^>]*>(?:(?!<\/?li\b)[\s\S])*?<\/li>/g, (m) => (linkRe.test(m) ? (punkteWeg++, '') : m));
+  // Karten (<article class="news-card"> u. a., Klasse mit „card“ oder „karte“, ohne verschachtelte <article>) mit Link auf den Pfad (22.11.2026).
+  neu = neu.replace(/(\n[ \t]*)?<article\b[^>]*class="[^"]*(?:card|karte)[^"]*"[^>]*>(?:(?!<\/?article\b)[\s\S])*?<\/article>/g, (m) => (linkRe.test(m) ? (kartenWeg++, '') : m));
   neu = neu.replace(/(<script type="application\/ld\+json">)([\s\S]*?)(<\/script>)/g, (m, a, json, z) => {
     if (!trefferRe.test(json)) return m;
     let wert;
@@ -115,7 +118,7 @@ if (existsSync(umleitungen)) {
 }
 
 const zuTun = seitenWeg + dateienGeaendert + themenWeg;
-console.log(`Zurückgezogen: ${pfade.length} Pfade; ${nurPruefen ? 'offen' : 'entfernt'}: ${seitenWeg} Seiten, ${zeilenWeg} Feed-Zeilen, ${punkteWeg} Listenpunkte, ${ldWeg} JSON-LD-Listen, ${umleitungenWeg} Weiterleitungen, ${themenWeg} leere Themenseiten (${dateienGeaendert} Dateien).`);
+console.log(`Zurückgezogen: ${pfade.length} Pfade; ${nurPruefen ? 'offen' : 'entfernt'}: ${seitenWeg} Seiten, ${zeilenWeg} Feed-Zeilen, ${punkteWeg} Listenpunkte, ${kartenWeg} Karten, ${ldWeg} JSON-LD-Listen, ${umleitungenWeg} Weiterleitungen, ${themenWeg} leere Themenseiten (${dateienGeaendert} Dateien).`);
 if (reste.length) {
   console.error(`Zurückgezogen: noch Verweise in anderer Form, von Hand lösen:\n  ${reste.join('\n  ')}`);
   process.exit(1);

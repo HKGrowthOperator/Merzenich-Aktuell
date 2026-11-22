@@ -56,36 +56,6 @@
       }
     },
     {
-      "slug": "amtsblatt-12-2026-abgabeschluss-2026-11-03",
-      "titel": "Abgabeschluss für das Amtsblatt 12/2026",
-      "start": "2026-11-03T00:00:00+01:00",
-      "ort": "Gemeinde Merzenich, Amtsblatt-Redaktion (per E-Mail)",
-      "adresse": "Valdersweg 1, 52399 Merzenich",
-      "ortsteil": "Gemeinde",
-      "kategorie": "Info",
-      "veranstalter": "Gemeinde Merzenich",
-      "beschreibung": "Beiträge für das Amtsblatt 12/2026 (Erscheinungstag Freitag, 13. November) nimmt die Gemeinde bis Dienstag, 3. November, per E-Mail an amtsblatt@gemeinde-merzenich.de entgegen. Eine Uhrzeit nennt sie nicht.",
-      "absaetze": [
-        "Nach dem Terminplan der Gemeinde und dem Hinweis auf Seite 1 des Amtsblatts 11/2026 ist Dienstag, 3. November 2026, Abgabeschluss für Beiträge zum Amtsblatt 12/2026. Die Ausgabe erscheint am Freitag, 13. November. Mitteilungen sollen möglichst als Datei per E-Mail an amtsblatt@gemeinde-merzenich.de geschickt werden.",
-        "Korrigiert am 2. November 2026: Der Eintrag nannte bisher 12 Uhr als Uhrzeit. Weder Terminplan noch Amtsblatt geben eine Uhrzeit an; der Termin gilt deshalb für den ganzen Tag."
-      ],
-      "links": [
-        [
-          "Amtsblatt-Termine der Gemeinde",
-          "https://www.gemeinde-merzenich.de/aktuelles/amtsblaetter.php"
-        ],
-        [
-          "Amtsblatt Merzenich 11/2026, Seite 1: nächstes Erscheinungsdatum und Abgabetermine",
-          "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_11_2026-web.pdf#page=3"
-        ]
-      ],
-      "quelle": {
-        "name": "Gemeinde Merzenich, Amtsblatt Nr. 11 vom 16.10.2026, S. 1: „Nächstes Erscheinungsdatum“ und Abgabetermine; Terminplan auf gemeinde-merzenich.de",
-        "url": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_11_2026-web.pdf#page=3",
-        "stand": "2026-11-03"
-      }
-    },
-    {
       "slug": "aktionstag-persoenliches-budget-kreishaus-2026-11-05",
       "titel": "Aktionstag „Das Persönliche Budget“ im Kreishaus Düren",
       "start": "2026-11-05T10:00:00+01:00",
