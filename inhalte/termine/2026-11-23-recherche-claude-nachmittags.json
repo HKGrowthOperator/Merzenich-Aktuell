@@ -1,0 +1,24 @@
+{
+ "hinweis": "Kalenderpflege 23.11.2026, Nachmittagslauf (Claude): neuer Eintrag der Pfadfinder Merzenich im Veranstaltungskalender der Gemeinde (Heimat-Info, veröffentlicht 22.11.2026 15:43 Uhr, gelesen 23.11. 09:20 und 14:46 Uhr). Die Termin-Automatik hatte ihn nicht übernommen, weil er beim Quellenabruf am 22.11. auf der zweiten Kalenderseite stand; sie erkennt den Eintrag künftig über die Quellen-URL als vorhanden.",
+ "termine": [
+  {
+   "slug": "friedenslicht-aussendung-pfadfinder-merzenich-2026-12-13",
+   "titel": "Aussendungsfeier des Friedenslichts aus Bethlehem mit den Pfadfindern",
+   "start": "2026-12-13T18:00:00+01:00",
+   "ort": "Alte Kirche Merzenich, danach Pfarrkirche St. Laurentius",
+   "ortsteil": "Merzenich",
+   "kategorie": "Kirche",
+   "veranstalter": "Pfadfinder Merzenich (DPSG St. Laurentius)",
+   "beschreibung": "Die Pfadfinder Merzenich bringen das Friedenslicht aus Bethlehem nach Merzenich: Die Aussendungsfeier beginnt am Sonntag, 13. Dezember, um 18 Uhr in der Alten Kirche und endet in der Pfarrkirche St. Laurentius.",
+   "absaetze": [
+    "Am Sonntag, 13. Dezember 2026, holen die Pfadfinder Merzenich (DPSG St. Laurentius) das Friedenslicht aus Bethlehem nachmittags im Aachener Dom ab und bringen es nach Merzenich. Um 18 Uhr beginnt die Aussendungsfeier in der Alten Kirche; danach tragen die Pfadfinder das Licht in die Pfarrkirche St. Laurentius, wo die Feier endet.",
+    "Wer das Licht mitnehmen und weitergeben möchte, bringt eine eigene Laterne mit oder bekommt bei den Pfadfindern eine Kerze gegen eine Spende. Nach Angaben der Pfadfinder kann das Friedenslicht auch in den Tagen danach und bei den Weihnachtsgottesdiensten in der Kirche oder bei ihnen abgeholt werden."
+   ],
+   "quelle": {
+    "name": "Heimat-Info, Veranstaltungskalender der Gemeinde Merzenich (Eintrag der Pfadfinder Merzenich vom 22.11.2026)",
+    "url": "https://www.heimat-info.de/veranstaltungen/042c28a0-75d0-4b9a-a5a0-1a9f7b715def",
+    "stand": "2026-11-23"
+   }
+  }
+ ]
+}

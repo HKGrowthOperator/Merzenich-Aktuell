@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Aussendungsfeier des Friedenslichts aus Bethlehem mit den Pfad
+ findern
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:friedenslicht-aussendung-pfadfinder-merzenich-2026-12-13@merzenich-aktu
+ ell.de
+DTSTAMP:20261123T060000Z
+DTSTART:20261213T170000Z
+SUMMARY:Aussendungsfeier des Friedenslichts aus Bethlehem mit den Pfadfinde
+ rn
+DESCRIPTION:Die Pfadfinder Merzenich bringen das Friedenslicht aus Bethlehe
+ m nach Merzenich: Die Aussendungsfeier beginnt am Sonntag\, 13. Dezember\,
+  um 18 Uhr in der Alten Kirche und endet in der Pfarrkirche St. Laurentius
+ .\nVeranstalter: Pfadfinder Merzenich (DPSG St. Laurentius)\nhttps://merze
+ nichaktuell.hk-growthoperator.de/termine/friedenslicht-aussendung-pfadfind
+ er-merzenich-2026-12-13/
+LOCATION:Alte Kirche Merzenich\, danach Pfarrkirche St. Laurentius
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/friedenslicht-aus
+ sendung-pfadfinder-merzenich-2026-12-13/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
