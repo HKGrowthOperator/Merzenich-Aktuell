@@ -1,13 +1,13 @@
 # Offene Themen aus dem Register
 
-Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-22-claude-nachmittags.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
+Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-23-claude-morgens.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
 
 ## Zahlen
 
 | Status | Themen |
 |---|---:|
 | archiv_refresh_noetig | 96 |
-| uebernommen | 71 |
+| uebernommen | 72 |
 | gesperrt | 37 |
 | neu | 5 |
 | zur_abnahme | 5 |
@@ -132,7 +132,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 
 ## Jüngste Läufe
 
+- 2026-11-23 morgens (Claude): Korrektur Unwetter-Vorspann (datiert, neue Stufe-2-Warnungen nachgetragen). Nullfund für neue Meldungen. Sport: Girbelsrath verlor laut FuPa-Spielbericht 0:3 in Arnoldsweiler (20.11.), FUSSBALL.DE noch ohne Bestätigung, daher noch keine Meldung. Kalender 18 Termine bis 07.12. bestätigt; neuer Heimat-Info-Termin Friedenslicht 13.12. (Pfadfinder) der Automatik überlassen. Mindesttakt 23.11.: 0 bis hierher. – Commit b4b2baba, a47858aa
+- 2026-11-23 morgens (ChatGPT): Eine T2-Wetterupdatekarte: neue Glätte/Nebelwarnung neben bekanntem Frost; überholte pauschale Entwarnung im Vorspann als neue Korrektur. Nebelbeginn Kreis/Gemeinde abweichend. Wochenvorschau-Fußballergänzung2306ee1b live bestätigt; Freitagsergebnis weiter unlesbar. Keine neue Terminänderung, Liedersingen nur neu datiert. Motorradcaption weiter offen.
 - 2026-11-22 nachmittags (Claude): Nullfund für neue Meldungen (Sonntag: Polizei, Feuerwehr, Gemeinde, Kreis, RIS, Heimat-Info ohne neue belegbare Nachricht mit Ortsbezug). Eigene Korrektur der Wochenvorschau (nicht nur zwei Fußballvereine; Spiele Girbelsrath 26.11. und Morschenich 29.11. ergänzt). ChatGPT mittags ohne Korrekturauftrag. Kalender 20 Termine bis 06.12. erneut bestätigt. Frostwarnung Stufe 2 für die Nacht nicht als Meldung. Mindesttakt 22.11.: 0. – Commit 2306ee1b
 - 2026-11-22 mittags (ChatGPT): Keine neue lokale Themenkarte/Terminänderung. Wasserturm-Korrektur von Claude live einschließlich Ersatzbild frisch bestätigt; bekannte Motorradcaption weiter offen. DWD aktuell ohne Kreiswarnung, neue Polizeivolltexte ohne Ortsbezug. Jüngste Artikel einschließlich Kompost/Bauausschuss gegen Originale nachgeprüft, Grenzen dokumentiert.
-- 2026-11-22 morgens (Claude): Korrektur Feuerwehr-Automatik 149/26 (Fehlalarm durch Waffeln: Entwarnung, Wasserturm-Foto statt Brandmotiv, Relevanz 3) und Ursache im Werkzeug behoben (Brandmeldealarm/MDL → Klasse Brandmeldeanlage, Quellensatz im Nominativ, Test). Kalender 20 Termine bis 06.12. bestätigt. Keine neue belegbare Nachricht (Polizei nur Düren, Glätte/Frost Stufe 2). Mindesttakt 22.11.: 0 bis hierher. – Commit fc6ab28a, c440abf2, ad701833
-- 2026-11-22 morgens (ChatGPT): Zwei T2-Updatekarten: Feuerwehr149 Wasserturm ohne Brand, bestehender Artikel braucht Entwarnung und neues Motiv; neue morgendliche Glättewarnung vor09Uhr, vorClaude erneut prüfen. Eine neue Bildkorrektur, bekannte Motorradcaption weiter offen. Weihnachtsfensterergänzung live bestätigt; keine neue Terminänderung.

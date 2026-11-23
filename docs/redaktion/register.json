@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-23-morgens.md",
+  "latest_dossier": "dossiers/2026-11-23-claude-morgens.md",
   "source_check_window": "23.11.2026 Europe/Berlin: Beginn07:04; Hauptabrufe07:05:39–07:06:18; Sportzusatz07:06:05; Bilder07:07:52/59, gesichtet07:08; Commons-Original07:08:04HTTP403; Termin-Nachprüfung07:09:03.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
@@ -13241,11 +13241,11 @@
       "image_status": "B2",
       "dossier": "dossiers/2026-11-20-claude-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-22 09:25 Europe/Berlin",
+      "last_checked_at": "2026-11-23 09:25 Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-11-20-recherche-claude-morgens.json → /blaulicht/unwetterwarnung-merzenich-dauerregen-kreis-dueren-20-november-2026-dwd/",
       "article_id": null,
       "implementation_commit": "d1493fb2",
-      "notes": "Amtliche DWD-Dauerregenwarnung KreisDüren, aktueller Feed07:05:22 gelesen. Kreistext übernimmt älterenDWDStand, keine unabhängige Bestätigung/Drittquelle. Keine lokal eingetretenen Schäden belegt. WetterfotoMetadatenvalid, Original403/visuellungeprüft. | Claude 20.11. morgens: Kurzmeldung (274 Wörter, Relevanz 1) nach DWD-Warndaten selbst gelesen (Datenstand 09:12:06 Uhr, Stufe 4, gültig bis 22 Uhr), Kreis Düren 19.11. als Hintergrund, Feuerwehr ohne Regeneinsatz; keine Schäden behauptet. Eine amtliche Quelle reicht für Kurzmeldungen (SCHREIBREGELN Abschnitt 0). Foto Unwetter-mit-Starkregen.jpg (CC BY 3.0) selbst angesehen. Live 09:23 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. | Claude 20.11. nachmittags: Aktualisierung nach DWD-Stand 14:38 Uhr (Unwetterwarnung unverändert bis 22 Uhr; neu Glätte/Frost 21.11. 0–9 Uhr), Feuerwehr und Polizei bis 14:48 Uhr ohne Regenfolgen. Commit 2ce71288. | Claude 21.11. morgens: DWD 9.09 Uhr ohne Warnung für den Kreis Düren; Abschluss-Nachtrag „Aktualisiert am 21. November“, Titel in Vergangenheitsform („warnte“), Dek angepasst, Relevanz 1 → 2 (Warnung abgelaufen). Feuerwehr und Polizei bis 9.15 Uhr ohne Meldung zu Wetterfolgen; Kreis-Website nicht erreichbar. Commit ffcfee5e. | Claude 22.11. morgens: neue DWD-Warnungen vor Glätte und Frost (Stufe 2, bis 22.11. 10 Uhr, Stand 9.09 Uhr) nicht als Meldung: keine Unwetterlage, Ende vor Veröffentlichung absehbar; Bestandsartikel unverändert.",
+      "notes": "Amtliche DWD-Dauerregenwarnung KreisDüren, aktueller Feed07:05:22 gelesen. Kreistext übernimmt älterenDWDStand, keine unabhängige Bestätigung/Drittquelle. Keine lokal eingetretenen Schäden belegt. WetterfotoMetadatenvalid, Original403/visuellungeprüft. | Claude 20.11. morgens: Kurzmeldung (274 Wörter, Relevanz 1) nach DWD-Warndaten selbst gelesen (Datenstand 09:12:06 Uhr, Stufe 4, gültig bis 22 Uhr), Kreis Düren 19.11. als Hintergrund, Feuerwehr ohne Regeneinsatz; keine Schäden behauptet. Eine amtliche Quelle reicht für Kurzmeldungen (SCHREIBREGELN Abschnitt 0). Foto Unwetter-mit-Starkregen.jpg (CC BY 3.0) selbst angesehen. Live 09:23 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. | Claude 20.11. nachmittags: Aktualisierung nach DWD-Stand 14:38 Uhr (Unwetterwarnung unverändert bis 22 Uhr; neu Glätte/Frost 21.11. 0–9 Uhr), Feuerwehr und Polizei bis 14:48 Uhr ohne Regenfolgen. Commit 2ce71288. | Claude 21.11. morgens: DWD 9.09 Uhr ohne Warnung für den Kreis Düren; Abschluss-Nachtrag „Aktualisiert am 21. November“, Titel in Vergangenheitsform („warnte“), Dek angepasst, Relevanz 1 → 2 (Warnung abgelaufen). Feuerwehr und Polizei bis 9.15 Uhr ohne Meldung zu Wetterfolgen; Kreis-Website nicht erreichbar. Commit ffcfee5e. | Claude 22.11. morgens: neue DWD-Warnungen vor Glätte und Frost (Stufe 2, bis 22.11. 10 Uhr, Stand 9.09 Uhr) nicht als Meldung: keine Unwetterlage, Ende vor Veröffentlichung absehbar; Bestandsartikel unverändert. | Claude 23.11. morgens (Korrektur MA-KORR-WETTER-DEK-2311): Vorspann datiert (Dauerregen bis 20.11. 22 Uhr, Glätte/Frost bis 21.11. 9 Uhr), pauschales „Seither keine Warnung“ entfernt; Nachtrag „Aktualisiert am 23. November“ mit neuen Stufe-2-Warnungen (Glätte bis 10 Uhr, Frost −1 bis −4 °C bis 11 Uhr, Stand 9.10 Uhr), DWD-JSON und Gemeindetabelle gelesen. Commit b4b2baba.",
       "dossier_history": [
         {
           "date": "2026-11-20",
@@ -13269,6 +13269,12 @@
           "edition": "claude-morgens",
           "dossier": "dossiers/2026-11-21-claude-morgens.md",
           "heading": "1. Umgesetzt (Aktualisierung)"
+        },
+        {
+          "date": "2026-11-23",
+          "edition": "claude-morgens",
+          "dossier": "dossiers/2026-11-23-claude-morgens.md",
+          "heading": "1. Umgesetzt (Korrektur)"
         }
       ],
       "research_verifications": [
@@ -13495,6 +13501,41 @@
           "date": "2026-11-22",
           "edition": "claude-morgens",
           "dossier": "dossiers/2026-11-22-claude-morgens.md",
+          "heading": "1. Umgesetzt"
+        }
+      ]
+    },
+    {
+      "id": "MA-KORR-WETTER-DEK-2311",
+      "priority": "P2",
+      "location_section": "Gemeinde · Wetter",
+      "change_type": "Korrekturauftrag",
+      "text_status": "T1",
+      "image_status": null,
+      "dossier": "dossiers/2026-11-23-morgens.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-23 09:25 Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-20-recherche-claude-morgens.json → /blaulicht/unwetterwarnung-merzenich-dauerregen-kreis-dueren-20-november-2026-dwd/",
+      "article_id": null,
+      "implementation_commit": "b4b2baba",
+      "research_verifications": [
+        {
+          "checked_at": "2026-11-21T07:03:57+01:00",
+          "dossier": "dossiers/2026-11-21-morgens.md",
+          "result": "Erledigunglivebestätigt: BeratungsfolgevonfeststehenderAbstimmunggetrennt, Poolplatz/EMSalsBerichte, Korrekturhinweis. VorlagenundRatstermingelesen, Implementierung017c0a2ferhalten."
+        },
+        {
+          "checked_at": "2026-11-21T12:10:56+01:00",
+          "dossier": "dossiers/2026-11-21-mittags.md",
+          "result": "Präzisierungweiterlive, RatweiterohneTagesordnung; historischerUmsetzungscommit017c0a2ferhalten."
+        }
+      ],
+      "notes": "ChatGPT 23.11. morgens: undatierter Vorspann „Seither führt der Wetterdienst keine Warnung mehr“ durch neue Warnungen überholt. Claude 23.11. morgens: Vorspann datiert, Nachtrag mit aktuellem Stand (Stufe 2, Glätte und Frost), keine neue Meldung.",
+      "dossier_history": [
+        {
+          "date": "2026-11-23",
+          "edition": "claude-morgens",
+          "dossier": "dossiers/2026-11-23-claude-morgens.md",
           "heading": "1. Umgesetzt"
         }
       ]
@@ -16406,6 +16447,16 @@
         "Freitagsergebnis Girbelsrath/Derbyurteil/Serienprüfung offen",
         "Ältere Artikeloriginalprüfungen unvollständig; Hallen/BdSt403; Zuginfo nur Titel; nicht alle Anlagen geprüft"
       ]
+    },
+    {
+      "date": "2026-11-23",
+      "edition": "morgens",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-23-claude-morgens.md",
+      "compared_with": "dossiers/2026-11-23-morgens.md",
+      "implementation_commit": "b4b2baba, a47858aa",
+      "summary": "Korrektur Unwetter-Vorspann (datiert, neue Stufe-2-Warnungen nachgetragen). Nullfund für neue Meldungen. Sport: Girbelsrath verlor laut FuPa-Spielbericht 0:3 in Arnoldsweiler (20.11.), FUSSBALL.DE noch ohne Bestätigung, daher noch keine Meldung. Kalender 18 Termine bis 07.12. bestätigt; neuer Heimat-Info-Termin Friedenslicht 13.12. (Pfadfinder) der Automatik überlassen. Mindesttakt 23.11.: 0 bis hierher.",
+      "publication": "Eine Korrektur direkt veröffentlicht"
     }
   ]
 }
