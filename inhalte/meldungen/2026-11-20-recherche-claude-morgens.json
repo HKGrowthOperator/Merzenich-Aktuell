@@ -8,7 +8,7 @@
       "ortsteil": "merzenich",
       "kicker": "Blaulicht · Wetter",
       "titel": "Unwetterwarnung für Merzenich: DWD warnte bis Freitag 22 Uhr vor ergiebigem Dauerregen",
-      "dek": "Die amtliche Unwetterwarnung für den Kreis Düren galt bis Freitag, 22 Uhr, die anschließende Warnung vor Glätte und Frost bis Samstag, 9 Uhr. Seither führt der Wetterdienst keine Warnung mehr.",
+      "dek": "Die amtliche Unwetterwarnung vor Dauerregen für den Kreis Düren galt bis Freitag, 20. November, 22 Uhr, die anschließende Warnung vor Glätte und Frost bis Samstag, 21. November, 9 Uhr.",
       "datum": "2026-11-20T09:18:00+01:00",
       "artikeltyp": "kurzmeldung",
       "relevanz": 2,
@@ -30,7 +30,8 @@
         "Der Kreis Düren hatte die Warnung schon am Donnerstag, 19. November, weitergegeben. Damals galt sie ab 11.44 Uhr; erwartet wurden zu diesem Zeitpunkt noch 40 bis 60 Liter je Quadratmeter, in Staulagen bis 70 Liter.",
         "Einsätze wegen des Regens in Merzenich sind bislang nicht bekannt. Die Einsatzübersichten der Freiwilligen Feuerwehr Merzenich auf ihrer Website und in der Heimat-Info-App verzeichneten am Freitagmorgen um 9.17 Uhr als jüngsten Einsatz eine Türöffnung vom Donnerstagvormittag; ein Unwettereinsatz war nicht darunter. Auch die Polizei Düren hatte bis dahin keine Meldung zu Folgen des Regens in der Gemeinde veröffentlicht. Merzenich Aktuell berichtet, falls sich das ändert.",
         "Aktualisiert am 20. November: Nach dem Stand von 14.38 Uhr hält der DWD die Unwetterwarnung bis 22 Uhr aufrecht; Mengen und Hinweise sind unverändert. Neu warnt er für die Nacht zum Samstag, 21. November, von 0 bis 9 Uhr vor Glätte und vor leichtem Frost zwischen 0 und minus 3 Grad. Er rät, im Straßenverkehr vorsichtig zu fahren und Pflanzen oder Leitungen bei Bedarf vor Frost zu schützen. Die Feuerwehr Merzenich hatte bis 14.48 Uhr keinen Einsatz wegen des Regens veröffentlicht, die Polizei Düren keine Meldung zu Regenfolgen in der Gemeinde.",
-        "Aktualisiert am 21. November: Die Unwetterwarnung vor Dauerregen ist am Freitag um 22 Uhr ausgelaufen, die Warnung vor Glätte und Frost am Samstag um 9 Uhr. Nach dem Stand von 9.09 Uhr führt der DWD für den Kreis Düren keine Warnung mehr. Die Feuerwehr Merzenich hatte bis Samstag, 9.15 Uhr, keinen Einsatz wegen Regen oder Glätte veröffentlicht; ihr jüngster Einsatz bleibt die Türöffnung vom Donnerstag. Auch bei der Polizei Düren gab es bis dahin keine Meldung zu Folgen des Wetters in der Gemeinde."
+        "Aktualisiert am 21. November: Die Unwetterwarnung vor Dauerregen ist am Freitag um 22 Uhr ausgelaufen, die Warnung vor Glätte und Frost am Samstag um 9 Uhr. Nach dem Stand von 9.09 Uhr führt der DWD für den Kreis Düren keine Warnung mehr. Die Feuerwehr Merzenich hatte bis Samstag, 9.15 Uhr, keinen Einsatz wegen Regen oder Glätte veröffentlicht; ihr jüngster Einsatz bleibt die Türöffnung vom Donnerstag. Auch bei der Polizei Düren gab es bis dahin keine Meldung zu Folgen des Wetters in der Gemeinde.",
+        "Aktualisiert am 23. November: Im Vorspann stand bis dahin, der Wetterdienst führe seither keine Warnung mehr. Das gilt nicht mehr: Für den Kreis Düren warnt der DWD inzwischen wieder, diesmal vor Glätte und vor leichtem Frost zwischen minus 1 und minus 4 Grad. Nach dem Stand von Montag, 9.10 Uhr, läuft die Glättewarnung um 10 Uhr aus, die Frostwarnung um 11 Uhr. Beides sind einfache Wetterwarnungen der Stufe 2, keine Unwetterwarnung."
       ],
       "fakten": [
         "Amtliche Unwetterwarnung vor ergiebigem Dauerregen für den Kreis Düren bis Freitag, 20. November, 22 Uhr",
@@ -93,6 +94,14 @@
             "https://www.presseportal.de/blaulicht/nr/8"
           ],
           "stelle": "warnings[105358000] fehlt; Einsatzübersichten; Dienststellenliste"
+        },
+        {
+          "aussage": "DWD-Warnungen (warnings.json), Datenstand 23.11.2026 09:10:03 Uhr (Montag, 23. November, 9.10 Uhr), gelesen 09:15 Uhr: Warnzelle 105358000 „Kreis Düren“: „GLÄTTE“, Stufe 2, Beginn 22.11. 23:45 Uhr, Ende 23.11. 10:00 Uhr (10 Uhr), „Es besteht vereinzelt Glättegefahr.“; „FROST“, Stufe 2 (Stufe 2), Beginn 22.11. 20:00 Uhr, Ende 23.11. 11:00 Uhr (11 Uhr), „Es tritt leichter Frost zwischen -1 °C und -4 °C auf.“ (minus 1, minus 4). Keine Unwetterwarnung. Frühere Phasen: Dauerregen bis 20.11. 22 Uhr, Glätte/Frost bis 21.11. 9 Uhr (Prüfeinträge vom 20. und 21. November). DWD-Warntabelle der Gemeinden in NRW, Abschnitt „Gemeinde Merzenich“, gelesen 09:17 Uhr: „Amtliche WARNUNG vor GLÄTTE“, gültig „So., 22. Nov., 23:45 Uhr“ bis „Mo., 23. Nov., 10:00 Uhr“; „Amtliche WARNUNG vor FROST“, gültig „So., 22. Nov., 20:00 Uhr“ bis „Mo., 23. Nov., 11:00 Uhr“, „zwischen -1 °C und -4 °C“.",
+          "belege": [
+            "https://www.dwd.de/DWD/warnungen/warnapp/json/warnings.json",
+            "https://www.wettergefahren.de/DWD/warnungen/warnapp_gemeinden/warnings_gemeinde_nrw.html"
+          ],
+          "stelle": "warnings[105358000]; Gemeindetabelle, Abschnitt Gemeinde Merzenich"
         }
       ],
       "quelle": {
@@ -125,6 +134,11 @@
           "name": "Polizei Düren: Pressemitteilungen (Presseportal, Dienststelle 8)",
           "url": "https://www.presseportal.de/blaulicht/nr/8",
           "stand": "2026-11-20"
+        },
+        {
+          "name": "Deutscher Wetterdienst: Warnungen für die Gemeinden in Nordrhein-Westfalen (Gemeinde Merzenich)",
+          "url": "https://www.wettergefahren.de/DWD/warnungen/warnapp_gemeinden/warnings_gemeinde_nrw.html",
+          "stand": "2026-11-23"
         }
       ]
     },
