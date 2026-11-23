@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-22-claude-nachmittags.md",
-  "source_check_window": "22.11.2026 Europe/Berlin: Beginn11:55; Hauptabrufe11:56:55–11:57:24; Polizeivolltexte11:57:46; Bilder11:58:12/21, frisch gesichtet11:59; Originalnachprüfungen11:58:31/11:59:27.",
+  "latest_dossier": "dossiers/2026-11-23-morgens.md",
+  "source_check_window": "23.11.2026 Europe/Berlin: Beginn07:04; Hauptabrufe07:05:39–07:06:18; Sportzusatz07:06:05; Bilder07:07:52/59, gesichtet07:08; Commons-Original07:08:04HTTP403; Termin-Nachprüfung07:09:03.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -12124,6 +12124,11 @@
           "checked_at": "2026-11-22T12:02:04+01:00",
           "dossier": "dossiers/2026-11-22-mittags.md",
           "result": "Bekannte Korrektur MA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411 weiter offen: Caption/Alt Wache, frisch geladenes und gesichtetes Livebild Motorrad. Keine Websiteänderung."
+        },
+        {
+          "checked_at": "2026-11-23T07:11:56+01:00",
+          "dossier": "dossiers/2026-11-23-morgens.md",
+          "result": "Bekannte Korrektur MA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411 weiter offen: Caption/Alt Wache, frisch geladenes und gesichtetes Livebild Motorrad. Keine Websiteänderung."
         }
       ]
     },
@@ -12183,6 +12188,11 @@
           "checked_at": "2026-11-21T12:10:56+01:00",
           "dossier": "dossiers/2026-11-21-mittags.md",
           "result": "NeueWochenvorschauvollständiglive/Repo,gegenelfangegebeneOriginalwegegeprüft. Kein konkreter neuerTextfehlerimgeprüftenUmfang. Nikolaus-Widerspruch/Frühstücksortlückekorrektbenannt; keinezusätzlicheT1-FreigabeunabhängigungesicherterEinzelangaben. BildSymboladventfrischgesichtet."
+        },
+        {
+          "checked_at": "2026-11-23T07:11:56+01:00",
+          "dossier": "dossiers/2026-11-23-morgens.md",
+          "result": "Claude-Korrektur2306ee1b live bestätigt: Girbelsrath26Nov19:30inSchlich, Morschenich29Nov14:30FreundschaftsspielinWeilerswist an Mannschaftsseiten geprüft. Liedersingen nur neu publiziert, Veranstaltungsangaben gleich. Keine neue Korrekturkarte, keine zusätzliche T1-Freigabe."
         }
       ]
     },
@@ -13287,6 +13297,24 @@
           "checked_at": "2026-11-22T12:02:04+01:00",
           "dossier": "dossiers/2026-11-22-mittags.md",
           "result": "DWD11:57:08, Feedstand11:54:15: kein Kreis-Düren-Warnungseintrag, Merzenich ohne aktuelle Tabellenwarnung. Morgenwarnung nicht als aktiv übernehmen. Keine Schadensfreiheit behauptet, keine neue Wetterkarte. Historische Claude-Statuswerte/Notizen/Umsetzungscommits erhalten."
+        },
+        {
+          "checked_at": "2026-11-23T07:11:56+01:00",
+          "dossier": "dossiers/2026-11-23-morgens.md",
+          "result": "Neu Glätte/Nebel neben bekanntem Frost. DWD-Kreisfeed06:59:05/Gemeindetabelle frisch gelesen, Warnenden23Nov09/10/11. Aktuell pauschale Entwarnung im undatierten Vorspann überholt: MA-KORR-WETTER-DEK-2311. RechercheT2 wegen fehlender unabhängiger Bestätigung/Drittquelle; Nebelbeginn Kreis/Gemeinde abweichend. Historische Claude-Statuswerte und Umsetzungscommits erhalten.",
+          "current_research_status": "T2"
+        }
+      ],
+      "correction_checks": [
+        {
+          "id": "MA-KORR-WETTER-DEK-2311",
+          "dossier": "dossiers/2026-11-23-morgens.md",
+          "checked_at": "2026-11-23T07:11:56+01:00",
+          "status": "offen_live",
+          "confirmed": true,
+          "wrong_statement": "Seither führt der Wetterdienst keine Warnung mehr.",
+          "correct_statement": "Frühere Warnphase datiert abschließen; aktuelle neue DWD-Warnphase vor Glätte/Nebel/Frost getrennt datieren, Vorspann vor Umsetzung frisch prüfen.",
+          "implementation": "keine_Websiteaenderung"
         }
       ]
     },
@@ -13428,6 +13456,11 @@
           "checked_at": "2026-11-22T12:02:04+01:00",
           "dossier": "dossiers/2026-11-22-mittags.md",
           "result": "Korrektur MA-KORR-FW149-BILDMOTIV-2211 live erledigt: Entwarnung/Waffelursache/Nachtrag und Wasserturmfoto statt Brandfoto frisch kontrolliert. Originalbericht erneut gelesen. Keine bestimmte Veranstaltung behauptet. Historische Claude-T1/B2 und Umsetzungfc6ab28a sowie Werkzeugc440abf2 erhalten; keine zusätzliche T1-Ereignis-/Commons-Rechtefreigabe. Unabhängige Bestätigung/Drittquelle nicht hinzugewonnen."
+        },
+        {
+          "checked_at": "2026-11-23T07:11:56+01:00",
+          "dossier": "dossiers/2026-11-23-morgens.md",
+          "result": "Wasserturm-Korrektur weiterhin live erledigt: Text gegen Original, Ersatzbild frisch gesichtet. Keine neue Entwicklung/Dublette. Historische ClaudeT1/B2, Notizen und Umsetzungfc6ab28a/c440abf2 erhalten, keine zusätzliche Commons-Rechtefreigabe."
         }
       ]
     },
@@ -16326,6 +16359,53 @@
       "implementation_commit": "2306ee1b",
       "summary": "Nullfund für neue Meldungen (Sonntag: Polizei, Feuerwehr, Gemeinde, Kreis, RIS, Heimat-Info ohne neue belegbare Nachricht mit Ortsbezug). Eigene Korrektur der Wochenvorschau (nicht nur zwei Fußballvereine; Spiele Girbelsrath 26.11. und Morschenich 29.11. ergänzt). ChatGPT mittags ohne Korrekturauftrag. Kalender 20 Termine bis 06.12. erneut bestätigt. Frostwarnung Stufe 2 für die Nacht nicht als Meldung. Mindesttakt 22.11.: 0.",
       "publication": "Eine Korrektur direkt veröffentlicht"
+    },
+    {
+      "date": "2026-11-23",
+      "edition": "morgens",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-23-morgens.md",
+      "compared_with": "dossiers/2026-11-22-mittags.md",
+      "compared_with_claude": "dossiers/2026-11-22-claude-nachmittags.md",
+      "base_commit": "94049c4093a478b58b0149b5319832fbfed1d96d",
+      "implementation_commit": null,
+      "summary": "Eine T2-Wetterupdatekarte: neue Glätte/Nebelwarnung neben bekanntem Frost; überholte pauschale Entwarnung im Vorspann als neue Korrektur. Nebelbeginn Kreis/Gemeinde abweichend. Wochenvorschau-Fußballergänzung2306ee1b live bestätigt; Freitagsergebnis weiter unlesbar. Keine neue Terminänderung, Liedersingen nur neu datiert. Motorradcaption weiter offen.",
+      "topics": 1,
+      "new_topics": 0,
+      "updated_topics": 1,
+      "blocked_T2": 1,
+      "corrections_required": 2,
+      "new_corrections_required": 1,
+      "new_corrections": [
+        "MA-KORR-WETTER-DEK-2311"
+      ],
+      "known_corrections_still_open": [
+        "MA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411"
+      ],
+      "resolved_corrections_verified": [
+        "MA-KORR-FW149-BILDMOTIV-2211"
+      ],
+      "repository_article_files_read": 62,
+      "repository_event_files_read": 26,
+      "repository_area_files_read": 24,
+      "new_or_changed_events": 0,
+      "complete_drafts": 0,
+      "source_check_window": "23.11.2026 Europe/Berlin: Beginn07:04; Hauptabrufe07:05:39–07:06:18; Sportzusatz07:06:05; Bilder07:07:52/59, gesichtet07:08; Commons-Original07:08:04HTTP403; Termin-Nachprüfung07:09:03.",
+      "prepared_at": "2026-11-23T07:11:56+01:00",
+      "deadline": "2026-11-23T08:45:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche Bereitstellung/Fristeinhaltung im bestätigten main-Uploadabschluss; prepared_at ist kein Uploadnachweis.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "open_checks": [
+        "Wetter-Vorspann aktualisieren; DWD vor Umsetzung frisch lesen, Nebelbeginn Kreis/Gemeinde abweichend",
+        "Unabhängige Bestätigung/Drittquelle für Wetterupdate fehlen, Bildoriginal403/B0",
+        "Bekannte Motorradcaption weiter offen",
+        "HFA-Ergebnisse/Ratstagesordnung fehlen",
+        "Nikolaus-Zeitkonflikt/Frühstücksort offen",
+        "Freitagsergebnis Girbelsrath/Derbyurteil/Serienprüfung offen",
+        "Ältere Artikeloriginalprüfungen unvollständig; Hallen/BdSt403; Zuginfo nur Titel; nicht alle Anlagen geprüft"
+      ]
     }
   ]
 }
