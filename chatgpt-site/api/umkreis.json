@@ -1,6 +1,6 @@
 {
  "hinweis": "Erzeugt von deploy/umkreis.mjs aus inhalte/umkreis/. Nicht von Hand ändern.",
- "stand": "2026-11-22",
+ "stand": "2026-11-23",
  "tage": 30,
  "orte": [
   "Düren",
@@ -11,6 +11,22 @@
   "Kreis Düren"
  ],
  "eintraege": [
+  {
+   "ort": "Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Betrunken am Steuer: Polizei stellt 1,18 Promille fest",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6395723",
+   "datum": "2026-11-23",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Nach privater Feier mit Verdacht auf \"K.O.-Tropfen\" ins Krankenhaus",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6395718",
+   "datum": "2026-11-23",
+   "quelle": "Polizei Düren"
+  },
   {
    "ort": "Düren",
    "rubrik": "Blaulicht",

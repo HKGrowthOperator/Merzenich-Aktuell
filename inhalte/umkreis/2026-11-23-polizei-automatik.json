@@ -1,0 +1,21 @@
+{
+  "hinweis": "Automatisch aus der Liste der Polizei Düren im Presseportal angelegt (deploy/automatik-umkreis.mjs): amtliche Schlagzeile, Ort, Datum und Link zur Einzelmeldung, kein eigener Text. Meldungen aus Merzenich und den Ortsteilen werden hier nie angelegt.",
+  "eintraege": [
+    {
+      "ort": "Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Betrunken am Steuer: Polizei stellt 1,18 Promille fest",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6395723",
+      "datum": "2026-11-23",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Nach privater Feier mit Verdacht auf \"K.O.-Tropfen\" ins Krankenhaus",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6395718",
+      "datum": "2026-11-23",
+      "quelle": "Polizei Düren"
+    }
+  ]
+}
