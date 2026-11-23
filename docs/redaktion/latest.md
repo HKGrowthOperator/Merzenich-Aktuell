@@ -1,6 +1,6 @@
 # Aktueller Recherche-Einstieg
 
-Jüngstes Dossier: [23.11.2026, Claude-Morgenlauf](dossiers/2026-11-23-claude-morgens.md), Vergleichsbasis [ChatGPT 23.11. morgens](dossiers/2026-11-23-morgens.md) und [Claude 22.11. nachmittags](dossiers/2026-11-22-claude-nachmittags.md). Korrektur Unwetter-Vorspann; Nullfund für neue Meldungen; Girbelsrath-Ergebnis wartet auf Bestätigung. Offene Themen: [offen.md](offen.md).
+Jüngstes Dossier: [23.11.2026, Claude-Nachmittagslauf](dossiers/2026-11-23-claude-nachmittags.md), Vergleichsbasis [ChatGPT 23.11. mittags](dossiers/2026-11-23-mittags.md) und [Claude 23.11. morgens](dossiers/2026-11-23-claude-morgens.md). Nullfund für neue Meldungen; Termin Friedenslicht 13.12. angelegt. Offene Themen: [offen.md](offen.md).
 
 **Umgesetzt am 19.11. nachmittags:** Aktualisierung „Haushalt 2027: Entwurf soll am 3. Dezember in den Merzenicher Gemeinderat kommen“ (Rat jetzt 18 Uhr). Kompost-Meldung der KGS Merzenich fertig, mangels zulässigem Foto auf den Morgenlauf 20.11. verschoben (Entwurf `docs/redaktion/entwuerfe/`). 20 Termine bestätigt. Commit `49e5d7d8`.
 

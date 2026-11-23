@@ -1,6 +1,6 @@
 # Offene Themen aus dem Register
 
-Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-23-claude-morgens.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
+Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-23-claude-nachmittags.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
 
 ## Zahlen
 
@@ -132,7 +132,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 
 ## Jüngste Läufe
 
+- 2026-11-23 nachmittags (Claude): Nullfund für neue Meldungen (Polizei nur Wohnort-Bezug, Kreis ohne Ortsbezug, HFA weiter ohne Ergebnisse, Girbelsrath-Ergebnis von FUSSBALL.DE weiter nicht bestätigt). Neuer Termin Friedenslicht 13.12. (Pfadfinder) angelegt, den die Termin-Automatik wegen Kalenderseite 2 nicht übernommen hatte. ChatGPT mittags ohne Korrekturauftrag. Kalender 18 Termine bis 07.12. erneut bestätigt. Mindesttakt 23.11.: 0. – Commit 8a1110fc
+- 2026-11-23 mittags (ChatGPT): Keine neue lokale Themenkarte. Wetter-Vorspannkorrektur b4b2baba live bestätigt, aktueller DWD ohne Kreiswarnung. FuPa3:0/Abpfiff direkt gelesen, aber bereits Claude bekannt und Datenkonflikt/fehlende unabhängige Bestätigung offen. Neue Dürener Polizeimeldungen regional (Fahrerherkunft Merzenich allein kein institutioneller/örtlicher Ereignisbezug nach Ortsregel). Friedenslicht13Dez noch nicht im Repository, keine Handanlage.
 - 2026-11-23 morgens (Claude): Korrektur Unwetter-Vorspann (datiert, neue Stufe-2-Warnungen nachgetragen). Nullfund für neue Meldungen. Sport: Girbelsrath verlor laut FuPa-Spielbericht 0:3 in Arnoldsweiler (20.11.), FUSSBALL.DE noch ohne Bestätigung, daher noch keine Meldung. Kalender 18 Termine bis 07.12. bestätigt; neuer Heimat-Info-Termin Friedenslicht 13.12. (Pfadfinder) der Automatik überlassen. Mindesttakt 23.11.: 0 bis hierher. – Commit b4b2baba, a47858aa
 - 2026-11-23 morgens (ChatGPT): Eine T2-Wetterupdatekarte: neue Glätte/Nebelwarnung neben bekanntem Frost; überholte pauschale Entwarnung im Vorspann als neue Korrektur. Nebelbeginn Kreis/Gemeinde abweichend. Wochenvorschau-Fußballergänzung2306ee1b live bestätigt; Freitagsergebnis weiter unlesbar. Keine neue Terminänderung, Liedersingen nur neu datiert. Motorradcaption weiter offen.
-- 2026-11-22 nachmittags (Claude): Nullfund für neue Meldungen (Sonntag: Polizei, Feuerwehr, Gemeinde, Kreis, RIS, Heimat-Info ohne neue belegbare Nachricht mit Ortsbezug). Eigene Korrektur der Wochenvorschau (nicht nur zwei Fußballvereine; Spiele Girbelsrath 26.11. und Morschenich 29.11. ergänzt). ChatGPT mittags ohne Korrekturauftrag. Kalender 20 Termine bis 06.12. erneut bestätigt. Frostwarnung Stufe 2 für die Nacht nicht als Meldung. Mindesttakt 22.11.: 0. – Commit 2306ee1b
-- 2026-11-22 mittags (ChatGPT): Keine neue lokale Themenkarte/Terminänderung. Wasserturm-Korrektur von Claude live einschließlich Ersatzbild frisch bestätigt; bekannte Motorradcaption weiter offen. DWD aktuell ohne Kreiswarnung, neue Polizeivolltexte ohne Ortsbezug. Jüngste Artikel einschließlich Kompost/Bauausschuss gegen Originale nachgeprüft, Grenzen dokumentiert.
