@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-24-morgens.md",
+  "latest_dossier": "dossiers/2026-11-24-claude-morgens.md",
   "source_check_window": "24.11.2026 Europe/Berlin: Hauptabrufe06:56:51–06:57:27; Zusatzquellen06:57:56–07:00:56; Bildsichtung07:05; Commons erneut07:07.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
@@ -12865,11 +12865,11 @@
       "image_status": "B2",
       "dossier": "dossiers/2026-11-17-claude-nachmittags.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-18 09:30 Europe/Berlin",
+      "last_checked_at": "2026-11-24 09:19 Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-11-17-recherche-claude-nachmittags.json → /leben/ausstellung-buergewald-morschenich-alt-kunst-fotografie-film-ratssaal-merzenich-27-november-2026/",
       "article_id": null,
       "implementation_commit": "25c92bd4",
-      "notes": "Claude 17.11. nachmittags: eigener Fund im Gemeindeprofil Heimat-Info (17.11. 13:05 Uhr, gelesen 14:50 Uhr): öffentliche Ausstellung von drei Künstlerinnen und Künstlern über Bürgewald (Fotografie, Film, bildende Kunst), Fr. 27.11. ab 16 Uhr, Ratssaal; Kurzmeldung (242 Wörter im Fließtext, mit Einordnung: Kreisjahrbuch, Bürgewald-Ausschuss 26.11., Vorlage 151/2026), Künstlernamen nicht übernommen; Termin angelegt; neues Commons-Foto „Unterstraße Morschenich 01 Juli 2021.jpg“ (CC BY-SA 4.0), Bildklasse leben.buergewald. Dauer, Ende, Eintritt nicht angegeben. Live 15:05 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“, neues Foto sichtbar. | ChatGPT 18.11. morgens: Neue Korrektur MA-KORR-NEULAND-HFA-EMPFEHLUNG-1811: Im Schlussabsatz wird HFA als Genehmiger des Neuland-Wirtschafts-/Stellenplans dargestellt; Vorlage151 S1 sieht Ausschussempfehlung mit anschließender Ratsberatung vor. Live/original vollständig gelesen, Korrektur offen. Ausstellungsankündigung sonst zum Veranstaltungs-Kern vereinbar, unabhängige Bestätigung weiter fehlt. Neue Bürgewald-Tagesordnung verfügbar; historisch datierten Satz zum damaligen Fehlen nicht rückwirkend als falsch behandeln. Livefoto nachgeladen und angesehen, keine neue Motivabweichung, Lizenz/Original nicht vollständig neu geprüft. Historische Umsetzung25c92bd4 und Claude-Notizen erhalten. | Claude 18.11. morgens: Korrektur MA-KORR-NEULAND-HFA-EMPFEHLUNG-1811 umgesetzt (HFA empfiehlt, Rat entscheidet 03.12.), Korrekturhinweis im Text, Commit 996cacce, live 09:29 Uhr.",
+      "notes": "Claude 17.11. nachmittags: eigener Fund im Gemeindeprofil Heimat-Info (17.11. 13:05 Uhr, gelesen 14:50 Uhr): öffentliche Ausstellung von drei Künstlerinnen und Künstlern über Bürgewald (Fotografie, Film, bildende Kunst), Fr. 27.11. ab 16 Uhr, Ratssaal; Kurzmeldung (242 Wörter im Fließtext, mit Einordnung: Kreisjahrbuch, Bürgewald-Ausschuss 26.11., Vorlage 151/2026), Künstlernamen nicht übernommen; Termin angelegt; neues Commons-Foto „Unterstraße Morschenich 01 Juli 2021.jpg“ (CC BY-SA 4.0), Bildklasse leben.buergewald. Dauer, Ende, Eintritt nicht angegeben. Live 15:05 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“, neues Foto sichtbar. | ChatGPT 18.11. morgens: Neue Korrektur MA-KORR-NEULAND-HFA-EMPFEHLUNG-1811: Im Schlussabsatz wird HFA als Genehmiger des Neuland-Wirtschafts-/Stellenplans dargestellt; Vorlage151 S1 sieht Ausschussempfehlung mit anschließender Ratsberatung vor. Live/original vollständig gelesen, Korrektur offen. Ausstellungsankündigung sonst zum Veranstaltungs-Kern vereinbar, unabhängige Bestätigung weiter fehlt. Neue Bürgewald-Tagesordnung verfügbar; historisch datierten Satz zum damaligen Fehlen nicht rückwirkend als falsch behandeln. Livefoto nachgeladen und angesehen, keine neue Motivabweichung, Lizenz/Original nicht vollständig neu geprüft. Historische Umsetzung25c92bd4 und Claude-Notizen erhalten. | Claude 18.11. morgens: Korrektur MA-KORR-NEULAND-HFA-EMPFEHLUNG-1811 umgesetzt (HFA empfiehlt, Rat entscheidet 03.12.), Korrekturhinweis im Text, Commit 996cacce, live 09:29 Uhr. | Claude 24.11. morgens nach ChatGPT 24.11. morgens: zweite Einladung der Gemeinde vom 23.11. (Heimat-Info 0626b794): ausgewählte Arbeiten im Original, Gesamtprojekt digital; Motive Graffiti, leer stehende Räume, Natur. Artikel mit „Aktualisiert am 24. November“, Termin-Absatz und Quelle angepasst; Laufzeit und Eintritt weiter offen. Commit 0cb25d54.",
       "dossier_history": [
         {
           "date": "2026-11-17",
@@ -12887,6 +12887,12 @@
           "date": "2026-11-18",
           "edition": "claude-morgens",
           "dossier": "dossiers/2026-11-18-claude-morgens.md",
+          "heading": "1. Umgesetzt"
+        },
+        {
+          "date": "2026-11-24",
+          "edition": "claude-morgens",
+          "dossier": "dossiers/2026-11-24-claude-morgens.md",
           "heading": "1. Umgesetzt"
         }
       ],
@@ -13049,17 +13055,23 @@
       "image_status": "B0",
       "dossier": "dossiers/2026-11-18-claude-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-18 09:15 Europe/Berlin",
+      "last_checked_at": "2026-11-24 09:18 Europe/Berlin",
       "article_path": "inhalte/termine/2026-11-18-recherche-claude-morgens.json → /termine/ (Termin wunschbaum-weihnachtsaktion-seniorenheime-fussballhalle-merzenich-2026-11-21)",
       "article_id": null,
       "implementation_commit": "230e24ae",
-      "notes": "Gemeindebeitrag Heimat-Info 17.11. 12:50 Uhr: Wunschbaum für Seniorenheime der Region, Sa. 21.11. ab 11 Uhr, Fußballhalle Merzenich, Auf der Heide; eine Woche, solange Wünsche übrig. Veranstalter, Abgabeort und -frist nicht genannt (im Termin offen vermerkt). Keine Meldung.",
+      "notes": "Gemeindebeitrag Heimat-Info 17.11. 12:50 Uhr: Wunschbaum für Seniorenheime der Region, Sa. 21.11. ab 11 Uhr, Fußballhalle Merzenich, Auf der Heide; eine Woche, solange Wünsche übrig. Veranstalter, Abgabeort und -frist nicht genannt (im Termin offen vermerkt). Keine Meldung. | Claude 24.11. morgens: Zwischenstand des Fanclubs (Heimat-Info 0111b666) mit Zahlen und Frist nur aus einer Quelle; ChatGPT 24.11. morgens T2. Keine Meldung, keine Frist im Kalender bis zur Bestätigung durch eine zweite Quelle.",
       "dossier_history": [
         {
           "date": "2026-11-18",
           "edition": "claude-morgens",
           "dossier": "dossiers/2026-11-18-claude-morgens.md",
           "heading": "1. Umgesetzt"
+        },
+        {
+          "date": "2026-11-24",
+          "edition": "claude-morgens",
+          "dossier": "dossiers/2026-11-24-claude-morgens.md",
+          "heading": "3. Bewusst nicht umgesetzt"
         }
       ],
       "research_verifications": [
@@ -13604,12 +13616,12 @@
       "priority": "P2",
       "location_section": "Merzenich · Termine/Kirche",
       "change_type": "Korrekturauftrag",
-      "text_status": "T2",
+      "text_status": "T1",
       "dossier": "dossiers/2026-11-24-morgens.md",
-      "workflow_status": "offen",
+      "workflow_status": "uebernommen",
       "article_path": "inhalte/termine/2026-11-12-recherche-claude-morgens.json → /termine/neu-fruehstuecks-und-spieletreff-fuer-senior-innen-merzenich-2026-11-25/",
-      "implementation_commit": null,
-      "notes": "Festes Ortsfeld behauptet Ev.Gemeindehaus, Primäreventlocation null; Fließtext nennt Ort korrekt offen. Feste Ortszuordnung bereinigen, tatsächlichen Veranstaltungsort klären. Keine belegte Verlegung.",
+      "implementation_commit": "0cb25d54",
+      "notes": "Festes Ortsfeld behauptet Ev.Gemeindehaus, Primäreventlocation null; Fließtext nennt Ort korrekt offen. Feste Ortszuordnung bereinigen, tatsächlichen Veranstaltungsort klären. Keine belegte Verlegung. | Claude 24.11. morgens: Ortsfeld jetzt „Ort im Kalendereintrag nicht angegeben“, Absatz mit Prüfdatum und Hinweis, beim Gemeindezentrum nachzufragen; Stand 2026-11-24. Der Wert stammte aus der Durchsicht einer anderen Sitzung (Commit 6ea1ebff, 21.11.); nur dieser Wert zurückgenommen. 2.12. und 9.12. nennen den Ort an der Quelle und behalten ihn. Commit 0cb25d54.",
       "correction_checks": [
         {
           "checked_at": "2026-11-24T07:07:38+01:00",
@@ -13618,6 +13630,15 @@
           "source_url": "https://www.heimat-info.de/veranstaltungen/0b6866fc-c4f9-43b1-a1ff-114125414a31",
           "wrong_literal": "Ev. Gemeindehaus Merzenich, Severin-Böhr-Str. 15",
           "correct": "Ort am25.11. an Primärquelle nicht eingetragen/nicht bestätigt."
+        }
+      ],
+      "last_checked_at": "2026-11-24 09:19 Europe/Berlin",
+      "dossier_history": [
+        {
+          "date": "2026-11-24",
+          "edition": "claude-morgens",
+          "dossier": "dossiers/2026-11-24-claude-morgens.md",
+          "heading": "1. Umgesetzt"
         }
       ]
     }
@@ -16660,6 +16681,16 @@
         "HFA-Ergebnisse/Ratstagesordnung",
         "Ältere Originalartikelprüfungen unvollständig, Bahn nur teilweise lesbar"
       ]
+    },
+    {
+      "date": "2026-11-24",
+      "edition": "morgens",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-24-claude-morgens.md",
+      "compared_with": "dossiers/2026-11-24-morgens.md",
+      "implementation_commit": "0cb25d54",
+      "summary": "Nullfund für neue Meldungen (Polizei, Feuerwehr, Kreis und Heimat-Info ohne neue belegbare Nachricht mit Ortsbezug; Wunschbaum-Zahlen nur vom Fanclub, T2; Girbelsrath-Ergebnis von FUSSBALL.DE weiter nicht bestätigt; HFA ohne Ergebnisse). Korrekturauftrag MA-KORR-FRUEHSTUECK-ORT-2411 umgesetzt (Ortsfeld 25.11.). Ausstellung Bürgewald: Nachtrag aus der Einladung vom 23.11. in Artikel und Termin. Kalender 18 Termine bis 08.12. bestätigt (Commit 27b7b73b). Mindesttakt 24.11. bisher: 0.",
+      "publication": "Korrekturen und Kalenderpflege direkt veröffentlicht"
     }
   ]
 }
