@@ -1,4 +1,4 @@
 {
-  "plugin": {"version": "1.50.4", "zip": "wordpress-delivery/merzenich-aktuell-core.zip", "sha256": "73b6e75db3045a2494f3ba0a31d83d09a8a8e40d6ca75a7897965c50c9ddbf7f"},
-  "theme": {"version": "21.30.5", "zip": "wordpress-delivery/merzenich-aktuell-theme.zip", "sha256": "7b3a209820b076371953580fb25e92d8dc31f715dcdb8e648855b6fce7f83252"}
+  "plugin": {"version": "1.50.4", "zip": "wordpress-delivery/merzenich-aktuell-core.zip", "sha256": "e4c3915c4f196a13ad6b4b04cd34b29cfe913739b676d68a5e0dccefa90aebbe"},
+  "theme": {"version": "21.30.5", "zip": "wordpress-delivery/merzenich-aktuell-theme.zip", "sha256": "5df26db296d6a9c5eae9049e40697ea78a60c83fa537daff6f94372b9f8e4934"}
 }
