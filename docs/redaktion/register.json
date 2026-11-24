@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-23-claude-nachmittags.md",
-  "source_check_window": "23.11.2026 Europe/Berlin: Beginn12:05; Hauptabrufe12:06:45–12:07:15; FuPa12:07:24/54, neue Polizeivolltexte12:07:54; Bilder12:08:28/34, gesichtet12:09; Friedenslicht12:10:22; Bildoriginale403.",
+  "latest_dossier": "dossiers/2026-11-24-morgens.md",
+  "source_check_window": "24.11.2026 Europe/Berlin: Hauptabrufe06:56:51–06:57:27; Zusatzquellen06:57:56–07:00:56; Bildsichtung07:05; Commons erneut07:07.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -4052,7 +4052,15 @@
           "published": "laufende Vorlagenübersicht"
         }
       ],
-      "latest_research_image_status": "B0"
+      "latest_research_image_status": "B0",
+      "research_verifications": [
+        {
+          "checked_at": "2026-11-24T07:07:38+01:00",
+          "dossier": "dossiers/2026-11-24-morgens.md",
+          "research_status": "T2",
+          "result": "Neue19seitige Fotodokumentation zu135/2026 gesichtet, keine neue Beschluss-/Fristlage daraus belegt, Personenfotos nicht übernehmen."
+        }
+      ]
     },
     {
       "id": "MA-NAHVERKEHRSPLAN",
@@ -12907,6 +12915,14 @@
           "evidence": "Vorlage151/2026 PDF-S1, Beratungsfolge und Beschlussvorschlag; Liveartikel letzter Absatz; Abruf jeweils18.11.06:56:54",
           "implementation": "keine_Artikelumsetzung"
         }
+      ],
+      "research_verifications": [
+        {
+          "checked_at": "2026-11-24T07:07:38+01:00",
+          "dossier": "dossiers/2026-11-24-morgens.md",
+          "research_status": "T2",
+          "result": "Neue Gemeinde-Programmklarstellung: ausgewählte Originalwerke und Gesamtprojekt digital; Datum/Ort unverändert, Kalenderergänzung statt Dublette; kein neuer Artikel mit Drei-Quellen-Freigabe."
+        }
       ]
     },
     {
@@ -13044,6 +13060,14 @@
           "edition": "claude-morgens",
           "dossier": "dossiers/2026-11-18-claude-morgens.md",
           "heading": "1. Umgesetzt"
+        }
+      ],
+      "research_verifications": [
+        {
+          "checked_at": "2026-11-24T07:07:38+01:00",
+          "dossier": "dossiers/2026-11-24-morgens.md",
+          "research_status": "T2",
+          "result": "Neuer Fanclub-Zwischenstand1211/650 und Frist7Dez; unabhängige Bestätigung/Drittquelle fehlen, Fristphasen ungeklärt; keine Freigabe."
         }
       ]
     },
@@ -13557,6 +13581,12 @@
           "checked_at": "2026-11-21T12:10:56+01:00",
           "dossier": "dossiers/2026-11-21-mittags.md",
           "result": "Präzisierungweiterlive, RatweiterohneTagesordnung; historischerUmsetzungscommit017c0a2ferhalten."
+        },
+        {
+          "checked_at": "2026-11-24T07:07:38+01:00",
+          "dossier": "dossiers/2026-11-24-morgens.md",
+          "research_status": "T1",
+          "result": "Datierter Vorspann/Nachtrag weiter live, b4b2baba erhalten. Aktuell DWD Warnungen mit unterschiedlicher Frost-Endzeit Gemeinde11/Kreis12Uhr; keine pauschale Entwarnung."
         }
       ],
       "notes": "ChatGPT 23.11. morgens: undatierter Vorspann „Seither führt der Wetterdienst keine Warnung mehr“ durch neue Warnungen überholt. Claude 23.11. morgens: Vorspann datiert, Nachtrag mit aktuellem Stand (Stufe 2, Glätte und Frost), keine neue Meldung.",
@@ -13566,6 +13596,28 @@
           "edition": "claude-morgens",
           "dossier": "dossiers/2026-11-23-claude-morgens.md",
           "heading": "1. Umgesetzt"
+        }
+      ]
+    },
+    {
+      "id": "MA-KORR-FRUEHSTUECK-ORT-2411",
+      "priority": "P2",
+      "location_section": "Merzenich · Termine/Kirche",
+      "change_type": "Korrekturauftrag",
+      "text_status": "T2",
+      "dossier": "dossiers/2026-11-24-morgens.md",
+      "workflow_status": "offen",
+      "article_path": "inhalte/termine/2026-11-12-recherche-claude-morgens.json → /termine/neu-fruehstuecks-und-spieletreff-fuer-senior-innen-merzenich-2026-11-25/",
+      "implementation_commit": null,
+      "notes": "Festes Ortsfeld behauptet Ev.Gemeindehaus, Primäreventlocation null; Fließtext nennt Ort korrekt offen. Feste Ortszuordnung bereinigen, tatsächlichen Veranstaltungsort klären. Keine belegte Verlegung.",
+      "correction_checks": [
+        {
+          "checked_at": "2026-11-24T07:07:38+01:00",
+          "confirmed": true,
+          "live_url": "https://merzenich-aktuell.de/termine/neu-fruehstuecks-und-spieletreff-fuer-senior-innen-merzenich-2026-11-25/",
+          "source_url": "https://www.heimat-info.de/veranstaltungen/0b6866fc-c4f9-43b1-a1ff-114125414a31",
+          "wrong_literal": "Ev. Gemeindehaus Merzenich, Severin-Böhr-Str. 15",
+          "correct": "Ort am25.11. an Primärquelle nicht eingetragen/nicht bestätigt."
         }
       ]
     }
@@ -16565,6 +16617,49 @@
       "implementation_commit": "8a1110fc",
       "summary": "Nullfund für neue Meldungen (Polizei nur Wohnort-Bezug, Kreis ohne Ortsbezug, HFA weiter ohne Ergebnisse, Girbelsrath-Ergebnis von FUSSBALL.DE weiter nicht bestätigt). Neuer Termin Friedenslicht 13.12. (Pfadfinder) angelegt, den die Termin-Automatik wegen Kalenderseite 2 nicht übernommen hatte. ChatGPT mittags ohne Korrekturauftrag. Kalender 18 Termine bis 07.12. erneut bestätigt. Mindesttakt 23.11.: 0.",
       "publication": "Ein Termin direkt veröffentlicht"
+    },
+    {
+      "date": "2026-11-24",
+      "edition": "morgens",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-24-morgens.md",
+      "compared_with": "dossiers/2026-11-23-mittags.md",
+      "compared_with_claude": "dossiers/2026-11-23-claude-nachmittags.md",
+      "base_commit": "4ab87bb3fc81301f2cf095d84b2d5bc4923c92e7",
+      "implementation_commit": null,
+      "summary": "Wunschbaum-Zwischenstand T2; neue Frühstücksort-Korrektur, Motorradcaption weiterhin offen; Ausstellungsprogramm konkretisiert. Jugendfotoanlage ohne neue Beschlusslage. Friedenslicht jetzt Bestand/live bestätigt.",
+      "topics": 1,
+      "new_topics": 0,
+      "updated_topics": 1,
+      "blocked_T2": 1,
+      "corrections_required": 2,
+      "new_corrections_required": 1,
+      "new_corrections": [
+        "MA-KORR-FRUEHSTUECK-ORT-2411"
+      ],
+      "known_corrections_still_open": [
+        "MA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411"
+      ],
+      "repository_article_files_read": 62,
+      "repository_event_files_read": 27,
+      "repository_area_files_read": 25,
+      "new_or_changed_events": 1,
+      "complete_drafts": 0,
+      "prepared_at": "2026-11-24T07:07:38+01:00",
+      "deadline": "2026-11-24T08:45:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Bereitstellungszeit/Frist im bestätigten main-Uploadabschluss; prepared_at kein Uploadnachweis.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "open_checks": [
+        "Wunschbaum unabhängige Bestätigung/Drittquelle und Fristauslegung",
+        "Frühstücksort unbekannt; Ortsfeld-Korrektur",
+        "Bekannte Motorradcaption",
+        "Girbelsrath-Ergebnis Datenkonflikt und unabhängige Bestätigung/Drittquelle",
+        "Bildoriginal403/B0",
+        "HFA-Ergebnisse/Ratstagesordnung",
+        "Ältere Originalartikelprüfungen unvollständig, Bahn nur teilweise lesbar"
+      ]
     }
   ]
 }
