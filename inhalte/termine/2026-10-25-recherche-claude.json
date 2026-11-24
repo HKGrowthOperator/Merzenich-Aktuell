@@ -95,12 +95,17 @@
       "ortsteil": "Merzenich",
       "kategorie": "Politik",
       "veranstalter": "Gemeinde Merzenich",
-      "beschreibung": "Der Gemeinderat tagt am Donnerstag, 3. Dezember, um 18 Uhr im Ratssaal; die Tagesordnung veröffentlicht die Gemeinde im Ratsinformationssystem.",
+      "beschreibung": "Der Gemeinderat tagt am Donnerstag, 3. Dezember, um 18 Uhr im Ratssaal. Auf der Tagesordnung stehen unter anderem die Hundesteuer, die Hebesätze 2027, neue Abwassersatzungen, der Jahresabschluss 2025 und das Dorfauto.",
       "absaetze": [
         "Laut Sitzungskalender des Ratsinformationssystems tritt der Gemeinderat am Donnerstag, 3. Dezember 2026, um 18 Uhr im Ratssaal des Rathauses zusammen. Es ist seine 8. Sitzung und die letzte eingetragene Ratssitzung des Jahres.",
-        "Geändert am 18. November: Bis zum 17. November stand im Sitzungskalender 17 Uhr als Beginn, seit dem 18. November 18 Uhr. Eine Tagesordnung lag am 18. November noch nicht vor. Beraten soll der Rat unter anderem über die Leitlinien zum Bau-Turbo und den Solarpark an der A4."
+        "Geändert am 18. November: Bis zum 17. November stand im Sitzungskalender 17 Uhr als Beginn, seit dem 18. November 18 Uhr. Eine Tagesordnung lag am 18. November noch nicht vor. Beraten soll der Rat unter anderem über die Leitlinien zum Bau-Turbo und den Solarpark an der A4.",
+        "Aktualisiert am 24. November: Der Bürgermeister hat die Tagesordnung bekannt gemacht. Im öffentlichen Teil berät der Rat unter anderem über die Empfehlungen des Haupt- und Finanzausschusses (Hundesteuer, Hebesätze 2027, Abwasser- und Unterkunftsgebühren, Übernachtungssteuer, Brandschutzbedarfsplan), des Bauausschusses (Grundschule Golzheim) und des Ausschusses für Revitalisierung Bürgewald (Solarpark an der A4, Bau-Turbo), außerdem über neue Abwassersatzungen, den Jahresabschluss 2025 und das Dorfauto. Die Einbringung des Haushaltsentwurfs 2027 ist nicht aufgeführt."
       ],
       "links": [
+        [
+          "Bekanntmachung mit Tagesordnung (PDF)",
+          "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZRw74HCqH4cw55rwZ4RTi0BMw_Y0-sALqKb0Zs_DFO3z/Bekanntmachung_Gemeinderat_03.12.2026.pdf"
+        ],
         [
           "Sitzungsseite im Ratsinformationssystem",
           "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZUGwKZgRgIQ7L6aLimbkVj4"
@@ -111,8 +116,8 @@
         ]
       ],
       "quelle": {
-        "name": "Gemeinde Merzenich, Ratsinformationssystem, Sitzungskalender (Kalenderexport)",
-        "url": "https://ratsinfo.gemeinde-merzenich.de/termine.ics",
+        "name": "Gemeinde Merzenich, Bekanntmachung der 8. Sitzung des Gemeinderates am 03.12.2026 (vom 24.11.2026)",
+        "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZRw74HCqH4cw55rwZ4RTi0BMw_Y0-sALqKb0Zs_DFO3z/Bekanntmachung_Gemeinderat_03.12.2026.pdf",
         "stand": "2026-11-24"
       }
     }
