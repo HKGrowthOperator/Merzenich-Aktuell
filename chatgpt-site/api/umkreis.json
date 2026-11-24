@@ -1,6 +1,6 @@
 {
  "hinweis": "Erzeugt von deploy/umkreis.mjs aus inhalte/umkreis/. Nicht von Hand ändern.",
- "stand": "2026-11-23",
+ "stand": "2026-11-24",
  "tage": 30,
  "orte": [
   "Düren",
@@ -11,6 +11,38 @@
   "Kreis Düren"
  ],
  "eintraege": [
+  {
+   "ort": "Nörvenich",
+   "rubrik": "Blaulicht",
+   "titel": "Einbruch in Altenpflegeheim - Bargeld und Schlüssel entwendet",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6396748",
+   "datum": "2026-11-24",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Jülich: Zwei Leichtverletzte und hoher Sachschaden nach Zusammenstoß im Einmündungsbereich",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6396750",
+   "datum": "2026-11-24",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Kreuzau: 16 Verletzte und hoher Sachschaden bei Brand in Papierfabrik",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6396751",
+   "datum": "2026-11-24",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Raub in der Dürener Innenstadt - Die Polizei bittet um Hinweise",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6396749",
+   "datum": "2026-11-24",
+   "quelle": "Polizei Düren"
+  },
   {
    "ort": "Düren",
    "rubrik": "Blaulicht",

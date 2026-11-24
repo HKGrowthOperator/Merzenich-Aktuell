@@ -1,0 +1,37 @@
+{
+  "hinweis": "Automatisch aus der Liste der Polizei Düren im Presseportal angelegt (deploy/automatik-umkreis.mjs): amtliche Schlagzeile, Ort, Datum und Link zur Einzelmeldung, kein eigener Text. Meldungen aus Merzenich und den Ortsteilen werden hier nie angelegt.",
+  "eintraege": [
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Kreuzau: 16 Verletzte und hoher Sachschaden bei Brand in Papierfabrik",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6396751",
+      "datum": "2026-11-24",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Jülich: Zwei Leichtverletzte und hoher Sachschaden nach Zusammenstoß im Einmündungsbereich",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6396750",
+      "datum": "2026-11-24",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Raub in der Dürener Innenstadt - Die Polizei bittet um Hinweise",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6396749",
+      "datum": "2026-11-24",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Nörvenich",
+      "rubrik": "Blaulicht",
+      "titel": "Einbruch in Altenpflegeheim - Bargeld und Schlüssel entwendet",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6396748",
+      "datum": "2026-11-24",
+      "quelle": "Polizei Düren"
+    }
+  ]
+}
