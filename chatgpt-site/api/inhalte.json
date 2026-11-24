@@ -1,13 +1,13 @@
 {
- "generated": "2026-11-21T22:01:00+01:00",
- "anzahl": 235,
+ "generated": "2026-11-24T14:55:00+01:00",
+ "anzahl": 236,
  "bestand": {
-  "gesamt": 235,
+  "gesamt": 236,
   "ressorts": {
    "nachrichten": 0,
    "blaulicht": 74,
    "sport": 33,
-   "rathaus": 44,
+   "rathaus": 45,
    "leben": 50,
    "wirtschaft": 9,
    "tipp": 0,
@@ -16,7 +16,7 @@
    "kultur": 0
   },
   "ortsteile": {
-   "merzenich": 163,
+   "merzenich": 164,
    "golzheim": 27,
    "girbelsrath": 23,
    "morschenich": 13,
@@ -25,7 +25,7 @@
   },
   "listen": {
    "/nachrichten/": {
-    "anzahl": 235,
+    "anzahl": 236,
     "liste": "gepflegt"
    },
    "/blaulicht/": {
@@ -37,7 +37,7 @@
     "liste": "gepflegt"
    },
    "/rathaus/": {
-    "anzahl": 44,
+    "anzahl": 45,
     "liste": "gepflegt"
    },
    "/leben/": {
@@ -65,7 +65,7 @@
     "liste": "keine Seite"
    },
    "/merzenich/": {
-    "anzahl": 163,
+    "anzahl": 164,
     "liste": "gepflegt"
    },
    "/golzheim/": {
@@ -101,6 +101,48 @@
  },
  "hinweis": "Kanonischer Inhaltsindex, erzeugt von deploy/inhaltsindex.mjs aus den Artikelseiten. Alle Listen, Feeds und die Startseite werden daraus gebaut.",
  "artikel": [
+  {
+   "id": "2026-11-24-gemeinderat-merzenich-3-dezember-2026-tagesordnung-hundesteuer-haushaltsentwurf-dorfauto",
+   "url": "/rathaus/gemeinderat-merzenich-3-dezember-2026-tagesordnung-hundesteuer-haushaltsentwurf-dorfauto/",
+   "titel": "Gemeinderat Merzenich am 3. Dezember: Hundesteuer soll stärker steigen, Haushaltsentwurf fehlt auf der Tagesordnung",
+   "teaser": "Der Finanzausschuss empfiehlt für einen Hund ab 2029 84 statt 69 Euro im Jahr. Die angekündigte Einbringung des Haushalts 2027 steht nicht in der Bekanntmachung vom 24. November. Neu sind Abwassersatzungen, der Jahresabschluss 2025 und Details zum Dorfauto.",
+   "kicker": "Rathaus · Gemeinderat",
+   "ressort": "rathaus",
+   "ressortLabel": "Rathaus & Politik",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-11-24T14:55:00+01:00",
+   "aktualisiert": "2026-11-24T14:55:00+01:00",
+   "lesezeit": "6 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "gemeinderat",
+     "label": "Gemeinderat"
+    },
+    {
+     "slug": "steuern",
+     "label": "Steuern und Gebühren"
+    },
+    {
+     "slug": "haushalt",
+     "label": "Haushalt"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg",
+    "srcset": "/assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-480.webp 480w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a-800.webp 800w, /assets/editorial-pools/aktuell/aktuell-01-0b6bcf033a.jpg 1024w",
+    "alt": "Merzenich, Rathaus Own Work papa1234 2006-07-14",
+    "width": 1024,
+    "height": 768,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Papa1234 / Wikimedia Commons · gemeinfrei",
+    "symbol": true,
+    "stufe": "B"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
   {
    "id": "2026-11-21-einsatz-149-brandmeldealarm-merzenich",
    "url": "/blaulicht/einsatz-149-brandmeldealarm-merzenich/",
@@ -1019,7 +1061,7 @@
    "ortsteil": "merzenich",
    "datum": "2026-11-11T09:21:00+01:00",
    "aktualisiert": "2026-11-11T09:21:00+01:00",
-   "lesezeit": "4 Min. Lesezeit",
+   "lesezeit": "5 Min. Lesezeit",
    "themen": [
     {
      "slug": "haushalt",
@@ -9713,15 +9755,20 @@
   }
  ],
  "aufmacher": {
-  "id": "2026-11-21-merzenich-23-bis-29-november-2026-buergewald-ausschuss-tannenbaumschmuecken-adventmarkt",
-  "url": "/leben/merzenich-23-bis-29-november-2026-buergewald-ausschuss-tannenbaumschmuecken-adventmarkt/",
-  "titel": "Merzenich vom 23. bis 29. November: Bürgewald-Ausschuss, Tannenbaumschmücken und Adventmarkt"
+  "id": "2026-11-24-gemeinderat-merzenich-3-dezember-2026-tagesordnung-hundesteuer-haushaltsentwurf-dorfauto",
+  "url": "/rathaus/gemeinderat-merzenich-3-dezember-2026-tagesordnung-hundesteuer-haushaltsentwurf-dorfauto/",
+  "titel": "Gemeinderat Merzenich am 3. Dezember: Hundesteuer soll stärker steigen, Haushaltsentwurf fehlt auf der Tagesordnung"
  },
  "nebenmeldungen": [
   {
    "id": "2026-11-21-einsatz-149-brandmeldealarm-merzenich",
    "url": "/blaulicht/einsatz-149-brandmeldealarm-merzenich/",
    "titel": "Feuerwehr Merzenich: Waffeln lösen Brandmeldealarm am Wasserturm aus (Einsatz 149/26)"
+  },
+  {
+   "id": "2026-11-21-merzenich-23-bis-29-november-2026-buergewald-ausschuss-tannenbaumschmuecken-adventmarkt",
+   "url": "/leben/merzenich-23-bis-29-november-2026-buergewald-ausschuss-tannenbaumschmuecken-adventmarkt/",
+   "titel": "Merzenich vom 23. bis 29. November: Bürgewald-Ausschuss, Tannenbaumschmücken und Adventmarkt"
   },
   {
    "id": "2026-11-20-gutachterbuero-hr2-merzenich-gewerbegebiet-schimmel-feuchteschaeden-15-arbeitsplaetze",
@@ -9732,11 +9779,6 @@
    "id": "2026-11-20-bauausschuss-merzenich-ergebnisse-grundschule-golzheim-poolplatz-solarpark-a4-bau-turbo-2026",
    "url": "/rathaus/bauausschuss-merzenich-ergebnisse-grundschule-golzheim-poolplatz-solarpark-a4-bau-turbo-2026/",
    "titel": "Bauausschuss Merzenich: Ja zum Umbau der Grundschule Golzheim, 36 Wohnungen am Poolplatz vorgestellt"
-  },
-  {
-   "id": "2026-11-20-unwetterwarnung-merzenich-dauerregen-kreis-dueren-20-november-2026-dwd",
-   "url": "/blaulicht/unwetterwarnung-merzenich-dauerregen-kreis-dueren-20-november-2026-dwd/",
-   "titel": "Unwetterwarnung für Merzenich: DWD warnte bis Freitag 22 Uhr vor ergiebigem Dauerregen"
   }
  ],
  "startseitenMotive": {
@@ -9759,12 +9801,12 @@
   "editorial-pools/blaulicht/blaulicht-05-ec25c697b3": 2,
   "editorial-pools/blaulicht/blaulicht-10-85fcb93e91": 1,
   "editorial-pools/blaulicht/blaulicht-13-f2236bb05e": 1,
+  "editorial-pools/feuerwehr/feuerwehr-05-64a62b437a": 1,
   "editorial-pools/feuerwehr/feuerwehr-17-06a888ad36": 1,
   "editorial-pools/feuerwehr/feuerwehr-19-1b61ac5382": 1,
   "editorial-pools/kultur/kultur-01-8826d38c5d": 1,
   "editorial-pools/polizei/polizei-10-b2dae76ca0": 1,
   "editorial-pools/schule/schule-03-dbb36132c8": 1,
-  "editorial-pools/technik/technik-05-81cd88e925": 1,
   "editorial-pools/themen/themen-01-0394d77d0b": 1,
   "editorial-pools/themen/themen-06-bc6b8eed4f": 1,
   "editorial-pools/themen/themen-12-1e67d8491e": 1,
@@ -9791,9 +9833,9 @@
   "responsive/5191bb10b6a3de": 1
  },
  "buehnenMotive": [
+  "editorial-pools/aktuell/aktuell-01-0b6bcf033a",
   "editorial-pools/aktuell/aktuell-05-85b961cd5e",
   "editorial-pools/aktuell/aktuell-07-d923824479",
-  "editorial-pools/themen/themen-26-299418b5e9",
   "editorial-pools/themen/themen-28-0db85162b4",
   "editorial-pools/veranstaltungen/veranstaltungen-10-5df0764e43"
  ],

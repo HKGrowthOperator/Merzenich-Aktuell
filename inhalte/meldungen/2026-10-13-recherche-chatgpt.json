@@ -478,7 +478,8 @@
         "Für Januar und Februar 2027 plant die Verwaltung zwei Lesungen im Haupt- und Finanzausschuss sowie ein Bürgerforum. Beschließen soll der Rat den Haushalt im Februar oder März 2027; im selben Zeitraum ist die Anzeige bei der Kommunalaufsicht vorgesehen. Gültiges Haushaltsrecht erwartet die Verwaltung voraussichtlich ab April 2027. Die genauen Sitzungstermine will sie bekannt geben, sobald der Sitzungskalender für 2027 fertig ist.",
         "Zum Vergleich: Für den Haushalt 2026 hatte die Gemeinde von Januar bis Mitte März sechs öffentliche Vorberatungen abgehalten, bevor die Verwaltung den Entwurf am 25. März 2026 in den Rat einbrachte. Nach der ersten Lesung im Haupt- und Finanzausschuss am 16. April und einem Bürgerforum am 7. Mai verabschiedete der Rat den Entwurf am 21. Mai; mit diesem Haushalt brachte die Gemeinde erstmals ein Haushaltssicherungskonzept ein. Öffentlich bekannt gemacht hat sie die Haushaltssatzung 2026 am 13. August 2026.",
         "Die Mitteilungsvorlage beschreibt ausschließlich das Verfahren. Beträge, Steuersätze oder einzelne Vorhaben für 2027 nennt sie nicht, und den Ablauf gibt sie ausdrücklich als derzeitigen Stand an.",
-        "Aktualisiert am 19. November: Der Sitzungskalender nennt für die Ratssitzung am 3. Dezember inzwischen 18 Uhr als Beginn; bis zum 17. November stand dort 17 Uhr. Wie sich der laufende Haushalt 2026 entwickelt, steht im Bericht der Verwaltung für den Haupt- und Finanzausschuss am 19. November: Sie erwartet ein Defizit von rund 3,4 statt der geplanten 5,7 Millionen Euro."
+        "Aktualisiert am 19. November: Der Sitzungskalender nennt für die Ratssitzung am 3. Dezember inzwischen 18 Uhr als Beginn; bis zum 17. November stand dort 17 Uhr. Wie sich der laufende Haushalt 2026 entwickelt, steht im Bericht der Verwaltung für den Haupt- und Finanzausschuss am 19. November: Sie erwartet ein Defizit von rund 3,4 statt der geplanten 5,7 Millionen Euro.",
+        "Aktualisiert am 24. November: In der Tagesordnung der Ratssitzung am 3. Dezember, die der Bürgermeister am 24. November bekannt gemacht hat, ist die Einbringung des Haushaltsentwurfs 2027 nicht aufgeführt. Eine weitere Ratssitzung im Dezember steht nicht im Sitzungskalender. Ob die Tagesordnung noch erweitert wird oder sich der Zeitplan verschiebt, hat die Verwaltung bis zum 24. November nicht mitgeteilt."
       ],
       "themen": [
         [
@@ -520,6 +521,26 @@
           "name": "Gemeinde Merzenich, Öffentliche Bekanntmachungen, Haushaltssatzung 2026 vom 13.08.2026",
           "url": "https://www.gemeinde-merzenich.de/politik/oeffentliche-bekanntmachungen.php",
           "stand": "2026-10-13"
+        },
+        {
+          "name": "Gemeinde Merzenich, Bekanntmachung der 8. Sitzung des Gemeinderates am 03.12.2026",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZRw74HCqH4cw55rwZ4RTi0BMw_Y0-sALqKb0Zs_DFO3z/Bekanntmachung_Gemeinderat_03.12.2026.pdf",
+          "stand": "2026-11-24"
+        },
+        {
+          "name": "Gemeinde Merzenich, Sitzungskalender (termine.ics)",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/termine.ics",
+          "stand": "2026-11-24"
+        }
+      ],
+      "pruefung": [
+        {
+          "aussage": "Bekanntmachung der 8. Sitzung des Gemeinderates vom 24.11.2026, gelesen 24.11.2026 14:50 Uhr: Tagesordnung ohne Einbringung des Haushaltsentwurfs 2027, „Haushalt“ nur in TOP 8.3 Hebesatzsatzung 2027; TOP 4 Anträge auf Erweiterung. Sitzungskalender termine.ics 24.11.2026 14:51 Uhr: im Dezember nur Gemeinderat und Jugendgremium am 03.12. Aktualisierung vom 24. November.",
+          "belege": [
+            "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZRw74HCqH4cw55rwZ4RTi0BMw_Y0-sALqKb0Zs_DFO3z/Bekanntmachung_Gemeinderat_03.12.2026.pdf",
+            "https://ratsinfo.gemeinde-merzenich.de/termine.ics"
+          ],
+          "stelle": "Bekanntmachung; termine.ics"
         }
       ]
     },

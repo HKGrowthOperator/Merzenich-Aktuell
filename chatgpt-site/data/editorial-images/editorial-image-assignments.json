@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-22T08:16:16.561Z",
+  "updatedAt": "2026-11-24T13:55:17.728Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -1826,6 +1826,15 @@
       "assignedAt": "2026-11-22T08:16:16.561Z",
       "articleId": "2026-11-21-einsatz-149-brandmeldealarm-merzenich",
       "articleDate": "2026-11-21T22:01:00+01:00"
+    },
+    "/rathaus/gemeinderat-merzenich-3-dezember-2026-tagesordnung-hundesteuer-haushaltsentwurf-dorfauto/": {
+      "imageId": "web-aktuell-01-0b6bcf03",
+      "pool": "aktuell",
+      "motiv": "rathaus-merzenich",
+      "regel": "rathaus.rat",
+      "assignedAt": "2026-11-24T13:55:17.728Z",
+      "articleId": "2026-11-24-gemeinderat-merzenich-3-dezember-2026-tagesordnung-hundesteuer-haushaltsentwurf-dorfauto",
+      "articleDate": "2026-11-24T14:55:00+01:00"
     }
   }
 }
