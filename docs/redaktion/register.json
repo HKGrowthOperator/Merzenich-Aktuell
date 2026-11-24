@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-24-claude-morgens.md",
-  "source_check_window": "24.11.2026 Europe/Berlin: Hauptabrufe06:56:51–06:57:27; Zusatzquellen06:57:56–07:00:56; Bildsichtung07:05; Commons erneut07:07.",
+  "latest_dossier": "dossiers/2026-11-24-mittags.md",
+  "source_check_window": "24.11.2026 Europe/Berlin: Hauptabrufe12:08:26–12:09:17; Polizei12:08:56; Sport12:09:54/12:10:06; Bilder12:10:24/35, Sichtung12:11; Commons12:10.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -5843,7 +5843,15 @@
           "heading": "06 · MA-MORSCHENICH-SPORT · P1 · Morschenich/Fußball · Update · T1/B0"
         }
       ],
-      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet."
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet.",
+      "research_verifications": [
+        {
+          "checked_at": "2026-11-24T12:13:45+01:00",
+          "dossier": "dossiers/2026-11-24-mittags.md",
+          "research_status": "T2",
+          "result": "Neue Absetzung des Freundschaftsspiels29NovWeilerswist auf Spielseite/beidenDFBMannschaftsseiten. Gemeinsamer Herausgeber, unabhängige Bestätigung/Drittquelle fehlen; Vereinsseiten503/403. Wochenvorschau aktualisierungsbedürftig, keine definitive Absageursache/Ersatzdatum."
+        }
+      ]
     },
     {
       "id": "MA-SPORT-ERGÄNZUNG",
@@ -12211,6 +12219,12 @@
           "checked_at": "2026-11-23T12:13:38+01:00",
           "dossier": "dossiers/2026-11-23-mittags.md",
           "result": "Ergänzte Paarungen weiter mit Mannschaftsseiten vereinbar, 2306ee1b erhalten. FuPa-Freitagsergebnis direkt gelesen, jedoch bereits in letztem Claude-Lauf bekannt; FUSSBALL.DE-Endstand unlesbar, Torverhältnis abweichend. Keine neue Sportfreigabe oder zusätzliche unabhängige Bestätigung."
+        },
+        {
+          "checked_at": "2026-11-24T12:13:45+01:00",
+          "dossier": "dossiers/2026-11-24-mittags.md",
+          "research_status": "T2",
+          "result": "Sonntagabsatz kündigt Morschenich29Nov noch an, DFBjetztAbsetzung; neuer Prüf-/Korrekturhinweis quellenbezogen, unabhängige Bestätigung offen."
         }
       ]
     },
@@ -12928,6 +12942,12 @@
           "dossier": "dossiers/2026-11-24-morgens.md",
           "research_status": "T2",
           "result": "Neue Gemeinde-Programmklarstellung: ausgewählte Originalwerke und Gesamtprojekt digital; Datum/Ort unverändert, Kalenderergänzung statt Dublette; kein neuer Artikel mit Drei-Quellen-Freigabe."
+        },
+        {
+          "checked_at": "2026-11-24T12:13:45+01:00",
+          "dossier": "dossiers/2026-11-24-mittags.md",
+          "research_status": "T1",
+          "result": "Morgendliche Programmpräzisierung0cb25d54aufArtikel/Terminlivebestätigt, keine neue Karte, ältere Umsetzung25c92bd4erhalten."
         }
       ]
     },
@@ -13080,6 +13100,12 @@
           "dossier": "dossiers/2026-11-24-morgens.md",
           "research_status": "T2",
           "result": "Neuer Fanclub-Zwischenstand1211/650 und Frist7Dez; unabhängige Bestätigung/Drittquelle fehlen, Fristphasen ungeklärt; keine Freigabe."
+        },
+        {
+          "checked_at": "2026-11-24T12:13:45+01:00",
+          "dossier": "dossiers/2026-11-24-mittags.md",
+          "research_status": "T2",
+          "result": "Fanclub/Gemeindetext unverändert, neueZahlen/Frist weiterohneunabhängigeBestätigung/Drittquelle; keine Wiederholungskarte."
         }
       ]
     },
@@ -13639,6 +13665,34 @@
           "edition": "claude-morgens",
           "dossier": "dossiers/2026-11-24-claude-morgens.md",
           "heading": "1. Umgesetzt"
+        }
+      ],
+      "research_verifications": [
+        {
+          "checked_at": "2026-11-24T12:13:45+01:00",
+          "dossier": "dossiers/2026-11-24-mittags.md",
+          "research_status": "T1",
+          "result": "Erledigung0cb25d54live und Primärquelle bestätigt; Ortsfeld nennt jetzt fehlenden Veranstaltungsort. Tatsächlicher Ort weiter ungeklärt."
+        }
+      ]
+    },
+    {
+      "id": "MA-KORR-WOCHENVORSCHAU-MORSCHENICH-2411",
+      "priority": "P2",
+      "location_section": "Morschenich · Sport/Wochenvorschau",
+      "change_type": "Neuer Quellenstatus / Prüf- und Korrekturhinweis",
+      "text_status": "T2",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-11-24-mittags.md",
+      "workflow_status": "offen",
+      "article_path": "inhalte/meldungen/2026-11-21-recherche-claude-morgens.json → /leben/merzenich-23-bis-29-november-2026-buergewald-ausschuss-tannenbaumschmuecken-adventmarkt/",
+      "implementation_commit": null,
+      "notes": "Wochenvorschau kündigt Freundschaftsspiel29Nov14:30SSVWeilerswist–SVMorschenich an; FUSSBALL.DEjetztAbsetzung. NurquellenbezogenerStatus, unabhängigeVereinsbestätigung/Drittquelle fehlen, keine Ursache/Ersatzdatum.",
+      "research_verifications": [
+        {
+          "checked_at": "2026-11-24T12:13:45+01:00",
+          "research_status": "T2",
+          "result": "Spielseite/beideMannschaftsseiten stimmen überein, sindderselbeHerausgeber; Vereins503/403; FuPaAbwesenheitkeinAbsagebeleg."
         }
       ]
     }
@@ -16691,6 +16745,52 @@
       "implementation_commit": "0cb25d54",
       "summary": "Nullfund für neue Meldungen (Polizei, Feuerwehr, Kreis und Heimat-Info ohne neue belegbare Nachricht mit Ortsbezug; Wunschbaum-Zahlen nur vom Fanclub, T2; Girbelsrath-Ergebnis von FUSSBALL.DE weiter nicht bestätigt; HFA ohne Ergebnisse). Korrekturauftrag MA-KORR-FRUEHSTUECK-ORT-2411 umgesetzt (Ortsfeld 25.11.). Ausstellung Bürgewald: Nachtrag aus der Einladung vom 23.11. in Artikel und Termin. Kalender 18 Termine bis 08.12. bestätigt (Commit 27b7b73b). Mindesttakt 24.11. bisher: 0.",
       "publication": "Korrekturen und Kalenderpflege direkt veröffentlicht"
+    },
+    {
+      "date": "2026-11-24",
+      "edition": "mittags",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-24-mittags.md",
+      "compared_with": "dossiers/2026-11-24-morgens.md",
+      "compared_with_claude": "dossiers/2026-11-24-claude-morgens.md",
+      "base_commit": "9c7baa11d7b76a11db37ed3e97e27e99cfcc2cc8",
+      "implementation_commit": null,
+      "summary": "NeuDFBAbsetzungMorschenich–Weilerswist29Nov,T2mangelsunabhängigerBestätigung/Drittquelle; Wochenvorschau-Prüfhinweis. Frühstückskorrektur/Ausstellungsergänzunglivebestätigt, Motorradcaptionoffen. NeuePolizeivorgängeregionalohneMerzenicherInstitution.",
+      "topics": 1,
+      "new_topics": 0,
+      "updated_topics": 1,
+      "blocked_T2": 1,
+      "corrections_required": 2,
+      "new_corrections_required": 1,
+      "new_corrections": [
+        "MA-KORR-WOCHENVORSCHAU-MORSCHENICH-2411"
+      ],
+      "known_corrections_still_open": [
+        "MA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411"
+      ],
+      "resolved_corrections_verified": [
+        "MA-KORR-FRUEHSTUECK-ORT-2411"
+      ],
+      "repository_article_files_read": 62,
+      "repository_event_files_read": 27,
+      "repository_area_files_read": 25,
+      "new_or_changed_events": 1,
+      "complete_drafts": 0,
+      "prepared_at": "2026-11-24T12:13:45+01:00",
+      "deadline": "2026-11-24T14:15:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "TatsächlicheBereitstellung/Frist im bestätigtenUploadabschluss, prepared_atkeinUploadnachweis.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "open_checks": [
+        "MorschenichAbsetzung unabhängigeVereinsbestätigung/Drittquelle, Grund/Ersatztermin unbekannt",
+        "Wochenvorschau-Ankündigung überholt/quellenbezogenprüfen",
+        "BekannteMotorradcaption",
+        "GirbelsrathFuPa/DFBDatenkonflikt",
+        "WunschbaumZahlen/Fristunbestätigt",
+        "HFAErgebnisse/Ratstagesordnung",
+        "ÄltereArtikeloriginalprüfungen/Bahnunvollständig; Vereins503/403/Bildoriginal403"
+      ]
     }
   ]
 }
