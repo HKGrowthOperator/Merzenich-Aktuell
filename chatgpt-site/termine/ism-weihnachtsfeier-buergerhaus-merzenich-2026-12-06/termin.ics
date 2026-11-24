@@ -9,7 +9,7 @@ REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
 UID:ism-weihnachtsfeier-buergerhaus-merzenich-2026-12-06@merzenich-aktuell.
  de
-DTSTAMP:20261123T060000Z
+DTSTAMP:20261124T060000Z
 DTSTART:20261206T130000Z
 SUMMARY:Inklusive Weihnachtsfeier im Bürgerhaus
 DESCRIPTION:Der Verein Inklusives Soziales Miteinander feiert am Sonntag\, 
