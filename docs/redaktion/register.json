@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-24-mittags.md",
+  "latest_dossier": "dossiers/2026-11-24-claude-nachmittags.md",
   "source_check_window": "24.11.2026 Europe/Berlin: Hauptabrufe12:08:26–12:09:17; Polizei12:08:56; Sport12:09:54/12:10:06; Bilder12:10:24/35, Sichtung12:11; Commons12:10.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
@@ -5843,7 +5843,7 @@
           "heading": "06 · MA-MORSCHENICH-SPORT · P1 · Morschenich/Fußball · Update · T1/B0"
         }
       ],
-      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet.",
+      "notes": "Historisches Thema: ursprünglichen Text-/Bildstatus im referenzierten Dossier lesen. Vor Übernahme aktuellen Artikelbestand, Ereignisablauf und neuere Quellen prüfen. Kein neuer Freigabestatus aus Archivimport abgeleitet. | Claude 24.11. nachmittags: Absetzung des Freundschaftsspiels in Weilerswist (29.11.) in der Wochenvorschau vermerkt, keine eigene Meldung.",
       "research_verifications": [
         {
           "checked_at": "2026-11-24T12:13:45+01:00",
@@ -11423,11 +11423,11 @@
       "image_status": "B0",
       "dossier": "dossiers/2026-11-11-claude-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-11 morgens Europe/Berlin",
+      "last_checked_at": "2026-11-24 14:55 Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-11-11-recherche-claude-morgens.json → /rathaus/merzenich-abgaben-2027-abwassergebuehren-hundesteuer-grundsteuer-b-1077-vorschlag-verwaltung/",
       "article_id": null,
       "implementation_commit": "f9804cb4",
-      "notes": "Abwasser-, Realsteuer- und Hundesteuervorschläge konkretisiert; unabhängige konkrete Bestätigung fehlt. Nur Beschlussvorschläge/Planungsstände, keine bereits gefassten Beschlüsse. Keine Artikelumsetzung durch diesen Lauf. | Claude 11.11. morgens: Standardartikel (820 Wörter) aus den Vorlagen 141, 131 und 101/2026 mit Anlagen und der BdSt-Erhebung Grundsteuer B 2026; durchgehend als Vorschläge gekennzeichnet, relevanz 2. Alte Sätze Grundsteuer A, Gewerbesteuer und Kleinkläranlagen nicht belegt, daher nicht genannt. Live 09:24 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. Folge: HFA-Empfehlung 19.11., Ratsbeschluss 03.12.",
+      "notes": "Abwasser-, Realsteuer- und Hundesteuervorschläge konkretisiert; unabhängige konkrete Bestätigung fehlt. Nur Beschlussvorschläge/Planungsstände, keine bereits gefassten Beschlüsse. Keine Artikelumsetzung durch diesen Lauf. | Claude 11.11. morgens: Standardartikel (820 Wörter) aus den Vorlagen 141, 131 und 101/2026 mit Anlagen und der BdSt-Erhebung Grundsteuer B 2026; durchgehend als Vorschläge gekennzeichnet, relevanz 2. Alte Sätze Grundsteuer A, Gewerbesteuer und Kleinkläranlagen nicht belegt, daher nicht genannt. Live 09:24 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. Folge: HFA-Empfehlung 19.11., Ratsbeschluss 03.12. | Claude 24.11. nachmittags: Aktualisierung mit HFA-Empfehlung Hundesteuer (101/2026 1. Ergänzung vom 22.11.: ein Hund 60/72/84 Euro statt 59/64/69) und fehlender Haushaltseinbringung in der Ratstagesordnung; Folgemeldung MA-GEMEINDERAT-03122026-TO. Commit 2fbd0ffb.",
       "latest_research_dossier": "dossiers/2026-11-11-morgens.md",
       "latest_research_text_status": "T2",
       "latest_research_scope": "Primärvorlagen/Anlagen und dokumentierter Hintergrund; Unabhängigkeit der konkreten Ereignisbestätigung fehlt",
@@ -11452,6 +11452,12 @@
           "date": "2026-11-11",
           "edition": "claude-morgens",
           "dossier": "dossiers/2026-11-11-claude-morgens.md",
+          "heading": "1. Umgesetzt"
+        },
+        {
+          "date": "2026-11-24",
+          "edition": "claude-nachmittags",
+          "dossier": "dossiers/2026-11-24-claude-nachmittags.md",
           "heading": "1. Umgesetzt"
         }
       ],
@@ -12189,7 +12195,7 @@
       "article_path": "inhalte/meldungen/2026-11-21-recherche-claude-morgens.json → /leben/merzenich-23-bis-29-november-2026-buergewald-ausschuss-tannenbaumschmuecken-adventmarkt/",
       "article_id": null,
       "implementation_commit": "ad708019",
-      "notes": "Claude 21.11. morgens: Wochenvorschau 23. bis 29. November (Standard, 818 Wörter) aus dem am 21.11. an den Quellen geprüften Terminbestand: Senioren-Treffs 25.11., Bürgewald-Ausschuss 26.11. (Tagesordnung RIS), Ausstellung Bürgewald und Tannenbaumschmücken 27.11., Adventmarkt, Weinbergschnecken, Adventsfenster Morschenich, Golzheimer Adventskalender 28.11., Heimspiele SC und FC Golzheim sowie Adventsliedersingen 29.11. Widerspruch Nikolaus-Zeit (Amtsblatt 12 gegen Kulturkalender) benannt. Bild Klasse leben.brauchtum.advent (Schloss Merode, Symbolbild). | Claude 22.11. nachmittags: eigene Korrektur „beide Merzenicher Fußballvereine“ → FC Golzheim und SC Merzenich mit Heimspielen; ergänzt Girbelsrath beim FC Viktoria Schlich (Do 26.11., 19.30 Uhr, Kreisliga B) und SV Morschenich beim SSV Weilerswist (So 29.11., 14.30 Uhr, Freundschaftsspiel), Korrekturvermerk; 895 Wörter. Commit 2306ee1b.",
+      "notes": "Claude 21.11. morgens: Wochenvorschau 23. bis 29. November (Standard, 818 Wörter) aus dem am 21.11. an den Quellen geprüften Terminbestand: Senioren-Treffs 25.11., Bürgewald-Ausschuss 26.11. (Tagesordnung RIS), Ausstellung Bürgewald und Tannenbaumschmücken 27.11., Adventmarkt, Weinbergschnecken, Adventsfenster Morschenich, Golzheimer Adventskalender 28.11., Heimspiele SC und FC Golzheim sowie Adventsliedersingen 29.11. Widerspruch Nikolaus-Zeit (Amtsblatt 12 gegen Kulturkalender) benannt. Bild Klasse leben.brauchtum.advent (Schloss Merode, Symbolbild). | Claude 22.11. nachmittags: eigene Korrektur „beide Merzenicher Fußballvereine“ → FC Golzheim und SC Merzenich mit Heimspielen; ergänzt Girbelsrath beim FC Viktoria Schlich (Do 26.11., 19.30 Uhr, Kreisliga B) und SV Morschenich beim SSV Weilerswist (So 29.11., 14.30 Uhr, Freundschaftsspiel), Korrekturvermerk; 895 Wörter. Commit 2306ee1b. | 24.11. nachmittags: Morschenicher Freundschaftsspiel laut FUSSBALL.DE abgesetzt, Aktualisierung (MA-KORR-WOCHENVORSCHAU-MORSCHENICH-2411), Commit d80f62bb.",
       "dossier_history": [
         {
           "date": "2026-11-21",
@@ -12202,6 +12208,12 @@
           "edition": "claude-nachmittags",
           "dossier": "dossiers/2026-11-22-claude-nachmittags.md",
           "heading": "1. Umgesetzt (Korrektur)"
+        },
+        {
+          "date": "2026-11-24",
+          "edition": "claude-nachmittags",
+          "dossier": "dossiers/2026-11-24-claude-nachmittags.md",
+          "heading": "1. Umgesetzt"
         }
       ],
       "research_verifications": [
@@ -13268,11 +13280,11 @@
       "image_status": "B0",
       "dossier": "dossiers/2026-11-19-mittags.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-19 14:49 Europe/Berlin",
+      "last_checked_at": "2026-11-24 14:51 Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-10-13-recherche-chatgpt.json → /rathaus/haushalt-2027-zeitplan-merzenich/",
       "article_id": null,
       "implementation_commit": "49e5d7d8",
-      "notes": "Siehe KORREKTUREN im Dossier: ältere Live-/Repositorypassage nennt für Rat03.12. weiterhin17 Uhr, aktueller Originaltermin/ICS18 Uhr. Terminpassage aktualisieren, historischen Kalenderstand nicht rückwirkend als damals falsch bewerten. Kalenderbestand bereits18 Uhr; keine neue zweite Terminverschiebung. Keine Artikel-/CMS-Änderung durch Recherche. | Claude 19.11. nachmittags: Ratsbeginn 18 Uhr eingesetzt, Aktualisierungshinweis mit Verweis auf Haushaltsprognose 2026, Faktenliste angepasst; live 14:49 Uhr.",
+      "notes": "Siehe KORREKTUREN im Dossier: ältere Live-/Repositorypassage nennt für Rat03.12. weiterhin17 Uhr, aktueller Originaltermin/ICS18 Uhr. Terminpassage aktualisieren, historischen Kalenderstand nicht rückwirkend als damals falsch bewerten. Kalenderbestand bereits18 Uhr; keine neue zweite Terminverschiebung. Keine Artikel-/CMS-Änderung durch Recherche. | Claude 19.11. nachmittags: Ratsbeginn 18 Uhr eingesetzt, Aktualisierungshinweis mit Verweis auf Haushaltsprognose 2026, Faktenliste angepasst; live 14:49 Uhr. | Claude 24.11. nachmittags: Bekanntmachung der Ratssitzung 3.12. vom 24.11. ohne Einbringung des Haushaltsentwurfs (M128/2026 sah sie vor); termine.ics ohne weitere Ratssitzung im Dezember. Vermerk „Aktualisiert am 24. November“, Prüfeintrag. Commit 2fbd0ffb.",
       "source": "https://ratsinfo.gemeinde-merzenich.de/tops/?__=UGhVM0hpd2NXNFdFcExjZUGwKZgRgIQ7L6aLimbkVj4",
       "source_locator": "Terminblock Gemeinderat8.Sitzung03.12.2026,18:00Uhr; Liveartikel zweiter Absatz",
       "source_retrieved_at": "2026-11-19T12:04:02+01:00",
@@ -13287,6 +13299,12 @@
           "date": "2026-11-19",
           "edition": "claude-nachmittags",
           "dossier": "dossiers/2026-11-19-claude-nachmittags.md",
+          "heading": "1. Umgesetzt"
+        },
+        {
+          "date": "2026-11-24",
+          "edition": "claude-nachmittags",
+          "dossier": "dossiers/2026-11-24-claude-nachmittags.md",
           "heading": "1. Umgesetzt"
         }
       ],
@@ -13681,18 +13699,50 @@
       "priority": "P2",
       "location_section": "Morschenich · Sport/Wochenvorschau",
       "change_type": "Neuer Quellenstatus / Prüf- und Korrekturhinweis",
-      "text_status": "T2",
+      "text_status": "T1",
       "image_status": "B0",
       "dossier": "dossiers/2026-11-24-mittags.md",
-      "workflow_status": "offen",
+      "workflow_status": "uebernommen",
       "article_path": "inhalte/meldungen/2026-11-21-recherche-claude-morgens.json → /leben/merzenich-23-bis-29-november-2026-buergewald-ausschuss-tannenbaumschmuecken-adventmarkt/",
-      "implementation_commit": null,
-      "notes": "Wochenvorschau kündigt Freundschaftsspiel29Nov14:30SSVWeilerswist–SVMorschenich an; FUSSBALL.DEjetztAbsetzung. NurquellenbezogenerStatus, unabhängigeVereinsbestätigung/Drittquelle fehlen, keine Ursache/Ersatzdatum.",
+      "implementation_commit": "d80f62bb",
+      "notes": "Wochenvorschau kündigt Freundschaftsspiel29Nov14:30SSVWeilerswist–SVMorschenich an; FUSSBALL.DEjetztAbsetzung. NurquellenbezogenerStatus, unabhängigeVereinsbestätigung/Drittquelle fehlen, keine Ursache/Ersatzdatum. | Claude 24.11. nachmittags: FUSSBALL.DE um 14:44 Uhr selbst gelesen (Mannschaftsseiten SV Morschenich und SSV Weilerswist, Spielseite: „Absetzung“). Sonntagsabsatz quellenbezogen geändert („führt FUSSBALL.DE inzwischen als abgesetzt; einen Grund oder einen neuen Termin nennt der Eintrag nicht“), Vermerk „Aktualisiert am 24. November“, Faktenpunkt, Prüfeintrag, zwei Quellen. Keine Absageursache, kein Ersatztermin. Commit d80f62bb.",
       "research_verifications": [
         {
           "checked_at": "2026-11-24T12:13:45+01:00",
           "research_status": "T2",
           "result": "Spielseite/beideMannschaftsseiten stimmen überein, sindderselbeHerausgeber; Vereins503/403; FuPaAbwesenheitkeinAbsagebeleg."
+        }
+      ],
+      "last_checked_at": "2026-11-24 14:45 Europe/Berlin",
+      "dossier_history": [
+        {
+          "date": "2026-11-24",
+          "edition": "claude-nachmittags",
+          "dossier": "dossiers/2026-11-24-claude-nachmittags.md",
+          "heading": "1. Umgesetzt"
+        }
+      ]
+    },
+    {
+      "id": "MA-GEMEINDERAT-03122026-TO",
+      "priority": "P1",
+      "location_section": "Merzenich · Rathaus/Gemeinderat",
+      "change_type": "Folgemeldung",
+      "text_status": "T1",
+      "image_status": "B2",
+      "dossier": "dossiers/2026-11-24-claude-nachmittags.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-24 14:55 Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-24-recherche-claude-nachmittags.json → /rathaus/gemeinderat-merzenich-3-dezember-2026-tagesordnung-hundesteuer-haushaltsentwurf-dorfauto/",
+      "article_id": null,
+      "implementation_commit": "2fbd0ffb",
+      "notes": "Claude 24.11. nachmittags, eigener Fund: Bekanntmachung der 8. Ratssitzung (3.12., 18 Uhr) vom 24.11. Standard 1.115 Wörter. HFA 19.11. empfiehlt laut 101/2026 1. Ergänzung (22.11., rot) höhere Hundesteuer: ein Hund 60/72/84 Euro statt 59/64/69; neue Einnahmesummen ohne den gefährlichen Hund (Widerspruch benannt). Haushaltsentwurf 2027 laut M128/2026 für 3.12. vorgesehen, nicht auf der Tagesordnung, keine weitere Ratssitzung im Dezember. Neue Vorlagen 139, 153, 160 (Abwassersatzungen), 162 (Unterkünfte), 132 (Jahresabschluss 2025, Fehlbetrag 2.495.271,29 Euro), 149 (Dorfauto, LEADER-Bescheid 34.415,66 Euro EU; Förderende 30.06. laut Vorlage gegen 01.06.2029 laut Bescheid), M154 (Schiedsperson, Name nicht übernommen). Offen: Stimmverhältnisse HFA, Niederschrift, M152 (Rüge) nicht gelesen, Anlagen 142/2026 aktualisiert 24.11.",
+      "dossier_history": [
+        {
+          "date": "2026-11-24",
+          "edition": "claude-nachmittags",
+          "dossier": "dossiers/2026-11-24-claude-nachmittags.md",
+          "heading": "1. Umgesetzt"
         }
       ]
     }
@@ -16791,6 +16841,16 @@
         "HFAErgebnisse/Ratstagesordnung",
         "ÄltereArtikeloriginalprüfungen/Bahnunvollständig; Vereins503/403/Bildoriginal403"
       ]
+    },
+    {
+      "date": "2026-11-24",
+      "edition": "nachmittags",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-24-claude-nachmittags.md",
+      "compared_with": "dossiers/2026-11-24-mittags.md",
+      "implementation_commit": "2fbd0ffb",
+      "summary": "Neue Meldung (Standard, 1.115 Wörter): Tagesordnung Gemeinderat 3.12. vom 24.11., HFA-Empfehlung höhere Hundesteuer, Haushaltsentwurf 2027 nicht aufgeführt, neue Satzungs-, Jahresabschluss- und Dorfauto-Vorlagen (MA-GEMEINDERAT-03122026-TO). Korrekturauftrag MA-KORR-WOCHENVORSCHAU-MORSCHENICH-2411 umgesetzt (FUSSBALL.DE: Absetzung). Aktualisierungen Haushalt-2027-Zeitplan und Abgaben 2027, Termin Gemeinderat ergänzt. 18 Termine bestätigt. Mindesttakt 24.11.: 1.",
+      "publication": "Meldung, Aktualisierungen und Termin direkt veröffentlicht"
     }
   ]
 }

@@ -1,19 +1,18 @@
 # Offene Themen aus dem Register
 
-Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-24-mittags.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
+Automatisch aus [register.json](register.json) erzeugt (deploy/register-pflege.mjs). Stand des Registers: dossiers/2026-11-24-claude-nachmittags.md. Nicht von Hand bearbeiten; Status im Register pflegen, dann neu erzeugen.
 
 ## Zahlen
 
 | Status | Themen |
 |---|---:|
 | archiv_refresh_noetig | 96 |
-| uebernommen | 73 |
+| uebernommen | 75 |
 | gesperrt | 37 |
 | neu | 5 |
 | zur_abnahme | 5 |
 | in_bearbeitung | 2 |
 | veraltet | 1 |
-| offen | 1 |
 
 ## Offen (12)
 
@@ -133,7 +132,7 @@ Textstatus: T1 belegter Entwurf (Endabnahme nötig), T1-B Bestandsentwurf ohne e
 
 ## Jüngste Läufe
 
+- 2026-11-24 nachmittags (Claude): Neue Meldung (Standard, 1.115 Wörter): Tagesordnung Gemeinderat 3.12. vom 24.11., HFA-Empfehlung höhere Hundesteuer, Haushaltsentwurf 2027 nicht aufgeführt, neue Satzungs-, Jahresabschluss- und Dorfauto-Vorlagen (MA-GEMEINDERAT-03122026-TO). Korrekturauftrag MA-KORR-WOCHENVORSCHAU-MORSCHENICH-2411 umgesetzt (FUSSBALL.DE: Absetzung). Aktualisierungen Haushalt-2027-Zeitplan und Abgaben 2027, Termin Gemeinderat ergänzt. 18 Termine bestätigt. Mindesttakt 24.11.: 1. – Commit 2fbd0ffb
 - 2026-11-24 mittags (ChatGPT): NeuDFBAbsetzungMorschenich–Weilerswist29Nov,T2mangelsunabhängigerBestätigung/Drittquelle; Wochenvorschau-Prüfhinweis. Frühstückskorrektur/Ausstellungsergänzunglivebestätigt, Motorradcaptionoffen. NeuePolizeivorgängeregionalohneMerzenicherInstitution.
 - 2026-11-24 morgens (Claude): Nullfund für neue Meldungen (Polizei, Feuerwehr, Kreis und Heimat-Info ohne neue belegbare Nachricht mit Ortsbezug; Wunschbaum-Zahlen nur vom Fanclub, T2; Girbelsrath-Ergebnis von FUSSBALL.DE weiter nicht bestätigt; HFA ohne Ergebnisse). Korrekturauftrag MA-KORR-FRUEHSTUECK-ORT-2411 umgesetzt (Ortsfeld 25.11.). Ausstellung Bürgewald: Nachtrag aus der Einladung vom 23.11. in Artikel und Termin. Kalender 18 Termine bis 08.12. bestätigt (Commit 27b7b73b). Mindesttakt 24.11. bisher: 0. – Commit 0cb25d54
 - 2026-11-24 morgens (ChatGPT): Wunschbaum-Zwischenstand T2; neue Frühstücksort-Korrektur, Motorradcaption weiterhin offen; Ausstellungsprogramm konkretisiert. Jugendfotoanlage ohne neue Beschlusslage. Friedenslicht jetzt Bestand/live bestätigt.
-- 2026-11-23 nachmittags (Claude): Nullfund für neue Meldungen (Polizei nur Wohnort-Bezug, Kreis ohne Ortsbezug, HFA weiter ohne Ergebnisse, Girbelsrath-Ergebnis von FUSSBALL.DE weiter nicht bestätigt). Neuer Termin Friedenslicht 13.12. (Pfadfinder) angelegt, den die Termin-Automatik wegen Kalenderseite 2 nicht übernommen hatte. ChatGPT mittags ohne Korrekturauftrag. Kalender 18 Termine bis 07.12. erneut bestätigt. Mindesttakt 23.11.: 0. – Commit 8a1110fc
