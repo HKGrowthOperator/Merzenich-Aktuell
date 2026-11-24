@@ -72,9 +72,13 @@ Heimat-Info-Veranstaltungskalender der Gemeinde (https://www.heimat-info.de/geme
 
 ## 7. QA, Commit, Abgleich
 
-Commits: `0cb25d54` (Korrekturen), `27b7b73b` (Kalenderpflege), Dokumentation in diesem Commit. Abgleich 09:18 Uhr `angestossen: true`.
+Commits: `0cb25d54` (Korrekturen), `27b7b73b` (Kalenderpflege), `73124c40` (Dokumentation), Live-Nachweis in diesem Commit. Abgleich 09:18 und 09:25 Uhr `angestossen: true`.
 
-Live-Nachweis: wird nach dem Push dieses Commits ergänzt.
+Live-Nachweis 09:25 Uhr, jeweils HTTP 200:
+
+- `/termine/neu-fruehstuecks-und-spieletreff-fuer-senior-innen-merzenich-2026-11-25/`: Ortsblock und strukturierte Daten nennen „Ort im Kalendereintrag nicht angegeben“. Die Severin-Böhr-Straße steht nur noch im Fließtext, dort ausdrücklich für den 18.11. und den 2.12.
+- `/leben/ausstellung-buergewald-morschenich-alt-kunst-fotografie-film-ratssaal-merzenich-27-november-2026/`: mit „Aktualisiert am 24. November“.
+- `/termine/ausstellung-buergewald-ratssaal-merzenich-2026-11-27/`: mit der digitalen Präsentation.
 
 ## 8. Bildprüfung
 
