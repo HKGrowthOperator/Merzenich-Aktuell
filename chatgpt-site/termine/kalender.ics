@@ -7,21 +7,6 @@ X-WR-CALNAME:Merzenich Aktuell Termine
 X-WR-TIMEZONE:Europe/Berlin
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 BEGIN:VEVENT
-UID:patrozinium-st-amandus-girbelsrath-2026@merzenich-aktuell.de
-DTSTAMP:20261005T060000Z
-DTSTART:20261024T143000Z
-SUMMARY:Messe zum Patrozinium von St. Amandus in Girbelsrath
-DESCRIPTION:Girbelsrath feiert am Samstag\, 24. Oktober\, um 16:30 Uhr eine
-  Messe zum Fest seines Pfarrpatrons\, des heiligen Amandus von Maastricht.
-  Ab 16 Uhr ist stille Anbetung.\nVeranstalter: Katholische Pfarrgemeinde S
- t. Amandus Girbelsrath\nhttps://merzenichaktuell.hk-growthoperator.de/term
- ine/patrozinium-st-amandus-girbelsrath-2026/
-LOCATION:St. Amandus Girbelsrath
-URL:https://merzenichaktuell.hk-growthoperator.de/termine/patrozinium-st-am
- andus-girbelsrath-2026/
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
 UID:buergersprechstunde-golzheim-2026-10-30@merzenich-aktuell.de
 DTSTAMP:20261027T060000Z
 DTSTART:20261030T170000Z
@@ -692,7 +677,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:neu-fruehstuecks-und-spieletreff-fuer-senior-innen-merzenich-2026-11-25
  @merzenich-aktuell.de
-DTSTAMP:20261123T060000Z
+DTSTAMP:20261124T060000Z
 DTSTART:20261125T080000Z
 DTEND:20261125T100000Z
 SUMMARY:Frühstücks- und Spieletreff für Seniorinnen und Senioren des Eva
@@ -703,7 +688,7 @@ DESCRIPTION:Der Frühstücks- und Spieletreff des Evangelischen Gemeindezen
  ung zum Frühstück erbeten.\nVeranstalter: Evangelisches Gemeindezentrum 
  Merzenich\nhttps://merzenichaktuell.hk-growthoperator.de/termine/neu-frueh
  stuecks-und-spieletreff-fuer-senior-innen-merzenich-2026-11-25/
-LOCATION:Ev. Gemeindehaus Merzenich\, Severin-Böhr-Str. 15
+LOCATION:Ort im Kalendereintrag nicht angegeben
 URL:https://merzenichaktuell.hk-growthoperator.de/termine/neu-fruehstuecks-
  und-spieletreff-fuer-senior-innen-merzenich-2026-11-25/
 STATUS:CONFIRMED
@@ -743,7 +728,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:ausstellung-buergewald-ratssaal-merzenich-2026-11-27@merzenich-aktuell.
  de
-DTSTAMP:20261123T060000Z
+DTSTAMP:20261124T060000Z
 DTSTART:20261127T150000Z
 SUMMARY:Ausstellung „Bürgewald“: Fotografie\, Film und Kunst im Ratssa
  al

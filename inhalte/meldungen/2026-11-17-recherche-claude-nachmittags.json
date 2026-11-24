@@ -166,7 +166,8 @@
         "Wie lange die Ausstellung zu sehen ist und ob Eintritt verlangt wird, steht in der Ankündigung nicht. Auch ein Ende des Abends nennt die Gemeinde nicht.",
         "Die Geschichte von Bürgewald ist eng mit dem Tagebau Hambach und dem Strukturwandel im Rheinischen Revier verbunden; auch das Kreisjahrbuch 2026 des Kreises Düren hat dem Ort einen Beitrag gewidmet. Einen Tag vor der Ausstellung, am Donnerstag, 26. November, tagt um 18 Uhr im Ratssaal der Ausschuss für Revitalisierung Bürgewald. Eine Tagesordnung war im Ratsinformationssystem am 17. November noch nicht veröffentlicht.",
         "Um die Zukunft der Region geht es auch im Haupt- und Finanzausschuss am Donnerstag, 19. November: Er soll dem Gemeinderat empfehlen, den Wirtschafts- und Stellenplan 2027/2028 der Neuland Hambach GmbH zu genehmigen; entscheiden soll der Rat am Donnerstag, 3. Dezember. Die Verwaltung befürwortet die Genehmigung, weil die Projekte des Strukturwandels nach ihren Worten für die künftige Entwicklung der Gemeinde von enormer Bedeutung sind. Die Zahlen dazu stehen in nicht öffentlichen Anlagen.",
-        "Korrigiert am 18. November: Der Haupt- und Finanzausschuss genehmigt den Plan nicht selbst, er gibt nur eine Empfehlung an den Gemeinderat."
+        "Korrigiert am 18. November: Der Haupt- und Finanzausschuss genehmigt den Plan nicht selbst, er gibt nur eine Empfehlung an den Gemeinderat.",
+        "Aktualisiert am 24. November: In einer zweiten Einladung vom 23. November schreibt die Gemeinde, dass im Ratssaal ausgewählte Arbeiten im Original zu sehen sind und das ganze Projekt digital vorgestellt wird. Als Motive nennt sie Graffiti, leer stehende Räume und die Natur, die sich das Dorf zurückholt. Wie lange die Ausstellung läuft und ob Eintritt verlangt wird, steht auch in dieser Einladung nicht."
       ],
       "pruefung": [
         {
@@ -201,6 +202,14 @@
             "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZTNr64pOAqrSbVwwS6MNRwm5jGJHCtguFSP_DHIWHkPk/Beschlussvorlage_151-2026.pdf"
           ],
           "stelle": "Vorlage S. 1 bis 2"
+        },
+        {
+          "aussage": "Beitrag der Gemeinde Merzenich in Heimat-Info vom 23.11.2026, 14:21 Uhr (23. November), gelesen 24.11.2026 09:16 Uhr (24. November): „Graffiti, verlassene Räume und die Natur, die sich ihren Weg bahnt“; „Freitag, 27. November 2026, ab 16:00 Uhr“, „Ratssaal der Gemeinde Merzenich“; „Erlebt ausgewählte Kunstwerke im Original und das gesamte Projekt in einer digitalen Präsentation.“ Keine Angaben zu Laufzeit oder Eintritt.",
+          "belege": [
+            "https://www.heimat-info.de/beitraege/0626b794-ef79-4322-beff-713bf77738cf"
+          ],
+          "stelle": "Gemeindebeitrag",
+          "selbstauskunft": "Beitrag des offiziellen Profils der Gemeinde Merzenich über die eigene Ausstellung"
         }
       ],
       "quelle": {
@@ -233,6 +242,11 @@
           "name": "Gemeinde Merzenich, Beschlussvorlage 151/2026 (Neuland Hambach GmbH)",
           "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZTNr64pOAqrSbVwwS6MNRwm5jGJHCtguFSP_DHIWHkPk/Beschlussvorlage_151-2026.pdf",
           "stand": "2026-11-17"
+        },
+        {
+          "name": "Gemeinde Merzenich in Heimat-Info: „Kunst trifft Leerstand: Einladung zur Ausstellungseröffnung!“ (23.11.2026)",
+          "url": "https://www.heimat-info.de/beitraege/0626b794-ef79-4322-beff-713bf77738cf",
+          "stand": "2026-11-24"
         }
       ]
     }
