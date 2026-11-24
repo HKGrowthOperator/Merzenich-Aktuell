@@ -72,9 +72,16 @@ Heimat-Info-Veranstaltungskalender der Gemeinde (https://www.heimat-info.de/geme
 
 ## 7. QA, Commit, Abgleich
 
-Commits: `d80f62bb` (Korrektur Wochenvorschau), `2fbd0ffb` (Meldung und zwei Aktualisierungen), `02e57865` (Termin Gemeinderat), Dokumentation in diesem Commit. Abgleich 14:48 Uhr `angestossen: true`; um 14:57 und 15:00 Uhr `angestossen: false`, nächster planmäßiger Abgleich 15:05 Uhr.
+Commits: `d80f62bb` (Korrektur Wochenvorschau), `2fbd0ffb` (Meldung und zwei Aktualisierungen), `02e57865` (Termin Gemeinderat), `d33e9b60` (Dokumentation), Live-Nachweis in diesem Commit. Abgleich 14:48 Uhr `angestossen: true`, um 14:57 und 15:00 Uhr `angestossen: false` (planmäßiger Abgleich 15:05 Uhr), 15:02 Uhr `angestossen: true`. Import-XML auf GitHub raw um 15:03 Uhr mit dem neuen Slug.
 
-Live-Nachweis: wird nach dem Abgleich ergänzt.
+Live-Nachweis 15:10 Uhr, jeweils HTTP 200:
+
+- `/rathaus/gemeinderat-merzenich-3-dezember-2026-tagesordnung-hundesteuer-haushaltsentwurf-dorfauto/`: Titel vorhanden, Teilbild `aktuell-01-0b6bcf033a` (Rathaus); in `news-sitemap.xml` enthalten; auf der Startseite oben in „Neu in Merzenich“ (14:55 Uhr, Rathaus & Politik).
+- `/leben/merzenich-23-bis-29-november-2026-buergewald-ausschuss-tannenbaumschmuecken-adventmarkt/`: mit „Aktualisiert am 24. November“ und „als abgesetzt“.
+- `/rathaus/haushalt-2027-zeitplan-merzenich/` und `/rathaus/merzenich-abgaben-2027-abwassergebuehren-hundesteuer-grundsteuer-b-1077-vorschlag-verwaltung/`: je mit „Aktualisiert am 24. November“.
+- `/termine/gemeinderat-sitzung-2026-12-03/`: mit der neuen Beschreibung („Hebesätze 2027“).
+
+Die Bekanntmachung ist auf den 24.11. datiert; ich habe sie um 14:48 Uhr gefunden (um 09:18 Uhr gab es noch keine Tagesordnung). Live war die Meldung 22 Minuten nach dem Fund.
 
 ## 8. Bildprüfung
 
@@ -84,7 +91,6 @@ Live-Nachweis: wird nach dem Abgleich ergänzt.
 
 ## 9. Offene Punkte für den nächsten Lauf
 
-- Live-Nachweis der Meldung und der drei Aktualisierungen, falls er hier nicht mehr ergänzt ist.
 - Bürgewald-Ausschuss 26.11.: Ergebnisse und die aktualisierten Anlagen zu 142/2026.
 - Haushalt 2027: Erweiterung der Tagesordnung oder neuer Zeitplan beobachten; HFA-Niederschrift abwarten.
 - Girbelsrath-Ergebnis, Wunschbaum (T2), Amtsblatt 13.
