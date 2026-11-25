@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-24T13:55:17.728Z",
+  "updatedAt": "2026-11-25T08:20:44.245Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -1835,6 +1835,15 @@
       "assignedAt": "2026-11-24T13:55:17.728Z",
       "articleId": "2026-11-24-gemeinderat-merzenich-3-dezember-2026-tagesordnung-hundesteuer-haushaltsentwurf-dorfauto",
       "articleDate": "2026-11-24T14:55:00+01:00"
+    },
+    "/rathaus/bau-turbo-merzenich-leitlinien-fassung-2-mehr-als-sechs-wohnungen-buergewald-ausgenommen/": {
+      "imageId": "web-aktuell-05-85b961cd",
+      "pool": "aktuell",
+      "motiv": "rathaus-merzenich",
+      "regel": "rathaus.rat",
+      "assignedAt": "2026-11-25T08:20:44.245Z",
+      "articleId": "2026-11-25-bau-turbo-merzenich-leitlinien-fassung-2-mehr-als-sechs-wohnungen-buergewald-ausgenommen",
+      "articleDate": "2026-11-25T09:20:00+01:00"
     }
   }
 }
