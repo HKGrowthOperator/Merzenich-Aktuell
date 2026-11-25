@@ -20,7 +20,7 @@
  */
 if (!defined('ABSPATH')) { exit; }
 
-const MA_RECHTSTEXTE_VERSION = '2026-11-25';
+const MA_RECHTSTEXTE_VERSION = '2026-11-25b';
 
 function ma_rechtstexte(): array {
     return [
@@ -148,6 +148,9 @@ function ma_rechtstexte_abgleichen(): void {
     update_option('ma_rechtstexte_geprueft', MA_RECHTSTEXTE_VERSION, false);
 }
 add_action('admin_init', 'ma_rechtstexte_abgleichen');
+// Auch im stündlichen Abgleich (25.11.2026): Ohne Backend-Aufruf blieb eine neue Fassung
+// (neue Kontaktadresse) live liegen, bis sich jemand anmeldete.
+add_action('ma_abgleich_stuendlich', 'ma_rechtstexte_abgleichen', 5);
 
 add_action('admin_menu', function (): void {
     add_submenu_page('merzenich-aktuell', 'Rechtstexte', 'Rechtstexte', 'manage_options', 'ma-rechtstexte', 'ma_rechtstexte_seite_admin');

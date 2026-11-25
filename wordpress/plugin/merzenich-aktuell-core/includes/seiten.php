@@ -19,7 +19,7 @@
  */
 if (!defined('ABSPATH')) { exit; }
 
-const MA_SEITEN_VERSION = '2026-11-03';
+const MA_SEITEN_VERSION = '2026-11-25';
 
 /** Slug → Seite. 'eltern' = Slug der übergeordneten Seite. 'art' für JSON-LD (includes/seo.php). */
 function ma_seiten(): array {
@@ -499,6 +499,8 @@ function ma_seiten_abgleichen(): void {
     update_option('ma_seiten_anzahl', count(ma_seiten()), false);
 }
 add_action('admin_init', 'ma_seiten_abgleichen');
+// Auch im stündlichen Abgleich (25.11.2026), siehe rechtstexte.php.
+add_action('ma_abgleich_stuendlich', 'ma_seiten_abgleichen', 5);
 // Auch ohne Besuch im Backend (Selbst-Update, 1.42.0): neue Seiten wie /umgebung/ entstehen mit dem stündlichen Lauf.
 add_action('ma_selbst_update_stuendlich', 'ma_seiten_abgleichen', 5);
 

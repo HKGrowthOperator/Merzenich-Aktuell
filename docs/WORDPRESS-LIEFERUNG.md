@@ -1,6 +1,10 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-25. November 2026 · Theme 21.30.7 · Core-Plugin 1.50.5 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+25. November 2026 · Theme 21.30.7 · Core-Plugin 1.50.6 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+
+## Neu am 25.11.2026 nachmittags: Plugin 1.50.6, neue Fassungen ohne Backend-Aufruf
+
+- Impressum, Datenschutz und die Plugin-Seiten (Kontakt, Redaktion, Über uns …) spielen eine neue Fassung jetzt auch im stündlichen Abgleich ein, nicht nur beim Aufruf des Backends. Nach 1.50.5 stand live noch `info@kbs-management.tv`, weil sich niemand angemeldet hatte. Seiten-Fassung 2026-11-25 (die Kontaktadresse steckt auch in Kontakt und Redaktion), Rechtstexte-Fassung 2026-11-25b. Von Hand geänderte Seiten bleiben wie bisher unangetastet.
 
 ## Neu am 25.11.2026 mittags: Plugin 1.50.5 und Theme 21.30.7, Kontaktadresse
 
