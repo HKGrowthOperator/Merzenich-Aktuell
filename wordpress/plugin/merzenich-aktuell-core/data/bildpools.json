@@ -34,7 +34,7 @@
   "flaeche": 2,
   "verkehr": 20,
   "tipp": 21,
-  "themen": 28,
+  "themen": 29,
   "menschen": 20
  },
  "bilder": [
@@ -7680,6 +7680,20 @@
    "lizenzUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
    "geprueft": true,
    "geprueftAm": "2026-11-20",
+   "ort": "Deutschland / überregional"
+  },
+  {
+   "id": "web-themen-29-9dd9c31b",
+   "pool": "themen",
+   "datei": "/assets/editorial-pools/themen/themen-29-9dd9c31b5a.jpg",
+   "alt": "Mulled wine on the Christmas market in Osnabrück in Germany in 2015",
+   "credit": "Symbolbild · Basotxerri / Wikimedia Commons · CC BY-SA 4.0",
+   "quelle": "https://commons.wikimedia.org/wiki/File%3AGl%C3%BChwein_Weinnachtsmarkt_OS.JPG",
+   "titel": "File:Glühwein Weinnachtsmarkt OS.JPG",
+   "lizenz": "CC BY-SA 4.0",
+   "lizenzUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "geprueft": true,
+   "geprueftAm": "2026-11-25",
    "ort": "Deutschland / überregional"
   },
   {

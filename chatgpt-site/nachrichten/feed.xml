@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Wed, 25 Nov 2026 08:20:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 25 Nov 2026 08:30:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Aktuell</title><link>https://merzenichaktuell.hk-growthoperator.de/nachrichten/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/nachrichten/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Glühweinabend in Merzenich: Livemusik, Weihnachtszauber und Spaß für die ganze Familie</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/leben/gluehweinabend-buergerhaus-merzenich-2026-11-27/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/gluehweinabend-buergerhaus-merzenich-2026-11-27/</guid>
+<pubDate>Wed, 25 Nov 2026 08:30:00 GMT</pubDate>
+<category>Leben</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Der SC Merzenich lädt am Freitag, 27. November, ab 17 Uhr zum Glühweinabend: erst wird am Lindenplatz der Weihnachtsbaum geschmückt, dann geht es auf dem Platz vor dem Bürgerhaus weiter, mit der Band HSO, Kinderkarussell und Elch-Rodeo.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-29-9dd9c31b5a.jpg" medium="image"><media:credit>Basotxerri / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Mulled wine on the Christmas market in Osnabrück in Germany in 2015</media:description></media:content>
+</item>
 <item>
 <title>Bau-Turbo in Merzenich: Politik soll schon bei mehr als sechs Wohnungen entscheiden, Bürgewald bekommt eigene Regeln</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/rathaus/bau-turbo-merzenich-leitlinien-fassung-2-mehr-als-sechs-wohnungen-buergewald-ausgenommen/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Ab dem 1. Januar 2027 übernehmen nach einer Mitteilung im Profil der Gemeinde keine Vereine mehr die Papiersammlungen. Abgestimmt sei das mit der Gemeinde und dem Entsorger Schönmackers.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-20-72a84de410.jpg" medium="image"><media:credit>4028mdk09 / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Richen, ein Ortsteil von Groß-Umstadt (Hessen, Deutschland)</media:description></media:content>
-</item>
-<item>
-<title>S19 aus Merzenich: Stellwerk in Köln repariert, Züge fahren wieder über den Flughafen</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/leben/s19-merzenich-flughafen-koeln-bonn-stellwerk-stoerung-umleitung-november-2026/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/s19-merzenich-flughafen-koeln-bonn-stellwerk-stoerung-umleitung-november-2026/</guid>
-<pubDate>Sun, 08 Nov 2026 13:47:00 GMT</pubDate>
-<category>Leben</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Seit Samstagmorgen war die S19 wegen eines defekten Stellwerks zwischen Köln Messe/Deutz und Troisdorf umgeleitet und hielt nicht am Flughafen. Am Sonntagabend meldete das Verkehrsportal mobil.nrw die Reparatur; am Montagabend war dort keine Störung mehr verzeichnet.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-24-960e0101ba.jpg" medium="image"><media:credit>Qualle / Wikimedia Commons · CC BY 2.5</media:credit><media:description>S-Bahn EMU Class 423 at Porz-Wahn</media:description></media:content>
 </item>
 </channel>
 </rss>

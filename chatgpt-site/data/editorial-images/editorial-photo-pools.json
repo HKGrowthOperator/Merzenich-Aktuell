@@ -35,7 +35,7 @@
     "flaeche": 2,
     "verkehr": 20,
     "tipp": 21,
-    "themen": 28,
+    "themen": 29,
     "menschen": 20
   },
   "images": [
@@ -17351,6 +17351,34 @@
       "locality": "Deutschland / überregional",
       "geprueft": true,
       "checksum": "da32bd6f915deb7a0ffa63cd5f60e84f07390cf6bab14ae940bfdef9db46662f"
+    },
+    {
+      "id": "web-themen-29-9dd9c31b",
+      "pool": "themen",
+      "src": "/assets/editorial-pools/themen/themen-29-9dd9c31b5a.jpg",
+      "alt": "Mulled wine on the Christmas market in Osnabrück in Germany in 2015",
+      "credit": "Symbolbild · Basotxerri / Wikimedia Commons · CC BY-SA 4.0",
+      "source": "Wikimedia Commons",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AGl%C3%BChwein_Weinnachtsmarkt_OS.JPG",
+      "sourceTitle": "File:Glühwein Weinnachtsmarkt OS.JPG",
+      "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Gl%C3%BChwein_Weinnachtsmarkt_OS.JPG/1920px-Gl%C3%BChwein_Weinnachtsmarkt_OS.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "rightsCheckedAt": "2026-11-25",
+      "tags": [
+        "symbolbild",
+        "thema",
+        "glühwein",
+        "weinnachtsmarkt"
+      ],
+      "width": 1600,
+      "height": 1424,
+      "format": "jpg",
+      "symbol": true,
+      "photo": true,
+      "locality": "Deutschland / überregional",
+      "geprueft": true,
+      "checksum": "209a140af223850c48ac50dd249a8056e2effa56c7ca1c84f0dd5fbbeeccbc03"
     },
     {
       "id": "web-menschen-01-686bb6fb",

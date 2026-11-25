@@ -22,22 +22,33 @@
     },
     {
       "slug": "tannenbaumschmuecken-lindenplatz-sc-merzenich-2026-11-27",
-      "titel": "Tannenbaumschmücken am Lindenplatz",
+      "titel": "Glühweinabend mit Tannenbaumschmücken am Lindenplatz",
       "start": "2026-11-27T17:00:00+01:00",
-      "ort": "Lindenplatz Merzenich",
+      "ort": "Lindenplatz und Bürgerhausplatz Merzenich",
       "ortsteil": "Merzenich",
       "kategorie": "Brauchtum",
       "veranstalter": "SC Merzenich",
-      "beschreibung": "Der SC Merzenich richtet in diesem Jahr das traditionelle Tannenbaumschmücken am Lindenplatz aus, mit Live-Musik, Programm für Kinder und Besuch des Weihnachtsmanns. Beginn 17 Uhr.",
+      "beschreibung": "Der SC Merzenich lädt ab 17 Uhr zum Glühweinabend: Kindergartenkinder schmücken am Lindenplatz den Weihnachtsbaum, danach geht es auf dem Bürgerhausplatz weiter mit der Band HSO, Kinderkarussell, Elch-Rodeo und Weihnachtsmann.",
       "absaetze": [
-        "Das traditionelle Tannenbaumschmücken am Lindenplatz in Merzenich übernimmt in diesem Jahr der SC Merzenich. Beginn ist am Freitag, 27. November 2026, um 17 Uhr.",
-        "Angekündigt sind Live-Musik, Programm für Kinder, der Besuch des Weihnachtsmanns sowie Glühwein und Stadionwurst."
+        "Am Freitag, 27. November 2026, richtet der SC Merzenich ab 17 Uhr das traditionelle Tannenbaumschmücken am Lindenplatz aus; die Kinder aus dem Kindergarten schmücken den Weihnachtsbaum. Danach geht der Glühweinabend auf dem Bürgerhausplatz vor dem Bürgerhaus weiter.",
+        "Die Band HSO spielt live, für Kinder gibt es Kinderkarussell, Elch-Rodeo und den Besuch des Weihnachtsmanns. Ausgeschenkt werden roter und weißer Glühwein, Kakao und Kaltgetränke, dazu gibt es Stadionwurst. Eigene Glühweinbecher dürfen mitgebracht werden; eingeladen ist der ganze Ort."
       ],
       "quelle": {
-        "name": "Gemeinde Merzenich, 16. Kulturkalender (November 2026 bis März 2027)",
-        "url": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Gemeinde-Merzenich-Kulturkalender-16-A4-2026.pdf",
+        "name": "Gemeinde Merzenich, Amtsblatt Nr. 12 vom 13.11.2026, S. 17 (Einladung des SC Merzenich); dazu Angaben des Vereins vom 25.11.2026",
+        "url": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_12_2026-web.pdf#page=17",
         "stand": "2026-11-25"
-      }
+      },
+      "adresse": "Burgstraße 9, 52399 Merzenich",
+      "links": [
+        [
+          "Beitrag: Glühweinabend in Merzenich",
+          "/leben/gluehweinabend-buergerhaus-merzenich-2026-11-27/"
+        ],
+        [
+          "Amtsblatt Nr. 12, S. 17 (PDF)",
+          "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2026/Merzenich_12_2026-web.pdf#page=17"
+        ]
+      ]
     },
     {
       "slug": "adventfeier-schuetzenbruderschaft-merzenich-2026-11-27",

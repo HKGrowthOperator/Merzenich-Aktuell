@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-25T08:20:44.245Z",
+  "updatedAt": "2026-11-25T08:34:20.801Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -1844,6 +1844,15 @@
       "assignedAt": "2026-11-25T08:20:44.245Z",
       "articleId": "2026-11-25-bau-turbo-merzenich-leitlinien-fassung-2-mehr-als-sechs-wohnungen-buergewald-ausgenommen",
       "articleDate": "2026-11-25T09:20:00+01:00"
+    },
+    "/leben/gluehweinabend-buergerhaus-merzenich-2026-11-27/": {
+      "imageId": "web-themen-29-9dd9c31b",
+      "pool": "themen",
+      "motiv": "gluehwein",
+      "regel": "leben.brauchtum.gluehwein",
+      "assignedAt": "2026-11-25T08:34:20.801Z",
+      "articleId": "2026-11-25-gluehweinabend-buergerhaus-merzenich-2026-11-27",
+      "articleDate": "2026-11-25T09:30:00+01:00"
     }
   }
 }

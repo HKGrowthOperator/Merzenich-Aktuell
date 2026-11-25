@@ -15,6 +15,22 @@
   ],
   "items": [
     {
+      "id": "https://merzenichaktuell.hk-growthoperator.de/leben/gluehweinabend-buergerhaus-merzenich-2026-11-27/",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/leben/gluehweinabend-buergerhaus-merzenich-2026-11-27/",
+      "title": "Glühweinabend in Merzenich: Livemusik, Weihnachtszauber und Spaß für die ganze Familie",
+      "summary": "Der SC Merzenich lädt am Freitag, 27. November, ab 17 Uhr zum Glühweinabend: erst wird am Lindenplatz der Weihnachtsbaum geschmückt, dann geht es auf dem Platz vor dem Bürgerhaus weiter, mit der Band HSO, Kinderkarussell und Elch-Rodeo.",
+      "content_html": "<p>Der SC Merzenich lädt am Freitag, 27. November, ab 17 Uhr zum Glühweinabend: erst wird am Lindenplatz der Weihnachtsbaum geschmückt, dann geht es auf dem Platz vor dem Bürgerhaus weiter, mit der Band HSO, Kinderkarussell und Elch-Rodeo.</p>",
+      "date_published": "2026-11-25T09:30:00+01:00",
+      "date_modified": "2026-11-25T09:30:00+01:00",
+      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-29-9dd9c31b5a.jpg",
+      "tags": [
+        "Leben",
+        "Merzenich",
+        "Advent",
+        "Termine"
+      ]
+    },
+    {
       "id": "https://merzenichaktuell.hk-growthoperator.de/rathaus/bau-turbo-merzenich-leitlinien-fassung-2-mehr-als-sechs-wohnungen-buergewald-ausgenommen/",
       "url": "https://merzenichaktuell.hk-growthoperator.de/rathaus/bau-turbo-merzenich-leitlinien-fassung-2-mehr-als-sechs-wohnungen-buergewald-ausgenommen/",
       "title": "Bau-Turbo in Merzenich: Politik soll schon bei mehr als sechs Wohnungen entscheiden, Bürgewald bekommt eigene Regeln",
@@ -486,22 +502,6 @@
         "Golzheim",
         "Vereine",
         "Abfall"
-      ]
-    },
-    {
-      "id": "https://merzenichaktuell.hk-growthoperator.de/leben/s19-merzenich-flughafen-koeln-bonn-stellwerk-stoerung-umleitung-november-2026/",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/leben/s19-merzenich-flughafen-koeln-bonn-stellwerk-stoerung-umleitung-november-2026/",
-      "title": "S19 aus Merzenich: Stellwerk in Köln repariert, Züge fahren wieder über den Flughafen",
-      "summary": "Seit Samstagmorgen war die S19 wegen eines defekten Stellwerks zwischen Köln Messe/Deutz und Troisdorf umgeleitet und hielt nicht am Flughafen. Am Sonntagabend meldete das Verkehrsportal mobil.nrw die Reparatur; am Montagabend war dort keine Störung mehr verzeichnet.",
-      "content_html": "<p>Seit Samstagmorgen war die S19 wegen eines defekten Stellwerks zwischen Köln Messe/Deutz und Troisdorf umgeleitet und hielt nicht am Flughafen. Am Sonntagabend meldete das Verkehrsportal mobil.nrw die Reparatur; am Montagabend war dort keine Störung mehr verzeichnet.</p>",
-      "date_published": "2026-11-08T14:47:00+01:00",
-      "date_modified": "2026-11-08T14:47:00+01:00",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-24-960e0101ba.jpg",
-      "tags": [
-        "Leben",
-        "Merzenich",
-        "Bahn",
-        "Verkehr"
       ]
     }
   ]

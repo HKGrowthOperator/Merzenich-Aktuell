@@ -1136,13 +1136,19 @@ function ma21_foto_des_tages(): string {
 /** Kommende Termine (ma_event), nach Beginn sortiert. */
 function ma21_kommende_termine(int $n): array {
     $jetzt = current_time('Y-m-d\TH:i');
-    // Nur Termine ab 60 Tagen vor heute (mehrtägige laufen noch): Ohne Grenze holte die Abfrage die
-    // 50 ältesten Termine, und seit es mehr als 50 vergangene gibt, blieb die Liste leer (21.29.1).
-    $ab = wp_date('Y-m-d', time() - 60 * DAY_IN_SECONDS);
-    $q = get_posts(['post_type' => 'ma_event', 'post_status' => 'publish', 'posts_per_page' => 50, 'meta_key' => 'ma_event_start', 'orderby' => 'meta_value', 'order' => 'ASC',
-        'meta_query' => [['key' => 'ma_event_start', 'value' => $ab, 'compare' => '>=']]]);
+    $heute = current_time('Y-m-d');
+    // Zwei Abfragen statt „ab heute minus 60 Tage“ (21.30.6, 25.11.2026): Zwischen diesem Datum
+    // und heute lagen 60 Termine, die 50 geholten waren alle vorbei, und „Vor Ort“ meldete
+    // „Gerade sind keine Termine eingetragen“. Jetzt: Beginn ab heute, dazu laufende mehrtägige
+    // (Ende ab heute). Termine ohne Ende bleiben bis 23:59 ihres Tages stehen, wie bisher.
+    $basis = ['post_type' => 'ma_event', 'post_status' => 'publish', 'posts_per_page' => max($n, 1) + 20, 'no_found_rows' => true, 'meta_key' => 'ma_event_start', 'orderby' => 'meta_value', 'order' => 'ASC'];
+    $q = get_posts($basis + ['meta_query' => [['key' => 'ma_event_start', 'value' => $heute, 'compare' => '>=']]]);
+    $laufend = get_posts(['meta_query' => [['key' => 'ma_event_start', 'value' => $heute, 'compare' => '<'], ['key' => 'ma_event_end', 'value' => $heute, 'compare' => '>=']]] + $basis);
+    $alle = [];
+    foreach (array_merge($laufend, $q) as $p) $alle[$p->ID] = $p;
+    uasort($alle, fn($a, $b) => strcmp((string) get_post_meta($a->ID, 'ma_event_start', true), (string) get_post_meta($b->ID, 'ma_event_start', true)) ?: ($a->ID <=> $b->ID));
     $raus = [];
-    foreach ($q as $p) {
+    foreach ($alle as $p) {
         $ende = get_post_meta($p->ID, 'ma_event_end', true) ?: substr((string) get_post_meta($p->ID, 'ma_event_start', true), 0, 10) . 'T23:59';
         if ($ende >= $jetzt) $raus[] = $p;
         if (count($raus) >= $n) break;

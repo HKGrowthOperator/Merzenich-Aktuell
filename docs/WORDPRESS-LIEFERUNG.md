@@ -1,6 +1,11 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-21. November 2026 · Theme 21.30.5 · Core-Plugin 1.50.4 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+25. November 2026 · Theme 21.30.6 · Core-Plugin 1.50.4 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+
+## Neu am 25.11.2026: Theme 21.30.6, Termine in „Vor Ort“ und Linie über dem Nachrichtenteil
+
+- Startseite, „Vor Ort · Veranstaltungen“: Die Liste zeigte „Gerade sind keine Termine eingetragen“, obwohl 109 Termine online sind. `ma21_kommende_termine()` holte 50 Termine ab „heute minus 60 Tage“; in diesem Zeitraum lagen inzwischen 60 vergangene Termine, also kein kommender. Jetzt zwei Abfragen: Beginn ab heute und laufende mehrtägige Termine (Ende ab heute). Termine ohne Ende bleiben wie bisher bis 23:59 ihres Tages stehen. Betrifft auch die Termine auf den Vereinsseiten.
+- Startseite: Die dünne Linie über „Vor Ort“ und „Nachrichten aus Merzenich“ (`.portal-top`, `startseite.css`) fällt weg (Wunsch Luis Kummer).
 
 ## Neu am 21.11.2026: Plugin 1.50.4 und Theme 21.30.5, Durchsicht vor der Vorstellung bei der Gemeinde
 

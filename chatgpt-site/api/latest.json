@@ -1,7 +1,16 @@
 {
-  "generated": "2026-11-25T09:20:00+01:00",
-  "stand": "2026-11-25T09:20:00+01:00",
+  "generated": "2026-11-25T09:30:00+01:00",
+  "stand": "2026-11-25T09:30:00+01:00",
   "items": [
+    {
+      "title": "Glühweinabend in Merzenich: Livemusik, Weihnachtszauber und Spaß für die ganze Familie",
+      "url": "https://merzenichaktuell.hk-growthoperator.de/leben/gluehweinabend-buergerhaus-merzenich-2026-11-27/",
+      "date": "2026-11-25T09:30:00+01:00",
+      "ressort": "leben",
+      "ort": "merzenich",
+      "teaser": "Der SC Merzenich lädt am Freitag, 27. November, ab 17 Uhr zum Glühweinabend: erst wird am Lindenplatz der Weihnachtsbaum geschmückt, dann geht es auf dem Platz vor dem Bürgerhaus weiter, mit der Band HSO, Kinderkarussell und Elch-Rodeo.",
+      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-29-9dd9c31b5a.jpg"
+    },
     {
       "title": "Bau-Turbo in Merzenich: Politik soll schon bei mehr als sechs Wohnungen entscheiden, Bürgewald bekommt eigene Regeln",
       "url": "https://merzenichaktuell.hk-growthoperator.de/rathaus/bau-turbo-merzenich-leitlinien-fassung-2-mehr-als-sechs-wohnungen-buergewald-ausgenommen/",
@@ -172,15 +181,6 @@
       "ort": "merzenich",
       "teaser": "Die Verwaltung schlägt vor, dass sich Merzenich mindestens fünf Jahre an einem gemeinsamen Dienstleistungszentrum mehrerer Kommunen beteiligt. Zugleich legt sie die Ergebnisse eines Digitalisierungschecks vor.",
       "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg"
-    },
-    {
-      "title": "Malwettbewerb der Polizei Düren: Auch Kinder aus Merzenich können bis 14. Dezember mitmachen",
-      "url": "https://merzenichaktuell.hk-growthoperator.de/leben/weihnachtsmalwettbewerb-polizei-dueren-2026-kinder-merzenich-mitmachen-14-dezember/",
-      "date": "2026-11-14T09:16:00+01:00",
-      "ressort": "leben",
-      "ort": "merzenich",
-      "teaser": "Unter dem Motto „Weihnachten auf Streife“ sucht die Kreispolizei wieder Bilder von Kindern bis elf Jahre. Vier Gewinnerinnen und Gewinner bekommen kurz vor Weihnachten Besuch mit dem Streifenwagen.",
-      "image": "https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/polizei/polizei-10-b2dae76ca0.jpg"
     }
   ],
   "events": [

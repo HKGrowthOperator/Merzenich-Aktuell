@@ -1,14 +1,14 @@
 {
- "generated": "2026-11-25T09:20:00+01:00",
- "anzahl": 237,
+ "generated": "2026-11-25T09:30:00+01:00",
+ "anzahl": 238,
  "bestand": {
-  "gesamt": 237,
+  "gesamt": 238,
   "ressorts": {
    "nachrichten": 0,
    "blaulicht": 74,
    "sport": 33,
    "rathaus": 46,
-   "leben": 50,
+   "leben": 51,
    "wirtschaft": 9,
    "tipp": 0,
    "menschen": 7,
@@ -16,7 +16,7 @@
    "kultur": 0
   },
   "ortsteile": {
-   "merzenich": 165,
+   "merzenich": 166,
    "golzheim": 27,
    "girbelsrath": 23,
    "morschenich": 13,
@@ -25,7 +25,7 @@
   },
   "listen": {
    "/nachrichten/": {
-    "anzahl": 237,
+    "anzahl": 238,
     "liste": "gepflegt"
    },
    "/blaulicht/": {
@@ -41,7 +41,7 @@
     "liste": "gepflegt"
    },
    "/leben/": {
-    "anzahl": 50,
+    "anzahl": 51,
     "liste": "gepflegt"
    },
    "/wirtschaft/": {
@@ -65,7 +65,7 @@
     "liste": "keine Seite"
    },
    "/merzenich/": {
-    "anzahl": 165,
+    "anzahl": 166,
     "liste": "gepflegt"
    },
    "/golzheim/": {
@@ -101,6 +101,44 @@
  },
  "hinweis": "Kanonischer Inhaltsindex, erzeugt von deploy/inhaltsindex.mjs aus den Artikelseiten. Alle Listen, Feeds und die Startseite werden daraus gebaut.",
  "artikel": [
+  {
+   "id": "2026-11-25-gluehweinabend-buergerhaus-merzenich-2026-11-27",
+   "url": "/leben/gluehweinabend-buergerhaus-merzenich-2026-11-27/",
+   "titel": "Glühweinabend in Merzenich: Livemusik, Weihnachtszauber und Spaß für die ganze Familie",
+   "teaser": "Der SC Merzenich lädt am Freitag, 27. November, ab 17 Uhr zum Glühweinabend: erst wird am Lindenplatz der Weihnachtsbaum geschmückt, dann geht es auf dem Platz vor dem Bürgerhaus weiter, mit der Band HSO, Kinderkarussell und Elch-Rodeo.",
+   "kicker": "Advent · Termin",
+   "ressort": "leben",
+   "ressortLabel": "Leben",
+   "ort": "MERZENICH",
+   "ortsteil": "merzenich",
+   "datum": "2026-11-25T09:30:00+01:00",
+   "aktualisiert": "2026-11-25T09:30:00+01:00",
+   "lesezeit": "2 Min. Lesezeit",
+   "themen": [
+    {
+     "slug": "advent",
+     "label": "Advent"
+    },
+    {
+     "slug": "termine",
+     "label": "Termine"
+    }
+   ],
+   "bild": {
+    "src": "/assets/editorial-pools/themen/themen-29-9dd9c31b5a.jpg",
+    "srcset": "",
+    "alt": "Mulled wine on the Christmas market in Osnabrück in Germany in 2015",
+    "width": 1920,
+    "height": 1709,
+    "fit": "",
+    "badge": "Symbolbild",
+    "credit": "Basotxerri / Wikimedia Commons · CC BY-SA 4.0",
+    "symbol": true,
+    "stufe": "B"
+   },
+   "undatiert": false,
+   "abgerufen": ""
+  },
   {
    "id": "2026-11-25-bau-turbo-merzenich-leitlinien-fassung-2-mehr-als-sechs-wohnungen-buergewald-ausgenommen",
    "url": "/rathaus/bau-turbo-merzenich-leitlinien-fassung-2-mehr-als-sechs-wohnungen-buergewald-ausgenommen/",

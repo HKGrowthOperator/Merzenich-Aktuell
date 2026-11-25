@@ -7,10 +7,21 @@
 <language>de-DE</language>
 <copyright>© 2026 Merzenich Aktuell</copyright>
 <managingEditor>info@kbs-management.tv (Redaktion Merzenich Aktuell)</managingEditor>
-<lastBuildDate>Wed, 25 Nov 2026 08:20:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 25 Nov 2026 08:30:00 GMT</lastBuildDate>
 <image><url>https://merzenichaktuell.hk-growthoperator.de/assets/img/avatar-1024.png</url><title>Merzenich Aktuell – Leben</title><link>https://merzenichaktuell.hk-growthoperator.de/leben/</link></image>
 <atom:link href="https://merzenichaktuell.hk-growthoperator.de/leben/feed.xml" rel="self" type="application/rss+xml"/>
 <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+<item>
+<title>Glühweinabend in Merzenich: Livemusik, Weihnachtszauber und Spaß für die ganze Familie</title>
+<link>https://merzenichaktuell.hk-growthoperator.de/leben/gluehweinabend-buergerhaus-merzenich-2026-11-27/</link>
+<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/gluehweinabend-buergerhaus-merzenich-2026-11-27/</guid>
+<pubDate>Wed, 25 Nov 2026 08:30:00 GMT</pubDate>
+<category>Leben</category>
+<category>Merzenich</category>
+<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
+<description>Der SC Merzenich lädt am Freitag, 27. November, ab 17 Uhr zum Glühweinabend: erst wird am Lindenplatz der Weihnachtsbaum geschmückt, dann geht es auf dem Platz vor dem Bürgerhaus weiter, mit der Band HSO, Kinderkarussell und Elch-Rodeo.</description>
+<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/themen/themen-29-9dd9c31b5a.jpg" medium="image"><media:credit>Basotxerri / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Mulled wine on the Christmas market in Osnabrück in Germany in 2015</media:description></media:content>
+</item>
 <item>
 <title>Merzenich vom 23. bis 29. November: Bürgewald-Ausschuss, Tannenbaumschmücken und Adventmarkt</title>
 <link>https://merzenichaktuell.hk-growthoperator.de/leben/merzenich-23-bis-29-november-2026-buergewald-ausschuss-tannenbaumschmuecken-adventmarkt/</link>
@@ -329,17 +340,6 @@
 <dc:creator>Redaktion Merzenich Aktuell</dc:creator>
 <description>Am Dienstag, 6. Oktober, macht der DRK-Blutspendedienst West Station im Bürgerhaus an der Burgstraße 9. Für die Spende wird um eine vorherige Terminreservierung gebeten.</description>
 <media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/aktuell/aktuell-05-85b961cd5e.jpg" medium="image"><media:credit>Karl-Heinz Meurer / Wikimedia Commons · CC BY-SA 3.0</media:credit><media:description>Rathaus der Gemeinde Merzenich</media:description></media:content>
-</item>
-<item>
-<title>„Orte von Kirche“: Infoabend am 8. Oktober im Pfarrheim Merzenich</title>
-<link>https://merzenichaktuell.hk-growthoperator.de/leben/orte-von-kirche-infoabend-merzenich-2026/</link>
-<guid isPermaLink="true">https://merzenichaktuell.hk-growthoperator.de/leben/orte-von-kirche-infoabend-merzenich-2026/</guid>
-<pubDate>Sun, 04 Oct 2026 10:28:00 GMT</pubDate>
-<category>Leben</category>
-<category>Merzenich</category>
-<dc:creator>Redaktion Merzenich Aktuell</dc:creator>
-<description>Wie soll kirchliches Leben im neuen Pastoralen Raum Merzenich–Niederzier–Nörvenich–Vettweiß künftig aussehen? Am Donnerstagabend lädt St. Laurentius zum Mitreden ins Pfarrheim ein.</description>
-<media:content url="https://merzenichaktuell.hk-growthoperator.de/assets/editorial-pools/kirchedetail/kirchedetail-01-995c6c09d8.jpg" medium="image"><media:credit>ErichanderElbe / Wikimedia Commons · CC BY-SA 4.0</media:credit><media:description>Kirchenfenster</media:description></media:content>
 </item>
 </channel>
 </rss>

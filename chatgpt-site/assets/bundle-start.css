@@ -2669,7 +2669,8 @@ body.home .front-zweit h2{font-size:clamp(22px,1.8vw,26px)}
 }
 
 /* Nach der Buehne A4.7: Vor Ort links, Hauptstrom daneben */
-body.home .portal-top{padding-top:32px;border-top:1px solid var(--a-linie)}
+/* Ohne Linie über „Vor Ort“ und „Nachrichten aus Merzenich“ (Wunsch Luis Kummer, 25.11.2026) */
+body.home .portal-top{padding-top:32px;border-top:0}
 body.home .portal-strom{min-width:0}
 /* Auf Desktop die Ressortbloecke in der Nachrichten-Spalte verteilen, statt
    unter der laengeren Service-Spalte einen toten Streifen zu lassen. */
@@ -2902,7 +2903,7 @@ body.home .buehne-karte .karte-bild .badge{font-size:9.5px;padding:2px 5px;left:
 body.home{--home-takt:clamp(20px,2.2vw,30px)}
 html body.home main > .desk{margin-top:0!important;padding-top:var(--home-takt)!important}
 html body.home main > .werbung--band{margin-top:var(--home-takt);margin-bottom:0}
-html body.home main > .portal-top{margin-top:var(--home-takt)!important;margin-bottom:0!important;padding-top:0!important}
+html body.home main > .portal-top{margin-top:var(--home-takt)!important;margin-bottom:0!important;padding-top:0!important;border-top:0!important}
 html body.home main > .orte-buehne{padding-top:var(--home-takt)!important;margin-top:0!important}
 html body.home main > .ansichten{margin-top:var(--home-takt)!important}
 html body.home main > .reader-note{margin-top:var(--home-takt)!important}
