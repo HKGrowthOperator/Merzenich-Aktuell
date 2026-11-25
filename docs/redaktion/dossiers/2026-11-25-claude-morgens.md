@@ -68,9 +68,14 @@ Heimat-Info-Veranstaltungskalender der Gemeinde (https://www.heimat-info.de/geme
 
 ## 7. QA, Commit, Abgleich
 
-Commits: `15b2abba` (Aktualisierungen Bau-Turbo), `edcb79ff` (Meldung), `525afc62` (Kalenderpflege), Dokumentation in diesem Commit. Abgleich 09:18 Uhr `angestossen: true`; 09:22 Uhr `angestossen: false`, nächster planmäßiger Abgleich 10:05 Uhr.
+Commits: `15b2abba` (Aktualisierungen Bau-Turbo), `edcb79ff` (Meldung), `525afc62` (Kalenderpflege), `2a643e2a` (Dokumentation), Live-Nachweis in diesem Commit. Abgleich 09:18 Uhr `angestossen: true`, 09:22 Uhr `angestossen: false`. Die Meldung war trotzdem schon um 09:26 Uhr abrufbar. Import-XML auf GitHub raw um 09:27 Uhr mit dem neuen Slug.
 
-Live-Nachweis: wird nach dem Abgleich ergänzt.
+Live-Nachweis 09:27 Uhr, jeweils HTTP 200:
+
+- `/rathaus/bau-turbo-merzenich-leitlinien-fassung-2-mehr-als-sechs-wohnungen-buergewald-ausgenommen/`: Titel vorhanden, Teilbild `aktuell-05-85b961cd5e` (Rathaus); in `news-sitemap.xml` enthalten; oben in „Neu in Merzenich“ auf der Startseite (09:20 Uhr, Rathaus & Politik).
+- `/rathaus/bau-turbo-merzenich-leitlinien-wohnungsbau-ohne-bebauungsplan-bauausschuss-2026/` und `/rathaus/buergewald-ausschuss-merzenich-26-november-2026-solarpark-a4-bau-turbo-vermarktung-erster-abschnitt/`: je mit „Aktualisiert am 25. November“.
+
+Die Fassung 2.0 lag seit dem 24.11. im Ratsinformationssystem (Exportdatum); gelesen habe ich sie um 09:15 Uhr, live war die Meldung um 09:26 Uhr.
 
 ## 8. Bildprüfung
 
@@ -80,7 +85,6 @@ Live-Nachweis: wird nach dem Abgleich ergänzt.
 
 ## 9. Offene Punkte für den nächsten Lauf
 
-- Live-Nachweis, falls hier nicht mehr ergänzt.
 - Bürgewald-Ausschuss 26.11.: Ergebnisse (Solarpark A4, Bau-Turbo, nichtöffentliche Vermarktungspunkte nur soweit veröffentlicht); Ausstellungseröffnung 27.11.
 - Haushalt 2027: Erweiterung der Ratstagesordnung oder neuer Zeitplan; HFA-Niederschrift.
 - Girbelsrath-Ergebnis 20.11. und Spiel 26.11.; Wunschbaum (T2); Amtsblatt 13.
