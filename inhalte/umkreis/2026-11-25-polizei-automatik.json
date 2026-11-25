@@ -1,0 +1,29 @@
+{
+  "hinweis": "Automatisch aus der Liste der Polizei Düren im Presseportal angelegt (deploy/automatik-umkreis.mjs): amtliche Schlagzeile, Ort, Datum und Link zur Einzelmeldung, kein eigener Text. Meldungen aus Merzenich und den Ortsteilen werden hier nie angelegt.",
+  "eintraege": [
+    {
+      "ort": "Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Schockanrufe im Kreisgebiet zum Teil mit neuer Masche",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6397542",
+      "datum": "2026-11-25",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Kleinkraftradfahrer bei Verkehrsunfall leicht verletzt und ohne Fahrerlaubnis unterwegs",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6397541",
+      "datum": "2026-11-25",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Linnich: Verkehrsunfall beim Abbiegen - Autofahrer leicht verletzt",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6397540",
+      "datum": "2026-11-25",
+      "quelle": "Polizei Düren"
+    }
+  ]
+}
