@@ -122,6 +122,9 @@ function altFuer(m) {
 
 function figureHtml(m, stufe = 'B') {
   const srcset = srcsetFuer(m);
+  // Plakat des Veranstalters (25.11.2026, Glühweinabend SC Merzenich): kein Symbolbild,
+  // im eigenen Seitenverhältnis ganz zeigen (Schrift im Bild), Nachweis nur der Veranstalter.
+  if (m.veranstalter === true) return `<figure class="art-figure art-figure--symbol" data-bildstufe="${esc(stufe)}" data-symbolbild="${esc(m.pool)}" data-editorial-image-id="${esc(m.id)}" data-editorial-pool="${esc(m.pool)}"><div class="media" style="aspect-ratio:${m.width || 1600}/${m.height || 900}"><img src="${esc(m.src)}"${srcset ? ` srcset="${esc(srcset)}" sizes="${SIZES.figur}"` : ''} alt="${esc(m.alt)}" width="${m.width || 1600}" height="${m.height || 900}" loading="eager" decoding="async" data-editorial-image data-editorial-image-id="${esc(m.id)}" data-editorial-pool="${esc(m.pool)}"></div><figcaption><span><span class="figure-badge">Plakat des Veranstalters</span> · ${esc(m.alt)}.</span><span>Bild: ${esc(m.credit)}</span></figcaption></figure>`;
   m = { ...m, alt: altFuer(m) };
   return `<figure class="art-figure art-figure--symbol" data-bildstufe="${esc(stufe)}" data-symbolbild="${esc(m.pool)}" data-editorial-image-id="${esc(m.id)}" data-editorial-pool="${esc(m.pool)}"><div class="media"><img src="${esc(m.src)}"${srcset ? ` srcset="${esc(srcset)}" sizes="${SIZES.figur}"` : ''} alt="${esc(m.alt)}" width="${m.width || 1600}" height="${m.height || 900}" loading="eager" decoding="async" data-editorial-image data-editorial-image-id="${esc(m.id)}" data-editorial-pool="${esc(m.pool)}"></div><figcaption><span><span class="figure-badge">Symbolbild</span> · ${esc(m.alt)}. Kein Foto vom Ereignis.</span><span>Bild: ${esc(nachweis(m))}</span></figcaption></figure>`;
 }

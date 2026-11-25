@@ -118,7 +118,7 @@ function quelleAusSeite(html) {
 }
 
 // ------------------------------------------------------------ Bilder
-const TYP = { Symbolbild: 'symbol', Ortsansicht: 'place', Originalbild: 'original', Quellenmotiv: 'official', 'Offizielles Veranstaltungsbild': 'official', 'Offizielles Quellenmotiv': 'official', Archivbild: 'licensed' };
+const TYP = { Symbolbild: 'symbol', Ortsansicht: 'place', Originalbild: 'original', Quellenmotiv: 'official', 'Offizielles Veranstaltungsbild': 'official', 'Offizielles Quellenmotiv': 'official', 'Plakat des Veranstalters': 'official', Archivbild: 'licensed' };
 const LIZENZ_RE = /\b(CC[ -][A-Z0-9 .-]+|Public domain|gemeinfrei|CC0)\b/i;
 const anhaenge = new Map();
 function anhang(bild) {

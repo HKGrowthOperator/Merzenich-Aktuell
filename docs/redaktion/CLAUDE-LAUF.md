@@ -147,6 +147,8 @@ Das Bild muss zeigen, worum es im Artikel geht (Sport zeigt Sport, ein Sturm zei
 3. Jedes neue Foto selbst ansehen (Datei öffnen). Erst danach Titel in `deploy/editorial-photo-review.json` (`freigegeben`) und Motiv in `deploy/bildmotive.json`; Motiv der Klasse in `deploy/bildklassen.json` ergänzen. Ungeeignete Fotos in `ausgeschlossen` mit Grund.
 4. Keine KI-generierten Fotos. Ortsansicht nur, wenn wirklich kein Motiv das Thema trifft (Prüfung meldet dann nur einen Hinweis).
 
+Plakate des Veranstalters (Entscheidung Luis Kummer, 25.11.2026): Schickt ein Veranstalter über Luis Kummer ein eigenes Plakat oder Foto zu seiner Veranstaltung, darf es das Bild des Beitrags sein; Eintrag im Pool `themen` mit `veranstalter: true`, Lizenz „Veranstalterbild, zur Veröffentlichung überlassen“, eigene Bildklasse, gekennzeichnet als „Plakat des Veranstalters“. Erster Fall: Glühweinabend des SC Merzenich. KI-Bilder bleiben ausgeschlossen.
+
 ### Phase 5: Dokumentation (5 Minuten)
 
 1. Dossier `docs/redaktion/dossiers/<datum>-claude-<lauf>.md` nach [vorlagen/dossier-claude.md](vorlagen/dossier-claude.md).

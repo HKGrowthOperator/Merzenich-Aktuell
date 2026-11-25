@@ -35,7 +35,7 @@
     "flaeche": 2,
     "verkehr": 20,
     "tipp": 21,
-    "themen": 29,
+    "themen": 30,
     "menschen": 20
   },
   "images": [
@@ -18009,6 +18009,34 @@
       "locality": "NRW",
       "geprueft": true,
       "checksum": "5aa0a2465df5b5c11a76222f257749f65f415fea1911e3ab07634577384f06f6"
+    },
+    {
+      "id": "web-themen-30-1da04849",
+      "pool": "themen",
+      "src": "/assets/editorial-pools/themen/themen-30-1da0484971.jpg",
+      "alt": "Plakat des SC Merzenich zum Glühweinabend vor dem Bürgerhaus Merzenich am 27. November 2026 ab 17 Uhr",
+      "credit": "SC Merzenich",
+      "source": "SC Merzenich (Veranstalter), übermittelt von Luis Kummer am 25.11.2026",
+      "sourceUrl": "https://merzenichaktuell.hk-growthoperator.de/leben/gluehweinabend-buergerhaus-merzenich-2026-11-27/",
+      "sourceTitle": "Veranstalter:SC Merzenich Glühweinabend 2026 Banner",
+      "license": "Veranstalterbild, zur Veröffentlichung überlassen",
+      "rightsCheckedAt": "2026-11-25",
+      "tags": [
+        "veranstalter",
+        "plakat",
+        "gluehweinabend",
+        "sc-merzenich",
+        "advent"
+      ],
+      "width": 1600,
+      "height": 899,
+      "format": "jpg",
+      "symbol": false,
+      "photo": true,
+      "veranstalter": true,
+      "locality": "Merzenich",
+      "geprueft": true,
+      "checksum": "1da048497154105cffafdedcf129df4dc0715e6606ff106fb8fa0fb10498ee9b"
     }
   ]
 }

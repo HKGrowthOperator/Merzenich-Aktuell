@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-25T08:34:20.801Z",
+  "updatedAt": "2026-11-25T09:20:54.991Z",
   "assignments": {
     "/vereine/feuerwehr-girbelsrath-10-jahre/": {
       "imageId": "web-feuerwehr-01-cacd4041",
@@ -1846,11 +1846,11 @@
       "articleDate": "2026-11-25T09:20:00+01:00"
     },
     "/leben/gluehweinabend-buergerhaus-merzenich-2026-11-27/": {
-      "imageId": "web-themen-29-9dd9c31b",
+      "imageId": "web-themen-30-1da04849",
       "pool": "themen",
-      "motiv": "gluehwein",
-      "regel": "leben.brauchtum.gluehwein",
-      "assignedAt": "2026-11-25T08:34:20.801Z",
+      "motiv": "gluehweinabend-plakat",
+      "regel": "leben.brauchtum.gluehweinabend-plakat",
+      "assignedAt": "2026-11-25T09:20:54.991Z",
       "articleId": "2026-11-25-gluehweinabend-buergerhaus-merzenich-2026-11-27",
       "articleDate": "2026-11-25T09:30:00+01:00"
     }
