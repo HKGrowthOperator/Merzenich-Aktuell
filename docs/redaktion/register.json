@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-24-claude-nachmittags.md",
-  "source_check_window": "24.11.2026 Europe/Berlin: Hauptabrufe12:08:26–12:09:17; Polizei12:08:56; Sport12:09:54/12:10:06; Bilder12:10:24/35, Sichtung12:11; Commons12:10.",
+  "latest_dossier": "dossiers/2026-11-25-morgens.md",
+  "source_check_window": "25.11.2026 Europe/Berlin: Hauptabrufe06:59:13–06:59:57; Rat06:59:26–31; Bauanlagen07:00:19; Altvergleich07:01:03; korrekter Vorbericht07:01:45; visuelle Prüfungen07:00–07:03.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -11163,6 +11163,12 @@
           "dossier": "dossiers/2026-11-20-morgens.md",
           "result": "Neu: Diskussion6WE und einstimmige Empfehlung, genaue Fassung/Schwellenabgrenzung offen. Zuständigkeitskorrektur bleibt erhalten. T2.",
           "related_id": "MA-BAUTURBO-142-2026"
+        },
+        {
+          "checked_at": "2026-11-25T07:05:40+01:00",
+          "dossier": "dossiers/2026-11-25-morgens.md",
+          "research_status": "T2",
+          "result": "Geänderte Anlagen inhaltlich und visuell geprüft: Gremiumsschwelle mehr als sechs statt zehn WE; Bürgewald ausgenommen. Separate Leitlinien laut Vorlage erste Sitzungsrunde2027. Neue unabhängige Bestätigung fehlt; kein Ratsbeschluss, nur Entwurfsnachtrag prüfen."
         }
       ]
     },
@@ -13044,6 +13050,12 @@
           "dossier": "dossiers/2026-11-18-mittags.md",
           "research_status": "T2",
           "finding": "Neuer Korrektur-/Klärungsauftrag MA-KORR-BAUTURBO-AUSSENBEREICH-1811: pauschale politische Zuständigkeit ohne Delegation; Leitlinien 2.1/2.2 widersprüchlich. Historische Umsetzung und T1-Feld bleiben erhalten; keine unabhängige Bestätigung der aktuellen Beratung/Solarparameter durch bloße NRW.URBAN-Kontextquelle."
+        },
+        {
+          "checked_at": "2026-11-25T07:05:40+01:00",
+          "dossier": "dossiers/2026-11-25-morgens.md",
+          "research_status": "T2",
+          "result": "Neue Anlagen konkretisieren mehr als sechs statt zehn Wohneinheiten und Bürgewald-Ausnahme; Vorlage kündigt separate Leitlinien2027 an. Datierter Nachtrag zum alten Vorbericht prüfen; unabhängige Bestätigung fehlt."
         }
       ]
     },
@@ -13158,6 +13170,12 @@
           "dossier": "dossiers/2026-11-19-morgens.md",
           "verification_status": "live_confirmed",
           "finding": "Delegationsregel/Quellenwiderspruch und Korrekturhinweis im Liveartikel bestätigt; Umsetzung5b2f625a und alle historischen Felder erhalten. Keine verbindliche Auslegung des Entwurfs."
+        },
+        {
+          "checked_at": "2026-11-25T07:05:40+01:00",
+          "dossier": "dossiers/2026-11-25-morgens.md",
+          "research_status": "T2",
+          "result": "Alte Außenbereichspräzisierung bleibt erhalten. Neu geänderte Anlagen zu Schwelle und Bürgewald-Ausnahme erfordern datierten Nachtrag; alte Umsetzungscommits nicht ersetzen."
         }
       ]
     },
@@ -13691,6 +13709,12 @@
           "dossier": "dossiers/2026-11-24-mittags.md",
           "research_status": "T1",
           "result": "Erledigung0cb25d54live und Primärquelle bestätigt; Ortsfeld nennt jetzt fehlenden Veranstaltungsort. Tatsächlicher Ort weiter ungeklärt."
+        },
+        {
+          "checked_at": "2026-11-25T07:05:40+01:00",
+          "dossier": "dossiers/2026-11-25-morgens.md",
+          "research_status": "Erledigung bestätigt",
+          "result": "Fehlender Ort weiter korrekt markiert,0cb25d54 erhalten; tatsächlicher Treffpunkt offen."
         }
       ]
     },
@@ -13711,6 +13735,12 @@
           "checked_at": "2026-11-24T12:13:45+01:00",
           "research_status": "T2",
           "result": "Spielseite/beideMannschaftsseiten stimmen überein, sindderselbeHerausgeber; Vereins503/403; FuPaAbwesenheitkeinAbsagebeleg."
+        },
+        {
+          "checked_at": "2026-11-25T07:05:40+01:00",
+          "dossier": "dossiers/2026-11-25-morgens.md",
+          "research_status": "Erledigung bestätigt",
+          "result": "Quellenbezogener Absetzungshinweis live, d80f62bb erhalten. Unabhängige Vereinsbestätigung weiterhin offen."
         }
       ],
       "last_checked_at": "2026-11-24 14:45 Europe/Berlin",
@@ -13743,6 +13773,59 @@
           "edition": "claude-nachmittags",
           "dossier": "dossiers/2026-11-24-claude-nachmittags.md",
           "heading": "1. Umgesetzt"
+        }
+      ],
+      "research_verifications": [
+        {
+          "checked_at": "2026-11-25T07:05:40+01:00",
+          "dossier": "dossiers/2026-11-25-morgens.md",
+          "research_status": "Bestandsprüfung",
+          "result": "Neue Ratsmeldung gegen Bekanntmachung/14benannte Originalwege geprüft, Hundesteuertabellen S.2–3 visuell kontrolliert; keine neue konkrete Textkorrektur. Haushalts-/Förderdatums-Konflikte bereits benannt; nicht alle Anlagen geprüft, keine zusätzliche Freigabe."
+        }
+      ]
+    },
+    {
+      "id": "MA-KORR-BAUTURBO-ANLAGEN-2511",
+      "priority": "P2",
+      "location_section": "Gemeinde · Rathaus/Bauen",
+      "change_type": "Aktualisierungsauftrag wegen neuer Entwurfsanlagen",
+      "text_status": "T2",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-11-25-morgens.md",
+      "workflow_status": "offen",
+      "article_path": "inhalte/meldungen/2026-11-05-recherche-claude-morgens.json → /rathaus/bau-turbo-merzenich-leitlinien-wohnungsbau-ohne-bebauungsplan-bauausschuss-2026/; inhalte/meldungen/2026-11-18-recherche-claude-morgens.json → /rathaus/buergewald-ausschuss-merzenich-26-november-2026-solarpark-a4-bau-turbo-vermarktung-erster-abschnitt/",
+      "implementation_commit": null,
+      "notes": "Aktualisierte Anlage2 senkt Gremiumsschwelle von mehr als zehn auf mehr als sechs WE und nimmt Bürgewald aus; Vorlage nennt separate Leitlinien für erste Sitzungsrunde2027. Frühere Aussagen waren alter Entwurfsstand, datiert ergänzen statt rückwirkenden Fehler behaupten. Unabhängige Bestätigung fehlt; keine neue eigenständige Meldung freigegeben.",
+      "sources": [
+        {
+          "key": "bauanlage1",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZeBtlyPZjtcDLZvE8wD0CpDVJFmJs_M_vPfv5ReEEdzl/Anlage_2_-_20261120_Leitlinien_der_Gemeinde_Merzenich.pdf",
+          "at": "2026-11-25T07:00:19+01:00",
+          "status": 200
+        },
+        {
+          "key": "bau142",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZTp-B9pOdfspOlb5OTBhU5IAchFzc95eCQ5H1dY5HVlO/Beschlussvorlage_142-2026_1._Ergaenzung.pdf",
+          "at": "2026-11-25T07:00:07+01:00",
+          "status": 200
+        },
+        {
+          "key": "bauanlage2",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZca1bxSRQ8ukOrIWZq0Z9utlkBwU7BjjElvZhDsNjwnd/Anlage_3_-_20261120_Synopse.pdf",
+          "at": "2026-11-25T07:00:19+01:00",
+          "status": 200
+        },
+        {
+          "key": "bauold",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZb5rQHjW7QIV4zxlxUp2vSZWDAQjWI3hmXK48X94Bjtd/Anlage_2_-_Leitlinien_der_Gemeinde_Merzenich.pdf",
+          "at": "2026-11-25T07:01:03+01:00",
+          "status": 200
+        },
+        {
+          "key": "bauanlage0",
+          "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZeFS47Aqg6irn0myT7reLQtKnR2V-zVw5qgT99IW3bVi/Anlage_1_-_Leitlinien_Bauturbo_Kreis_Dueren.pdf",
+          "at": "2026-11-25T07:00:19+01:00",
+          "status": 200
         }
       ]
     }
@@ -16851,6 +16934,53 @@
       "implementation_commit": "2fbd0ffb",
       "summary": "Neue Meldung (Standard, 1.115 Wörter): Tagesordnung Gemeinderat 3.12. vom 24.11., HFA-Empfehlung höhere Hundesteuer, Haushaltsentwurf 2027 nicht aufgeführt, neue Satzungs-, Jahresabschluss- und Dorfauto-Vorlagen (MA-GEMEINDERAT-03122026-TO). Korrekturauftrag MA-KORR-WOCHENVORSCHAU-MORSCHENICH-2411 umgesetzt (FUSSBALL.DE: Absetzung). Aktualisierungen Haushalt-2027-Zeitplan und Abgaben 2027, Termin Gemeinderat ergänzt. 18 Termine bestätigt. Mindesttakt 24.11.: 1.",
       "publication": "Meldung, Aktualisierungen und Termin direkt veröffentlicht"
+    },
+    {
+      "date": "2026-11-25",
+      "edition": "morgens",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-25-morgens.md",
+      "compared_with": "dossiers/2026-11-24-mittags.md",
+      "compared_with_claude": "dossiers/2026-11-24-claude-nachmittags.md",
+      "base_commit": "fbaa1598dcd9226b55881dd26783d52785d4f93f",
+      "implementation_commit": null,
+      "summary": "Bau-Turbo-Anlagen neu inhaltlich erschlossen: sechs statt zehn WE, Bürgewald ausgenommen, separate Leitlinien2027 angekündigt. T2 mangels unabhängiger Bestätigung; zwei ältere Artikel datiert ergänzen. Neue Ratsmeldung und erledigte Absetzungskorrektur live geprüft; Motorradcaption offen.",
+      "topics": 1,
+      "new_topics": 0,
+      "updated_topics": 1,
+      "blocked_T2": 1,
+      "corrections_required": 2,
+      "new_corrections_required": 1,
+      "new_corrections": [
+        "MA-KORR-BAUTURBO-ANLAGEN-2511"
+      ],
+      "known_corrections_still_open": [
+        "MA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411"
+      ],
+      "resolved_corrections_verified": [
+        "MA-KORR-WOCHENVORSCHAU-MORSCHENICH-2411",
+        "MA-KORR-FRUEHSTUECK-ORT-2411"
+      ],
+      "repository_article_files_read": 63,
+      "repository_event_files_read": 27,
+      "repository_area_files_read": 26,
+      "new_or_changed_events": 0,
+      "complete_drafts": 0,
+      "prepared_at": "2026-11-25T07:05:40+01:00",
+      "deadline": "2026-11-25T08:45:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche Bereitstellung/Frist im bestätigten main-Uploadabschluss; prepared_at kein Uploadnachweis.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "open_checks": [
+        "Bau-Turbo-Änderungen unabhängige Bestätigung/Drittquellenbeleg; datierte Bestandsnachträge",
+        "Gremien-/Außenbereichszuständigkeit und Vertragswiderspruch",
+        "Bekannte Motorradcaption",
+        "Wunschbaum-Zahlen/Frist",
+        "Girbelsrath-Datenkonflikt",
+        "HFA-Niederschrift/Haushalts-TOP beobachten",
+        "Nicht alle älteren Artikel/Anlagen geprüft; Bahn nur teilweise lesbar; Vereinsquellen503/403"
+      ]
     }
   ]
 }
