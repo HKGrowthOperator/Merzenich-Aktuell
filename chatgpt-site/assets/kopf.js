@@ -60,7 +60,7 @@
   }
   if (!document.querySelector('script[data-ma-editorial-audit]')) {
     const script = document.createElement('script');
-    script.src = '/assets/editorial-audit.js?v=2dff7f8334';
+    script.src = '/assets/editorial-audit.js?v=a978ba441c';
     script.async = false;
     script.dataset.maEditorialAudit = '1';
     document.head.append(script);

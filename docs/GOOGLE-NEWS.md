@@ -26,7 +26,7 @@ Empfehlung: **aus**, solange die Redaktion jeden Tag freigibt; so geht jede Meld
 1. **Search Console** (bereits bestätigte Property `merzenich-aktuell.de`): unter Sitemaps zusätzlich `https://merzenich-aktuell.de/news-sitemap.xml` eintragen. Nach dem ersten Abgleich mit Veröffentlichung enthält sie die Meldungen der letzten zwei Tage.
 2. **Google Publisher Center** (publishercenter.google.com, mit dem Google-Konto der Search Console):
    - „Publikation hinzufügen“: Name *Merzenich Aktuell*, Sprache Deutsch, Standort Deutschland, Website `https://merzenich-aktuell.de` (die Bestätigung kommt aus der Search Console).
-   - Kontakt: `info@kbs-management.tv`, Logo quadratisch und als Querformat (Vorlagen: `chatgpt-site/assets/img/logo.png` und `logo-on-light.png`, Publisher Center verlangt mindestens 512 px Breite).
+   - Kontakt: `redaktion@merzenich-aktuell.de`, Logo quadratisch und als Querformat (Vorlagen: `chatgpt-site/assets/img/logo.png` und `logo-on-light.png`, Publisher Center verlangt mindestens 512 px Breite).
    - Unter „Google News“ → Inhalte: Abschnitte per Feed anlegen, zum Beispiel *Aktuell* `https://merzenich-aktuell.de/feed/`, *Blaulicht* `https://merzenich-aktuell.de/blaulicht/feed/`, *Sport* `https://merzenich-aktuell.de/sport/feed/`, *Rathaus* `https://merzenich-aktuell.de/rathaus/feed/`.
    - Veröffentlichen. Die Publikation erscheint danach in der Google-News-App unter ihrem Namen und kann von Leserinnen und Lesern abonniert werden; die Prüfung dauert erfahrungsgemäß einige Tage bis wenige Wochen.
 3. **Bing** (optional, erreicht auch Nachrichten in Windows und Edge): Bing Webmaster Tools mit derselben Sitemap, dann „Bing PubHub“ für die Publikation.

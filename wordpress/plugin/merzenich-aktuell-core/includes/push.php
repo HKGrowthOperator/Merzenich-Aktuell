@@ -18,7 +18,7 @@
  */
 if (!defined('ABSPATH')) { exit; }
 
-const MA_PUSH_KONTAKT = 'mailto:info@kbs-management.tv';
+const MA_PUSH_KONTAKT = 'mailto:redaktion@merzenich-aktuell.de';
 const MA_PUSH_TTL = 86400;
 const MA_PUSH_PAKET = 50;
 const MA_PUSH_MAX_FEHLER = 5;

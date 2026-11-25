@@ -189,7 +189,7 @@ function hauptteil(m, index) {
 </div>
     <!-- werbung:artikel:start --><!-- werbung:artikel:end --><div class="source-box"><b>Quelle & Transparenz</b> Grundlage dieser Meldung: ${quellenLinks}.${hinweis} ${transparenz} <a href="/korrekturen/">Fehler melden</a></div>
     <div class="tags">${tags}</div>
-    <div class="author-box"><span class="avatar" aria-hidden="true">MA</span><div class="b"><b><a href="/autor/redaktion/">Redaktion Merzenich Aktuell</a></b><p>Die Redaktion prüft jede Meldung gegen die Originalquelle, dokumentiert Bildtyp und Bildcredit und ergänzt eigene Einordnung. Kontakt: <a href="mailto:info@kbs-management.tv">info@kbs-management.tv</a></p></div></div>
+    <div class="author-box"><span class="avatar" aria-hidden="true">MA</span><div class="b"><b><a href="/autor/redaktion/">Redaktion Merzenich Aktuell</a></b><p>Die Redaktion prüft jede Meldung gegen die Originalquelle, dokumentiert Bildtyp und Bildcredit und ergänzt eigene Einordnung. Kontakt: <a href="mailto:redaktion@merzenich-aktuell.de">redaktion@merzenich-aktuell.de</a></p></div></div>
     <div class="cta-row"><a class="btn ghost" href="/meldung-senden/">Hinweis zu dieser Meldung senden</a><a class="btn ghost" href="/korrekturen/">Fehler melden</a></div>
   </div>
   <aside class="sidebar"><h2 class="sr-only">Weitere Inhalte</h2></aside>

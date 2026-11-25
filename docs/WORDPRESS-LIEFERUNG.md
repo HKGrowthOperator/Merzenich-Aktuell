@@ -1,6 +1,10 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-25. November 2026 · Theme 21.30.6 · Core-Plugin 1.50.4 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+25. November 2026 · Theme 21.30.7 · Core-Plugin 1.50.5 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+
+## Neu am 25.11.2026 mittags: Plugin 1.50.5 und Theme 21.30.7, Kontaktadresse
+
+- Überall `redaktion@merzenich-aktuell.de` statt `info@kbs-management.tv` (Wunsch Betreiber): Impressum, Datenschutz, Kontakt, Redaktion, Korrekturen, Hilfe, Termin- und Firmenseiten, Push-Kontakt, strukturierte Daten, `llms.txt`. Rechtstexte-Fassung 2026-11-25; eine von Hand geänderte Seite bleibt stehen, das Backend bietet die neue Fassung an.
 
 ## Neu am 25.11.2026: Theme 21.30.6, Termine in „Vor Ort“ und Linie über dem Nachrichtenteil
 

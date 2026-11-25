@@ -126,7 +126,7 @@ function ma_hilfe_seite(): void {
     }
     echo '<h2>Häufige Fragen</h2><div class="ma-hilfe__fragen">';
     foreach (ma_hilfe_fragen() as [$f, $a]) echo '<details><summary>' . esc_html($f) . '</summary><p>' . esc_html($a) . '</p></details>';
-    echo '</div><h2>Kontakt</h2><p>Fragen beantwortet die Redaktion: <a href="mailto:info@kbs-management.tv">info@kbs-management.tv</a>.</p></div>';
+    echo '</div><h2>Kontakt</h2><p>Fragen beantwortet die Redaktion: <a href="mailto:redaktion@merzenich-aktuell.de">redaktion@merzenich-aktuell.de</a>.</p></div>';
 }
 
 add_action('admin_head', 'ma_hilfe_css');

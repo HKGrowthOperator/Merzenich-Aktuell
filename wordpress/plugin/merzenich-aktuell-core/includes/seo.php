@@ -324,9 +324,9 @@ function ma_seo_graph(array $k, array $o): array {
         '@type' => 'NewsMediaOrganization', '@id' => $home . '#organization', 'name' => MA_SEO_MARKE, 'alternateName' => MA_SEO_UNTERTITEL, 'url' => $home,
         'logo' => ['@type' => 'ImageObject', 'url' => $o['logo'], 'width' => 1295, 'height' => 664], 'image' => $o['bild'],
         'description' => 'Nachrichten aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald',
-        'parentOrganization' => ['@type' => 'Organization', 'name' => 'KBS Management GmbH', 'email' => 'info@kbs-management.tv',
+        'parentOrganization' => ['@type' => 'Organization', 'name' => 'KBS Management GmbH', 'email' => 'redaktion@merzenich-aktuell.de',
             'address' => ['@type' => 'PostalAddress', 'streetAddress' => 'Rheinstr. 78a', 'postalCode' => '51371', 'addressLocality' => 'Leverkusen', 'addressCountry' => 'DE']],
-        'email' => 'info@kbs-management.tv',
+        'email' => 'redaktion@merzenich-aktuell.de',
         'areaServed' => ['@type' => 'AdministrativeArea', 'name' => MA_SEO_GEBIET],
         'publishingPrinciples' => $home . 'grundsaetze/', 'correctionsPolicy' => $home . 'korrekturen/', 'ethicsPolicy' => $home . 'grundsaetze/#ethik',
         'actionableFeedbackPolicy' => $home . 'meldung-senden/', 'masthead' => $home . 'ueber-uns/', 'ownershipFundingInfo' => $home . 'ueber-uns/#finanzierung', 'diversityPolicy' => $home . 'grundsaetze/#vielfalt',
@@ -465,7 +465,7 @@ function ma_seo_itemlist(array $liste): array {
  */
 function ma_seo_llms_txt(string $home, array $seiten, array $neueste = []): string {
     $t = "# " . MA_SEO_MARKE . "\n\n> " . MA_SEO_BESCHREIBUNG_LANG . "\n\n";
-    $t .= "Anbieterin: KBS Management GmbH, Rheinstr. 78a, 51371 Leverkusen, info@kbs-management.tv. Jede Meldung nennt ihre Originalquelle, ihren Datenstand und den Bildtyp; Fehler werden im Artikel mit Datum korrigiert.\n\n";
+    $t .= "Anbieterin: KBS Management GmbH, Rheinstr. 78a, 51371 Leverkusen, redaktion@merzenich-aktuell.de. Jede Meldung nennt ihre Originalquelle, ihren Datenstand und den Bildtyp; Fehler werden im Artikel mit Datum korrigiert.\n\n";
     $t .= "## Aktuell\n\n- [Heute in Merzenich]({$home}heute/): Was heute in der Gemeinde ansteht und neu ist.\n- [Termine]({$home}termine/): Veranstaltungen, Sitzungen und Feste aus allen Ortsteilen.\n- [Terminkalender (ICS)]({$home}termine/kalender.ics): alle Termine zum Abonnieren.\n- [KI-Redaktion]({$home}ki-redaktion/): Wie Meldungen mit KI recherchiert, geprüft und gekennzeichnet werden.\n- [Nachrichten aus der Umgebung]({$home}umgebung/): Düren, Niederzier, Nörvenich, Elsdorf, Kerpen und Kreis Düren, letzte 30 Tage.\n";
     if ($neueste) {
         $t .= "\n## Neueste Meldungen\n\n";

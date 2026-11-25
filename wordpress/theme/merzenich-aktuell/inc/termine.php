@@ -177,7 +177,7 @@ function ma21_termin_einzel(WP_Post $p): void {
     echo ma21_werbung('artikel');
     echo '<div class="source-box"><b>Termindaten.</b> '
         . ($t['quelle'] !== '' ? 'Quelle: <a href="' . esc_url($t['quelle']) . '" target="_blank" rel="noopener nofollow">' . esc_html((string) parse_url($t['quelle'], PHP_URL_HOST)) . ' ↗</a>. ' : '')
-        . 'Änderungen bitte an <a href="mailto:info@kbs-management.tv">info@kbs-management.tv</a> oder über <a href="' . esc_url(home_url('/termin-melden/')) . '">Termin melden</a>.</div>';
+        . 'Änderungen bitte an <a href="mailto:redaktion@merzenich-aktuell.de">redaktion@merzenich-aktuell.de</a> oder über <a href="' . esc_url(home_url('/termin-melden/')) . '">Termin melden</a>.</div>';
     echo '</div><aside class="sidebar"><h2 class="sr-only">Weitere Inhalte</h2><div class="sidebox"><h3>Weitere Termine<a href="' . esc_url(home_url('/termine/')) . '">alle</a></h3>';
     if ($weitere) {
         echo '<ul>';

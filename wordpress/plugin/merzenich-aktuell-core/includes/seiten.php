@@ -60,12 +60,12 @@ function ma_seite_ueber_uns(): string {
         . '<h2 id="finanzierung">Finanzierung</h2>'
         . '<p>Merzenich Aktuell finanziert sich über gekennzeichnete Anzeigen sowie Firmenporträts und freiwillige Beiträge von Leserinnen und Lesern. Werbekunden haben keinen Einfluss auf redaktionelle Entscheidungen; siehe <a href="/grundsaetze/">Publizistische Grundsätze</a>.</p>'
         . '<h2 id="kontakt">Kontakt</h2>'
-        . '<p>E-Mail: <a href="mailto:info@kbs-management.tv">info@kbs-management.tv</a>. Meldungen, Termine und Bilder bitte über die Formulare (<a href="/meldung-senden/">Meldung senden</a>, <a href="/termin-melden/">Termin melden</a>). Anbieterin ist die KBS Management GmbH, Leverkusen; siehe <a href="/impressum/">Impressum</a>.</p>';
+        . '<p>E-Mail: <a href="mailto:redaktion@merzenich-aktuell.de">redaktion@merzenich-aktuell.de</a>. Meldungen, Termine und Bilder bitte über die Formulare (<a href="/meldung-senden/">Meldung senden</a>, <a href="/termin-melden/">Termin melden</a>). Anbieterin ist die KBS Management GmbH, Leverkusen; siehe <a href="/impressum/">Impressum</a>.</p>';
 }
 
 function ma_seite_redaktion(): string {
     return '<p>Die Redaktion Merzenich Aktuell ist die Lokalredaktion für die Gemeinde Merzenich im Kreis Düren. Sie prüft jede Meldung gegen die Originalquelle, dokumentiert Bildtyp und Bildcredit und ergänzt eigene Einordnung. Unter jeder Meldung stehen Quelle, Datenstand und Bildnachweis.</p>'
-        . '<p>Kontakt: <a href="mailto:info@kbs-management.tv">info@kbs-management.tv</a> · <a href="/meldung-senden/">Meldung senden</a> · <a href="/korrekturen/">Fehler melden</a> · <a href="/grundsaetze/">Publizistische Grundsätze</a></p>'
+        . '<p>Kontakt: <a href="mailto:redaktion@merzenich-aktuell.de">redaktion@merzenich-aktuell.de</a> · <a href="/meldung-senden/">Meldung senden</a> · <a href="/korrekturen/">Fehler melden</a> · <a href="/grundsaetze/">Publizistische Grundsätze</a></p>'
         . '<h2 id="meldungen">Die jüngsten Meldungen</h2>[ma_redaktion_meldungen]';
 }
 
@@ -81,7 +81,7 @@ function ma_seite_grundsaetze(): string {
         . '<li><strong>Leserfoto.</strong> Von Leserinnen und Lesern eingesandt, mit Namensnennung.</li></ul>'
         . '<p><strong>Keine KI-Bilder für reale Ereignisse.</strong> Für Meldungen über tatsächliche Ereignisse wird kein generiertes Ersatzbild als Ereignisfoto verwendet. Wenn kein passendes Foto vorliegt, erscheint die Meldung ohne Bild. Selbst gezeichnete Grafiken als Ersatz verwenden wir nicht.</p>'
         . '<h2 id="korrekturen">Korrekturen</h2>'
-        . '<p>Fehler werden korrigiert und die Änderung wird im Artikel mit Datum ausgewiesen. Hinweise gehen an <a href="mailto:info@kbs-management.tv">info@kbs-management.tv</a> oder über das <a href="/korrekturen/">Korrekturformular</a>. Eine Übersicht aller Korrekturen führen wir auf der Seite <a href="/korrekturen/">Korrekturen</a>.</p>'
+        . '<p>Fehler werden korrigiert und die Änderung wird im Artikel mit Datum ausgewiesen. Hinweise gehen an <a href="mailto:redaktion@merzenich-aktuell.de">redaktion@merzenich-aktuell.de</a> oder über das <a href="/korrekturen/">Korrekturformular</a>. Eine Übersicht aller Korrekturen führen wir auf der Seite <a href="/korrekturen/">Korrekturen</a>.</p>'
         . '<h2 id="ethik">Ethik</h2>'
         . '<p>Wir berichten wahrhaftig, sorgfältig und fair. Persönlichkeitsrechte, insbesondere von Kindern, Opfern und Angehörigen, haben Vorrang vor dem Nachrichtenwert. Bei Blaulichtmeldungen nennen wir keine Namen und zeigen keine identifizierbaren Personen ohne Einwilligung. Wir trennen Nachricht und Meinung: Kommentare und Kolumnen sind als solche gekennzeichnet.</p>'
         . '<h2 id="unabhaengigkeit">Unabhängigkeit</h2>'
@@ -121,7 +121,7 @@ function ma_seite_ki_redaktion(): string {
 function ma_seite_kontakt(): string {
     return '<h2 id="die-richtige-anlaufstelle">Die richtige Anlaufstelle</h2>'
         . '<ul><li><a href="/meldung-senden/">Nachricht oder Foto einsenden</a></li><li><a href="/termin-melden/">Veranstaltung melden</a></li><li><a href="/korrekturen/">Fehler in einer Meldung melden</a></li><li><a href="/werben/">Werbung und Anzeigen anfragen</a></li></ul>'
-        . '<p>Die Redaktion erreichen Sie unter <a href="mailto:info@kbs-management.tv">info@kbs-management.tv</a> oder über das Formular unten. Bitte nennen Sie bei einer Korrektur den Beitrag und bei einer Kommentarmeldung zusätzlich den Namen und Zeitpunkt des Kommentars. Vertrauliche personenbezogene Angaben gehören nicht in öffentliche Kommentare.</p>'
+        . '<p>Die Redaktion erreichen Sie unter <a href="mailto:redaktion@merzenich-aktuell.de">redaktion@merzenich-aktuell.de</a> oder über das Formular unten. Bitte nennen Sie bei einer Korrektur den Beitrag und bei einer Kommentarmeldung zusätzlich den Namen und Zeitpunkt des Kommentars. Vertrauliche personenbezogene Angaben gehören nicht in öffentliche Kommentare.</p>'
         . '[ma_formular typ="kontakt"]';
 }
 
@@ -130,7 +130,7 @@ function ma_seite_meldung_senden(): string {
         . '<p>Vereine, Gemeinde, Kirchen, Schulen und Leserinnen und Leser können Hinweise einsenden. Hilfreich sind: <strong>was</strong> passiert, <strong>wann</strong> und <strong>wo</strong>, <strong>wer</strong> der Veranstalter oder Ansprechpartner ist, eine Kontaktmöglichkeit für Rückfragen und, wenn vorhanden, ein Bild mit der Angabe, wer es aufgenommen hat.</p>'
         . '<p>Die Redaktion prüft jede Meldung gegen die Originalquelle, dokumentiert Bildtyp und Bildcredit und ergänzt eigene Einordnung. Was wir nicht veröffentlichen: anonyme Vorwürfe gegen Einzelpersonen, Werbung ohne Kennzeichnung und Inhalte, deren Rechte nicht beim Einsender liegen.</p>'
         . '<p><strong>Familienanzeigen</strong> (Hochzeit, Geburt, Jubiläum, Nachruf) geben Sie bitte mit Foto und dem Einverständnis der Betroffenen über <a href="/anzeigen/aufgeben/">Anzeige aufgeben</a> auf.</p>'
-        . '<p>Lieber per E-Mail? <a href="mailto:info@kbs-management.tv">info@kbs-management.tv</a>. Für Termine gibt es ein <a href="/termin-melden/">eigenes Formular</a>, Fotos für das Foto des Tages schicken Sie <a href="#foto-des-tages">weiter unten</a>.</p>'
+        . '<p>Lieber per E-Mail? <a href="mailto:redaktion@merzenich-aktuell.de">redaktion@merzenich-aktuell.de</a>. Für Termine gibt es ein <a href="/termin-melden/">eigenes Formular</a>, Fotos für das Foto des Tages schicken Sie <a href="#foto-des-tages">weiter unten</a>.</p>'
         . '<div id="formular"></div>[ma_formular typ="meldung"]'
         . '<h2 id="foto-des-tages">Foto des Tages einsenden</h2>'
         . '<p>Ein schöner Blick auf Merzenich, Golzheim, Girbelsrath, Morschenich oder Bürgewald? Die Redaktion wählt aus den Einsendungen das Foto des Tages für die Startseite, mit Ihrem Namen im Bildnachweis. Am besten im Querformat und ohne erkennbare Personen.</p>'
@@ -163,7 +163,7 @@ function ma_seite_werben(): string {
         . '<li><strong>Unternehmensprofil.</strong> Dauerhafter Eintrag unter <a href="/unternehmen/">Unternehmen</a> mit Bild, Kontakt und eigenen Beiträgen.</li></ul>'
         . '<p>So sehen laufende Anzeigen aus:</p>[ma_werbung_beispiel]'
         . '<h2 id="anfrage">Anfrage</h2>'
-        . '<p>Für das Werbepaket wählen Sie „Werbepaket mit Foto und Video“ und füllen die Felder aus; für ein Firmenprofil allein „Unternehmensprofil“. Für Tipp, Sponsoring oder eine Beratung reicht eine kurze Nachricht. Preis auf Anfrage. E-Mail: <a href="mailto:info@kbs-management.tv">info@kbs-management.tv</a>.</p>'
+        . '<p>Für das Werbepaket wählen Sie „Werbepaket mit Foto und Video“ und füllen die Felder aus; für ein Firmenprofil allein „Unternehmensprofil“. Für Tipp, Sponsoring oder eine Beratung reicht eine kurze Nachricht. Preis auf Anfrage. E-Mail: <a href="mailto:redaktion@merzenich-aktuell.de">redaktion@merzenich-aktuell.de</a>.</p>'
         . '[ma_formular typ="werbung"]';
 }
 

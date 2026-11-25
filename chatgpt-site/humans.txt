@@ -1,6 +1,6 @@
 /* TEAM */
 Lokalredaktion: Redaktion Merzenich Aktuell
-Kontakt: info@kbs-management.tv
+Kontakt: redaktion@merzenich-aktuell.de
 
 /* SITE */
 Stand: 2026-09-09T10:15:14+02:00

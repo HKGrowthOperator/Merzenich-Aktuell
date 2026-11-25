@@ -179,7 +179,7 @@ aside h3{font-family:'Newsreader',Georgia,serif;font-weight:600;font-size:46px;l
 <div class="clip voll" id="vorspann" data-start="0" data-duration="${VORSPANN}"><img class="logo" src="medien/logo.png" alt=""><h1>So geht's:<br><span>Ihr Zugang bei Merzenich Aktuell</span></h1><p>Anmelden, schreiben, Bild einfügen, einreichen. In ${KAPITEL.length} kurzen Kapiteln.</p></div>
 <div class="rahmen-video">${videos.join('\n')}</div>
 ${teile.join('\n')}
-<div class="clip voll" id="abspann" data-start="${r1(t)}" data-duration="${ABSPANN}"><img class="logo" src="medien/logo.png" alt=""><h1>Fragen?<br><span>info@kbs-management.tv</span></h1><p>Die Anleitung als PDF, dieses Video und die Tour finden Sie im Backend unter <b>Hilfe</b>.</p></div>
+<div class="clip voll" id="abspann" data-start="${r1(t)}" data-duration="${ABSPANN}"><img class="logo" src="medien/logo.png" alt=""><h1>Fragen?<br><span>redaktion@merzenich-aktuell.de</span></h1><p>Die Anleitung als PDF, dieses Video und die Tour finden Sie im Backend unter <b>Hilfe</b>.</p></div>
 </div>
 <script>
 const tl = gsap.timeline({ paused: true });

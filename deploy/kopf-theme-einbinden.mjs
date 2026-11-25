@@ -283,7 +283,7 @@ for (const pfad of seiten) {
   }
   // Eine Redaktionsadresse nach aussen (deploy/site.json), nur auf den Redaktionsseiten;
   // das Impressum behaelt die Adresse der Gesellschaft.
-  if (KONTAKT_SEITEN.some((k) => pfad.includes(`/chatgpt-site/${k}/`))) html = html.split('redaktion@merzenich-aktuell.de').join(KONTAKT_MAIL).split('info@kbs-management.tv').join(KONTAKT_MAIL);
+  if (KONTAKT_SEITEN.some((k) => pfad.includes(`/chatgpt-site/${k}/`))) html = html.split('redaktion@merzenich-aktuell.de').join(KONTAKT_MAIL).split('redaktion@merzenich-aktuell.de').join(KONTAKT_MAIL);
   // Das Redaktionshandbuch (/redaktion/) ist nicht oeffentlich; der Fusslink fuehrt zur Ueber-uns-Seite.
   html = html.replace(/<a href="\/redaktion\/">Redaktion<\/a>/g, '<a href="/ueber-uns/">Redaktion</a>');
   // Wetter-Akkordeon: bleibt verborgen, bis v20.js echte Daten hat (kein sichtbarer "nicht verfuegbar"-Zustand).

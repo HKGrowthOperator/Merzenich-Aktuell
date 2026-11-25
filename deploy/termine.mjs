@@ -86,7 +86,7 @@ function seiteAusDaten(t) {
     </div>
     <div class="cta-row"><a class="btn" href="/termine/${esc(t.slug)}/termin.ics" download>In den Kalender</a><a class="btn ghost" href="https://www.openstreetmap.org/search?query=${encodeURIComponent(t.adresse || t.ort)}" target="_blank" rel="noopener">Karte ↗</a><a class="btn ghost" href="${esc(t.quelle.url)}" target="_blank" rel="noopener nofollow">Quelle ↗</a>${links}</div>
     <div class="prose">${t.absaetze.map((p) => `<p>${esc(p)}</p>`).join('')}${t.artikel ? `<p><a href="${esc(t.artikel)}">Zur Meldung auf Merzenich Aktuell</a></p>` : ''}</div>
-    <!-- werbung:artikel:start --><!-- werbung:artikel:end --><div class="source-box"><b>Termindaten.</b> Quelle: <a href="${esc(t.quelle.url)}" target="_blank" rel="noopener nofollow">${esc(t.quelle.name)} ↗</a>.${stand ? ` Stand ${stand}.` : ''} Änderungen bitte an <a href="mailto:info@kbs-management.tv">info@kbs-management.tv</a> oder über <a href="/termine/melden/">Termin melden</a>.</div>
+    <!-- werbung:artikel:start --><!-- werbung:artikel:end --><div class="source-box"><b>Termindaten.</b> Quelle: <a href="${esc(t.quelle.url)}" target="_blank" rel="noopener nofollow">${esc(t.quelle.name)} ↗</a>.${stand ? ` Stand ${stand}.` : ''} Änderungen bitte an <a href="mailto:redaktion@merzenich-aktuell.de">redaktion@merzenich-aktuell.de</a> oder über <a href="/termine/melden/">Termin melden</a>.</div>
   </div>
   <aside class="sidebar"><h2 class="sr-only">Weitere Inhalte</h2>
     <!-- termine:weitere:start --><!-- termine:weitere:end -->

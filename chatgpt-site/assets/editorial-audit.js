@@ -190,5 +190,5 @@
    * Stillgelegt: Eine Kontaktadresse, die erst im Browser umgeschrieben wird, steht in
    * der ausgelieferten Seite falsch — Mailprogramme, Kopieren und Suchmaschinen sehen
    * die alte. Die richtige Adresse gehoert in die Quellseiten. */
-  if(LAUFZEIT_UMBAU && ['/kontakt','/redaktion','/ueber-uns','/meldung-senden'].includes(path))qa('a[href="mailto:info@kbs-management.tv"]').forEach(a=>{a.href='mailto:redaktion@merzenich-aktuell.de';a.textContent='redaktion@merzenich-aktuell.de'});
+  if(LAUFZEIT_UMBAU && ['/kontakt','/redaktion','/ueber-uns','/meldung-senden'].includes(path))qa('a[href="mailto:redaktion@merzenich-aktuell.de"]').forEach(a=>{a.href='mailto:redaktion@merzenich-aktuell.de';a.textContent='redaktion@merzenich-aktuell.de'});
 })();

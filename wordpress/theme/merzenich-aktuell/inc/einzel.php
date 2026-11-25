@@ -119,7 +119,7 @@ function ma21_anzeige_einzel(WP_Post $p): void {
     echo ma21_werbung('artikel');
     // Kennzeichnung bzw. Herkunft: Prüfzeile nur, wenn es eine Quelle gibt.
     if ($p->post_type === 'ma_tip') echo '<div class="source-box"><b>Werbliche Kennzeichnung.</b> ' . esc_html($d['kicker']) . ' · bezahlte Platzierung' . ($d['gesponsert'] !== '' ? ' · Auftraggeber: ' . esc_html($d['gesponsert']) : '') . '. Inhalte von Auftraggebern sind getrennt von den Nachrichten der Redaktion.</div>';
-    elseif ($p->post_type === 'ma_business') echo '<div class="source-box"><b>Angaben.</b> Veröffentlicht mit Einwilligung des Betriebs. Änderungen bitte an <a href="mailto:info@kbs-management.tv">info@kbs-management.tv</a>.</div>';
+    elseif ($p->post_type === 'ma_business') echo '<div class="source-box"><b>Angaben.</b> Veröffentlicht mit Einwilligung des Betriebs. Änderungen bitte an <a href="mailto:redaktion@merzenich-aktuell.de">redaktion@merzenich-aktuell.de</a>.</div>';
     elseif ($d['quelle'] !== '' && function_exists('ma_theme_verified_line')) echo '<div class="source-box"><b>Herkunft.</b> Originalanzeige: <a href="' . esc_url($d['quelle']) . '" target="_blank" rel="noopener nofollow">' . esc_html((string) parse_url($d['quelle'], PHP_URL_HOST)) . ' ↗</a>. ' . esc_html(ma_theme_verified_line($p->ID)) . '.</div>';
     else echo '<div class="source-box"><b>Anzeige.</b> Aufgegeben bei Merzenich Aktuell und vor der Veröffentlichung von der Redaktion geprüft. Veröffentlicht am ' . esc_html(get_the_date('d.m.Y', $p)) . '.</div>';
     // Rechts: weitere Einträge derselben Art und der Weg zur eigenen Anzeige.

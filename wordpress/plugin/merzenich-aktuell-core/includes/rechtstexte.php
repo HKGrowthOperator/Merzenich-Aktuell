@@ -20,7 +20,7 @@
  */
 if (!defined('ABSPATH')) { exit; }
 
-const MA_RECHTSTEXTE_VERSION = '2026-11-21';
+const MA_RECHTSTEXTE_VERSION = '2026-11-25';
 
 function ma_rechtstexte(): array {
     return [
@@ -44,7 +44,7 @@ function ma_rechtstext_anbieter(): string {
 
 function ma_rechtstext_impressum(): string {
     return '<h2 id="anbieter-nach-5-ddg">Anbieter nach § 5 DDG</h2>' . ma_rechtstext_anbieter()
-        . '<h2 id="kontakt">Kontakt</h2><p>E-Mail: <a href="mailto:info@kbs-management.tv">info@kbs-management.tv</a></p>'
+        . '<h2 id="kontakt">Kontakt</h2><p>E-Mail: <a href="mailto:redaktion@merzenich-aktuell.de">redaktion@merzenich-aktuell.de</a></p>'
         . '<p>Die Gesellschaft ist Anbieterin von Merzenich Aktuell. Merzenich Aktuell ist ein unabhängiges Angebot und kein Angebot der Gemeinde Merzenich.</p>'
         . '<h2 id="redaktionell-verantwortliche-person">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>'
         // Vorgabe Betreiber 06.10.2026: Geschäftsführer, mit der Anschrift der Gesellschaft.
@@ -60,7 +60,7 @@ function ma_rechtstext_datenschutz(): string {
     $ich = ma_rechtstext_anbieter();
     return '<p>Diese Hinweise erklären, welche Daten beim Besuch von merzenich-aktuell.de verarbeitet werden, wofür und wie lange. Die Seite setzt keine Tracking-Cookies, bindet keine Analyse- oder Werbedienste Dritter ein und zählt Reichweite ohne Wiedererkennung über den Tag hinaus.</p>'
         . '<h2 id="verantwortliche-stelle">Verantwortliche Stelle</h2>' . $ich
-        . '<p>Kontakt für Datenschutzanliegen: <a href="mailto:info@kbs-management.tv">info@kbs-management.tv</a>.</p>'
+        . '<p>Kontakt für Datenschutzanliegen: <a href="mailto:redaktion@merzenich-aktuell.de">redaktion@merzenich-aktuell.de</a>.</p>'
         . '<h2 id="hosting">Hosting und Server-Protokolle</h2>'
         . '<p>Die Website läuft als WordPress-Installation bei der IONOS SE, Montabaur, als Auftragsverarbeiterin. Beim Abruf einer Seite verarbeitet der Webserver technisch notwendige Verbindungsdaten (IP-Adresse, Zeitpunkt, angeforderte Adresse, Browserkennung, verweisende Seite), um die Seite auszuliefern und den Betrieb abzusichern. Rechtsgrundlage ist Artikel 6 Absatz 1 Buchstabe f DSGVO. Die Protokolle verwaltet der Hoster nach seinen Vorgaben; wir werten sie nicht aus.</p>'
         . '<p>Fehlt eine Datei des Seitenlayouts (Stylesheet, Schrift, Bild) auf diesem Server, lädt unser Server sie einmal aus dem Quellcode-Archiv der Redaktion bei GitHub nach und liefert sie danach selbst aus. Ihr Browser verbindet sich dabei nicht mit GitHub; Daten über Sie werden nicht weitergegeben.</p>'
