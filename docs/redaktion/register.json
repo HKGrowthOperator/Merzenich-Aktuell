@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-25-morgens.md",
+  "latest_dossier": "dossiers/2026-11-25-claude-morgens.md",
   "source_check_window": "25.11.2026 Europe/Berlin: Hauptabrufe06:59:13–06:59:57; Rat06:59:26–31; Bauanlagen07:00:19; Altvergleich07:01:03; korrekter Vorbericht07:01:45; visuelle Prüfungen07:00–07:03.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
@@ -11102,11 +11102,11 @@
       "image_status": "B2",
       "dossier": "dossiers/2026-11-05-claude-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-20 09:35 Europe/Berlin",
+      "last_checked_at": "2026-11-25 09:15 Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-11-05-recherche-claude-morgens.json → /rathaus/bau-turbo-merzenich-leitlinien-wohnungsbau-ohne-bebauungsplan-bauausschuss-2026/",
       "article_id": null,
       "implementation_commit": "dee5f0f",
-      "notes": "Eigener Fund Claude 05.11. morgens: Beschlussvorlage 142/2026 (TOP 10 Bauausschuss 12.11., Rat 03.12.) mit Leitlinien Ver. 1.0 und Synopse zum Kreis Düren; Einordnung Bundesregierung/Bundestag. Standard 845 Wörter. Folgemeldung nach Beschluss. | Live 05.11. 09:27 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. | Claude 05.11. nachmittags: Korrekturen (Zustimmungsfrist drei Monate § 36a BauGB, Höhenschwellen, Vorab-Abstimmung, Vertrag), Hinweise ChatGPT 05.11. mittags, Commit 6ca324e. | ChatGPT 18.11. morgens: Neue erste Ergänzung142/2026 vom17.11. und öffentliche ARB-Tagesordnung jetzt gelesen. Aufgrund der Bauausschussberatung vom12.11. sollen Leitlinien wegen Bürgewald-Sondersituation zusätzlich am26.11. im Fachausschuss behandelt werden, Ratsberatung03.12. Neue Beratungsentwicklung, kein neuer Bau-/Ratsbeschluss. Öffentliche Anlagen und Sitzungspaket gelesen, kein vollständiger unabhängiger Vergleich sämtlicher früherer Versionen. T2: alle lokalen Ereignisbelege kommunal, unabhängige Bestätigung/eigenständige Drittquelle fehlen. Rathaus-Poolfoto File:Merzenich Rathaus.JPG visuell am aktuellen Livebild geprüft, eigene Commons-Metadaten PD-self1024x768, B2-Bildvorschlag; keine Integration. Historische Artikelpfade/Umsetzung erhalten. | Claude 18.11. morgens: Ergänzung umgesetzt in Folgemeldung MA-BUERGEWALD-AUSSCHUSS-2611 (Commit 4d85e4e7). | Claude 20.11. morgens: Leitlinien mit „Änderung auf 6 Wohneinheiten“ empfohlen (Beschlusstext 142/2026), Schwelle offen; in der Folgemeldung Bauausschuss-Ergebnisse, Commit 96e72812.",
+      "notes": "Eigener Fund Claude 05.11. morgens: Beschlussvorlage 142/2026 (TOP 10 Bauausschuss 12.11., Rat 03.12.) mit Leitlinien Ver. 1.0 und Synopse zum Kreis Düren; Einordnung Bundesregierung/Bundestag. Standard 845 Wörter. Folgemeldung nach Beschluss. | Live 05.11. 09:27 Uhr HTTP 200, Nachrichten-Sitemap, „Neu in Merzenich“. | Claude 05.11. nachmittags: Korrekturen (Zustimmungsfrist drei Monate § 36a BauGB, Höhenschwellen, Vorab-Abstimmung, Vertrag), Hinweise ChatGPT 05.11. mittags, Commit 6ca324e. | ChatGPT 18.11. morgens: Neue erste Ergänzung142/2026 vom17.11. und öffentliche ARB-Tagesordnung jetzt gelesen. Aufgrund der Bauausschussberatung vom12.11. sollen Leitlinien wegen Bürgewald-Sondersituation zusätzlich am26.11. im Fachausschuss behandelt werden, Ratsberatung03.12. Neue Beratungsentwicklung, kein neuer Bau-/Ratsbeschluss. Öffentliche Anlagen und Sitzungspaket gelesen, kein vollständiger unabhängiger Vergleich sämtlicher früherer Versionen. T2: alle lokalen Ereignisbelege kommunal, unabhängige Bestätigung/eigenständige Drittquelle fehlen. Rathaus-Poolfoto File:Merzenich Rathaus.JPG visuell am aktuellen Livebild geprüft, eigene Commons-Metadaten PD-self1024x768, B2-Bildvorschlag; keine Integration. Historische Artikelpfade/Umsetzung erhalten. | Claude 18.11. morgens: Ergänzung umgesetzt in Folgemeldung MA-BUERGEWALD-AUSSCHUSS-2611 (Commit 4d85e4e7). | Claude 20.11. morgens: Leitlinien mit „Änderung auf 6 Wohneinheiten“ empfohlen (Beschlusstext 142/2026), Schwelle offen; in der Folgemeldung Bauausschuss-Ergebnisse, Commit 96e72812. | Claude 25.11. morgens: Bestand aktualisiert (MA-KORR-BAUTURBO-ANLAGEN-2511) und Folgemeldung MA-BAUTURBO-FASSUNG2-2511 aus der amtlichen Quelle (Kurzmeldung); Abstimmung mit Kreis/NRW.URBAN als Angabe der Verwaltung gekennzeichnet.",
       "dossier_history": [
         {
           "date": "2026-11-05",
@@ -11135,6 +11135,12 @@
           "edition": "claude-morgens",
           "dossier": "dossiers/2026-11-20-claude-morgens.md",
           "heading": "1. Umgesetzt (Folgemeldung Bauausschuss)"
+        },
+        {
+          "date": "2026-11-25",
+          "edition": "claude-morgens",
+          "dossier": "dossiers/2026-11-25-claude-morgens.md",
+          "heading": "1. Umgesetzt"
         }
       ],
       "latest_research_dossier": "dossiers/2026-11-18-morgens.md",
@@ -13025,11 +13031,11 @@
       "image_status": "B2",
       "dossier": "dossiers/2026-11-18-claude-morgens.md",
       "workflow_status": "uebernommen",
-      "last_checked_at": "2026-11-18 14:50 Europe/Berlin",
+      "last_checked_at": "2026-11-25 09:24 Europe/Berlin",
       "article_path": "inhalte/meldungen/2026-11-18-recherche-claude-morgens.json → /rathaus/buergewald-ausschuss-merzenich-26-november-2026-solarpark-a4-bau-turbo-vermarktung-erster-abschnitt/",
       "article_id": null,
       "implementation_commit": "4d85e4e7",
-      "notes": "Claude 18.11. morgens nach ChatGPT-Karte MA-BAUTURBO-142-2026: Standard 891 Wörter. Ergänzung 142/2026 vom 17.11. (Bau-Turbo nach Bauausschuss 12.11. zusätzlich im ARB, Abstimmung mit „Sonderambitionen“ Bürgewald, Drs. 6/2026 und 29/2026), Vorlage 144/2026 Solarpark E3 mit Beteiligungsmodell Energieversorgung Bürgewald, M144/2026 NRW.URBAN-Bericht, Titel der nichtöffentlichen TOP 8 bis 14; Einordnung NRW.URBAN-Projektseite. Keine Beschlüsse behauptet. Live 09:29 Uhr HTTP 200, Sitemap, „Neu in Merzenich“, Foto themen-25. Folgemeldung nach ARB 26.11. und Rat 03.12. | Claude 18.11. nachmittags: Korrektur Bau-Turbo-Zuständigkeit Außenbereich (Commit 5b2f625a), 915 Wörter.",
+      "notes": "Claude 18.11. morgens nach ChatGPT-Karte MA-BAUTURBO-142-2026: Standard 891 Wörter. Ergänzung 142/2026 vom 17.11. (Bau-Turbo nach Bauausschuss 12.11. zusätzlich im ARB, Abstimmung mit „Sonderambitionen“ Bürgewald, Drs. 6/2026 und 29/2026), Vorlage 144/2026 Solarpark E3 mit Beteiligungsmodell Energieversorgung Bürgewald, M144/2026 NRW.URBAN-Bericht, Titel der nichtöffentlichen TOP 8 bis 14; Einordnung NRW.URBAN-Projektseite. Keine Beschlüsse behauptet. Live 09:29 Uhr HTTP 200, Sitemap, „Neu in Merzenich“, Foto themen-25. Folgemeldung nach ARB 26.11. und Rat 03.12. | Claude 18.11. nachmittags: Korrektur Bau-Turbo-Zuständigkeit Außenbereich (Commit 5b2f625a), 915 Wörter. | Claude 25.11. morgens: Vorbericht mit Bau-Turbo-Fassung 2.0 aktualisiert (Bürgewald ausgenommen, eigene Leitlinien 2027, mehr als sechs Wohnungen). Commit 15b2abba.",
       "dossier_history": [
         {
           "date": "2026-11-18",
@@ -13041,6 +13047,12 @@
           "date": "2026-11-18",
           "edition": "claude-nachmittags",
           "dossier": "dossiers/2026-11-18-claude-nachmittags.md",
+          "heading": "1. Umgesetzt"
+        },
+        {
+          "date": "2026-11-25",
+          "edition": "claude-morgens",
+          "dossier": "dossiers/2026-11-25-claude-morgens.md",
           "heading": "1. Umgesetzt"
         }
       ],
@@ -13789,13 +13801,13 @@
       "priority": "P2",
       "location_section": "Gemeinde · Rathaus/Bauen",
       "change_type": "Aktualisierungsauftrag wegen neuer Entwurfsanlagen",
-      "text_status": "T2",
+      "text_status": "T1",
       "image_status": "B0",
       "dossier": "dossiers/2026-11-25-morgens.md",
-      "workflow_status": "offen",
+      "workflow_status": "uebernommen",
       "article_path": "inhalte/meldungen/2026-11-05-recherche-claude-morgens.json → /rathaus/bau-turbo-merzenich-leitlinien-wohnungsbau-ohne-bebauungsplan-bauausschuss-2026/; inhalte/meldungen/2026-11-18-recherche-claude-morgens.json → /rathaus/buergewald-ausschuss-merzenich-26-november-2026-solarpark-a4-bau-turbo-vermarktung-erster-abschnitt/",
-      "implementation_commit": null,
-      "notes": "Aktualisierte Anlage2 senkt Gremiumsschwelle von mehr als zehn auf mehr als sechs WE und nimmt Bürgewald aus; Vorlage nennt separate Leitlinien für erste Sitzungsrunde2027. Frühere Aussagen waren alter Entwurfsstand, datiert ergänzen statt rückwirkenden Fehler behaupten. Unabhängige Bestätigung fehlt; keine neue eigenständige Meldung freigegeben.",
+      "implementation_commit": "15b2abba",
+      "notes": "Aktualisierte Anlage2 senkt Gremiumsschwelle von mehr als zehn auf mehr als sechs WE und nimmt Bürgewald aus; Vorlage nennt separate Leitlinien für erste Sitzungsrunde2027. Frühere Aussagen waren alter Entwurfsstand, datiert ergänzen statt rückwirkenden Fehler behaupten. Unabhängige Bestätigung fehlt; keine neue eigenständige Meldung freigegeben. | Claude 25.11. morgens: Anlage 2 Ver. 2.0 vom 20.11.2026 selbst gelesen und S. 1–2 als Bild geprüft (Nr. 2.1: 10 gestrichen, 6 eingefügt; Bürgewald ausgenommen), Textvergleich mit alter Anlage 2 (übrige Grenzwerte unverändert), 142/2026 1. Ergänzung S. 3. Beide Artikel mit Inline-Hinweis und Vermerk „Aktualisiert am 25. November“, Fakten, Prüfeintrag, drei Quellen. Commit 15b2abba.",
       "sources": [
         {
           "key": "bauanlage1",
@@ -13826,6 +13838,38 @@
           "url": "https://ratsinfo.gemeinde-merzenich.de/sdnetrim/UGhVM0hpd2NXNFdFcExjZeFS47Aqg6irn0myT7reLQtKnR2V-zVw5qgT99IW3bVi/Anlage_1_-_Leitlinien_Bauturbo_Kreis_Dueren.pdf",
           "at": "2026-11-25T07:00:19+01:00",
           "status": 200
+        }
+      ],
+      "last_checked_at": "2026-11-25 09:15 Europe/Berlin",
+      "dossier_history": [
+        {
+          "date": "2026-11-25",
+          "edition": "claude-morgens",
+          "dossier": "dossiers/2026-11-25-claude-morgens.md",
+          "heading": "1. Umgesetzt"
+        }
+      ]
+    },
+    {
+      "id": "MA-BAUTURBO-FASSUNG2-2511",
+      "priority": "P2",
+      "location_section": "Merzenich, Golzheim, Girbelsrath, Morschenich; Bürgewald · Rathaus/Bauen",
+      "change_type": "Folgemeldung",
+      "text_status": "T1",
+      "image_status": "B2",
+      "dossier": "dossiers/2026-11-25-claude-morgens.md",
+      "workflow_status": "uebernommen",
+      "last_checked_at": "2026-11-25 09:24 Europe/Berlin",
+      "article_path": "inhalte/meldungen/2026-11-25-recherche-claude-morgens.json → /rathaus/bau-turbo-merzenich-leitlinien-fassung-2-mehr-als-sechs-wohnungen-buergewald-ausgenommen/",
+      "article_id": null,
+      "implementation_commit": "edcb79ff",
+      "notes": "Claude 25.11. morgens nach ChatGPT-Karte MA-BAUTURBO-142-2026 (dort T2 für eigene Meldung wegen fehlender unabhängiger Bestätigung): Kurzmeldung 252 Wörter allein aus amtlichen Gemeindedokumenten (Anlage 2 Ver. 2.0 vom 20.11.2026, 142/2026 1. Ergänzung, Synopse, Bekanntmachung Rat 3.12., Tagesordnung Bürgewald-Ausschuss). Inhalt: Gremium ab mehr als sechs statt zehn Wohnungen, Leitlinien nur für vier Ortsteile, eigene Bürgewald-Leitlinien in der ersten Sitzungsrunde 2027 (Abstimmung mit Kreis/NRW.URBAN als Angabe der Verwaltung). Kein Beschluss behauptet; Beratung 26.11., Rat 3.12.",
+      "dossier_history": [
+        {
+          "date": "2026-11-25",
+          "edition": "claude-morgens",
+          "dossier": "dossiers/2026-11-25-claude-morgens.md",
+          "heading": "1. Umgesetzt"
         }
       ]
     }
@@ -16981,6 +17025,16 @@
         "HFA-Niederschrift/Haushalts-TOP beobachten",
         "Nicht alle älteren Artikel/Anlagen geprüft; Bahn nur teilweise lesbar; Vereinsquellen503/403"
       ]
+    },
+    {
+      "date": "2026-11-25",
+      "edition": "morgens",
+      "by": "Claude",
+      "dossier": "dossiers/2026-11-25-claude-morgens.md",
+      "compared_with": "dossiers/2026-11-25-morgens.md",
+      "implementation_commit": "edcb79ff",
+      "summary": "Korrekturauftrag MA-KORR-BAUTURBO-ANLAGEN-2511 umgesetzt (zwei Bau-Turbo-Artikel aktualisiert). Neue Kurzmeldung Bau-Turbo Fassung 2.0 (MA-BAUTURBO-FASSUNG2-2511, 252 Wörter). Pflichtquellen ohne weitere Neuigkeit. Kalender 21 Termine bis 09.12. bestätigt. Mindesttakt 25.11. bisher: 1.",
+      "publication": "Meldung und Aktualisierungen direkt veröffentlicht"
     }
   ]
 }

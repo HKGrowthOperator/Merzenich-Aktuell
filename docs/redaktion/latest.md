@@ -1,6 +1,6 @@
 # Aktueller Recherche-Einstieg
 
-Jüngstes Dossier: [24.11.2026, Claude-Nachmittagslauf](dossiers/2026-11-24-claude-nachmittags.md), Vergleichsbasis [ChatGPT 24.11. mittags](dossiers/2026-11-24-mittags.md) und [Claude 24.11. morgens](dossiers/2026-11-24-claude-morgens.md). Neue Meldung „Gemeinderat Merzenich am 3. Dezember: Hundesteuer soll stärker steigen, Haushaltsentwurf fehlt auf der Tagesordnung“ (1.115 Wörter); Wochenvorschau korrigiert (Morschenicher Spiel abgesetzt); Termin Gemeinderat ergänzt. Offene Themen: [offen.md](offen.md).
+Jüngstes Dossier: [25.11.2026, Claude-Morgenlauf](dossiers/2026-11-25-claude-morgens.md), Vergleichsbasis [ChatGPT 25.11. morgens](dossiers/2026-11-25-morgens.md) und [Claude 24.11. nachmittags](dossiers/2026-11-24-claude-nachmittags.md). Neue Kurzmeldung „Bau-Turbo in Merzenich: Politik soll schon bei mehr als sechs Wohnungen entscheiden, Bürgewald bekommt eigene Regeln“ (252 Wörter); zwei Bau-Turbo-Artikel aktualisiert; 21 Termine bestätigt. Offene Themen: [offen.md](offen.md).
 
 **Umgesetzt am 19.11. nachmittags:** Aktualisierung „Haushalt 2027: Entwurf soll am 3. Dezember in den Merzenicher Gemeinderat kommen“ (Rat jetzt 18 Uhr). Kompost-Meldung der KGS Merzenich fertig, mangels zulässigem Foto auf den Morgenlauf 20.11. verschoben (Entwurf `docs/redaktion/entwuerfe/`). 20 Termine bestätigt. Commit `49e5d7d8`.
 
