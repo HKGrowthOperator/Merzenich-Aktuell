@@ -14,6 +14,6 @@ description: Kontakt zur Redaktion von Merzenich Aktuell für Nachrichten, Termi
 
 [Werbung und Anzeigen anfragen](/werben/)
 
-Die Redaktion erreichen Sie unter [info@kbs-management.tv](mailto:info@kbs-management.tv).
+Die Redaktion erreichen Sie unter [redaktion@merzenich-aktuell.de](mailto:redaktion@merzenich-aktuell.de).
 
 Bitte nennen Sie bei einer Korrektur den Beitrag und bei einer Kommentarmeldung zusätzlich den Namen und Zeitpunkt des Kommentars. Vertrauliche personenbezogene Angaben gehören nicht in öffentliche Kommentare.

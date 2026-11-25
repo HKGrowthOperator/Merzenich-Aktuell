@@ -19,9 +19,9 @@ Deutschland
 
 ## Kontakt
 
-Redaktion: [info@kbs-management.tv](mailto:info@kbs-management.tv)
+Redaktion: [redaktion@merzenich-aktuell.de](mailto:redaktion@merzenich-aktuell.de)
 
-Anbieter: [info@kbs-management.tv](mailto:info@kbs-management.tv)
+Anbieter: [redaktion@merzenich-aktuell.de](mailto:redaktion@merzenich-aktuell.de)
 
 ## Verantwortlich für den Inhalt nach § 18 Absatz 2 MStV
 

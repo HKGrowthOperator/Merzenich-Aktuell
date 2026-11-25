@@ -7,7 +7,7 @@ metaDescription: Kontakt, Arbeitsweise und publizistische Grundsätze der Redakt
 ---
 ## Hinweise, Fragen und Korrekturen
 
-Schreiben Sie uns an [info@kbs-management.tv](mailto:info@kbs-management.tv) oder nutzen Sie [Meldung senden](/meldung-senden/).
+Schreiben Sie uns an [redaktion@merzenich-aktuell.de](mailto:redaktion@merzenich-aktuell.de) oder nutzen Sie [Meldung senden](/meldung-senden/).
 
 ## Unsere Arbeitsweise
 
