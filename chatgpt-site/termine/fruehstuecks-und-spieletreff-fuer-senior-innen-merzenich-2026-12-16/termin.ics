@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Merzenich Aktuell//Termine//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Frühstücks- und Spieletreff für Senior:innen
+X-WR-TIMEZONE:Europe/Berlin
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:fruehstuecks-und-spieletreff-fuer-senior-innen-merzenich-2026-12-16@mer
+ zenich-aktuell.de
+DTSTAMP:20261126T060000Z
+DTSTART:20261216T080000Z
+DTEND:20261216T100000Z
+SUMMARY:Frühstücks- und Spieletreff für Senior:innen
+DESCRIPTION:„Frühstücks- und Spieletreff für Senior:innen“ am Mittwo
+ ch\, 16. Dezember\, 9:00 Uhr. Ort: Ev. Gemeindehaus Sverin-Böhr-Str. 15.\
+ nVeranstalter: Evangelisches Gemeindezentrum Merzenich\nhttps://merzenicha
+ ktuell.hk-growthoperator.de/termine/fruehstuecks-und-spieletreff-fuer-seni
+ or-innen-merzenich-2026-12-16/
+LOCATION:Ev. Gemeindehaus Sverin-Böhr-Str. 15
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/fruehstuecks-und-
+ spieletreff-fuer-senior-innen-merzenich-2026-12-16/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

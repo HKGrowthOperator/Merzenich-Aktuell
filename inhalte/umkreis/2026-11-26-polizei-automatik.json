@@ -1,0 +1,29 @@
+{
+  "hinweis": "Automatisch aus der Liste der Polizei Düren im Presseportal angelegt (deploy/automatik-umkreis.mjs): amtliche Schlagzeile, Ort, Datum und Link zur Einzelmeldung, kein eigener Text. Meldungen aus Merzenich und den Ortsteilen werden hier nie angelegt.",
+  "eintraege": [
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Black Friday - Nicht jedes Schnäppchen ist ein gutes Geschäft",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6398547",
+      "datum": "2026-11-26",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Kreis Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Jülich: Betrunken am Steuer: Polizei stellt 2,04 Promille fest",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6398546",
+      "datum": "2026-11-26",
+      "quelle": "Polizei Düren"
+    },
+    {
+      "ort": "Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Fußgänger beim Queren der Fahrbahn leicht verletzt",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6398545",
+      "datum": "2026-11-26",
+      "quelle": "Polizei Düren"
+    }
+  ]
+}

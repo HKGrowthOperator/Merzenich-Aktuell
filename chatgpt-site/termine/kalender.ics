@@ -1096,6 +1096,40 @@ URL:https://merzenichaktuell.hk-growthoperator.de/termine/weihnachtsfenster
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
+UID:fruehstuecks-und-spieletreff-fuer-senior-innen-merzenich-2026-12-16@mer
+ zenich-aktuell.de
+DTSTAMP:20261126T060000Z
+DTSTART:20261216T080000Z
+DTEND:20261216T100000Z
+SUMMARY:Frühstücks- und Spieletreff für Senior:innen
+DESCRIPTION:„Frühstücks- und Spieletreff für Senior:innen“ am Mittwo
+ ch\, 16. Dezember\, 9:00 Uhr. Ort: Ev. Gemeindehaus Sverin-Böhr-Str. 15.\
+ nVeranstalter: Evangelisches Gemeindezentrum Merzenich\nhttps://merzenicha
+ ktuell.hk-growthoperator.de/termine/fruehstuecks-und-spieletreff-fuer-seni
+ or-innen-merzenich-2026-12-16/
+LOCATION:Ev. Gemeindehaus Sverin-Böhr-Str. 15
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/fruehstuecks-und-
+ spieletreff-fuer-senior-innen-merzenich-2026-12-16/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:maennergruppe-skatrunde-fuer-senioren-merzenich-2026-12-16@merzenich-ak
+ tuell.de
+DTSTAMP:20261126T060000Z
+DTSTART:20261216T080000Z
+DTEND:20261216T100000Z
+SUMMARY:Männergruppe / Skatrunde für Senioren
+DESCRIPTION:„Männergruppe / Skatrunde für Senioren“ am Mittwoch\, 16.
+  Dezember\, 9:00 Uhr. Ort: Ev. Gemeindehaus\, Severin-Böhr-Str. 15.\nVera
+ nstalter: Evangelisches Gemeindezentrum Merzenich\nhttps://merzenichaktuel
+ l.hk-growthoperator.de/termine/maennergruppe-skatrunde-fuer-senioren-merze
+ nich-2026-12-16/
+LOCATION:Ev. Gemeindehaus\, Severin-Böhr-Str. 15
+URL:https://merzenichaktuell.hk-growthoperator.de/termine/maennergruppe-ska
+ trunde-fuer-senioren-merzenich-2026-12-16/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
 UID:breakdance-workshop-funky-monkeys-weinberghalle-2026-12-19@merzenich-ak
  tuell.de
 DTSTAMP:20261102T060000Z
