@@ -1,6 +1,12 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-25. November 2026 · Theme 21.30.7 · Core-Plugin 1.50.6 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+26. November 2026 · Theme 21.30.8 · Core-Plugin 1.50.6 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+
+## Neu am 26.11.2026: Theme 21.30.8, Bildhinweise bis Samstag 28.11., 4 Uhr ausgeblendet
+
+- Entscheidung des Betreibers für den Start: Bis `MA21_HINWEISE_PAUSE_BIS` (28.11.2026, 4:00 Uhr Berlin) blendet die öffentliche Seite die Marken auf Bildern („Symbolbild“, „Ortsansicht“, „Bild: Quelle“, „Archivbild“) und die Hinweise in Bildunterschriften („Symbolbild ·“, „Kein Foto vom Ereignis.“, „Kein Foto der Veranstaltung.“, KI-Hinweis im Titelbild des Glühweinabends) aus. Danach erscheint alles von selbst wieder; es ist kein Eingriff nötig.
+- Umsetzung: `inc/hinweise-pause.php` (Ausgabefilter auf öffentlichen Seiten und eine CSS-Regel für Marken, die Skripte setzen). Daten im Backend bleiben unverändert. „Anzeige“ bleibt immer sichtbar.
+- Nach dem Ende kann die Datei bei der nächsten Theme-Version entfernt werden.
 
 ## Neu am 25.11.2026 nachmittags: Plugin 1.50.6, neue Fassungen ohne Backend-Aufruf
 
