@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-26-morgens.md",
-  "source_check_window": "26.11.2026 Europe/Berlin: Hauptabrufe07:06:14–07:07:21; DRK/Notfall07:06:52–07:11:36; RIS-Ergänzungen07:10:51–07:12:45; DWDNachabruf07:10:51; Motorradbildabruf07:08:07, visuell07:10.",
+  "latest_dossier": "dossiers/2026-11-26-mittags.md",
+  "source_check_window": "26.11.2026 Europe/Berlin: Hauptabrufe11:56:43–11:57:53; Livebildabrufe11:58:28/11:58:34, visuell11:59; Nachabrufe12:01:44.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -13080,6 +13080,12 @@
           "dossier": "dossiers/2026-11-26-morgens.md",
           "research_status": "T2",
           "result": "Neue TOP6.2-Vorlage und öffentliche Projektpräsentation; politische Workshops/Planungen, keine heutigen Beschlüsse. Unabhängige aktuelle Bestätigung fehlt."
+        },
+        {
+          "checked_at": "2026-11-26T12:02:55+01:00",
+          "dossier": "dossiers/2026-11-26-mittags.md",
+          "research_status": "T2",
+          "result": "Öffentliche TOP/Unterlagen gegenüber Morgen unverändert; keine Wiederholungskarte. Keine heutigen Ergebnisse, unabhängige aktuelle Bestätigung/Workshoporganisation offen."
         }
       ]
     },
@@ -13885,6 +13891,12 @@
           "dossier": "dossiers/2026-11-26-morgens.md",
           "research_status": "Erledigung bestätigt",
           "result": "Bestandsnachträge weiter live, kein erneuter Korrekturauftrag."
+        },
+        {
+          "checked_at": "2026-11-26T12:02:55+01:00",
+          "dossier": "dossiers/2026-11-26-mittags.md",
+          "research_status": "Erledigung bestätigt",
+          "result": "Live-Nachträge und Originalanlagen erneut gegengelesen; bestehende Umsetzung erhalten."
         }
       ]
     },
@@ -13922,6 +13934,12 @@
           "dossier": "dossiers/2026-11-26-morgens.md",
           "research_status": "Bestandsprüfung",
           "result": "Neue Kurzmeldung und Nachträge weiter live, Originalanlagen textgleich; bestehende Umsetzung erhalten."
+        },
+        {
+          "checked_at": "2026-11-26T12:02:55+01:00",
+          "dossier": "dossiers/2026-11-26-mittags.md",
+          "research_status": "Bestandsprüfung",
+          "result": "Kurztext/Entwurf unverändert, kein neuer konkreter Textfehler im Kern; keine neue Freigabe."
         }
       ]
     },
@@ -13987,6 +14005,12 @@
           "dossier": "dossiers/2026-11-26-morgens.md",
           "research_status": "T2",
           "result": "Haupttexte unverändert; technische Inbetriebnahme versus regelmäßiger Schaubetrieb weiter ungeklärt, keine Wiederholungskarte."
+        },
+        {
+          "checked_at": "2026-11-26T12:02:55+01:00",
+          "dossier": "dossiers/2026-11-26-mittags.md",
+          "research_status": "T2",
+          "result": "Haupttexte unverändert, Betriebsphasen nicht geklärt; keine neue Karte."
         }
       ]
     },
@@ -14022,6 +14046,12 @@
           "dossier": "dossiers/2026-11-26-morgens.md",
           "research_status": "T2",
           "result": "Neue Frostwarnung: Gemeinde0bis-5Grad, Kreisaggregat-5bis-8Grad. Identischer Warnzeitraum bis26.11.12Uhr; zwei DWD-Wege nicht unabhängig. Externe Drittquelle/zweite unabhängige Bestätigung fehlen. BildB0."
+        },
+        {
+          "checked_at": "2026-11-26T12:02:55+01:00",
+          "dossier": "dossiers/2026-11-26-mittags.md",
+          "research_status": "T2",
+          "result": "Zusätzlicher DWD-Kreiszeitraum12bis16Uhr; vorMittag lokale Merzenichzeile nurbis12Uhr, Nachabruf12:01ohneMerzenichzeile. Örtliche Geltung nicht übertragen; unabhängige Bestätigung/externe Drittquelle fehlen. Keine Freigabe."
         }
       ]
     },
@@ -14087,6 +14117,12 @@
           "dossier": "dossiers/2026-11-26-morgens.md",
           "research_status": "T2",
           "result": "Bestehende Karten-ID aus Terminbestand04.11.wieder aufgenommen, keine Dublette. Neuer Gemeinderückblick25.11.14:45; Ereignisdatum und unabhängiger DRK-Nachbericht fehlen. Allgemeiner BBK-Kontext bestätigt Veranstaltung nicht. BildB0/Original403."
+        },
+        {
+          "checked_at": "2026-11-26T12:02:55+01:00",
+          "dossier": "dossiers/2026-11-26-mittags.md",
+          "research_status": "T2",
+          "result": "Gemeinderückblick und Kontext unverändert; Durchführungstag und unabhängiger Nachbericht fehlen. Keine Wiederholungskarte."
         }
       ]
     }
@@ -17338,6 +17374,51 @@
         "Bekannte Motorradcaption",
         "Mühle-Schaubetrieb, Wunschbaum, Girbelsrath, HFA-Niederschrift",
         "Ältere Artikel/Anlagen/Bahnprüfung unvollständig; Quellenfehler dokumentiert"
+      ]
+    },
+    {
+      "date": "2026-11-26",
+      "edition": "mittags",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-26-mittags.md",
+      "compared_with": "dossiers/2026-11-26-morgens.md",
+      "compared_with_claude": "dossiers/2026-11-25-claude-morgens.md",
+      "base_commit": "ff6549a117ad4f2afc13b8ebe52354769b914647",
+      "implementation_commit": null,
+      "upload_parent_checked": "d7770e21fc4c3888e23849e904c84314a88c94e8",
+      "summary": "Neue Entwicklung: zusätzlicher DWD-Kreis-Frostzeitraum12bis16Uhr, örtliche Geltung für Merzenich ungeklärt(T2). KTWregional ohnekonkreten Ortsbezug. Glühweinabend-Bestandsprüfung ergänzt, Originaleinsendung nichtvollständigprüfbar. BekannteMotorradcaptionoffen, RecherchelinksdesMorgens hierberichtigt.",
+      "topics": 1,
+      "new_topics": 0,
+      "updated_topics": 1,
+      "blocked_T2": 1,
+      "corrections_required": 1,
+      "new_corrections_required": 0,
+      "known_corrections_still_open": [
+        "MA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411"
+      ],
+      "resolved_corrections_verified": [
+        "MA-KORR-BAUTURBO-ANLAGEN-2511"
+      ],
+      "repository_article_files_read": 65,
+      "repository_event_files_read": 27,
+      "repository_area_files_read": 27,
+      "new_or_changed_events": 0,
+      "complete_drafts": 0,
+      "prepared_at": "2026-11-26T12:02:55+01:00",
+      "deadline": "2026-11-26T14:15:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Bereitstellungszeit/Frist im bestätigten main-Uploadabschluss; prepared_at kein Uploadnachweis.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "open_checks": [
+        "Frost: lokale Geltung des Kreiszeitraums, unabhängige Bestätigung/externe Drittquelle",
+        "Glühweinabend: Originaleinsendung für Zusatzprogramm fehlt",
+        "Bekannte Motorradcaption",
+        "Bürgewald: unabhängige Bestätigung/Workshoporganisation/spätere Ergebnisse",
+        "DRK: Durchführungstag/unabhängiger Nachbericht",
+        "Mühle, Wunschbaum, Girbelsrath, HFA-Niederschrift",
+        "Commons-Frostfoto visuell prüfen/B0",
+        "Ältere Artikel/Anlagen/Bahn unvollständig, QuellenfehlerHTTP403/404/503 dokumentiert"
       ]
     }
   ]
