@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-25-mittags.md",
-  "source_check_window": "25.11.2026 Europe/Berlin: Hauptabrufe11:58:57–12:00:12; Polizei11:59:16; Mühlenquellen12:00:45–12:01:39; Bildsichtungen12:02–12:03; DWDNachabruf12:02:17.",
+  "latest_dossier": "dossiers/2026-11-26-morgens.md",
+  "source_check_window": "26.11.2026 Europe/Berlin: Hauptabrufe07:06:14–07:07:21; DRK/Notfall07:06:52–07:11:36; RIS-Ergänzungen07:10:51–07:12:45; DWDNachabruf07:10:51; Motorradbildabruf07:08:07, visuell07:10.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -13074,6 +13074,12 @@
           "dossier": "dossiers/2026-11-25-morgens.md",
           "research_status": "T2",
           "result": "Neue Anlagen konkretisieren mehr als sechs statt zehn Wohneinheiten und Bürgewald-Ausnahme; Vorlage kündigt separate Leitlinien2027 an. Datierter Nachtrag zum alten Vorbericht prüfen; unabhängige Bestätigung fehlt."
+        },
+        {
+          "checked_at": "2026-11-26T07:16:50+01:00",
+          "dossier": "dossiers/2026-11-26-morgens.md",
+          "research_status": "T2",
+          "result": "Neue TOP6.2-Vorlage und öffentliche Projektpräsentation; politische Workshops/Planungen, keine heutigen Beschlüsse. Unabhängige aktuelle Bestätigung fehlt."
         }
       ]
     },
@@ -13873,6 +13879,12 @@
           "dossier": "dossiers/2026-11-25-mittags.md",
           "research_status": "Erledigung bestätigt",
           "result": "Beide datierten Bestandsnachträge live und gegen unveränderte Anlagen geprüft;15b2abba erhalten, kein neuer Auftrag."
+        },
+        {
+          "checked_at": "2026-11-26T07:16:50+01:00",
+          "dossier": "dossiers/2026-11-26-morgens.md",
+          "research_status": "Erledigung bestätigt",
+          "result": "Bestandsnachträge weiter live, kein erneuter Korrekturauftrag."
         }
       ]
     },
@@ -13904,6 +13916,12 @@
           "dossier": "dossiers/2026-11-25-mittags.md",
           "research_status": "Bestandsprüfung",
           "result": "Neue Kurzmeldung gegen Gemeindeentwurf und Beratungsfolge gelesen, kein neuer konkreter Textfehler. Unabhängige Abstimmungsbestätigung nicht hinzugewonnen, keine zusätzliche Freigabe."
+        },
+        {
+          "checked_at": "2026-11-26T07:16:50+01:00",
+          "dossier": "dossiers/2026-11-26-morgens.md",
+          "research_status": "Bestandsprüfung",
+          "result": "Neue Kurzmeldung und Nachträge weiter live, Originalanlagen textgleich; bestehende Umsetzung erhalten."
         }
       ]
     },
@@ -13963,6 +13981,112 @@
           "dossier": "dossiers/2026-11-25-mittags.md",
           "research_status": "T2",
           "result": "Drei Herausgeber und mehrere Primärtexte gelesen; aktuelle Betriebsphase und Restarbeiten nicht unabhängig geklärt. Keine Kopien als unabhängige Bestätigung gezählt."
+        },
+        {
+          "checked_at": "2026-11-26T07:16:50+01:00",
+          "dossier": "dossiers/2026-11-26-morgens.md",
+          "research_status": "T2",
+          "result": "Haupttexte unverändert; technische Inbetriebnahme versus regelmäßiger Schaubetrieb weiter ungeklärt, keine Wiederholungskarte."
+        }
+      ]
+    },
+    {
+      "id": "MA-FROST-26112026",
+      "priority": "P2",
+      "location_section": "Gemeindegebiet · Wetter",
+      "change_type": "Neue Warnung",
+      "text_status": "T2",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-11-26-morgens.md",
+      "workflow_status": "gesperrt",
+      "article_path": null,
+      "implementation_commit": null,
+      "notes": "Neue Frostwarnung: Gemeinde0bis-5Grad, Kreisaggregat-5bis-8Grad. Identischer Warnzeitraum bis26.11.12Uhr; zwei DWD-Wege nicht unabhängig. Externe Drittquelle/zweite unabhängige Bestätigung fehlen. BildB0.",
+      "sources": [
+        {
+          "key": "dwdgemeinde",
+          "url": "https://www.wettergefahren.de/DWD/warnungen/warnapp_gemeinden/warnings_gemeinde_nrw.html",
+          "at": "2026-11-26T07:10:51+01:00",
+          "status": 200
+        },
+        {
+          "key": "dwdjson",
+          "url": "https://www.dwd.de/DWD/warnungen/warnapp/json/warnings.json",
+          "at": "2026-11-26T07:10:51+01:00",
+          "status": 200
+        }
+      ],
+      "research_verifications": [
+        {
+          "checked_at": "2026-11-26T07:16:50+01:00",
+          "dossier": "dossiers/2026-11-26-morgens.md",
+          "research_status": "T2",
+          "result": "Neue Frostwarnung: Gemeinde0bis-5Grad, Kreisaggregat-5bis-8Grad. Identischer Warnzeitraum bis26.11.12Uhr; zwei DWD-Wege nicht unabhängig. Externe Drittquelle/zweite unabhängige Bestätigung fehlen. BildB0."
+        }
+      ]
+    },
+    {
+      "id": "MA-DRK-KRISENVORSORGE-10112026",
+      "priority": "P3",
+      "location_section": "Merzenich · Krisenvorsorge",
+      "change_type": "Neuer Rückblick zum bestehenden Veranstaltungsthema",
+      "text_status": "T2",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-11-26-morgens.md",
+      "workflow_status": "gesperrt",
+      "article_path": null,
+      "implementation_commit": null,
+      "notes": "Bestehende Karten-ID aus Terminbestand04.11.wieder aufgenommen, keine Dublette. Neuer Gemeinderückblick25.11.14:45; Ereignisdatum und unabhängiger DRK-Nachbericht fehlen. Allgemeiner BBK-Kontext bestätigt Veranstaltung nicht. BildB0/Original403.",
+      "sources": [
+        {
+          "key": "drkhi",
+          "url": "https://www.heimat-info.de/beitraege/8f76db78-da0e-462b-bca7-26d2bd5b34d4",
+          "at": "2026-11-26T07:06:52+01:00",
+          "status": 200
+        },
+        {
+          "key": "drkold",
+          "url": "https://www.heimat-info.de/beitraege/6b90fdb6-ad60-4e71-a466-90c774db0bc2",
+          "at": "2026-11-26T07:07:20+01:00",
+          "status": 200
+        },
+        {
+          "key": "notfallseite",
+          "url": "https://www.gemeinde-merzenich.de/aktuelles/info-texte/notfallmeldestelle-2025.php",
+          "at": "2026-11-26T07:08:00+01:00",
+          "status": 200
+        },
+        {
+          "key": "notfallpdf",
+          "url": "https://www.gemeinde-merzenich.de/bindata/amtsblatt-2025/Info-Broschuere-Notfallmeldestelle-2025.pdf",
+          "at": "2026-11-26T07:10:51+01:00",
+          "status": 200
+        },
+        {
+          "key": "checkliste",
+          "url": "https://www.gemeinde-merzenich.de/bindata/vorsorge-katastrophenschutz/Checklisten-zur-Vorsorge-Krisen-und-Katastrophen.pdf",
+          "at": "2026-11-26T07:10:51+01:00",
+          "status": 200
+        },
+        {
+          "key": "bbk",
+          "url": "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Stromausfall/stromausfall_node.html",
+          "at": "2026-11-26T07:07:20+01:00",
+          "status": 200
+        },
+        {
+          "key": "drkindex",
+          "url": "https://www.drk-dueren.de/leichte-sprache/aktuell/presse-service/meldungen.html",
+          "at": "2026-11-26T07:11:36+01:00",
+          "status": 200
+        }
+      ],
+      "research_verifications": [
+        {
+          "checked_at": "2026-11-26T07:16:50+01:00",
+          "dossier": "dossiers/2026-11-26-morgens.md",
+          "research_status": "T2",
+          "result": "Bestehende Karten-ID aus Terminbestand04.11.wieder aufgenommen, keine Dublette. Neuer Gemeinderückblick25.11.14:45; Ereignisdatum und unabhängiger DRK-Nachbericht fehlen. Allgemeiner BBK-Kontext bestätigt Veranstaltung nicht. BildB0/Original403."
         }
       ]
     }
@@ -17171,6 +17295,49 @@
         "Girbelsrath: Endstand und Datenkonflikt",
         "HFA-Niederschrift und Haushalts-TOP",
         "Ältere Artikel, Anlagen und Bahnprüfung unvollständig; Vereinsquellen HTTP503/403"
+      ]
+    },
+    {
+      "date": "2026-11-26",
+      "edition": "morgens",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-26-morgens.md",
+      "compared_with": "dossiers/2026-11-25-mittags.md",
+      "compared_with_claude": "dossiers/2026-11-25-claude-morgens.md",
+      "base_commit": "af7a54f47192cd919f607e63a71af0b74eb064a5",
+      "implementation_commit": null,
+      "summary": "Neu: Frostwarnung; zusätzlicher öffentlicher Bürgewald-TOP und Projektpräsentation; Gemeinderückblick DRK-Krisenvorsorge. AlleT2wegen fehlender unabhängiger aktueller Bestätigung, Frost zusätzlich ohne dritte externe Primärquelle. Bekannte Motorradcaption offen.",
+      "topics": 3,
+      "new_topics": 1,
+      "updated_topics": 2,
+      "blocked_T2": 3,
+      "corrections_required": 1,
+      "new_corrections_required": 0,
+      "known_corrections_still_open": [
+        "MA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411"
+      ],
+      "resolved_corrections_verified": [
+        "MA-KORR-BAUTURBO-ANLAGEN-2511"
+      ],
+      "repository_article_files_read": 65,
+      "repository_event_files_read": 27,
+      "repository_area_files_read": 27,
+      "new_or_changed_events": 1,
+      "complete_drafts": 0,
+      "prepared_at": "2026-11-26T07:16:50+01:00",
+      "deadline": "2026-11-26T08:45:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Bereitstellungszeit/Frist im bestätigten main-Uploadabschluss; prepared_at kein Uploadnachweis.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "open_checks": [
+        "Frost: unabhängige aktuelle Bestätigung/Drittquelle, lokale und kreisweite Temperaturbereiche trennen",
+        "Bürgewald: unabhängige Projektbestätigung, Workshoporganisation und spätere Sitzungsergebnisse",
+        "DRK: Ereignisdatum und unabhängige Durchführungskontrolle",
+        "Neue Commons-Motive visuell prüfen/B0",
+        "Bekannte Motorradcaption",
+        "Mühle-Schaubetrieb, Wunschbaum, Girbelsrath, HFA-Niederschrift",
+        "Ältere Artikel/Anlagen/Bahnprüfung unvollständig; Quellenfehler dokumentiert"
       ]
     }
   ]
