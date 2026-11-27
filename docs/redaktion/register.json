@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-27-morgens.md",
-  "source_check_window": "27.11.2026 Europe/Berlin: Hauptabrufe06:56:36–06:57:50, neueHI06:57:46, Schlich06:58:31, Kitabild06:58:58visuell06:59, Kontext06:59:04, Livebilder06:59:37/06:59:43visuell07:00.",
+  "latest_dossier": "dossiers/2026-11-27-mittags.md",
+  "source_check_window": "27.11.2026 Europe/Berlin: Hauptabrufe12:01:16–12:02:44; HFA12:01:48; Beschlusstexte12:02:02–12:02:10; Zusatzkontext12:03:59/12:05:00; Nachabrufe12:04:22; Livebild12:05:43, visuell12:09.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -11493,7 +11493,16 @@
           "integration": "nicht_erfolgt"
         },
         "implementation": "keine_Artikelumsetzung"
-      }
+      },
+      "research_verifications": [
+        {
+          "dossier": "dossiers/2026-11-27-mittags.md",
+          "checked_at": "2026-11-27T12:12:22+01:00",
+          "status": "T2",
+          "note": "Neue HFA-Abstimmungsstände131/101/141; bereits bekannte Werte nicht neu. Endgültiger Ratsbeschluss/Bekanntmachung und unabhängige Bestätigung offen.",
+          "implementation": "keine_Artikelumsetzung"
+        }
+      ]
     },
     {
       "id": "MA-ALTE-KIRCHE-ENTGELTE-2027",
@@ -11646,7 +11655,16 @@
           "integration": "nicht_erfolgt"
         },
         "implementation": "keine_Artikelumsetzung"
-      }
+      },
+      "research_verifications": [
+        {
+          "dossier": "dossiers/2026-11-27-mittags.md",
+          "checked_at": "2026-11-27T12:12:22+01:00",
+          "status": "T2",
+          "note": "Neue HFA-Empfehlung40/2026 1.Erg.; Arbeitsgruppe soll bestehen bleiben, keine Umsetzung/Budgetbewilligung daraus ableiten.",
+          "implementation": "keine_Artikelumsetzung"
+        }
+      ]
     },
     {
       "id": "MA-DIGITAL-IKZ-2026",
@@ -11718,7 +11736,16 @@
           "result": "Keine Abweichung im geprüften Vorlagenkern",
           "limits": "Konzept/Förderantrag, Digitalanlagen, frühere Beschlüsse und unabhängige Finanzierung/Umsetzung nicht neu geprüft"
         }
-      }
+      },
+      "research_verifications": [
+        {
+          "dossier": "dossiers/2026-11-27-mittags.md",
+          "checked_at": "2026-11-27T12:12:22+01:00",
+          "status": "T2",
+          "note": "Neue HFA-Empfehlungen134/146; Bürgermeister meldet Open-Source-Pilotanmeldung; unabhängige kdvz-Bestätigung, Förderbescheid/Verträge offen.",
+          "implementation": "keine_Artikelumsetzung"
+        }
+      ]
     },
     {
       "id": "MA-CORHELPER-EHRUNG-2026",
@@ -12512,7 +12539,16 @@
         "result": "Keine Korrekturen im geprüften Vorlagenkern",
         "limits": "Abschlussentwurf/Prüfbericht, Haushaltsoriginal und unabhängige Bestätigung offen",
         "text_status": "T2"
-      }
+      },
+      "research_verifications": [
+        {
+          "dossier": "dossiers/2026-11-27-mittags.md",
+          "checked_at": "2026-11-27T12:12:22+01:00",
+          "status": "T2",
+          "note": "Neu:HFA-Beschlusstext136/2026 nennt drei Jahre in Beratung, Ziff.3 weiterhin solange Alleingesellschafterin. Widerspruch/Prüferergebnis/finale Fassung offen, T2.",
+          "implementation": "keine_Artikelumsetzung"
+        }
+      ]
     },
     {
       "id": "MA-ADVENT-2026",
@@ -12799,6 +12835,15 @@
           "description": "Genehmigung als Verwaltungsauffassung, Hildener Gegenposition, Beispielsätze und KI-Recherche jetzt live transparent; konkrete Rechtsfrage bleibt offen",
           "implementation_commit_preserved": "3fa1783d",
           "implementation": "keine_neue_Artikelumsetzung"
+        }
+      ],
+      "research_verifications": [
+        {
+          "dossier": "dossiers/2026-11-27-mittags.md",
+          "checked_at": "2026-11-27T12:12:22+01:00",
+          "status": "T2",
+          "note": "Neu:HFA-Beschlusstext104/2026:6:5 für vorläufigen Prüfungsverzicht mit späterer Wiederaufnahme; Update bestehender Meldung, unabhängige Bestätigung/Ratsstand offen.",
+          "implementation": "keine_Artikelumsetzung"
         }
       ]
     },
@@ -14090,6 +14135,13 @@
           "dossier": "dossiers/2026-11-27-morgens.md",
           "research_status": "T2",
           "result": "Neue Nachtwarnung26.11.16bis27.11.12Uhr; lokale Merzenichzeile und Kreisfeed jetztgleich(-5bis-9Grad). ZweiDWD-Wege nichtunabhängig; externeDrittquellefehlt."
+        },
+        {
+          "dossier": "dossiers/2026-11-27-mittags.md",
+          "checked_at": "2026-11-27T12:12:22+01:00",
+          "status": "T2",
+          "note": "Kreisfolgefenster12–16, Gemeindeliste ohne Merzenich-Zeile; keine belegte lokale Verlängerung/Entwarnung. T2 bleibt.",
+          "implementation": "keine_Artikelumsetzung"
         }
       ]
     },
@@ -14255,6 +14307,35 @@
           "dossier": "dossiers/2026-11-27-morgens.md",
           "research_status": "Korrektur erforderlich",
           "result": "QuellenbezogenerNachtragzurWochenvorschau: Schlich–Girbelsrath26.11.Ausfall/Abgesagt. DFB-Anzeigebereits26.11.vorhanden, damalsbeiPrüfungübersehen. KeineGründe/Ersatzterminebelegt."
+        },
+        {
+          "dossier": "dossiers/2026-11-27-mittags.md",
+          "checked_at": "2026-11-27T12:12:22+01:00",
+          "status": "T2",
+          "note": "Originalstatus Ausfall/Abgesagt unverändert; Wochenvorschau live503, Nachabruf Timeout. Umsetzung aktuell nicht verifiziert.",
+          "implementation": "keine_Artikelumsetzung"
+        }
+      ]
+    },
+    {
+      "id": "MA-HFA-1911-PROTOKOLL-2711",
+      "priority": "P2",
+      "location_section": "Gemeinde · Rathaus/Finanzen/Verwaltung",
+      "change_type": "Neu",
+      "text_status": "T2",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-11-27-mittags.md",
+      "workflow_status": "recherche_gesperrt",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "notes": "Sammelkarte neu veröffentlichter HFA-Ergebnisse19.11.; Zuordnung zu bestehenden Artikeln statt Dubletten. Mehrere amtliche Dokumente derselben Gemeinde, unabhängige Bestätigung fehlt. Keine Artikelumsetzung.",
+      "research_verifications": [
+        {
+          "dossier": "dossiers/2026-11-27-mittags.md",
+          "checked_at": "2026-11-27T12:12:22+01:00",
+          "status": "T2",
+          "note": "Einzelbeschlüsse gelesen, Sammelniederschrift nur öffentlicher BeratungsteilS.1–14; übrige Anhänge nicht vollständig."
         }
       ]
     }
@@ -17598,6 +17679,48 @@
         "BekannteMotorradcaption",
         "Bürgewald/HFA-Niederschriften;DRK/Mühle/Wunschbaum/Girbelsrath-Altprüfung",
         "Originaleinsendung/Altartikel/Anlagen/Sporturteile/Bahn unvollständig;Quellenfehler/Bild-B0"
+      ]
+    },
+    {
+      "date": "2026-11-27",
+      "edition": "mittags",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-27-mittags.md",
+      "compared_with": "dossiers/2026-11-27-morgens.md",
+      "compared_with_claude": "dossiers/2026-11-25-claude-morgens.md",
+      "base_commit": "8ba911f5cde0b5e96a244813e83769b65e743ebe",
+      "implementation_commit": null,
+      "summary": "Neu verfügbare HFA-Ergebnisse: Übernachtungssteuer-Prüfungsverzicht, widersprüchliche Kita-Befristung und Sammelkarte weiterer Voten; alleT2. Keine zusätzlich neuen Termine/Korrekturen.",
+      "topics": 3,
+      "new_topics": 1,
+      "updated_topics": 2,
+      "blocked_T2": 3,
+      "corrections_required": 2,
+      "new_corrections_required": 0,
+      "new_corrections": [],
+      "known_corrections_still_open": [
+        "MA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411",
+        "MA-KORR-GIRB-SCHLICH-AUSFALL-2711"
+      ],
+      "repository_article_files_read": 65,
+      "repository_event_files_read": 28,
+      "repository_area_files_read": 28,
+      "new_or_changed_events": 0,
+      "complete_drafts": 0,
+      "prepared_at": "2026-11-27T12:12:22+01:00",
+      "deadline": "2026-11-27T14:15:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche Bereitstellung/Frist erst im bestätigten main-Uploadabschluss; prepared_at kein Uploadnachweis.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "open_checks": [
+        "Unabhängige Bestätigung HFA-Karten",
+        "Kita: Befristungswiderspruch/Prüferfassung",
+        "Endgültige Ratsbeschlüsse/Bekanntmachung",
+        "Aktuelle Wochenvorschau-Liveprüfung503/Timeout",
+        "Commons-Originale visuell/B0",
+        "Glühwein-Ort/Kita-Termin/OrangeDay weiterhin offen",
+        "Nicht alle Altartikel/Plan-/Prüfberichtsanlagen/Sporturteile/Bahn vollständig geprüft"
       ]
     }
   ]
