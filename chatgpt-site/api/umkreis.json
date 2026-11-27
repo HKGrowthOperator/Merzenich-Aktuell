@@ -1,6 +1,6 @@
 {
  "hinweis": "Erzeugt von deploy/umkreis.mjs aus inhalte/umkreis/. Nicht von Hand ändern.",
- "stand": "2026-11-26",
+ "stand": "2026-11-27",
  "tage": 30,
  "orte": [
   "Düren",
@@ -11,6 +11,30 @@
   "Kreis Düren"
  ],
  "eintraege": [
+  {
+   "ort": "Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Gefährliche Fahrmanöver auf der B56 - Polizei beschlagnahmt Führerschein",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6399065",
+   "datum": "2026-11-27",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Radfahrer bei Verkehrsunfall in Jülich leicht verletzt",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6399062",
+   "datum": "2026-11-27",
+   "quelle": "Polizei Düren"
+  },
+  {
+   "ort": "Kreis Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Tageswohnungseinbrüche in Jülich",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6399034",
+   "datum": "2026-11-27",
+   "quelle": "Polizei Düren"
+  },
   {
    "ort": "Kreis Düren",
    "rubrik": "Blaulicht",
