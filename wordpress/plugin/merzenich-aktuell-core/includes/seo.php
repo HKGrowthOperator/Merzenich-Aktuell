@@ -521,12 +521,18 @@ function ma_seo_standardbild(): array {
     return ['url' => home_url('/assets/img/og-default.jpg'), 'w' => 1200, 'h' => 630, 'alt' => MA_SEO_MARKE];
 }
 
-/** Beitragsbild für Vorschau und JSON-LD: nur mit geklärten Rechten (ma_content_image), sonst Standardbild. */
+/**
+ * Beitragsbild für Vorschau (WhatsApp, Facebook) und JSON-LD: genau das Bild, das die Seite selbst zeigt
+ * (Vorgabe Betreiber 27.11.2026: jeder geteilte Beitrag mit seinem Bild). Ohne Beitragsbild das freigegebene
+ * Firmenlogo eines Unternehmensbeitrags (ma21_bild_firmenlogo, wie auf der Seite), sonst das Standardbild.
+ * Bis 1.50.7 fiel die Vorschau ohne Rechte-Haken auf das Standardbild zurück, obwohl die Seite das Bild zeigte.
+ */
 function ma_seo_bild($post): array {
     $post = get_post($post);
-    if (!$post || !has_post_thumbnail($post)) return ma_seo_standardbild();
-    if (function_exists('ma_content_image') && !empty(ma_content_image($post, 'large')['is_fallback'])) return ma_seo_standardbild();
+    if (!$post) return ma_seo_standardbild();
     $id = (int) get_post_thumbnail_id($post);
+    if (!$id && function_exists('ma21_bild_firmenlogo')) $id = (int) (ma21_bild_firmenlogo($post)['id'] ?? 0);
+    if (!$id) return ma_seo_standardbild();
     // Google Discover verlangt Bilder ab 1200 px Breite: die größte verfügbare Größe nehmen.
     $src = null;
     foreach (['1536x1536', 'full', 'large'] as $g) { $s = wp_get_attachment_image_src($id, $g); if ($s && (int) $s[1] >= 1200) { $src = $s; break; } if (!$src && $s) $src = $s; }

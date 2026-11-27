@@ -1,6 +1,13 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-27. November 2026 · Theme 21.30.9 · Core-Plugin 1.50.7 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+27. November 2026 · Theme 21.30.9 · Core-Plugin 1.50.8 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+
+## Neu am 27.11.2026 nachmittags: Plugin 1.50.8, jeder geteilte Beitrag mit seinem Bild
+
+- Vorgabe des Betreibers: Jeder Link, der verschickt wird (WhatsApp und Co.), zeigt das Bild des Beitrags.
+- `ma_seo_bild()` nimmt jetzt genau das Bild, das die Seite zeigt: das Beitragsbild auch ohne Haken „Bildrechte geprüft“ (vorher Standardbild, betraf 28 Beiträge), bei Unternehmensbeiträgen ohne Foto das freigegebene Firmenlogo (3 Beiträge). Nur ohne jedes Bild bleibt das Standardbild.
+- Zuschnitte und Größengrenze (150 KB, teilen-bilder.php) bleiben; alle geteilten Bilder liegen unter 220 KB.
+- Test: `qa/wordpress/teilen-vorschau-test.php`.
 
 ## Neu am 27.11.2026: Plugin 1.50.7 und Theme 21.30.9, Anbieterin KBS Consulting (Pvt) Ltd
 
