@@ -7,7 +7,7 @@
 define('ABSPATH', __DIR__); define('MA_CORE_VERSION', 'test');
 function add_action(...$a) {} function add_filter(...$a) {}
 function home_url($p = '') { return 'https://merzenich-aktuell.de' . $p; }
-$GLOBALS['posts'] = [10 => (object) ['ID' => 10, 'post_title' => 'Ohne Haken'], 11 => (object) ['ID' => 11, 'post_title' => 'Firma'], 12 => (object) ['ID' => 12, 'post_title' => 'Ohne Bild']];
+
 $GLOBALS['thumb'] = [10 => 500];
 $GLOBALS['meta'] = [500 => ['_wp_attachment_image_alt' => 'Feuerwehr am Einsatzort']];
 function get_post($p) { return is_object($p) ? $p : ($GLOBALS['posts'][$p] ?? null); }
@@ -18,6 +18,18 @@ function get_the_title($p) { $p = get_post($p); return $p ? $p->post_title : '';
 function ma21_bild_firmenlogo($p) { return $p->ID === 11 ? ['id' => 700] : null; }
 // Wäre die alte Regel noch aktiv, fiele der Beitrag ohne Rechte-Haken auf das Standardbild zurück.
 function ma_content_image($p, $s = 'large') { return ['is_fallback' => true]; }
+class WP_Post { public $ID; public $post_type = 'post'; public $post_name = ''; public $post_title = ''; function __construct($id, $typ = 'post', $name = '') { $this->ID = $id; $this->post_type = $typ; $this->post_name = $name; } }
+class WP_Term { public $term_id = 0; public $taxonomy = ''; }
+$GLOBALS['posts'] = [10 => new WP_Post(10), 11 => new WP_Post(11), 12 => new WP_Post(12)];
+$GLOBALS['posts'][10]->post_title = 'Ohne Haken'; $GLOBALS['posts'][11]->post_title = 'Firma'; $GLOBALS['posts'][12]->post_title = 'Ohne Bild';
+$GLOBALS['wp_query'] = null;
+function is_singular($t = '') { return true; }
+function get_query_var($k, $d = '') { return $d; }
+function attachment_url_to_postid($u) { return 0; }
+function get_the_terms($id, $tax) { return false; }
+function get_posts($a) { return [new WP_Post(10)]; }
+function get_post_status($id) { return 'publish'; }
+function get_category_by_slug($s) { return null; }
 require __DIR__ . '/../../wordpress/plugin/merzenich-aktuell-core/includes/seo.php';
 
 $fehler = 0;
@@ -26,5 +38,10 @@ pruefe('Beitragsbild ohne Rechte-Haken: Vorschau zeigt das Bild der Seite', ma_s
 pruefe('Alt-Text des Bildes geht mit', ma_seo_bild(10)['alt'], 'Feuerwehr am Einsatzort');
 pruefe('Firmenbeitrag ohne Foto: freigegebenes Firmenlogo', ma_seo_bild(11)['url'], 'https://merzenich-aktuell.de/wp-content/uploads/logo.png');
 pruefe('Ohne jedes Bild: Standardbild', ma_seo_bild(12)['url'], 'https://merzenich-aktuell.de/assets/img/og-default.jpg');
+$verein = new WP_Post(20, 'ma_club', 'sc'); $verein->post_title = 'SC 1919 Merzenich';
+$GLOBALS['meta'][20] = ['ma_club_logo' => 'https://merzenich-aktuell.de/wp-content/uploads/sc-logo.webp'];
+$GLOBALS['posts'][20] = $verein;
+pruefe('Verein ohne Bild: Vereinslogo', ma_seo_ersatzbild(['typ' => 'verein'], $verein)['url'], 'https://merzenich-aktuell.de/wp-content/uploads/sc-logo.webp');
+pruefe('Seite ohne Bild (z. B. Impressum): Bild einer aktuellen Meldung statt Standardbild', ma_seo_ersatzbild(['typ' => 'seite'], new WP_Post(30, 'page', 'impressum'))['url'], 'https://merzenich-aktuell.de/wp-content/uploads/a.jpg');
 echo $fehler ? "$fehler Fehler\n" : "Alle Prüfungen bestanden\n";
 exit($fehler ? 1 : 0);

@@ -657,9 +657,59 @@ function ma_seo_kontext(): array {
         // Datums-, Autoren- und sonstige Archive: lesbar, aber nicht indexierbar.
         $k = array_merge($k, ['typ' => 'liste', 'titel' => html_entity_decode(wp_strip_all_tags(get_the_archive_title()), ENT_QUOTES, 'UTF-8'), 'beschreibung' => 'Meldungen auf Merzenich Aktuell.', 'url' => '', 'index' => false, 'krumen' => []]);
     }
+    // Jede geteilte Seite mit Bild (Vorgabe Betreiber 27.11.2026): Seiten ohne eigenes Bild nehmen ein passendes.
+    if (($k['bild']['url'] ?? '') === ma_seo_standardbild()['url']) $k['bild'] = ma_seo_ersatzbild($k, $o);
     // Seiten des Themes ohne eigenen WordPress-Inhalt (Unternehmenskanäle, 1.28.0) setzen Titel, Adresse und Index selbst.
     $k = (array) apply_filters('ma_seo_kontext', $k);
     return $k;
+}
+
+/** Erstes Bild (ma_seo_bild) aus einer Liste von Beiträgen, null ohne Treffer. */
+function ma_seo_bild_aus(array $posts): ?array {
+    $std = ma_seo_standardbild()['url'];
+    foreach ($posts as $p) { $b = ma_seo_bild($p); if (($b['url'] ?? '') !== $std) return $b; }
+    return null;
+}
+
+/** Neueste veröffentlichte Meldungen mit Beitragsbild, optional eingegrenzt (tax_query, meta). */
+function ma_seo_neueste_mit_bild(array $args = []): array {
+    return get_posts(array_merge(['post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 6, 'orderby' => 'date', 'order' => 'DESC', 'no_found_rows' => true,
+        'meta_query' => [['key' => '_thumbnail_id', 'compare' => 'EXISTS']]], $args));
+}
+
+/**
+ * Vorschaubild für Seiten ohne eigenes Bild (27.11.2026):
+ * - Verein: Vereinslogo, sonst Bild der neuesten Meldung des Vereins, sonst des Ortsteils.
+ * - Ressort, Thema, Ortsteil, Listen: Bild der neuesten Meldung auf der Seite bzw. in Rubrik, Thema, Ortsteil.
+ * - Startseite und alle übrigen Seiten: Bild des Aufmachers der Startseite, sonst der neuesten Meldung mit Bild.
+ * Nur wenn es nirgends ein Bild gibt, bleibt das Standardbild.
+ */
+function ma_seo_ersatzbild(array $k, $o): array {
+    $b = null;
+    if (($k['typ'] ?? '') === 'verein' && $o instanceof WP_Post) {
+        $logo = (string) get_post_meta($o->ID, 'ma_club_logo', true);
+        if ($logo !== '') {
+            $aid = function_exists('attachment_url_to_postid') ? (int) attachment_url_to_postid($logo) : 0;
+            $src = $aid ? wp_get_attachment_image_src($aid, 'full') : false;
+            $b = ['url' => $logo, 'w' => $src ? (int) $src[1] : 0, 'h' => $src ? (int) $src[2] : 0, 'alt' => 'Logo ' . html_entity_decode(get_the_title($o), ENT_QUOTES, 'UTF-8')];
+        }
+        $kurz = (string) get_post_meta($o->ID, 'ma_verein_kurz', true);
+        if (!$b && $kurz !== '' && function_exists('ma_verein_beitraege')) $b = ma_seo_bild_aus(ma_verein_beitraege($kurz, 6));
+        if (!$b) { $t = get_the_terms($o->ID, 'ma_location'); if (is_array($t) && $t) $b = ma_seo_bild_aus(ma_seo_neueste_mit_bild(['tax_query' => [['taxonomy' => 'ma_location', 'field' => 'term_id', 'terms' => $t[0]->term_id]]])); }
+    }
+    if (!$b) { global $wp_query; if ($wp_query && !empty($wp_query->posts) && !is_singular()) $b = ma_seo_bild_aus(array_slice(array_filter((array) $wp_query->posts, fn($p) => $p instanceof WP_Post), 0, 10)); }
+    if (!$b && $o instanceof WP_Term) {
+        $b = ma_seo_bild_aus(ma_seo_neueste_mit_bild(['tax_query' => [['taxonomy' => $o->taxonomy, 'field' => 'term_id', 'terms' => $o->term_id]]]));
+    }
+    // Ressortseiten als Seite (z. B. /blaulicht/) oder Ressort-Kategorie: neueste Meldung des Ressorts.
+    $ressort = $o instanceof WP_Post && $o->post_type === 'page' ? $o->post_name : (string) (get_query_var('category_name') ?: '');
+    if (!$b && $ressort !== '' && isset(ma_seo_ressorte()[$ressort]) && get_category_by_slug($ressort)) $b = ma_seo_bild_aus(ma_seo_neueste_mit_bild(['category_name' => $ressort]));
+    if (!$b && function_exists('ma_layout_get')) {
+        $auf = (int) (ma_layout_get('startseite')['slots']['aufmacher']['post'] ?? 0);
+        if ($auf && get_post_status($auf) === 'publish') $b = ma_seo_bild_aus([$auf]);
+    }
+    if (!$b) $b = ma_seo_bild_aus(ma_seo_neueste_mit_bild());
+    return $b ?: ma_seo_standardbild();
 }
 
 /* ------------------------------------------------------------ Kopfausgabe */
