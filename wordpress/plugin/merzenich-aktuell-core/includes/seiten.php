@@ -19,7 +19,7 @@
  */
 if (!defined('ABSPATH')) { exit; }
 
-const MA_SEITEN_VERSION = '2026-11-25';
+const MA_SEITEN_VERSION = '2026-11-27';
 
 /** Slug → Seite. 'eltern' = Slug der übergeordneten Seite. 'art' für JSON-LD (includes/seo.php). */
 function ma_seiten(): array {
@@ -60,7 +60,7 @@ function ma_seite_ueber_uns(): string {
         . '<h2 id="finanzierung">Finanzierung</h2>'
         . '<p>Merzenich Aktuell finanziert sich über gekennzeichnete Anzeigen sowie Firmenporträts und freiwillige Beiträge von Leserinnen und Lesern. Werbekunden haben keinen Einfluss auf redaktionelle Entscheidungen; siehe <a href="/grundsaetze/">Publizistische Grundsätze</a>.</p>'
         . '<h2 id="kontakt">Kontakt</h2>'
-        . '<p>E-Mail: <a href="mailto:redaktion@merzenich-aktuell.de">redaktion@merzenich-aktuell.de</a>. Meldungen, Termine und Bilder bitte über die Formulare (<a href="/meldung-senden/">Meldung senden</a>, <a href="/termin-melden/">Termin melden</a>). Anbieterin ist die KBS Management GmbH, Leverkusen; siehe <a href="/impressum/">Impressum</a>.</p>';
+        . '<p>E-Mail: <a href="mailto:redaktion@merzenich-aktuell.de">redaktion@merzenich-aktuell.de</a>. Meldungen, Termine und Bilder bitte über die Formulare (<a href="/meldung-senden/">Meldung senden</a>, <a href="/termin-melden/">Termin melden</a>). Anbieterin ist die KBS Consulting (Pvt) Ltd, Jaffna (Sri Lanka); siehe <a href="/impressum/">Impressum</a>.</p>';
 }
 
 function ma_seite_redaktion(): string {

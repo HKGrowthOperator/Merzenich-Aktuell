@@ -10,7 +10,8 @@
  * bleibt die Seite stehen und das Backend bietet an, die neue Fassung zu
  * übernehmen (Merzenich Aktuell → Rechtstexte).
  *
- * Inhalt nur aus belegten Tatsachen: Anbieterin KBS Management GmbH (Angaben
+ * Inhalt nur aus belegten Tatsachen: Anbieterin seit 27.11.2026 (Vorgabe Betreiber) die
+ * KBS Consulting (Pvt) Ltd, Jaffna, Sri Lanka; vorher KBS Management GmbH (Angaben
  * wie im Impressum der statischen Seite, abgeglichen mit dem Impressum von KBS
  * Management), die tatsächliche Technik dieser Installation (statistik.php,
  * live.php, werbung-stat.php, forms.php, eingang.php, comments.php,
@@ -20,26 +21,29 @@
  */
 if (!defined('ABSPATH')) { exit; }
 
-const MA_RECHTSTEXTE_VERSION = '2026-11-25b';
+const MA_RECHTSTEXTE_VERSION = '2026-11-27';
 
 function ma_rechtstexte(): array {
     return [
-        'impressum' => ['titel' => 'Impressum', 'anriss' => 'Anbieter und Kontakt von Merzenich Aktuell: KBS Management GmbH.', 'html' => 'ma_rechtstext_impressum'],
-        'datenschutz' => ['titel' => 'Datenschutzhinweise', 'anriss' => 'Datenschutz bei Merzenich Aktuell, einem Angebot der KBS Management GmbH.', 'html' => 'ma_rechtstext_datenschutz'],
+        'impressum' => ['titel' => 'Impressum', 'anriss' => 'Anbieter und Kontakt von Merzenich Aktuell: KBS Consulting (Pvt) Ltd.', 'html' => 'ma_rechtstext_impressum'],
+        'datenschutz' => ['titel' => 'Datenschutzhinweise', 'anriss' => 'Datenschutz bei Merzenich Aktuell, einem Angebot der KBS Consulting (Pvt) Ltd.', 'html' => 'ma_rechtstext_datenschutz'],
     ];
 }
 
 /** Offene Pflichtangaben, die nur der Betreiber liefern kann (nur im Backend sichtbar). */
 function ma_rechtstexte_offen(): array {
     return [
+        'Impressum: vertretungsberechtigte Person(en) und Registernummer der KBS Consulting (Pvt) Ltd ergänzen (§ 5 DDG).',
+        'Datenschutz: Vertreter in der EU nach Art. 27 DSGVO benennen, weil die Anbieterin ihren Sitz außerhalb der EU hat.',
         'Auftragsverarbeitungsvertrag mit dem Hoster (IONOS) bestätigen und die Speicherdauer der Server-Protokolle beim Hoster erfragen.',
         'Mailversand für Formular- und Kommentarbenachrichtigungen: Postfach bei IONOS anlegen und unter Merzenich Aktuell → Mailversand eintragen; danach in der Datenschutzerklärung nennen, dass die Mails über den Mailserver der IONOS SE gehen.',
     ];
 }
 
 function ma_rechtstext_anbieter(): string {
-    return '<p><strong>KBS Management GmbH</strong><br>Rheinstr. 78a<br>51371 Leverkusen<br>Deutschland</p>'
-        . '<p>Vertreten durch die Geschäftsführung: Barbara Koronkai und Anto-Sutharsan Jesuthasan.<br>Handelsregister: Amtsgericht Köln, HRB 104692.</p>';
+    // Vorgabe Betreiber 27.11.2026: Anbieterin KBS Consulting (Pvt) Ltd. Vertretung und Registernummer
+    // liegen noch nicht vor (offene Pflichtangabe im Backend).
+    return '<p><strong>KBS Consulting (Pvt) Ltd</strong><br>11 2nd Cross St<br>Jaffna<br>Sri Lanka</p>';
 }
 
 function ma_rechtstext_impressum(): string {
@@ -91,7 +95,7 @@ function ma_rechtstext_datenschutz(): string {
         . '<p>Unter /wp-json/ stellt WordPress eine Schnittstelle bereit, über die die Seite selbst Aufrufe, Besuche und Anzeigenkontakte zählt, das Wetter ausliefert und Push-Abonnements entgegennimmt oder löscht. Sie gibt nur veröffentlichte Inhalte aus.</p>'
         . '<h2 id="ihre-rechte">Ihre Rechte</h2>'
         . '<p>Im Rahmen der gesetzlichen Voraussetzungen bestehen Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch. Eine Einwilligung können Sie für die Zukunft widerrufen. Sie können sich bei einer Datenschutzaufsichtsbehörde beschweren, insbesondere der <a href="https://www.ldi.nrw.de/" target="_blank" rel="noopener">Landesbeauftragten für Datenschutz und Informationsfreiheit NRW</a>.</p>'
-        . '<p>Stand: 6. Oktober 2026.</p>';
+        . '<p>Stand: 27. November 2026.</p>';
 }
 
 /* ---------------------------------------------------------- Seiten anlegen und aktualisieren */

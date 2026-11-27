@@ -18,7 +18,7 @@
  * Blättern und Feeds funktionieren unter der kurzen Adresse. Autorenarchive
  * (/author/…, zeigen Anmeldenamen) und Anhangsseiten leiten weiter.
  *
- * Nur belegte Angaben: Anbieterin KBS Management GmbH (Impressum), Ortsmitte
+ * Nur belegte Angaben: Anbieterin KBS Consulting (Pvt) Ltd (Impressum, seit 27.11.2026), Ortsmitte
  * aus den Wetter-Einstellungen, Ortsteil-Koordinaten nur, wo GeoNames sie
  * führt (Golzheim, Girbelsrath; Abruf 02.10.2026 über die Open-Meteo
  * Geocoding-API). Social-Profile (sameAs) und Verifizierungs-Codes trägt der
@@ -166,7 +166,7 @@ function ma_seo_seitentexte(): array {
         'service' => 'Notrufe, Notdienste, Apotheken, Rathaus und wichtige Telefonnummern für die Gemeinde Merzenich auf einen Blick, mit Öffnungszeiten und Links.',
         'diskussion' => 'Diskutieren Sie mit: Kommentare der Leserinnen und Leser zu Meldungen aus Merzenich, moderiert nach den Kommentarrichtlinien der Redaktion.',
         'archiv' => 'Archiv von Merzenich Aktuell: alle Meldungen aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald nach Monat und Ressort.',
-        'impressum' => 'Impressum von Merzenich Aktuell, der Lokalzeitung online für die Gemeinde Merzenich: Anbieterin KBS Management GmbH, Kontakt und Verantwortliche.',
+        'impressum' => 'Impressum von Merzenich Aktuell, der Lokalzeitung online für die Gemeinde Merzenich: Anbieterin KBS Consulting (Pvt) Ltd, Kontakt und Verantwortliche.',
         'heute' => 'Termine von heute und den nächsten sieben Tagen in Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald, dazu die neuesten Meldungen.',
         // 1.42.0: „düren aktuell“, „niederzier aktuell“, „kreis düren aktuell“ (Google-Vorschläge 02.11.2026).
         'umgebung' => 'Nachrichten aus Düren, Niederzier, Nörvenich, Elsdorf, Kerpen und dem Kreis Düren: Polizei, Verkehr, Rathaus und Termine, mit Link zur Originalquelle.',
@@ -324,8 +324,8 @@ function ma_seo_graph(array $k, array $o): array {
         '@type' => 'NewsMediaOrganization', '@id' => $home . '#organization', 'name' => MA_SEO_MARKE, 'alternateName' => MA_SEO_UNTERTITEL, 'url' => $home,
         'logo' => ['@type' => 'ImageObject', 'url' => $o['logo'], 'width' => 1295, 'height' => 664], 'image' => $o['bild'],
         'description' => 'Nachrichten aus Merzenich, Golzheim, Girbelsrath, Morschenich und Bürgewald',
-        'parentOrganization' => ['@type' => 'Organization', 'name' => 'KBS Management GmbH', 'email' => 'redaktion@merzenich-aktuell.de',
-            'address' => ['@type' => 'PostalAddress', 'streetAddress' => 'Rheinstr. 78a', 'postalCode' => '51371', 'addressLocality' => 'Leverkusen', 'addressCountry' => 'DE']],
+        'parentOrganization' => ['@type' => 'Organization', 'name' => 'KBS Consulting (Pvt) Ltd', 'email' => 'redaktion@merzenich-aktuell.de',
+            'address' => ['@type' => 'PostalAddress', 'streetAddress' => '11 2nd Cross St', 'addressLocality' => 'Jaffna', 'addressCountry' => 'LK']],
         'email' => 'redaktion@merzenich-aktuell.de',
         'areaServed' => ['@type' => 'AdministrativeArea', 'name' => MA_SEO_GEBIET],
         'publishingPrinciples' => $home . 'grundsaetze/', 'correctionsPolicy' => $home . 'korrekturen/', 'ethicsPolicy' => $home . 'grundsaetze/#ethik',
@@ -465,7 +465,7 @@ function ma_seo_itemlist(array $liste): array {
  */
 function ma_seo_llms_txt(string $home, array $seiten, array $neueste = []): string {
     $t = "# " . MA_SEO_MARKE . "\n\n> " . MA_SEO_BESCHREIBUNG_LANG . "\n\n";
-    $t .= "Anbieterin: KBS Management GmbH, Rheinstr. 78a, 51371 Leverkusen, redaktion@merzenich-aktuell.de. Jede Meldung nennt ihre Originalquelle, ihren Datenstand und den Bildtyp; Fehler werden im Artikel mit Datum korrigiert.\n\n";
+    $t .= "Anbieterin: KBS Consulting (Pvt) Ltd, 11 2nd Cross St, Jaffna, Sri Lanka, redaktion@merzenich-aktuell.de. Jede Meldung nennt ihre Originalquelle, ihren Datenstand und den Bildtyp; Fehler werden im Artikel mit Datum korrigiert.\n\n";
     $t .= "## Aktuell\n\n- [Heute in Merzenich]({$home}heute/): Was heute in der Gemeinde ansteht und neu ist.\n- [Termine]({$home}termine/): Veranstaltungen, Sitzungen und Feste aus allen Ortsteilen.\n- [Terminkalender (ICS)]({$home}termine/kalender.ics): alle Termine zum Abonnieren.\n- [KI-Redaktion]({$home}ki-redaktion/): Wie Meldungen mit KI recherchiert, geprüft und gekennzeichnet werden.\n- [Nachrichten aus der Umgebung]({$home}umgebung/): Düren, Niederzier, Nörvenich, Elsdorf, Kerpen und Kreis Düren, letzte 30 Tage.\n";
     if ($neueste) {
         $t .= "\n## Neueste Meldungen\n\n";

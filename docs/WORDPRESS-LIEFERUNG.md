@@ -1,6 +1,13 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-26. November 2026 · Theme 21.30.8 · Core-Plugin 1.50.6 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+27. November 2026 · Theme 21.30.9 · Core-Plugin 1.50.7 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+
+## Neu am 27.11.2026: Plugin 1.50.7 und Theme 21.30.9, Anbieterin KBS Consulting (Pvt) Ltd
+
+- Vorgabe des Betreibers: KBS Management GmbH überall raus, Anbieterin ist die KBS Consulting (Pvt) Ltd, 11 2nd Cross St, Jaffna, Sri Lanka. Kontakt bleibt redaktion@merzenich-aktuell.de.
+- Geändert: Impressum und Datenschutz (Rechtstexte-Fassung 2026-11-27, Datenschutz-Stand 27. November 2026), Redaktionsseite (Seiten-Fassung 2026-11-27), JSON-LD `parentOrganization`, Impressum-Beschreibung, llms.txt, Fuß aller Seiten, Werben-Seite, Über uns und Impressum der statischen Kopie.
+- Verantwortlich nach § 18 Abs. 2 MStV bleibt Anto-Sutharsan Jesuthasan, Rheinstr. 78a, 51371 Leverkusen (Entscheidung des Betreibers).
+- Offen (Backend, Rechtstexte): vertretungsberechtigte Person(en) und Registernummer der Ltd; Vertreter in der EU nach Art. 27 DSGVO.
 
 ## Neu am 26.11.2026: Theme 21.30.8, Bildhinweise bis Samstag 28.11., 4 Uhr ausgeblendet
 

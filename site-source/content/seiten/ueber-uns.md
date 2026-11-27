@@ -18,7 +18,7 @@ Die Redaktion stellt sich hier mit Namen, Funktion und Kontakt vor. Namentlich g
 
 ## Finanzierung {#finanzierung}
 
-Merzenich Aktuell finanziert sich über gekennzeichnete Anzeigen, derzeit Banner von KBS Management GmbH und AJ Sports Entertainment, sowie Firmenporträts und freiwillige Beiträge von Leserinnen und Lesern. Werbekunden haben keinen Einfluss auf redaktionelle Entscheidungen; siehe [Publizistische Grundsätze](/grundsaetze/).
+Merzenich Aktuell finanziert sich über gekennzeichnete Anzeigen, derzeit Banner von Unternehmen aus Merzenich und der Umgebung, sowie Firmenporträts und freiwillige Beiträge von Leserinnen und Lesern. Werbekunden haben keinen Einfluss auf redaktionelle Entscheidungen; siehe [Publizistische Grundsätze](/grundsaetze/).
 
 ## Kontakt
 

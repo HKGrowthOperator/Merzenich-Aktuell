@@ -6,16 +6,10 @@ description: Angaben gemäß § 5 DDG und § 18 Absatz 2 MStV.
 ---
 ## Anbieter
 
-KBS Management GmbH
-Rheinstr. 78a
-51371 Leverkusen
-Deutschland
-
-**Vertreten durch:** Barbara Koronkai, Anto-Sutharsan Jesuthasan
-
-**Registergericht:** Amtsgericht Köln · **Registernummer:** 104692
-
-**Umsatzsteuer-Identifikationsnummer:** 332847684
+KBS Consulting (Pvt) Ltd
+11 2nd Cross St
+Jaffna
+Sri Lanka
 
 ## Kontakt
 
@@ -29,7 +23,7 @@ Anbieter: [redaktion@merzenich-aktuell.de](mailto:redaktion@merzenich-aktuell.de
 
 ## Werbepartner
 
-Banner von KBS Management GmbH und AJ Sports Entertainment, jeweils einzeln als Anzeige gekennzeichnet.
+Banner von Unternehmen aus Merzenich und der Umgebung, jeweils einzeln als Anzeige gekennzeichnet.
 
 ## Streitschlichtung
 

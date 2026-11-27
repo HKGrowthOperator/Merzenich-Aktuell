@@ -53,7 +53,7 @@ const haupt = `<main id="main">
 <details class="werben-bildnachweise"><summary>Bildnachweise der Fotos auf dieser Seite</summary><div class="werben-bildnachweise__grid">
 ${bildnachweise}
 </div></details>
-<div class="media-principles"><section><h2>Redaktion bleibt unabhängig.</h2><p>Werbung und Finanzierung bestimmen weder die Themenauswahl noch die Berichterstattung. Jede bezahlte Platzierung wird gekennzeichnet.</p><p>Merzenich Aktuell wird von KBS Management GmbH und AJ Sports Entertainment getragen. <a href="/ueber-uns/#finanzierung">Mehr zur Finanzierung</a></p></section><section><h2>Reichweite & Konditionen</h2><p>Für die Startphase liegen noch keine belastbaren Reichweitenzahlen vor. Wir nennen keine geschätzten Leserzahlen. Verfügbare Platzierungen und Konditionen erhalten Sie auf Anfrage.</p><p>Freie Werbeflächen werden nur dort angeboten, wo die Website bereits einen dafür vorgesehenen Platz hat.</p></section></div>
+<div class="media-principles"><section><h2>Redaktion bleibt unabhängig.</h2><p>Werbung und Finanzierung bestimmen weder die Themenauswahl noch die Berichterstattung. Jede bezahlte Platzierung wird gekennzeichnet.</p><p>Merzenich Aktuell ist ein Angebot der KBS Consulting (Pvt) Ltd. <a href="/ueber-uns/#finanzierung">Mehr zur Finanzierung</a></p></section><section><h2>Reichweite & Konditionen</h2><p>Für die Startphase liegen noch keine belastbaren Reichweitenzahlen vor. Wir nennen keine geschätzten Leserzahlen. Verfügbare Platzierungen und Konditionen erhalten Sie auf Anfrage.</p><p>Freie Werbeflächen werden nur dort angeboten, wo die Website bereits einen dafür vorgesehenen Platz hat.</p></section></div>
 ${form[0]}</div></section>
 `;
 
