@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-26-mittags.md",
-  "source_check_window": "26.11.2026 Europe/Berlin: Hauptabrufe11:56:43–11:57:53; Livebildabrufe11:58:28/11:58:34, visuell11:59; Nachabrufe12:01:44.",
+  "latest_dossier": "dossiers/2026-11-27-morgens.md",
+  "source_check_window": "27.11.2026 Europe/Berlin: Hauptabrufe06:56:36–06:57:50, neueHI06:57:46, Schlich06:58:31, Kitabild06:58:58visuell06:59, Kontext06:59:04, Livebilder06:59:37/06:59:43visuell07:00.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -2187,6 +2187,12 @@
           "checked_at": "2026-11-21T12:10:56+01:00",
           "dossier": "dossiers/2026-11-21-mittags.md",
           "result": "Gemeinde-DetailseitenormalHTTP200vollständiggelesen; bestätigtbekannten15Dez18UhrTerminRathausmitProgramm. Außerhalb14Tage, keineneueEntwicklung/Terminanlage. KeineSperrumgehung."
+        },
+        {
+          "checked_at": "2026-11-27T07:05:44+01:00",
+          "dossier": "dossiers/2026-11-27-morgens.md",
+          "research_status": "T0-Terminhinweis",
+          "result": "Neue Kita-Windmühle-Einladung: Bild7.12.2026um18Uhr, Institution imFooter; genaueVeranstaltungsadresse/Endeoffen, BildnurTerminbeleg."
         }
       ]
     },
@@ -12255,6 +12261,12 @@
           "dossier": "dossiers/2026-11-24-mittags.md",
           "research_status": "T2",
           "result": "Sonntagabsatz kündigt Morschenich29Nov noch an, DFBjetztAbsetzung; neuer Prüf-/Korrekturhinweis quellenbezogen, unabhängige Bestätigung offen."
+        },
+        {
+          "checked_at": "2026-11-27T07:05:44+01:00",
+          "dossier": "dossiers/2026-11-27-morgens.md",
+          "research_status": "Korrektur erforderlich",
+          "result": "Schlich–Girbelsrath26.11.lautDFBAusfall/FuPaAbgesagt; ursprünglicheAnsetzungnochlive. DFB-Ausfallstandwarbereits26.11.sichtbar, heuteerstmalskonkretalsNachtragdokumentiert."
         }
       ]
     },
@@ -12548,7 +12560,15 @@
         "result": "Keine Korrekturen im geprüften Terminkern; Symbolbild korrekt bezeichnet",
         "limits": "Aktuelle Ticketverfügbarkeit nicht geprüft; vollständige Gastgeberliste und bekannte Zeit-/Angebotskonflikte offen",
         "text_status": "T2"
-      }
+      },
+      "research_verifications": [
+        {
+          "checked_at": "2026-11-27T07:05:44+01:00",
+          "dossier": "dossiers/2026-11-27-morgens.md",
+          "research_status": "T2",
+          "result": "Neue Gemeindeankündigung Glühweinabend: Baumschmücken Bürgerhausvorplatz statt älterer Ortsfolge Lindenplatz/Bürgerhausplatz. Unabhängige Bestätigung einer Verlegung fehlt; Bestandsupdate nachKlärung."
+        }
+      ]
     },
     {
       "id": "MA-SONNTAGSSPORT-ERG-1511",
@@ -13086,6 +13106,12 @@
           "dossier": "dossiers/2026-11-26-mittags.md",
           "research_status": "T2",
           "result": "Öffentliche TOP/Unterlagen gegenüber Morgen unverändert; keine Wiederholungskarte. Keine heutigen Ergebnisse, unabhängige aktuelle Bestätigung/Workshoporganisation offen."
+        },
+        {
+          "checked_at": "2026-11-27T07:05:44+01:00",
+          "dossier": "dossiers/2026-11-27-morgens.md",
+          "research_status": "T2",
+          "result": "Sachunterlagen unverändert, nochkeineErgebnisniederschriftimgelesenenWeg. KeineDurchführungs-/BeschlussannahmeausvergangenemTermin."
         }
       ]
     },
@@ -13897,6 +13923,12 @@
           "dossier": "dossiers/2026-11-26-mittags.md",
           "research_status": "Erledigung bestätigt",
           "result": "Live-Nachträge und Originalanlagen erneut gegengelesen; bestehende Umsetzung erhalten."
+        },
+        {
+          "checked_at": "2026-11-27T07:05:44+01:00",
+          "dossier": "dossiers/2026-11-27-morgens.md",
+          "research_status": "Erledigung bestätigt",
+          "result": "BekannteNachträgeweiterlive, benannteAnlagenunverändert; Umsetzungen erhalten."
         }
       ]
     },
@@ -14052,6 +14084,12 @@
           "dossier": "dossiers/2026-11-26-mittags.md",
           "research_status": "T2",
           "result": "Zusätzlicher DWD-Kreiszeitraum12bis16Uhr; vorMittag lokale Merzenichzeile nurbis12Uhr, Nachabruf12:01ohneMerzenichzeile. Örtliche Geltung nicht übertragen; unabhängige Bestätigung/externe Drittquelle fehlen. Keine Freigabe."
+        },
+        {
+          "checked_at": "2026-11-27T07:05:44+01:00",
+          "dossier": "dossiers/2026-11-27-morgens.md",
+          "research_status": "T2",
+          "result": "Neue Nachtwarnung26.11.16bis27.11.12Uhr; lokale Merzenichzeile und Kreisfeed jetztgleich(-5bis-9Grad). ZweiDWD-Wege nichtunabhängig; externeDrittquellefehlt."
         }
       ]
     },
@@ -14123,6 +14161,100 @@
           "dossier": "dossiers/2026-11-26-mittags.md",
           "research_status": "T2",
           "result": "Gemeinderückblick und Kontext unverändert; Durchführungstag und unabhängiger Nachbericht fehlen. Keine Wiederholungskarte."
+        },
+        {
+          "checked_at": "2026-11-27T07:05:44+01:00",
+          "dossier": "dossiers/2026-11-27-morgens.md",
+          "research_status": "T2",
+          "result": "Unverändert, Durchführungstag/unabhängigerNachberichtoffen."
+        }
+      ]
+    },
+    {
+      "id": "MA-ORANGEDAY-26112026",
+      "priority": "P3",
+      "location_section": "Gemeindegebiet",
+      "change_type": "Neuer Gemeindebeitrag",
+      "text_status": "T2",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-11-27-morgens.md",
+      "workflow_status": "gesperrt",
+      "article_path": null,
+      "implementation_commit": null,
+      "notes": "Neuer Gemeinderückblick mitFunktionsträgerbeteiligung inDüren. KonkreterTag/OrtundunabhängigeTeilnahmebestätigungfehlen. Kontextquellen bestätigenTeilnahmenicht;T2/B0.",
+      "sources": [
+        {
+          "key": "orangehi",
+          "url": "https://www.heimat-info.de/beitraege/2ff9a0b4-8ad3-469e-9d17-be5fa9fa6669",
+          "at": "2026-11-27T06:57:46+01:00",
+          "status": 200
+        },
+        {
+          "key": "orangebus",
+          "url": "https://www.kreis-dueren.de/presse/orangefarbener-bus-orange-day_2026-11-19.php",
+          "at": "2026-11-27T06:59:04+01:00",
+          "status": 200
+        },
+        {
+          "key": "unorange",
+          "url": "https://unwomen.de/orange-the-world-gemeinsam-aktiv/",
+          "at": "2026-11-27T06:59:04+01:00",
+          "status": 200
+        }
+      ],
+      "research_verifications": [
+        {
+          "checked_at": "2026-11-27T07:05:44+01:00",
+          "dossier": "dossiers/2026-11-27-morgens.md",
+          "research_status": "T2",
+          "result": "Neuer Gemeinderückblick mitFunktionsträgerbeteiligung inDüren. KonkreterTag/OrtundunabhängigeTeilnahmebestätigungfehlen. Kontextquellen bestätigenTeilnahmenicht;T2/B0."
+        }
+      ]
+    },
+    {
+      "id": "MA-KORR-GIRB-SCHLICH-AUSFALL-2711",
+      "priority": "P2",
+      "location_section": "Girbelsrath",
+      "change_type": "Bestandskorrektur/Nachtrag",
+      "text_status": "Korrektur erforderlich",
+      "image_status": null,
+      "dossier": "dossiers/2026-11-27-morgens.md",
+      "workflow_status": "offen",
+      "article_path": "inhalte/meldungen/2026-11-21-recherche-claude-morgens.json",
+      "implementation_commit": null,
+      "notes": "QuellenbezogenerNachtragzurWochenvorschau: Schlich–Girbelsrath26.11.Ausfall/Abgesagt. DFB-Anzeigebereits26.11.vorhanden, damalsbeiPrüfungübersehen. KeineGründe/Ersatzterminebelegt.",
+      "sources": [
+        {
+          "key": "weeklive",
+          "url": "https://merzenich-aktuell.de/leben/merzenich-23-bis-29-november-2026-buergewald-ausschuss-tannenbaumschmuecken-adventmarkt/",
+          "at": "2026-11-27T06:56:48+01:00",
+          "status": 200
+        },
+        {
+          "key": "girbteam",
+          "url": "https://www.fussball.de/mannschaft/fc-rhenania-girbelsrath-fc-rhenania-girbelsrath-mittelrhein/-/saison/2627/team-id/01SIOKBTDK000000VS548984VVMI9KVG",
+          "at": "2026-11-27T06:56:52+01:00",
+          "status": 200
+        },
+        {
+          "key": "schlichgame",
+          "url": "https://www.fussball.de/spiel/fc-viktoria-schlich-fc-rhenania-girbelsrath/-/spiel/031LRL28GC000000VS5489BTVSRD0UH9",
+          "at": "2026-11-27T06:58:31+01:00",
+          "status": 200
+        },
+        {
+          "key": "fupaprev",
+          "url": "https://www.fupa.net/club/rhenania-girbelsrath/matches?pointer=prev",
+          "at": "2026-11-27T06:57:06+01:00",
+          "status": 200
+        }
+      ],
+      "research_verifications": [
+        {
+          "checked_at": "2026-11-27T07:05:44+01:00",
+          "dossier": "dossiers/2026-11-27-morgens.md",
+          "research_status": "Korrektur erforderlich",
+          "result": "QuellenbezogenerNachtragzurWochenvorschau: Schlich–Girbelsrath26.11.Ausfall/Abgesagt. DFB-Anzeigebereits26.11.vorhanden, damalsbeiPrüfungübersehen. KeineGründe/Ersatzterminebelegt."
         }
       ]
     }
@@ -17419,6 +17551,53 @@
         "Mühle, Wunschbaum, Girbelsrath, HFA-Niederschrift",
         "Commons-Frostfoto visuell prüfen/B0",
         "Ältere Artikel/Anlagen/Bahn unvollständig, QuellenfehlerHTTP403/404/503 dokumentiert"
+      ]
+    },
+    {
+      "date": "2026-11-27",
+      "edition": "morgens",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-27-morgens.md",
+      "compared_with": "dossiers/2026-11-26-mittags.md",
+      "compared_with_claude": "dossiers/2026-11-25-claude-morgens.md",
+      "base_commit": "4ab367f542c6dc0cff82d713437b336687e36065",
+      "implementation_commit": null,
+      "summary": "Neu:Frost-NachtwarnungfürMerzenich;GlühweinabendmitOrtsabweichung;Orange-Day-Gemeinderückblick,alleT2. NeueKita-Windmühle-Einladung7.12.18UhralsT0-Terminhinweis. ErstmalskonkreterWochenvorschau-NachtragSchlichAusfall;bekannteMotorradcaptionoffen.",
+      "topics": 3,
+      "new_topics": 1,
+      "updated_topics": 2,
+      "blocked_T2": 3,
+      "corrections_required": 2,
+      "new_corrections_required": 1,
+      "new_corrections": [
+        "MA-KORR-GIRB-SCHLICH-AUSFALL-2711"
+      ],
+      "known_corrections_still_open": [
+        "MA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411"
+      ],
+      "resolved_corrections_verified": [
+        "MA-KORR-BAUTURBO-ANLAGEN-2511"
+      ],
+      "repository_article_files_read": 65,
+      "repository_event_files_read": 28,
+      "repository_area_files_read": 28,
+      "new_or_changed_events": 1,
+      "complete_drafts": 0,
+      "prepared_at": "2026-11-27T07:05:44+01:00",
+      "deadline": "2026-11-27T08:45:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Bereitstellungszeit/Frist im bestätigten main-Uploadabschluss; prepared_at keinUploadnachweis.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "open_checks": [
+        "Glühweinabend: Ortsabweichung unabhängigklären",
+        "OrangeDay: Veranstaltungstag/Ort/Teilnahmebestätigung",
+        "Frost: unabhängigeBestätigung/externeDrittquelle",
+        "Kita: genaueVeranstaltungsadresse/Ende",
+        "Schlich-Ausfall: Bestandsnachtrag, Grund/Ersatzterminoffen",
+        "BekannteMotorradcaption",
+        "Bürgewald/HFA-Niederschriften;DRK/Mühle/Wunschbaum/Girbelsrath-Altprüfung",
+        "Originaleinsendung/Altartikel/Anlagen/Sporturteile/Bahn unvollständig;Quellenfehler/Bild-B0"
       ]
     }
   ]
