@@ -1,6 +1,11 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-27. November 2026 · Theme 21.30.9 · Core-Plugin 1.50.10 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+27. November 2026 · Theme 21.30.10 · Core-Plugin 1.50.10 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+
+## Neu am 27.11.2026 abends: Theme 21.30.10, „Vor Ort“ auf dem Handy zugeklappt
+
+- Vorgabe des Betreibers: Die Spalte „Vor Ort“ (Veranstaltungen, Wetter, Immobilienmarkt, Stellenmarkt) soll auf dem Handy nicht als lange Liste untereinander stehen, sondern zum Aufklappen sein.
+- `v20.js`: unter 960 px starten alle Klappfelder der Spalte zu; `korrekturen.css`: Zeilen als 48 px hohe Tippstreifen mit Trennlinie. Laptop unverändert.
 
 ## Neu am 27.11.2026 abends: Plugin 1.50.9, Vorschaubild auch für Seiten ohne eigenes Bild
 

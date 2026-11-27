@@ -24,6 +24,8 @@
 (()=>{
  // Kopf ohne Uhrzeit (Betreiber 02.10.2026): nur das Datum, daneben das Wetter (render()).
  const clock=()=>{const d=new Date();document.querySelectorAll('[data-today]').forEach(el=>{el.textContent=new Intl.DateTimeFormat('de-DE',{timeZone:'Europe/Berlin',weekday:'short',day:'2-digit',month:'2-digit',year:'numeric'}).format(d);el.dateTime=d.toISOString();});};clock();setInterval(clock,60000);
+ // Handy (Betreiber 27.11.2026): Die Klappfelder der Spalte „Vor Ort“ starten zu, damit sie nicht als lange Liste untereinander stehen; ein Tipp öffnet sie.
+ if(matchMedia('(max-width:959px)').matches)document.querySelectorAll('.portal-service .service-accordion[open]').forEach(el=>{el.open=false;});
  document.querySelectorAll('.service-accordion,.nav-more').forEach((el,i)=>{const summary=el.querySelector('summary'),body=summary?.nextElementSibling;if(!summary||!body)return;body.id=body.id||'expand-content-'+i;summary.setAttribute('aria-controls',body.id);const update=()=>summary.setAttribute('aria-expanded',String(el.open));el.addEventListener('toggle',update);update();});
  const nav=document.querySelector('.mainnav .navscroll'),more=document.querySelector('.nav-more:not(.mega) .more-links');if(nav&&more){const links=[...nav.children];const fit=()=>{links.forEach(el=>nav.append(el));if(innerWidth<768)return;let guard=0;while(nav.scrollWidth>nav.clientWidth+1&&nav.children.length>1&&guard++<20){more.prepend(nav.lastElementChild);}};new ResizeObserver(fit).observe(nav);fit();}
  document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.nav-more[open]').forEach(el=>{el.open=false;el.querySelector('summary').focus();});});
