@@ -43,5 +43,7 @@ $GLOBALS['meta'][20] = ['ma_club_logo' => 'https://merzenich-aktuell.de/wp-conte
 $GLOBALS['posts'][20] = $verein;
 pruefe('Verein ohne Bild: Vereinslogo', ma_seo_ersatzbild(['typ' => 'verein'], $verein)['url'], 'https://merzenich-aktuell.de/wp-content/uploads/sc-logo.webp');
 pruefe('Seite ohne Bild (z. B. Impressum): Bild einer aktuellen Meldung statt Standardbild', ma_seo_ersatzbild(['typ' => 'seite'], new WP_Post(30, 'page', 'impressum'))['url'], 'https://merzenich-aktuell.de/wp-content/uploads/a.jpg');
+$GLOBALS['meta'][20] = ['ma_club_logo' => '/assets/uploads/sc-logo.webp'];
+pruefe('Relatives Vereinslogo wird zur vollen Adresse', ma_seo_ersatzbild(['typ' => 'verein'], $verein)['url'], 'https://merzenich-aktuell.de/assets/uploads/sc-logo.webp');
 echo $fehler ? "$fehler Fehler\n" : "Alle Prüfungen bestanden\n";
 exit($fehler ? 1 : 0);

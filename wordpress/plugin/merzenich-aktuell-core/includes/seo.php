@@ -688,6 +688,8 @@ function ma_seo_ersatzbild(array $k, $o): array {
     $b = null;
     if (($k['typ'] ?? '') === 'verein' && $o instanceof WP_Post) {
         $logo = (string) get_post_meta($o->ID, 'ma_club_logo', true);
+        // Gespeicherte Logos können relativ sein („/assets/uploads/…“); og:image braucht die volle Adresse.
+        if ($logo !== '' && str_starts_with($logo, '/') && !str_starts_with($logo, '//')) $logo = home_url($logo);
         if ($logo !== '') {
             $aid = function_exists('attachment_url_to_postid') ? (int) attachment_url_to_postid($logo) : 0;
             $src = $aid ? wp_get_attachment_image_src($aid, 'full') : false;

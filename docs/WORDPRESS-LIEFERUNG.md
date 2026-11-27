@@ -1,12 +1,12 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-27. November 2026 · Theme 21.30.9 · Core-Plugin 1.50.9 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+27. November 2026 · Theme 21.30.9 · Core-Plugin 1.50.10 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
 
 ## Neu am 27.11.2026 abends: Plugin 1.50.9, Vorschaubild auch für Seiten ohne eigenes Bild
 
 - Vorgabe des Betreibers „ja alles“: Auch Vereine, Themen, Ortsteile, Rubriken, Startseite und Service-Seiten zeigen beim Teilen ein Bild statt des Standardbilds.
 - `ma_seo_ersatzbild()` (seo.php): Verein → Vereinslogo, sonst Bild der neuesten Vereinsmeldung, sonst des Ortsteils; Listen, Themen, Ortsteile, Rubriken → Bild der neuesten Meldung dort; Startseite und übrige Seiten → Bild des Aufmachers, sonst der neuesten Meldung mit Bild. Das Standardbild bleibt nur, wenn es nirgends ein Bild gibt.
-- Test: `qa/wordpress/teilen-vorschau-test.php` (erweitert).
+- Test: `qa/wordpress/teilen-vorschau-test.php` (erweitert). 1.50.10: relative Vereinslogos („/assets/…“) werden zur vollen Adresse.
 
 ## Neu am 27.11.2026 nachmittags: Plugin 1.50.8, jeder geteilte Beitrag mit seinem Bild
 
