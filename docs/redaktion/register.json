@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-27-mittags.md",
-  "source_check_window": "27.11.2026 Europe/Berlin: Hauptabrufe12:01:16–12:02:44; HFA12:01:48; Beschlusstexte12:02:02–12:02:10; Zusatzkontext12:03:59/12:05:00; Nachabrufe12:04:22; Livebild12:05:43, visuell12:09.",
+  "latest_dossier": "dossiers/2026-11-28-morgens.md",
+  "source_check_window": "28.11.2026 Europe/Berlin: Hauptabrufe06:57:18–06:59:10, neueHI/DB06:58:04, Zusatzquellen06:58:44/06:59:34, Livebild07:00:47/visuell07:01; Commons-Originale403/B0.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -12547,6 +12547,13 @@
           "status": "T2",
           "note": "Neu:HFA-Beschlusstext136/2026 nennt drei Jahre in Beratung, Ziff.3 weiterhin solange Alleingesellschafterin. Widerspruch/Prüferergebnis/finale Fassung offen, T2.",
           "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "dossier": "dossiers/2026-11-28-morgens.md",
+          "checked_at": "2026-11-28T07:04:49+01:00",
+          "status": "T2",
+          "note": "HFA136-Text unverändert; bekannter Widerspruch Dreijahrespassage/Ziff.3 weiter offen, keine neue Karte.",
+          "implementation": "keine_Artikelumsetzung"
         }
       ]
     },
@@ -14142,6 +14149,13 @@
           "status": "T2",
           "note": "Kreisfolgefenster12–16, Gemeindeliste ohne Merzenich-Zeile; keine belegte lokale Verlängerung/Entwarnung. T2 bleibt.",
           "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "dossier": "dossiers/2026-11-28-morgens.md",
+          "checked_at": "2026-11-28T07:04:49+01:00",
+          "status": "T2",
+          "note": "Neuer lokaler Warnzeitraum27.11.16 bis28.11.12,-4bis-8°C. T2 wegen fehlender unabhängiger Bestätigung/externer Drittquelle.",
+          "implementation": "keine_Artikelumsetzung"
         }
       ]
     },
@@ -14314,6 +14328,13 @@
           "status": "T2",
           "note": "Originalstatus Ausfall/Abgesagt unverändert; Wochenvorschau live503, Nachabruf Timeout. Umsetzung aktuell nicht verifiziert.",
           "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "dossier": "dossiers/2026-11-28-morgens.md",
+          "checked_at": "2026-11-28T07:04:49+01:00",
+          "status": "T2",
+          "note": "Wochenvorschau wiederHTTP200, falsche Zukunftsformulierung zu26.11. weiterhin live; Originalstatus Ausfall/Abgesagt unverändert.",
+          "implementation": "keine_Artikelumsetzung"
         }
       ]
     },
@@ -14336,6 +14357,59 @@
           "checked_at": "2026-11-27T12:12:22+01:00",
           "status": "T2",
           "note": "Einzelbeschlüsse gelesen, Sammelniederschrift nur öffentlicher BeratungsteilS.1–14; übrige Anhänge nicht vollständig."
+        },
+        {
+          "dossier": "dossiers/2026-11-28-morgens.md",
+          "checked_at": "2026-11-28T07:04:49+01:00",
+          "status": "T2",
+          "note": "HFA-Einzelbeschlüsse/Sitzungsweg unverändert; gestern dokumentierte Folgeaufträge nicht neu gezählt.",
+          "implementation": "keine_Artikelumsetzung"
+        }
+      ]
+    },
+    {
+      "id": "MA-EHRENAMTSFEST-2026-2811",
+      "priority": "P2",
+      "location_section": "Gemeinde",
+      "change_type": "Neu",
+      "text_status": "T1",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-11-28-morgens.md",
+      "workflow_status": "recherchiert",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "notes": "Neu:unabhängige Gemeindemeldung und eigener Tennisbericht, drei Primär-URLs plus Förderkontext. T1 nur zugeschriebener Fest-/Tennisrückblick; Einzelpreisdetails nicht unabhängig bestätigt, exakter Veranstaltungstag offen; BildB0.",
+      "research_verifications": [
+        {
+          "dossier": "dossiers/2026-11-28-morgens.md",
+          "checked_at": "2026-11-28T07:04:49+01:00",
+          "status": "T1",
+          "note": "Neu:unabhängige Gemeindemeldung und eigener Tennisbericht, drei Primär-URLs plus Förderkontext. T1 nur zugeschriebener Fest-/Tennisrückblick; Einzelpreisdetails nicht unabhängig bestätigt, exakter Veranstaltungstag offen; BildB0.",
+          "implementation": "keine_Artikelumsetzung"
+        }
+      ]
+    },
+    {
+      "id": "MA-BAHN-EHRENFELD-HORREM-2811",
+      "priority": "P2",
+      "location_section": "Gemeinde",
+      "change_type": "Neu",
+      "text_status": "T2",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-11-28-morgens.md",
+      "workflow_status": "recherche_gesperrt",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "notes": "Neuer Endfeld-/Textstand derselben Störung seit27.11.;2Dez03:30 kein gesichertes Ende, S19 nicht in Linienliste. DB-Tafel25.11.nur Kontext. Unabhängige Ereignisbestätigung fehlt.",
+      "research_verifications": [
+        {
+          "dossier": "dossiers/2026-11-28-morgens.md",
+          "checked_at": "2026-11-28T07:04:49+01:00",
+          "status": "T2",
+          "note": "Neuer Endfeld-/Textstand derselben Störung seit27.11.;2Dez03:30 kein gesichertes Ende, S19 nicht in Linienliste. DB-Tafel25.11.nur Kontext. Unabhängige Ereignisbestätigung fehlt.",
+          "implementation": "keine_Artikelumsetzung"
         }
       ]
     }
@@ -17721,6 +17795,48 @@
         "Commons-Originale visuell/B0",
         "Glühwein-Ort/Kita-Termin/OrangeDay weiterhin offen",
         "Nicht alle Altartikel/Plan-/Prüfberichtsanlagen/Sporturteile/Bahn vollständig geprüft"
+      ]
+    },
+    {
+      "date": "2026-11-28",
+      "edition": "morgens",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-28-morgens.md",
+      "compared_with": "dossiers/2026-11-27-mittags.md",
+      "compared_with_claude": "dossiers/2026-11-25-claude-morgens.md",
+      "base_commit": "55636e6ccf97471f4b952b499f5aece20ed53a6f",
+      "implementation_commit": null,
+      "summary": "Neu:Ehrenamtsfest/Gemeinde-undTennisberichte (T1 begrenzter Textkern/B0), lokales Frostfenster (T2), veränderter Weichenmeldungsstand (T2). Neue Adventmarkt-Verbreitung ohne Terminänderung. Zwei bekannte Korrekturen weiterliveoffen.",
+      "topics": 3,
+      "new_topics": 2,
+      "updated_topics": 1,
+      "ready_T1": 1,
+      "blocked_T2": 2,
+      "corrections_required": 2,
+      "new_corrections_required": 0,
+      "new_corrections": [],
+      "known_corrections_still_open": [
+        "MA-KORR-GIRB-SCHLICH-AUSFALL-2711",
+        "MA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411"
+      ],
+      "repository_article_files_read": 65,
+      "repository_event_files_read": 28,
+      "repository_area_files_read": 29,
+      "new_or_changed_events": 0,
+      "complete_drafts": 0,
+      "prepared_at": "2026-11-28T07:04:49+01:00",
+      "deadline": "2026-11-28T08:45:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Bereitstellungszeit/Frist im bestätigten main-Uploadabschluss, prepared_at keinUploadnachweis.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "open_checks": [
+        "Ehrenamtsfest:genauer Veranstaltungstag/Einzelpreise separatbestätigen/BildB0",
+        "Frost:unabhängige Bestätigung/externeDrittquelle",
+        "Weiche:unabhängiger Ereignisstand/konkreteVerbindungMerzenich",
+        "Bekannte Schlich-/Motorradkorrekturen",
+        "Kita-Befristungswiderspruch",
+        "Zwei vergangene HI-Detailseiten404;Altartikel/Anlagen/Sporturteile/Bahn unvollständig"
       ]
     }
   ]
