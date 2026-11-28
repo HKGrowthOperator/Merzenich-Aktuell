@@ -1,6 +1,6 @@
 {
  "hinweis": "Erzeugt von deploy/umkreis.mjs aus inhalte/umkreis/. Nicht von Hand ändern.",
- "stand": "2026-11-27",
+ "stand": "2026-11-28",
  "tage": 30,
  "orte": [
   "Düren",
@@ -11,6 +11,14 @@
   "Kreis Düren"
  ],
  "eintraege": [
+  {
+   "ort": "Düren",
+   "rubrik": "Blaulicht",
+   "titel": "Doppelte Trunkenheitsfahrt mit Verletzten bei einem Verkehrsunfall und anschließendem Entfernen vom Unfallort",
+   "url": "https://www.presseportal.de/blaulicht/pm/8/6399668",
+   "datum": "2026-11-28",
+   "quelle": "Polizei Düren"
+  },
   {
    "ort": "Düren",
    "rubrik": "Blaulicht",

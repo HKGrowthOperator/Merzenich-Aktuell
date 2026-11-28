@@ -1,0 +1,13 @@
+{
+  "hinweis": "Automatisch aus der Liste der Polizei Düren im Presseportal angelegt (deploy/automatik-umkreis.mjs): amtliche Schlagzeile, Ort, Datum und Link zur Einzelmeldung, kein eigener Text. Meldungen aus Merzenich und den Ortsteilen werden hier nie angelegt.",
+  "eintraege": [
+    {
+      "ort": "Düren",
+      "rubrik": "Blaulicht",
+      "titel": "Doppelte Trunkenheitsfahrt mit Verletzten bei einem Verkehrsunfall und anschließendem Entfernen vom Unfallort",
+      "url": "https://www.presseportal.de/blaulicht/pm/8/6399668",
+      "datum": "2026-11-28",
+      "quelle": "Polizei Düren"
+    }
+  ]
+}
