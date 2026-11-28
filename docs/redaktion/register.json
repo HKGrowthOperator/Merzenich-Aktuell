@@ -2,8 +2,8 @@
   "schema_version": 1,
   "project": "Merzenich Aktuell",
   "timezone": "Europe/Berlin",
-  "latest_dossier": "dossiers/2026-11-28-morgens.md",
-  "source_check_window": "28.11.2026 Europe/Berlin: Hauptabrufe06:57:18–06:59:10, neueHI/DB06:58:04, Zusatzquellen06:58:44/06:59:34, Livebild07:00:47/visuell07:01; Commons-Originale403/B0.",
+  "latest_dossier": "dossiers/2026-11-28-mittags.md",
+  "source_check_window": "28.11.2026 Europe/Berlin: Hauptabrufe12:05:11–12:06:51; Kapelle12:05:32; Pfarrwege12:06:22; Pfarrbrief12:06:59; Livebild12:06:47/visuell12:07.",
   "note": "Bearbeitungsregister ab 25.10.2026; kein vollständiges Inventar bereits veröffentlichter Artikel. Nullwerte sind ungeprüft.",
   "topics": [
     {
@@ -12554,6 +12554,13 @@
           "status": "T2",
           "note": "HFA136-Text unverändert; bekannter Widerspruch Dreijahrespassage/Ziff.3 weiter offen, keine neue Karte.",
           "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "dossier": "dossiers/2026-11-28-mittags.md",
+          "checked_at": "2026-11-28T12:09:56+01:00",
+          "status": "T2",
+          "note": "Bekannter Befristungswiderspruch unverändert, keine neue Karte.",
+          "implementation": "keine_Artikelumsetzung"
         }
       ]
     },
@@ -14156,6 +14163,13 @@
           "status": "T2",
           "note": "Neuer lokaler Warnzeitraum27.11.16 bis28.11.12,-4bis-8°C. T2 wegen fehlender unabhängiger Bestätigung/externer Drittquelle.",
           "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "dossier": "dossiers/2026-11-28-mittags.md",
+          "checked_at": "2026-11-28T12:09:56+01:00",
+          "status": "T2",
+          "note": "Morgenwarnzeitraum bis12Uhr abgelaufen. GemeindeeintragMerzenich und Kreisobjekt105358000 fehlen im Mittagsabruf; keine ausdrücklich gelesene Entwarnung, keine neue Karte.",
+          "implementation": "keine_Artikelumsetzung"
         }
       ]
     },
@@ -14335,6 +14349,13 @@
           "status": "T2",
           "note": "Wochenvorschau wiederHTTP200, falsche Zukunftsformulierung zu26.11. weiterhin live; Originalstatus Ausfall/Abgesagt unverändert.",
           "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "dossier": "dossiers/2026-11-28-mittags.md",
+          "checked_at": "2026-11-28T12:09:56+01:00",
+          "status": "T2",
+          "note": "Weiterhin live: Zukunftsformulierung26.11.; Originalstatus Ausfall/Abgesagt unverändert.",
+          "implementation": "keine_Artikelumsetzung"
         }
       ]
     },
@@ -14387,6 +14408,13 @@
           "status": "T1",
           "note": "Neu:unabhängige Gemeindemeldung und eigener Tennisbericht, drei Primär-URLs plus Förderkontext. T1 nur zugeschriebener Fest-/Tennisrückblick; Einzelpreisdetails nicht unabhängig bestätigt, exakter Veranstaltungstag offen; BildB0.",
           "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "dossier": "dossiers/2026-11-28-mittags.md",
+          "checked_at": "2026-11-28T12:09:56+01:00",
+          "status": "T1",
+          "note": "Gemeinde-/Tennisberichte unverändert. Engbegrenzter T1-Textkern des Morgenlaufs erhalten; Einzelpreisbestätigung/Veranstaltungstag/BildB0 weiteroffen.",
+          "implementation": "keine_Artikelumsetzung"
         }
       ]
     },
@@ -14409,6 +14437,36 @@
           "checked_at": "2026-11-28T07:04:49+01:00",
           "status": "T2",
           "note": "Neuer Endfeld-/Textstand derselben Störung seit27.11.;2Dez03:30 kein gesichertes Ende, S19 nicht in Linienliste. DB-Tafel25.11.nur Kontext. Unabhängige Ereignisbestätigung fehlt.",
+          "implementation": "keine_Artikelumsetzung"
+        },
+        {
+          "dossier": "dossiers/2026-11-28-mittags.md",
+          "checked_at": "2026-11-28T12:09:56+01:00",
+          "status": "T2",
+          "note": "Relevanter Weichenblock unverändert, Endfeld02.12.03:30 bei unbestimmtem Textende; keine neue Karte.",
+          "implementation": "keine_Artikelumsetzung"
+        }
+      ]
+    },
+    {
+      "id": "MA-TERMIN-WORTGOTTES-MORSCH-2811",
+      "priority": "P3",
+      "location_section": "Morschenich · Kirche",
+      "change_type": "Neuer Terminhinweis im Dossier",
+      "text_status": "T2",
+      "image_status": "B0",
+      "dossier": "dossiers/2026-11-28-mittags.md",
+      "workflow_status": "recherchiert_terminhinweis",
+      "article_path": null,
+      "article_id": null,
+      "implementation_commit": null,
+      "notes": "Aktuelle Kapelleneinladung28.11.10:21 für28.11.17:30; PfarrbriefS.30/40/41 bestätigt. Kein Termin im28-Dateien-Bestand. Organisatorisch verwandte Quellen nicht unabhängig; T2 für eigenständige Themenkarte, keine Artikelkarte/kein Entwurf. Ende/Einlass/Barrierefreiheit offen.",
+      "research_verifications": [
+        {
+          "dossier": "dossiers/2026-11-28-mittags.md",
+          "checked_at": "2026-11-28T12:09:56+01:00",
+          "status": "T2",
+          "note": "Primärhinweis und Pfarrbrief gelesen, nicht alle44PDF-Seiten vollständig; keine unabhängige Bestätigung.",
           "implementation": "keine_Artikelumsetzung"
         }
       ]
@@ -17837,6 +17895,49 @@
         "Bekannte Schlich-/Motorradkorrekturen",
         "Kita-Befristungswiderspruch",
         "Zwei vergangene HI-Detailseiten404;Altartikel/Anlagen/Sporturteile/Bahn unvollständig"
+      ]
+    },
+    {
+      "date": "2026-11-28",
+      "edition": "mittags",
+      "by": "ChatGPT",
+      "dossier": "dossiers/2026-11-28-mittags.md",
+      "compared_with": "dossiers/2026-11-28-morgens.md",
+      "compared_with_claude": "dossiers/2026-11-25-claude-morgens.md",
+      "base_commit": "4f2d8df8b9111119876f38c4d368d1aef8f52db0",
+      "implementation_commit": null,
+      "summary": "Keine zusätzliche Themenkarte. Neu dokumentierter Wortgottesdienst-Termin28.11.17:30 aus heutiger Einladung und älterem Pfarrbrief. DWD-Listeneinträge nach Warnablauf fehlen, keine explizite Entwarnung. Bahn/Ehrenamtsfest/HFA unverändert. Zwei bekannte Bestandskorrekturen offen.",
+      "topics": 0,
+      "new_topics": 0,
+      "updated_topics": 0,
+      "blocked_T2": 0,
+      "corrections_required": 2,
+      "new_corrections_required": 0,
+      "new_corrections": [],
+      "known_corrections_still_open": [
+        "MA-KORR-GIRB-SCHLICH-AUSFALL-2711",
+        "MA-KORR-MALWETTBEWERB-BILDBESCHREIBUNG-1411"
+      ],
+      "repository_article_files_read": 65,
+      "repository_event_files_read": 28,
+      "repository_area_files_read": 29,
+      "new_or_changed_events": 1,
+      "new_event_ids": [
+        "MA-TERMIN-WORTGOTTES-MORSCH-2811"
+      ],
+      "complete_drafts": 0,
+      "prepared_at": "2026-11-28T12:09:56+01:00",
+      "deadline": "2026-11-28T14:15:00+01:00",
+      "deadline_met": null,
+      "deadline_note": "Tatsächliche Bereitstellung/Frist im bestätigten main-Uploadabschluss; prepared_at keinUploadnachweis.",
+      "publication": "keine",
+      "source_check_status": "documented_partial_coverage",
+      "open_checks": [
+        "Bekannte Schlich-/Motorradkorrekturen",
+        "Termin28.11.:Ende/Einlass/Barrierefreiheit/unabhängigeBestätigung",
+        "Keine vollständige Altartikel-/Anlagen-/Sporturteils-/Bahnprüfung;HI-Detailseiten404",
+        "Kita-Befristungswiderspruch",
+        "Ehrenamtsfest-Einzelpreise/Veranstaltungstag und bekannteB0-Bilder"
       ]
     }
   ]
