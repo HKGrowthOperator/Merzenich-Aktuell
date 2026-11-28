@@ -1,6 +1,10 @@
 # Merzenich Aktuell – Lieferung und Prüfstand
 
-27. November 2026 · Theme 21.30.10 · Core-Plugin 1.50.10 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+27. November 2026 · Theme 21.30.11 · Core-Plugin 1.50.10 · live: siehe `/?ma_api=update-status`, Selbst-Update aktiv (Historie unten)
+
+## Neu am 28.11.2026: Theme 21.30.11, Bildhinweis-Pause entfernt
+
+- Die Pause (`inc/hinweise-pause.php`, bis 28.11.2026 04:00) war abgelaufen; Prüfung am 28.11. 04:15 zeigt alle Bildmarken wieder. Datei und Einbindung in `functions.php` entfernt, ohne sichtbare Änderung.
 
 ## Neu am 27.11.2026 abends: Theme 21.30.10, „Vor Ort“ auf dem Handy zugeklappt
 
